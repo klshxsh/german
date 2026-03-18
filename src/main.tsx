@@ -5,6 +5,7 @@ import './index.css';
 import Dashboard from './pages/Dashboard';
 import ImportPage from './pages/ImportPage';
 import UnitOverview from './pages/UnitOverview';
+import FlashcardSession from './pages/FlashcardSession';
 import Layout from './components/Layout';
 
 const router = createHashRouter([
@@ -15,6 +16,7 @@ const router = createHashRouter([
       { index: true, element: <Dashboard /> },
       { path: 'import', element: <ImportPage /> },
       { path: 'unit/:id', element: <UnitOverview /> },
+      { path: 'unit/:id/flashcards', element: <FlashcardSession /> },
     ],
   },
 ]);

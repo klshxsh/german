@@ -22,6 +22,18 @@ export default function UnitOverview() {
     [unitId]
   );
 
+  const dueCount = useLiveQuery(
+    () =>
+      unitId !== null
+        ? db.flashcardProgress
+            .where('unitId')
+            .equals(unitId)
+            .and((p) => p.nextDue <= new Date().toISOString())
+            .count()
+        : 0,
+    [unitId]
+  );
+
   if (unitId === null || isNaN(unitId)) {
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8">
@@ -106,10 +118,18 @@ export default function UnitOverview() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
           </div>
-          <div>
+          <div className="flex-1">
             <p className="font-medium" style={{ color: '#2C2418' }}>Flashcards</p>
             <p className="text-sm" style={{ color: '#7A6855' }}>Tap to flip, rate your recall</p>
           </div>
+          {dueCount !== undefined && dueCount > 0 && (
+            <span
+              className="text-xs font-semibold px-2 py-1 rounded-full"
+              style={{ backgroundColor: '#C4713B', color: 'white' }}
+            >
+              {dueCount} due
+            </span>
+          )}
           <svg className="w-5 h-5 ml-auto" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
