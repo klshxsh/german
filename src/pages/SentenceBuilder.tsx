@@ -8,6 +8,7 @@ import {
   KeyboardSensor,
   useSensor,
   useSensors,
+  useDroppable,
   type DragEndEvent,
   type DragStartEvent,
 } from '@dnd-kit/core';
@@ -147,6 +148,20 @@ function DragOverlayTile({ tile }: { tile: Tile }) {
       }}
     >
       {tile.text}
+    </div>
+  );
+}
+
+function DroppableZone({ id, children, className, style }: {
+  id: string;
+  children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const { setNodeRef } = useDroppable({ id });
+  return (
+    <div ref={setNodeRef} id={id} className={className} style={style}>
+      {children}
     </div>
   );
 }
@@ -550,9 +565,9 @@ export default function SentenceBuilder() {
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
-        <div className="max-w-2xl mx-auto px-4 pt-8 pb-4 flex flex-col min-h-screen">
+        <div className="max-w-2xl mx-auto px-4 pt-6 pb-4">
           {/* Top bar */}
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4">
             <button
               onClick={() => setPhase('config')}
               className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
@@ -599,7 +614,7 @@ export default function SentenceBuilder() {
 
           {/* English translation */}
           <div
-            className="rounded-xl p-4 mb-6"
+            className="rounded-xl p-4 mb-3"
             style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
           >
             <p className="text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
@@ -611,21 +626,18 @@ export default function SentenceBuilder() {
           </div>
 
           {/* Answer zone */}
-          <div className="mb-4">
+          <div className="mb-3">
             <p className="text-sm font-medium mb-2" style={{ color: '#7A6855' }}>
               Your answer:
             </p>
             <SortableContext items={answerIds} strategy={horizontalListSortingStrategy}>
-              <div
+              <DroppableZone
                 id="answer-zone"
                 className="min-h-[60px] rounded-xl border-2 border-dashed p-3 flex flex-wrap gap-2 transition-colors"
                 style={{
                   borderColor: feedbackBg ?? '#D4C8B8',
-                  backgroundColor: feedbackBg
-                    ? `${feedbackBg}18`
-                    : '#F6F1EB',
+                  backgroundColor: feedbackBg ? `${feedbackBg}18` : '#F6F1EB',
                 }}
-                data-droppable="answer-zone"
               >
                 {questionState.answerTiles.length === 0 && (
                   <p className="text-sm" style={{ color: '#7A6855' }}>
@@ -640,7 +652,7 @@ export default function SentenceBuilder() {
                     onClick={() => removeFromAnswer(tile.id)}
                   />
                 ))}
-              </div>
+              </DroppableZone>
             </SortableContext>
 
             {/* Feedback message */}
@@ -665,16 +677,15 @@ export default function SentenceBuilder() {
           </div>
 
           {/* Tile pool */}
-          <div className="mb-6">
+          <div className="mb-4">
             <p className="text-sm font-medium mb-2" style={{ color: '#7A6855' }}>
               Available tiles:
             </p>
             <SortableContext items={poolIds} strategy={horizontalListSortingStrategy}>
-              <div
+              <DroppableZone
                 id="pool-zone"
                 className="min-h-[60px] rounded-xl p-3 flex flex-wrap gap-2"
                 style={{ backgroundColor: '#EDE8E0' }}
-                data-droppable="pool-zone"
               >
                 {questionState.poolTiles.map((tile) => (
                   <SortableTile
@@ -684,12 +695,12 @@ export default function SentenceBuilder() {
                     onClick={() => addToAnswer(tile.id)}
                   />
                 ))}
-              </div>
+              </DroppableZone>
             </SortableContext>
           </div>
 
           {/* Action buttons */}
-          <div className="flex gap-3 mt-auto">
+          <div className="flex gap-3">
             {!questionState.checked ? (
               <button
                 onClick={checkAnswer}
