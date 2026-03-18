@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import ImportPage from './pages/ImportPage';
 import UnitOverview from './pages/UnitOverview';
 import FlashcardSession from './pages/FlashcardSession';
+import SentenceBuilder from './pages/SentenceBuilder';
 import Layout from './components/Layout';
 
 const router = createHashRouter([
@@ -17,6 +18,7 @@ const router = createHashRouter([
       { path: 'import', element: <ImportPage /> },
       { path: 'unit/:id', element: <UnitOverview /> },
       { path: 'unit/:id/flashcards', element: <FlashcardSession /> },
+      { path: 'unit/:id/builder', element: <SentenceBuilder /> },
     ],
   },
 ]);
