@@ -1,0 +1,1842 @@
+{
+  "unit": {
+    "name": "In meinem Leben",
+    "description": "Talking about what you have done in your life using the perfect tense"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Perfect tense - haben conjugation",
+      "description": "Conjugation of haben in the present tense for forming the perfect tense",
+      "grammarNotes": "Used with most verbs to form the perfect tense. Structure: subject + haben conjugation + past participle at end of clause"
+    },
+    {
+      "id": "cat_2",
+      "name": "Perfect tense - sein conjugation",
+      "description": "Conjugation of sein in the present tense for forming the perfect tense",
+      "grammarNotes": "Used with verbs of motion and change of state to form the perfect tense. Structure: subject + sein conjugation + past participle at end of clause"
+    },
+    {
+      "id": "cat_3",
+      "name": "Activities with haben - basic",
+      "description": "Common activities in the perfect tense using haben",
+      "grammarNotes": "Perfect tense formed with haben + past participle"
+    },
+    {
+      "id": "cat_4",
+      "name": "Activities with sein - motion and change",
+      "description": "Activities in the perfect tense using sein (verbs of motion and becoming)",
+      "grammarNotes": "Perfect tense formed with sein + past participle. Used for verbs of motion (fahren, laufen) and change of state (werden)"
+    },
+    {
+      "id": "cat_5",
+      "name": "More activities - haben perfect tense",
+      "description": "Extended activities using haben in the perfect tense",
+      "grammarNotes": "Perfect tense with haben. Can include time phrases which cause verb flip-flop (time phrase + auxiliary + subject + past participle)"
+    },
+    {
+      "id": "cat_6",
+      "name": "More activities - achievements",
+      "description": "Activities and achievements in the perfect tense",
+      "grammarNotes": "Perfect tense constructions. Time phrases at the beginning cause inversion (verb-subject order)"
+    },
+    {
+      "id": "cat_7",
+      "name": "Connectives",
+      "description": "Connecting words to link clauses and ideas",
+      "grammarNotes": "denn = coordinating (no word order change); weil/da/obwohl = subordinating (verb to end of clause)"
+    },
+    {
+      "id": "cat_8",
+      "name": "Opinions",
+      "description": "Phrases for expressing opinions",
+      "grammarNotes": "Opinion starters that can be followed by adjectives or full clauses with dass"
+    },
+    {
+      "id": "cat_9",
+      "name": "Qualifiers and adjectives - positive",
+      "description": "Positive qualifiers and adjectives to describe experiences and people",
+      "grammarNotes": "Qualifiers modify adjectives; adjectives can describe experiences or people"
+    },
+    {
+      "id": "cat_10",
+      "name": "Qualifiers and adjectives - negative",
+      "description": "Negative qualifiers and adjectives",
+      "grammarNotes": "Used to express negative opinions or describe negative qualities"
+    },
+    {
+      "id": "cat_11",
+      "name": "Qualifiers - intensity",
+      "description": "Adverbs that modify the intensity of adjectives",
+      "grammarNotes": "Place before adjectives to indicate degree"
+    },
+    {
+      "id": "cat_12",
+      "name": "Adjectives - personality positive",
+      "description": "Positive personality traits",
+      "grammarNotes": "Can be used with sein to describe people"
+    },
+    {
+      "id": "cat_13",
+      "name": "Adjectives - personality negative",
+      "description": "Negative personality traits",
+      "grammarNotes": "Can be used with sein to describe people"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Ich habe",
+      "english": "I have",
+      "partOfSpeech": "verb",
+      "grammarNotes": "1st person singular",
+      "tags": [
+        "auxiliary",
+        "perfect tense"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "Du hast",
+      "english": "you have",
+      "partOfSpeech": "verb",
+      "grammarNotes": "2nd person singular informal",
+      "tags": [
+        "auxiliary",
+        "perfect tense"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "Er/sie/es/man hat",
+      "english": "he/she/it/one has",
+      "partOfSpeech": "verb",
+      "grammarNotes": "3rd person singular",
+      "tags": [
+        "auxiliary",
+        "perfect tense"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "Wir haben",
+      "english": "we have",
+      "partOfSpeech": "verb",
+      "grammarNotes": "1st person plural",
+      "tags": [
+        "auxiliary",
+        "perfect tense"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_1",
+      "german": "Ihr habt",
+      "english": "you have",
+      "partOfSpeech": "verb",
+      "grammarNotes": "2nd person plural informal",
+      "tags": [
+        "auxiliary",
+        "perfect tense"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_1",
+      "german": "Sie haben",
+      "english": "you have / they have",
+      "partOfSpeech": "verb",
+      "grammarNotes": "2nd person formal / 3rd person plural",
+      "tags": [
+        "auxiliary",
+        "perfect tense"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_2",
+      "german": "bin ich",
+      "english": "I am",
+      "partOfSpeech": "verb",
+      "grammarNotes": "1st person singular",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_2",
+      "german": "bist du",
+      "english": "you are",
+      "partOfSpeech": "verb",
+      "grammarNotes": "2nd person singular informal",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_2",
+      "german": "ist er/sie/es/man",
+      "english": "he/she/it/one is",
+      "partOfSpeech": "verb",
+      "grammarNotes": "3rd person singular",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_2",
+      "german": "sind wir",
+      "english": "we are",
+      "partOfSpeech": "verb",
+      "grammarNotes": "1st person plural",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_2",
+      "german": "seid ihr",
+      "english": "you are",
+      "partOfSpeech": "verb",
+      "grammarNotes": "2nd person plural informal",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_2",
+      "german": "sind Sie",
+      "english": "you are",
+      "partOfSpeech": "verb",
+      "grammarNotes": "2nd person formal",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_2",
+      "german": "sind sie",
+      "english": "they are",
+      "partOfSpeech": "verb",
+      "grammarNotes": "3rd person plural",
+      "tags": [
+        "auxiliary",
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_3",
+      "german": "mit Kindern gearbeitet",
+      "english": "worked with children",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_3",
+      "german": "Leute glücklich gemacht",
+      "english": "made people happy",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_3",
+      "german": "interessante Erlebnisse gehabt",
+      "english": "had interesting experiences",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "experience"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "viele Preise gewonnen",
+      "english": "won lots of prizes",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_3",
+      "german": "viele Länder gesehen",
+      "english": "seen lots of countries",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "travel"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_3",
+      "german": "viel Geld verdient",
+      "english": "earnt lots of money",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_3",
+      "german": "viel trainiert",
+      "english": "trained a lot",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_3",
+      "german": "Biologie studiert",
+      "english": "studied biology",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "education"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_4",
+      "german": "nach Afrika gefahren",
+      "english": "went to Africa",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "perfect tense",
+        "travel",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_4",
+      "german": "berühmt geworden",
+      "english": "became famous",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - change of state",
+      "tags": [
+        "perfect tense",
+        "achievement",
+        "werden"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "erfolgreich geworden",
+      "english": "became successful",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - change of state",
+      "tags": [
+        "perfect tense",
+        "achievement",
+        "werden"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_4",
+      "german": "reich geworden",
+      "english": "became rich",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - change of state",
+      "tags": [
+        "perfect tense",
+        "achievement",
+        "werden"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_4",
+      "german": "selbstbewusst geworden",
+      "english": "became self confident",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - change of state",
+      "tags": [
+        "perfect tense",
+        "personal development",
+        "werden"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_4",
+      "german": "schnell gefahren",
+      "english": "drove quickly",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "perfect tense",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_4",
+      "german": "sehr schnell gelaufen",
+      "english": "ran very quickly",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "perfect tense",
+        "motion",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_4",
+      "german": "nach viele Länder gefahren",
+      "english": "went to lots of countries",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "perfect tense",
+        "travel",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_5",
+      "german": "Er hat einen neuen Tanz erfunden",
+      "english": "He made up a new dance",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "creativity"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_5",
+      "german": "Ich habe professionell getanzt",
+      "english": "I danced professionally",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "profession",
+        "dance"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_5",
+      "german": "Er hat ein tolles Blog geschrieben",
+      "english": "He wrote great blog",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "writing"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_5",
+      "german": "Sie hat Abends in einem Chor gesungen",
+      "english": "She sang in a choir in the evenings",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "music"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_5",
+      "german": "Sie hat 6 Wochen auf einem Schiff verbracht",
+      "english": "She spent 6 weeks on a boat",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "travel"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_5",
+      "german": "Sie ist nach Amerika gesegelt",
+      "english": "She sailed to America",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "perfect tense",
+        "travel",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat Hockey sehr gut gespielt",
+      "english": "He/she played hockey very well",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat Trompete super gespielt",
+      "english": "He/she played the trumpet brilliantly",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "music"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat beeindruckende Lieder gesungen",
+      "english": "He/she sung impressive songs",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "music"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat wunderbare Bilder gemalt/gezeichnet",
+      "english": "He/she painted / drew wonderful pictures",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "art"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat die Nachrichten gelesen",
+      "english": "He/she read the news",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "media"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat originelle Bücher geschrieben",
+      "english": "He/she wrote original books",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "writing"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_6",
+      "german": "Er/sie hat in der Unterhaltungsindustrie gearbeitet",
+      "english": "He/she worked in the entertainment industry",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect tense",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_7",
+      "german": "denn",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Coordinating conjunction - no word order change",
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_7",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to the end",
+      "tags": [
+        "reason",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_7",
+      "german": "da",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to the end",
+      "tags": [
+        "reason",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_7",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to the end",
+      "tags": [
+        "contrast",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_7",
+      "german": "obschon",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to the end",
+      "tags": [
+        "contrast",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_7",
+      "german": "obgleich",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to the end",
+      "tags": [
+        "contrast",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_7",
+      "german": "was … ist",
+      "english": "which is",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Relative clause connector",
+      "tags": [
+        "relative"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_7",
+      "german": "was … war",
+      "english": "which was",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Relative clause connector",
+      "tags": [
+        "relative"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_8",
+      "german": "Meiner Meinung nach ist es …",
+      "english": "in my opinion, it is …",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_8",
+      "german": "Ich bin der Meinung, dass es … ist",
+      "english": "I am of the opinion that it is …",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with dass clause",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_8",
+      "german": "Er ist/war …",
+      "english": "he is/was …",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Describing state with adjectives",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_8",
+      "german": "Sie ist/war …",
+      "english": "she is /was…",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Describing state with adjectives",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_9",
+      "german": "toll",
+      "english": "great",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_9",
+      "german": "fantastisch",
+      "english": "fantastic",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_9",
+      "german": "super",
+      "english": "super",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_9",
+      "german": "wunderbar",
+      "english": "wonderful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_9",
+      "german": "praktisch",
+      "english": "practical",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_9",
+      "german": "beeindruckend",
+      "english": "impressive",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_9",
+      "german": "angenehm",
+      "english": "pleasant",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_9",
+      "german": "wichtig",
+      "english": "important",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_9",
+      "german": "bezaubernd",
+      "english": "fascinating",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive adjective",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_10",
+      "german": "schlecht",
+      "english": "bad",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_10",
+      "german": "furchtbar",
+      "english": "awful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_10",
+      "german": "schrecklich",
+      "english": "terrible",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_10",
+      "german": "langweilig",
+      "english": "boring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_10",
+      "german": "enttäuschend",
+      "english": "disappointing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_10",
+      "german": "unangenehm",
+      "english": "unpleasant",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_10",
+      "german": "deprimierend",
+      "english": "depressing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative adjective",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_11",
+      "german": "äußerst",
+      "english": "extremely",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier - very strong intensity",
+      "tags": [
+        "qualifier",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_11",
+      "german": "wirklich",
+      "english": "really",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier - strong intensity",
+      "tags": [
+        "qualifier",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_11",
+      "german": "sehr",
+      "english": "very",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier - strong intensity",
+      "tags": [
+        "qualifier",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_11",
+      "german": "total",
+      "english": "totally",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier - strong intensity",
+      "tags": [
+        "qualifier",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_11",
+      "german": "ziemlich",
+      "english": "quite",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier - moderate intensity",
+      "tags": [
+        "qualifier",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_11",
+      "german": "ein bisschen",
+      "english": "a little bit",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier - weak intensity",
+      "tags": [
+        "qualifier",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_11",
+      "german": "nicht",
+      "english": "not",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Negation",
+      "tags": [
+        "qualifier",
+        "negation"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_11",
+      "german": "nicht sehr",
+      "english": "not very",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Negation with qualifier",
+      "tags": [
+        "qualifier",
+        "negation"
+      ]
+    },
+    {
+      "id": "ent_79",
+      "categoryId": "cat_12",
+      "german": "begabt",
+      "english": "talented",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_80",
+      "categoryId": "cat_12",
+      "german": "reich",
+      "english": "rich",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_81",
+      "categoryId": "cat_12",
+      "german": "berühmt",
+      "english": "famous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_82",
+      "categoryId": "cat_12",
+      "german": "bescheiden",
+      "english": "modest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_83",
+      "categoryId": "cat_12",
+      "german": "erfolgreich",
+      "english": "successful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_84",
+      "categoryId": "cat_12",
+      "german": "großzügig",
+      "english": "generous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_85",
+      "categoryId": "cat_12",
+      "german": "intelligent",
+      "english": "intelligent",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_86",
+      "categoryId": "cat_12",
+      "german": "erfinderisch",
+      "english": "inventive",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_87",
+      "categoryId": "cat_12",
+      "german": "originell",
+      "english": "original",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_88",
+      "categoryId": "cat_12",
+      "german": "charismatisch",
+      "english": "charismatic",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_89",
+      "categoryId": "cat_12",
+      "german": "selbstbewusst",
+      "english": "self-confident",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_90",
+      "categoryId": "cat_12",
+      "german": "selbstlos",
+      "english": "selfless",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive personality trait",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_91",
+      "categoryId": "cat_13",
+      "german": "arrogant",
+      "english": "arrogant",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative personality trait",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_92",
+      "categoryId": "cat_13",
+      "german": "launisch",
+      "english": "moody",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative personality trait",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_93",
+      "categoryId": "cat_13",
+      "german": "nervig",
+      "english": "annoying",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative personality trait",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_94",
+      "categoryId": "cat_13",
+      "german": "gemein",
+      "english": "mean",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative personality trait",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_95",
+      "categoryId": "cat_13",
+      "german": "egoistisch",
+      "english": "selfish",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative personality trait",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_14",
+      "infinitive": "arbeiten",
+      "present3rd": "arbeitet",
+      "perfectAux": "haben",
+      "pastParticiple": "gearbeitet"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_15",
+      "infinitive": "machen",
+      "present3rd": "macht",
+      "perfectAux": "haben",
+      "pastParticiple": "gemacht"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_16",
+      "infinitive": "haben",
+      "present3rd": "hat",
+      "perfectAux": "haben",
+      "pastParticiple": "gehabt"
+    },
+    {
+      "id": "vf_4",
+      "entryId": "ent_17",
+      "infinitive": "gewinnen",
+      "present3rd": "gewinnt",
+      "perfectAux": "haben",
+      "pastParticiple": "gewonnen"
+    },
+    {
+      "id": "vf_5",
+      "entryId": "ent_18",
+      "infinitive": "sehen",
+      "present3rd": "sieht",
+      "perfectAux": "haben",
+      "pastParticiple": "gesehen"
+    },
+    {
+      "id": "vf_6",
+      "entryId": "ent_19",
+      "infinitive": "verdienen",
+      "present3rd": "verdient",
+      "perfectAux": "haben",
+      "pastParticiple": "verdient"
+    },
+    {
+      "id": "vf_7",
+      "entryId": "ent_20",
+      "infinitive": "trainieren",
+      "present3rd": "trainiert",
+      "perfectAux": "haben",
+      "pastParticiple": "trainiert"
+    },
+    {
+      "id": "vf_8",
+      "entryId": "ent_21",
+      "infinitive": "studieren",
+      "present3rd": "studiert",
+      "perfectAux": "haben",
+      "pastParticiple": "studiert"
+    },
+    {
+      "id": "vf_9",
+      "entryId": "ent_22",
+      "infinitive": "fahren",
+      "present3rd": "fährt",
+      "perfectAux": "sein",
+      "pastParticiple": "gefahren"
+    },
+    {
+      "id": "vf_10",
+      "entryId": "ent_23",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_11",
+      "entryId": "ent_24",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_12",
+      "entryId": "ent_25",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_13",
+      "entryId": "ent_26",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_14",
+      "entryId": "ent_27",
+      "infinitive": "fahren",
+      "present3rd": "fährt",
+      "perfectAux": "sein",
+      "pastParticiple": "gefahren"
+    },
+    {
+      "id": "vf_15",
+      "entryId": "ent_28",
+      "infinitive": "laufen",
+      "present3rd": "läuft",
+      "perfectAux": "sein",
+      "pastParticiple": "gelaufen"
+    },
+    {
+      "id": "vf_16",
+      "entryId": "ent_29",
+      "infinitive": "fahren",
+      "present3rd": "fährt",
+      "perfectAux": "sein",
+      "pastParticiple": "gefahren"
+    },
+    {
+      "id": "vf_17",
+      "entryId": "ent_30",
+      "infinitive": "erfinden",
+      "present3rd": "erfindet",
+      "perfectAux": "haben",
+      "pastParticiple": "erfunden"
+    },
+    {
+      "id": "vf_18",
+      "entryId": "ent_31",
+      "infinitive": "tanzen",
+      "present3rd": "tanzt",
+      "perfectAux": "haben",
+      "pastParticiple": "getanzt"
+    },
+    {
+      "id": "vf_19",
+      "entryId": "ent_32",
+      "infinitive": "schreiben",
+      "present3rd": "schreibt",
+      "perfectAux": "haben",
+      "pastParticiple": "geschrieben"
+    },
+    {
+      "id": "vf_20",
+      "entryId": "ent_33",
+      "infinitive": "singen",
+      "present3rd": "singt",
+      "perfectAux": "haben",
+      "pastParticiple": "gesungen"
+    },
+    {
+      "id": "vf_21",
+      "entryId": "ent_34",
+      "infinitive": "verbringen",
+      "present3rd": "verbringt",
+      "perfectAux": "haben",
+      "pastParticiple": "verbracht"
+    },
+    {
+      "id": "vf_22",
+      "entryId": "ent_35",
+      "infinitive": "segeln",
+      "present3rd": "segelt",
+      "perfectAux": "sein",
+      "pastParticiple": "gesegelt"
+    },
+    {
+      "id": "vf_23",
+      "entryId": "ent_36",
+      "infinitive": "spielen",
+      "present3rd": "spielt",
+      "perfectAux": "haben",
+      "pastParticiple": "gespielt"
+    },
+    {
+      "id": "vf_24",
+      "entryId": "ent_37",
+      "infinitive": "spielen",
+      "present3rd": "spielt",
+      "perfectAux": "haben",
+      "pastParticiple": "gespielt"
+    },
+    {
+      "id": "vf_25",
+      "entryId": "ent_38",
+      "infinitive": "singen",
+      "present3rd": "singt",
+      "perfectAux": "haben",
+      "pastParticiple": "gesungen"
+    },
+    {
+      "id": "vf_26",
+      "entryId": "ent_39",
+      "infinitive": "malen",
+      "present3rd": "malt",
+      "perfectAux": "haben",
+      "pastParticiple": "gemalt"
+    },
+    {
+      "id": "vf_27",
+      "entryId": "ent_40",
+      "infinitive": "lesen",
+      "present3rd": "liest",
+      "perfectAux": "haben",
+      "pastParticiple": "gelesen"
+    },
+    {
+      "id": "vf_28",
+      "entryId": "ent_41",
+      "infinitive": "schreiben",
+      "present3rd": "schreibt",
+      "perfectAux": "haben",
+      "pastParticiple": "geschrieben"
+    },
+    {
+      "id": "vf_29",
+      "entryId": "ent_42",
+      "infinitive": "arbeiten",
+      "present3rd": "arbeitet",
+      "perfectAux": "haben",
+      "pastParticiple": "gearbeitet"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[subject] [auxiliary] [activity]",
+      "slots": [
+        "subject",
+        "auxiliary",
+        "activity"
+      ],
+      "description": "Simple perfect tense statement with haben or sein"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[subject] [auxiliary] [activity], [connective] [subject] [opinion_verb] [adjective]",
+      "slots": [
+        "subject",
+        "auxiliary",
+        "activity",
+        "connective",
+        "opinion_verb",
+        "adjective"
+      ],
+      "description": "Compound sentence with perfect tense and opinion using coordinating conjunction"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[subject] [auxiliary] [activity], [connective] [subject] [auxiliary] [second_activity]",
+      "slots": [
+        "subject",
+        "auxiliary",
+        "activity",
+        "connective",
+        "second_activity"
+      ],
+      "description": "Compound sentence connecting two perfect tense activities with coordinating conjunction"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[subject] [auxiliary] [activity], [relative_connective] [adjective]",
+      "slots": [
+        "subject",
+        "auxiliary",
+        "activity",
+        "relative_connective",
+        "adjective"
+      ],
+      "description": "Complex sentence with relative clause using 'was'"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[subject] [auxiliary] [activity], [subordinating_connective] [subject] [qualifier] [adjective] [verb_end]",
+      "slots": [
+        "subject",
+        "auxiliary",
+        "activity",
+        "subordinating_connective",
+        "qualifier",
+        "adjective",
+        "verb_end"
+      ],
+      "description": "Complex sentence with subordinate clause requiring verb-final position"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[opinion_phrase] [adjective]",
+      "slots": [
+        "opinion_phrase",
+        "adjective"
+      ],
+      "description": "Opinion statement with adjective"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[subject] [state_verb] [qualifier] [personality_adjective]",
+      "slots": [
+        "subject",
+        "state_verb",
+        "qualifier",
+        "personality_adjective"
+      ],
+      "description": "Simple sentence describing personality or state"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[subject] [auxiliary] [activity], [connective] [subject] [auxiliary] [activity_2] [verb_end]",
+      "slots": [
+        "subject",
+        "auxiliary",
+        "activity",
+        "connective",
+        "activity_2",
+        "verb_end"
+      ],
+      "description": "Complex sentence with subordinating conjunction and verb-final clause"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Ich habe viel trainiert",
+      "english": "I trained a lot",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_20"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Sie ist nach Afrika gefahren",
+      "english": "She went to Africa",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_22"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Du hast viele Preise gewonnen",
+      "english": "You won lots of prizes",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_17"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Wir haben Biologie studiert",
+      "english": "We studied biology",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_21"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Er ist berühmt geworden",
+      "english": "He became famous",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_23"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Sie hat professionell getanzt",
+      "english": "She danced professionally",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_31"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Er ist sehr schnell gelaufen",
+      "english": "He ran very quickly",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_28"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Ich habe mit Kindern gearbeitet, denn sie war sehr begabt",
+      "english": "I worked with children, because she was very talented",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_14",
+        "ent_43",
+        "ent_54",
+        "ent_73",
+        "ent_79"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Sie hat Leute glücklich gemacht, denn sie ist total großzügig",
+      "english": "She made people happy, because she is totally generous",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_15",
+        "ent_43",
+        "ent_54",
+        "ent_74",
+        "ent_84"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Er hat viele Länder gesehen, denn er hat viel Geld verdient",
+      "english": "He saw lots of countries, because he earned lots of money",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_18",
+        "ent_43",
+        "ent_19"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Wir haben interessante Erlebnisse gehabt, denn wir sind nach viele Länder gefahren",
+      "english": "We had interesting experiences, because we went to lots of countries",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_16",
+        "ent_43",
+        "ent_10",
+        "ent_29"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Sie hat 6 Wochen auf einem Schiff verbracht, denn sie ist nach Amerika gesegelt",
+      "english": "She spent 6 weeks on a boat, because she sailed to America",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_34",
+        "ent_43",
+        "ent_9",
+        "ent_35"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Er hat Hockey sehr gut gespielt, denn er ist wirklich charismatisch",
+      "english": "He played hockey very well, because he is really charismatic",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_36",
+        "ent_43",
+        "ent_53",
+        "ent_72",
+        "ent_88"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Sie hat beeindruckende Lieder gesungen, was fantastisch ist",
+      "english": "She sang impressive songs, which is fantastic",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_38",
+        "ent_49",
+        "ent_56"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Er hat die Nachrichten gelesen, was äußerst wichtig ist",
+      "english": "He read the news, which is extremely important",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_40",
+        "ent_49",
+        "ent_71",
+        "ent_62"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Sie hat wunderbare Bilder gemalt, was bezaubernd ist",
+      "english": "She painted wonderful pictures, which is fascinating",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_39",
+        "ent_49",
+        "ent_63"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Er hat originelle Bücher geschrieben, obwohl er nicht sehr selbstbewusst war",
+      "english": "He wrote original books, although he was not very self-confident",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_41",
+        "ent_46",
+        "ent_53",
+        "ent_78",
+        "ent_89"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Sie ist erfolgreich geworden, weil sie äußerst intelligent ist",
+      "english": "She became successful, because she is extremely intelligent",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_24",
+        "ent_44",
+        "ent_54",
+        "ent_71",
+        "ent_85"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Er hat in der Unterhaltungsindustrie gearbeitet, obwohl er ziemlich bescheiden war",
+      "english": "He worked in the entertainment industry, although he was quite modest",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_42",
+        "ent_46",
+        "ent_53",
+        "ent_75",
+        "ent_82"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Ich bin selbstbewusst geworden, da ich viel trainiert habe",
+      "english": "I became self-confident, because I trained a lot",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_7",
+        "ent_26",
+        "ent_45",
+        "ent_1",
+        "ent_20"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Er ist reich geworden, weil er viel Geld verdient hat",
+      "english": "He became rich, because he earned lots of money",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_25",
+        "ent_44",
+        "ent_3",
+        "ent_19"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Meiner Meinung nach ist es wunderbar",
+      "english": "In my opinion, it is wonderful",
+      "complexity": "simple",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_51",
+        "ent_58"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-17T23:11:17.549Z",
+  "version": "1.0"
+}

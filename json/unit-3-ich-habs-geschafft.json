@@ -1,0 +1,1419 @@
+{
+  "unit": {
+    "name": "Ich hab's geschafft! - I did it!",
+    "description": "Talking about past events, achievements, accidents, and life changes using the perfect tense"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Opening phrases",
+      "description": "Initial questions and prompts about past events",
+      "grammarNotes": "Questions using perfect tense"
+    },
+    {
+      "id": "cat_2",
+      "name": "Perfect tense with haben - accidents and injuries",
+      "description": "Describing accidents and injuries using haben as auxiliary",
+      "grammarNotes": "Perfect tense formed with haben + past participle. Reflexive pronouns mir/dir/ihm/ihr for body parts"
+    },
+    {
+      "id": "cat_3",
+      "name": "Perfect tense with haben - achievements and training",
+      "description": "Describing achievements, competitions, and training using haben as auxiliary",
+      "grammarNotes": "Perfect tense with haben + past participle"
+    },
+    {
+      "id": "cat_4",
+      "name": "Perfect tense with sein",
+      "description": "Events using sein as auxiliary verb",
+      "grammarNotes": "Perfect tense formed with sein + past participle for verbs of motion and becoming"
+    },
+    {
+      "id": "cat_5",
+      "name": "Body parts",
+      "description": "Body parts vocabulary",
+      "grammarNotes": "Neuter and masculine nouns"
+    },
+    {
+      "id": "cat_6",
+      "name": "Passive constructions - amputation",
+      "description": "Describing medical procedures in passive voice",
+      "grammarNotes": "Man hat... amputiert / Sie hat... amputiert - passive constructions"
+    },
+    {
+      "id": "cat_7",
+      "name": "Motivational phrase",
+      "description": "Expression of determination",
+      "grammarNotes": "Reflexive construction with lassen"
+    },
+    {
+      "id": "cat_8",
+      "name": "Past hobbies and activities",
+      "description": "Describing what someone did as a teenager",
+      "grammarNotes": "Als Teenager + past tense contexts"
+    },
+    {
+      "id": "cat_9",
+      "name": "Sports and activities vocabulary",
+      "description": "Various sports and hobbies",
+      "grammarNotes": "Neuter nouns and gerunds"
+    },
+    {
+      "id": "cat_10",
+      "name": "Professions and achievements",
+      "description": "Becoming a professional or champion",
+      "grammarNotes": "Used with werden (to become)"
+    },
+    {
+      "id": "cat_11",
+      "name": "Meinungen - opinions about experiences",
+      "description": "Adjectives to describe experiences",
+      "grammarNotes": "Adjectives with -e ending after indefinite article eine"
+    },
+    {
+      "id": "cat_12",
+      "name": "Personal development",
+      "description": "Describing how one has changed or improved",
+      "grammarNotes": "Comparative adjectives with werden"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Ich hab's geschafft!",
+      "english": "I did it!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Contraction of Ich habe es geschafft",
+      "tags": [
+        "achievement",
+        "exclamation"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "Was ist passiert?",
+      "english": "What happened?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question using perfect tense with sein",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "Was hast du gemacht?",
+      "english": "What did you do?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question using perfect tense with haben",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_2",
+      "german": "mir/dir/ihm/ihr das Bein verletzt",
+      "english": "injured my/your/his/her leg",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Reflexive dative pronouns + past participle",
+      "tags": [
+        "injury",
+        "body"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_2",
+      "german": "einen Unfall im Schwimmbad gehabt",
+      "english": "had an accident in the swimming pool",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "accident",
+        "location"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_2",
+      "german": "mir/dir/ihm/ihr den Arm gebrochen",
+      "english": "broke my/your/his/her arm",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Reflexive dative pronouns + past participle",
+      "tags": [
+        "injury",
+        "body"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_2",
+      "german": "einen Monat im Rollstuhl verbracht",
+      "english": "spent a month in a wheelchair",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "medical",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_3",
+      "german": "eine Medaille gewonnen",
+      "english": "won a medal",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "achievement",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_3",
+      "german": "eine Goldmedaille gewonnen",
+      "english": "won a gold medal",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "achievement",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_3",
+      "german": "eine Silbermedaille gewonnen",
+      "english": "won a silver medal",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "achievement",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_3",
+      "german": "eine Bronzemedaille gewonnen",
+      "english": "won a bronze medal",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "achievement",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_3",
+      "german": "ein Wettbewerb gewonnen",
+      "english": "won a competition",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "achievement",
+        "competition"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_3",
+      "german": "zweimal pro Woche trainiert",
+      "english": "trained twice a week",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "training",
+        "frequency"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_3",
+      "german": "dreimal pro Woche trainiert",
+      "english": "trained three times a week",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "training",
+        "frequency"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_3",
+      "german": "oft trainiert",
+      "english": "trained often",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "training",
+        "frequency"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_3",
+      "german": "jeden Tag trainiert",
+      "english": "trained everyday",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "training",
+        "frequency"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "jedes Wochenende trainiert",
+      "english": "trained every weekend",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "training",
+        "frequency"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_3",
+      "german": "hart trainiert",
+      "english": "trained hard",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "training",
+        "intensity"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_3",
+      "german": "eine Prothese bekommen",
+      "english": "got an artificial limb",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "medical",
+        "prosthetic"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_4",
+      "german": "vom Rad gefallen",
+      "english": "fell off my/your/his/her bike",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "accident",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_4",
+      "german": "ins Krankenhaus gekommen",
+      "english": "came to hospital",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - verb of motion",
+      "tags": [
+        "medical",
+        "motion"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_4",
+      "german": "Meister geworden",
+      "english": "became champion",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - werden",
+      "tags": [
+        "achievement",
+        "becoming"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_4",
+      "german": "in 2000 geboren",
+      "english": "was born in 2000",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - passive meaning",
+      "tags": [
+        "birth",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "in Hamburg geboren",
+      "english": "was born in Hamburg",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - passive meaning",
+      "tags": [
+        "birth",
+        "location"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_4",
+      "german": "in einem Krankenhaus geboren",
+      "english": "was born in hospital",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein - passive meaning",
+      "tags": [
+        "birth",
+        "location"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_5",
+      "german": "Bein",
+      "english": "leg",
+      "partOfSpeech": "noun",
+      "grammarNotes": "das Bein, neuter",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_5",
+      "german": "Fuss",
+      "english": "foot",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Fuß, masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_5",
+      "german": "Arm",
+      "english": "arm",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Arm, masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_5",
+      "german": "Hand",
+      "english": "hand",
+      "partOfSpeech": "noun",
+      "grammarNotes": "die Hand, feminine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_6",
+      "german": "Man hat sein... amputiert",
+      "english": "He had his... amputated",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Passive construction with man",
+      "tags": [
+        "medical",
+        "passive"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_6",
+      "german": "Sie hat ihr... amputiert",
+      "english": "She had her... amputated",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Passive construction",
+      "tags": [
+        "medical",
+        "passive"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_7",
+      "german": "Ich lasse mich nicht behindern",
+      "english": "I don't let myself be disabled",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Reflexive construction with lassen",
+      "tags": [
+        "motivation",
+        "determination"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_8",
+      "german": "Was hat er/sie gemacht?",
+      "english": "What did he/she do?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question in perfect tense",
+      "tags": [
+        "question",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_8",
+      "german": "Als Teenager war sein/ihr/mein Hobbys...",
+      "english": "As a teenager his/her/my hobbys were...",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Past tense context with als",
+      "tags": [
+        "past",
+        "teenager",
+        "hobbies"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_8",
+      "german": "Er hat... begonnen",
+      "english": "He began",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "beginning",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_8",
+      "german": "Sie hat... begonnen",
+      "english": "She began",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "beginning",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_8",
+      "german": "Er hat... gefunden",
+      "english": "He found",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "finding",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_8",
+      "german": "Sie hat... gefunden",
+      "english": "She found",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "finding",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_8",
+      "german": "Er hat... weitergemacht",
+      "english": "He continued with",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben - separable verb",
+      "tags": [
+        "continuing",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_8",
+      "german": "Sie hat... weitergemacht",
+      "english": "She continued with",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben - separable verb",
+      "tags": [
+        "continuing",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_9",
+      "german": "Wakeboarden",
+      "english": "Wakeboarding",
+      "partOfSpeech": "noun",
+      "grammarNotes": "das Wakeboarden, neuter gerund",
+      "tags": [
+        "sport",
+        "water"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_9",
+      "german": "Wassersport",
+      "english": "water sports",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Wassersport, masculine",
+      "tags": [
+        "sport",
+        "water"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_9",
+      "german": "Weitsprung",
+      "english": "long jump",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Weitsprung, masculine",
+      "tags": [
+        "sport",
+        "athletics"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_9",
+      "german": "Hochsprung",
+      "english": "high jump",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Hochsprung, masculine",
+      "tags": [
+        "sport",
+        "athletics"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_9",
+      "german": "einen anderen Sport",
+      "english": "another sport",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "accusative masculine",
+      "tags": [
+        "sport",
+        "general"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_9",
+      "german": "Klettern",
+      "english": "climbing",
+      "partOfSpeech": "noun",
+      "grammarNotes": "das Klettern, neuter gerund",
+      "tags": [
+        "sport",
+        "activity"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_9",
+      "german": "Segeln",
+      "english": "sailing",
+      "partOfSpeech": "noun",
+      "grammarNotes": "das Segeln, neuter gerund",
+      "tags": [
+        "sport",
+        "water"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_9",
+      "german": "Lesen",
+      "english": "reading",
+      "partOfSpeech": "noun",
+      "grammarNotes": "das Lesen, neuter gerund",
+      "tags": [
+        "hobby",
+        "activity"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_9",
+      "german": "Stepptanz",
+      "english": "tap dancing",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Stepptanz, masculine",
+      "tags": [
+        "hobby",
+        "dance"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_8",
+      "german": "Er ist... geworden",
+      "english": "He became",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein",
+      "tags": [
+        "becoming",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_8",
+      "german": "Sie ist... geworden",
+      "english": "She became",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein",
+      "tags": [
+        "becoming",
+        "third person"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_10",
+      "german": "Weltmeister(in)",
+      "english": "World Champion",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Weltmeister / die Weltmeisterin",
+      "tags": [
+        "profession",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_10",
+      "german": "Profi",
+      "english": "professional",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Profi, masculine",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_10",
+      "german": "Sportler(in)",
+      "english": "sportsperson",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Sportler / die Sportlerin",
+      "tags": [
+        "profession",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_10",
+      "german": "Akademiker",
+      "english": "academic",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Akademiker / die Akademikerin",
+      "tags": [
+        "profession",
+        "education"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_10",
+      "german": "Musiker(in)",
+      "english": "musician",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Musiker / die Musikerin",
+      "tags": [
+        "profession",
+        "music"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_10",
+      "german": "Koch/Köchin",
+      "english": "chef",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Koch / die Köchin",
+      "tags": [
+        "profession",
+        "culinary"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_10",
+      "german": "Lehrer(in)",
+      "english": "teacher",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Lehrer / die Lehrerin",
+      "tags": [
+        "profession",
+        "education"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_10",
+      "german": "Trainer(in)",
+      "english": "coach",
+      "partOfSpeech": "noun",
+      "grammarNotes": "der Trainer / die Trainerin",
+      "tags": [
+        "profession",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_11",
+      "german": "Es war eine... Erfahrung!",
+      "english": "It was a... experience",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Past tense with adjective",
+      "tags": [
+        "opinion",
+        "experience"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_11",
+      "german": "bezaubernde",
+      "english": "fascinating",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_11",
+      "german": "schmerzhafte",
+      "english": "painful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_11",
+      "german": "irre",
+      "english": "crazy",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "extreme"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_11",
+      "german": "großartige",
+      "english": "amazing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_11",
+      "german": "schwierige",
+      "english": "difficult",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "challenging"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_11",
+      "german": "spannende",
+      "english": "exciting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_11",
+      "german": "erfüllende",
+      "english": "fulfilling",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_11",
+      "german": "langweilige",
+      "english": "boring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Adjective ending after eine",
+      "tags": [
+        "opinion",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_12",
+      "german": "Ich habe viel gelernt",
+      "english": "I learnt a lot",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "learning",
+        "development"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_12",
+      "german": "Ich bin... geworden",
+      "english": "I became...",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense with sein + comparative adjective",
+      "tags": [
+        "becoming",
+        "development"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_12",
+      "german": "stärker",
+      "english": "stronger",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form",
+      "tags": [
+        "development",
+        "physical"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_12",
+      "german": "schneller",
+      "english": "faster",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form",
+      "tags": [
+        "development",
+        "physical"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_12",
+      "german": "klüger",
+      "english": "wiser",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form",
+      "tags": [
+        "development",
+        "mental"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_12",
+      "german": "gesünder",
+      "english": "fitter/healthier",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form",
+      "tags": [
+        "development",
+        "health"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_12",
+      "german": "besser",
+      "english": "better",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form - irregular",
+      "tags": [
+        "development",
+        "general"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_4",
+      "infinitive": "verletzen",
+      "present3rd": "verletzt",
+      "perfectAux": "haben",
+      "pastParticiple": "verletzt"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_5",
+      "infinitive": "haben",
+      "present3rd": "hat",
+      "perfectAux": "haben",
+      "pastParticiple": "gehabt"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_6",
+      "infinitive": "brechen",
+      "present3rd": "bricht",
+      "perfectAux": "haben",
+      "pastParticiple": "gebrochen"
+    },
+    {
+      "id": "vf_4",
+      "entryId": "ent_7",
+      "infinitive": "verbringen",
+      "present3rd": "verbringt",
+      "perfectAux": "haben",
+      "pastParticiple": "verbracht"
+    },
+    {
+      "id": "vf_5",
+      "entryId": "ent_8",
+      "infinitive": "gewinnen",
+      "present3rd": "gewinnt",
+      "perfectAux": "haben",
+      "pastParticiple": "gewonnen"
+    },
+    {
+      "id": "vf_6",
+      "entryId": "ent_13",
+      "infinitive": "trainieren",
+      "present3rd": "trainiert",
+      "perfectAux": "haben",
+      "pastParticiple": "trainiert"
+    },
+    {
+      "id": "vf_7",
+      "entryId": "ent_19",
+      "infinitive": "bekommen",
+      "present3rd": "bekommt",
+      "perfectAux": "haben",
+      "pastParticiple": "bekommen"
+    },
+    {
+      "id": "vf_8",
+      "entryId": "ent_20",
+      "infinitive": "fallen",
+      "present3rd": "fällt",
+      "perfectAux": "sein",
+      "pastParticiple": "gefallen"
+    },
+    {
+      "id": "vf_9",
+      "entryId": "ent_21",
+      "infinitive": "kommen",
+      "present3rd": "kommt",
+      "perfectAux": "sein",
+      "pastParticiple": "gekommen"
+    },
+    {
+      "id": "vf_10",
+      "entryId": "ent_22",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_11",
+      "entryId": "ent_35",
+      "infinitive": "beginnen",
+      "present3rd": "beginnt",
+      "perfectAux": "haben",
+      "pastParticiple": "begonnen"
+    },
+    {
+      "id": "vf_12",
+      "entryId": "ent_37",
+      "infinitive": "finden",
+      "present3rd": "findet",
+      "perfectAux": "haben",
+      "pastParticiple": "gefunden"
+    },
+    {
+      "id": "vf_13",
+      "entryId": "ent_39",
+      "infinitive": "weitermachen",
+      "present3rd": "macht weiter",
+      "perfectAux": "haben",
+      "pastParticiple": "weitergemacht"
+    },
+    {
+      "id": "vf_14",
+      "entryId": "ent_69",
+      "infinitive": "lernen",
+      "present3rd": "lernt",
+      "perfectAux": "haben",
+      "pastParticiple": "gelernt"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[subject] hat [perfect_phrase_haben]",
+      "slots": [
+        "subject",
+        "perfect_phrase_haben"
+      ],
+      "description": "Simple perfect tense statement with haben auxiliary"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[subject] ist [perfect_phrase_sein]",
+      "slots": [
+        "subject",
+        "perfect_phrase_sein"
+      ],
+      "description": "Simple perfect tense statement with sein auxiliary"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[subject] hat [perfect_phrase_haben], und [subject] hat [perfect_phrase_haben]",
+      "slots": [
+        "subject",
+        "perfect_phrase_haben"
+      ],
+      "description": "Compound sentence with two perfect tense clauses connected by und"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[subject] ist [perfect_phrase_sein], aber [subject] hat [perfect_phrase_haben]",
+      "slots": [
+        "subject",
+        "perfect_phrase_sein",
+        "perfect_phrase_haben"
+      ],
+      "description": "Compound sentence contrasting sein and haben perfect constructions"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[time_phrase] hat [subject] [perfect_phrase_haben]",
+      "slots": [
+        "time_phrase",
+        "subject",
+        "perfect_phrase_haben"
+      ],
+      "description": "Complex sentence with time phrase inversion"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[subject] hat [perfect_phrase_haben], denn [subject] ist [perfect_phrase_sein]",
+      "slots": [
+        "subject",
+        "perfect_phrase_haben",
+        "perfect_phrase_sein"
+      ],
+      "description": "Compound sentence with causal connector denn"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[subject] ist [perfect_phrase_sein] und [subject] ist [comparative] geworden",
+      "slots": [
+        "subject",
+        "perfect_phrase_sein",
+        "comparative"
+      ],
+      "description": "Compound sentence about change and development"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "Es war eine [adjective] Erfahrung",
+      "slots": [
+        "adjective"
+      ],
+      "description": "Opinion statement about an experience"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Ich hab's geschafft!",
+      "english": "I did it!",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Sie hat eine Goldmedaille gewonnen",
+      "english": "She won a gold medal",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_9"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Er hat sich das Bein verletzt",
+      "english": "He injured his leg",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_4"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Sie ist vom Rad gefallen",
+      "english": "She fell off her bike",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_20"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Er ist Weltmeister geworden",
+      "english": "He became World Champion",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_50",
+        "ent_52"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Sie ist in Hamburg geboren",
+      "english": "She was born in Hamburg",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_24"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Ich habe viel gelernt",
+      "english": "I learnt a lot",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_69"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Er hat einen Unfall im Schwimmbad gehabt, und er hat sich den Arm gebrochen",
+      "english": "He had an accident in the swimming pool, and he broke his arm",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_5",
+        "ent_6"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Sie hat dreimal pro Woche trainiert, und sie hat eine Silbermedaille gewonnen",
+      "english": "She trained three times a week, and she won a silver medal",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_14",
+        "ent_10"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Er ist ins Krankenhaus gekommen, aber er hat eine Prothese bekommen",
+      "english": "He came to hospital, but he got an artificial limb",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_21",
+        "ent_19"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Sie hat hart trainiert, denn sie ist Profi geworden",
+      "english": "She trained hard, because she became a professional",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_18",
+        "ent_51",
+        "ent_53"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Er hat sich das Bein verletzt, denn er ist vom Rad gefallen",
+      "english": "He injured his leg, because he fell off his bike",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_20"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Sie hat Wakeboarden begonnen, und sie ist Trainerin geworden",
+      "english": "She began wakeboarding, and she became a coach",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_36",
+        "ent_41",
+        "ent_51",
+        "ent_59"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Sie ist in 2000 geboren und sie hat einen anderen Sport gefunden",
+      "english": "She was born in 2000 and she found another sport",
+      "complexity": "compound",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_23",
+        "ent_38",
+        "ent_45"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Jeden Tag hat er trainiert",
+      "english": "Every day he trained",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_16"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Jedes Wochenende hat sie Segeln weitergemacht",
+      "english": "Every weekend she continued with sailing",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_17",
+        "ent_40",
+        "ent_47"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Zweimal pro Woche hat er Klettern trainiert, und er ist stärker geworden",
+      "english": "Twice a week he trained climbing, and he became stronger",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_13",
+        "ent_46",
+        "ent_70",
+        "ent_71"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Oft hat sie einen Wettbewerb gewonnen, denn sie ist schneller geworden",
+      "english": "Often she won a competition, because she became faster",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_15",
+        "ent_12",
+        "ent_70",
+        "ent_72"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Es war eine großartige Erfahrung",
+      "english": "It was an amazing experience",
+      "complexity": "simple",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_60",
+        "ent_64"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Er hat eine Bronzemedaille gewonnen, und es war eine spannende Erfahrung",
+      "english": "He won a bronze medal, and it was an exciting experience",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_11",
+        "ent_60",
+        "ent_66"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Sie hat Stepptanz begonnen, aber es war eine schwierige Erfahrung",
+      "english": "She began tap dancing, but it was a difficult experience",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_36",
+        "ent_49",
+        "ent_60",
+        "ent_65"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Er hat einen Monat im Rollstuhl verbracht, und er ist klüger geworden",
+      "english": "He spent a month in a wheelchair, and he became wiser",
+      "complexity": "compound",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_7",
+        "ent_70",
+        "ent_73"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-17T22:54:34.567Z",
+  "version": "1.0"
+}
