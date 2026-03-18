@@ -25,6 +25,7 @@ export default function ImportPage() {
   const [importing, setImporting] = useState(false);
   const [duplicate, setDuplicate] = useState<DuplicateState | null>(null);
   const [successUnitId, setSuccessUnitId] = useState<number | null>(null);
+  const [dragging, setDragging] = useState(false);
 
   const readFileAsText = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -37,48 +38,7 @@ export default function ImportPage() {
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
-
-    setError(null);
-    setPreview(null);
-    setDuplicate(null);
-    setSuccessUnitId(null);
-
-    try {
-      let text: string;
-      try {
-        text = await readFileAsText(file);
-      } catch {
-        throw new ImportError('Failed to read file');
-      }
-      let parsed: unknown;
-      try {
-        parsed = JSON.parse(text);
-      } catch {
-        throw new ImportError('Invalid JSON file — could not parse');
-      }
-
-      const json = validateImportJson(parsed);
-
-      // Build preview data
-      const entriesPerCategory = json.categories.map((cat) => ({
-        name: cat.name,
-        count: json.entries.filter((e) => e.categoryId === cat.id).length,
-      }));
-
-      setPreview({
-        json,
-        categoryCount: json.categories.length,
-        entryCount: json.entries.length,
-        entriesPerCategory,
-      });
-    } catch (err) {
-      if (err instanceof ImportError) {
-        setError(err.message);
-      } else {
-        setError('Failed to read file');
-      }
-    }
+    if (file) await processFile(file);
   };
 
   const handleImport = async (json: ImportJson, mode: 'skip' | 'replace' = 'skip') => {
@@ -105,6 +65,61 @@ export default function ImportPage() {
     } finally {
       setImporting(false);
     }
+  };
+
+  const processFile = async (file: File) => {
+    setError(null);
+    setPreview(null);
+    setDuplicate(null);
+    setSuccessUnitId(null);
+
+    try {
+      let text: string;
+      try {
+        text = await readFileAsText(file);
+      } catch {
+        throw new ImportError('Failed to read file');
+      }
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(text);
+      } catch {
+        throw new ImportError('Invalid JSON file — could not parse');
+      }
+
+      const json = validateImportJson(parsed);
+      const entriesPerCategory = json.categories.map((cat) => ({
+        name: cat.name,
+        count: json.entries.filter((e) => e.categoryId === cat.id).length,
+      }));
+      setPreview({ json, categoryCount: json.categories.length, entryCount: json.entries.length, entriesPerCategory });
+    } catch (err) {
+      if (err instanceof ImportError) {
+        setError(err.message);
+      } else {
+        setError('Failed to read file');
+      }
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragging(false);
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) await processFile(file);
   };
 
   const handleReset = () => {
@@ -178,7 +193,13 @@ export default function ImportPage() {
           {/* File picker */}
           <div
             className="rounded-2xl p-6 border-2 border-dashed"
-            style={{ borderColor: preview ? '#C4713B' : '#D4C8B8', backgroundColor: 'white' }}
+            style={{
+              borderColor: dragging ? '#C4713B' : preview ? '#C4713B' : '#D4C8B8',
+              backgroundColor: dragging ? '#FDF5EF' : 'white',
+            }}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
           >
             <label htmlFor="json-file-input" className="block cursor-pointer">
               <div className="text-center">
