@@ -366,15 +366,402 @@ export default {
 npm create vite@latest deutsch-learner -- --template react-ts
 cd deutsch-learner
 npm install dexie dexie-react-hooks react-router-dom @dnd-kit/core @dnd-kit/sortable @dnd-kit/utilities tailwindcss @tailwindcss/vite
+npm install -D vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom fake-indexeddb @playwright/test
+npx playwright install chromium
 
 # Dev
 npm run dev
+
+# Test
+npm run test          # unit + integration
+npm run test:e2e      # end-to-end (requires build first)
+npm run test:all      # everything
 
 # Build
 npm run build
 
 # Preview production build
 npm run preview
+```
+
+## Testing Strategy
+
+### Overview
+
+The app uses a two-tier testing approach:
+
+- **Vitest + React Testing Library** — unit tests for logic and integration tests for components
+- **Playwright** — end-to-end UI tests that run against the real app in a browser
+
+Tests should be written alongside each implementation phase, not bolted on after. Claude Code should create tests as part of each phase's deliverables.
+
+### Setup & Dependencies
+
+```bash
+# Unit & integration tests
+npm install -D vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom fake-indexeddb
+
+# E2E tests
+npm install -D @playwright/test
+npx playwright install chromium
+```
+
+```typescript
+// vite.config.ts — add test config
+export default {
+  // ... existing config
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    include: ['src/**/*.test.{ts,tsx}'],
+  },
+};
+```
+
+```typescript
+// src/test/setup.ts
+import '@testing-library/jest-dom';
+import 'fake-indexeddb/auto';  // Provides IndexedDB in jsdom for Dexie tests
+```
+
+```json
+// package.json scripts
+{
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:all": "vitest run && playwright test"
+  }
+}
+```
+
+### Unit Tests (Vitest)
+
+These test pure logic functions in isolation with no DOM or component rendering. Each module of business logic should have a corresponding `.test.ts` file.
+
+#### Database & Import Logic (`src/db/__tests__/`)
+
+```
+db.test.ts
+  ✓ creates all tables with correct schema
+  ✓ auto-increments IDs correctly
+
+import.test.ts
+  ✓ imports valid JSON and creates all records
+  ✓ remaps sourceId references to Dexie auto-increment IDs correctly
+  ✓ category sourceId "cat_1" maps to correct Dexie ID in entry.categoryId
+  ✓ entry sourceId "ent_1" maps to correct Dexie ID in verbForm.entryId
+  ✓ sentence usedEntryIds are remapped correctly
+  ✓ wraps all inserts in a transaction (partial failure rolls back)
+  ✓ rejects JSON missing required fields (unit, categories, entries)
+  ✓ handles missing optional fields gracefully (tags, grammarNotes default to empty)
+  ✓ detects duplicate unit by name and offers replace/skip
+  ✓ replace mode deletes old unit data before re-importing
+  ✓ initialises FlashcardProgress for every imported entry with bucket=0
+```
+
+#### Leitner Spaced Repetition (`src/logic/__tests__/`)
+
+```
+leitner.test.ts
+  ✓ correct answer moves card from bucket 0 to bucket 1
+  ✓ correct answer moves card from bucket 3 to bucket 4
+  ✓ correct answer on bucket 4 stays at bucket 4
+  ✓ incorrect answer resets any bucket to bucket 0
+  ✓ bucket 0 sets nextDue to now
+  ✓ bucket 1 sets nextDue to now + 1 day
+  ✓ bucket 2 sets nextDue to now + 3 days
+  ✓ bucket 3 sets nextDue to now + 7 days
+  ✓ bucket 4 sets nextDue to now + 14 days
+  ✓ getDueCards returns only cards where nextDue <= now
+  ✓ getDueCards ordered by nextDue ascending (oldest due first)
+  ✓ streak increments on correct, resets to 0 on incorrect
+```
+
+#### Sentence Tokenisation (`src/logic/__tests__/`)
+
+```
+tokeniser.test.ts
+  ✓ splits simple sentence into word tokens
+  ✓ keeps multi-word entries together ("sehr gern" → single token)
+  ✓ keeps multi-word entries together ("ein bisschen" → single token)
+  ✓ handles punctuation attached to words ("Tennis," → "Tennis" + ",")
+  ✓ maps tokens back to entry IDs where a match exists
+  ✓ tokens with no matching entry get entryId: null
+  ✓ handles German special characters (ü, ö, ä, ß)
+
+distractor.test.ts
+  ✓ generates N distractors from the same category as the blanked word
+  ✓ distractors never include the correct answer
+  ✓ distractors are unique (no duplicates)
+  ✓ returns fewer distractors if category has insufficient entries
+  ✓ distractors for verbs come from verb entries, not adjectives
+```
+
+#### Cloze Question Generation (`src/logic/__tests__/`)
+
+```
+cloze.test.ts
+  ✓ generates a question with one blank from a sentence
+  ✓ blank position matches the configured category (verb, qualifier, etc.)
+  ✓ multiple choice options include the correct answer
+  ✓ multiple choice has exactly 4 options (or fewer if not enough distractors)
+  ✓ correct answer is randomly positioned among options
+  ✓ free-type mode accepts exact match (case insensitive)
+  ✓ free-type mode accepts Levenshtein distance 1 ("spelt" ≈ "spielt")
+  ✓ free-type mode rejects Levenshtein distance 2+
+  ✓ handles umlauts: "uber" accepted for "über" (distance 1)
+```
+
+#### Scoring & Session Logic (`src/logic/__tests__/`)
+
+```
+scoring.test.ts
+  ✓ sentence builder: first-attempt correct = 2 points
+  ✓ sentence builder: second-attempt correct = 1 point
+  ✓ sentence builder: no correct attempt = 0 points
+  ✓ session summary calculates correct percentage
+  ✓ session summary calculates elapsed time
+
+session.test.ts
+  ✓ createSession logs mode, unitId, and startedAt
+  ✓ endSession updates endedAt, totalQuestions, correctAnswers
+  ✓ endSession writes to SessionLog table
+```
+
+### Integration Tests (Vitest + React Testing Library)
+
+These render React components and test user interactions against the real Dexie database (using fake-indexeddb). Place alongside components as `ComponentName.test.tsx`.
+
+#### Import Flow
+
+```
+ImportPage.test.tsx
+  ✓ renders file picker and import button
+  ✓ shows validation summary after selecting a valid JSON file
+  ✓ displays category count and entry count in preview
+  ✓ import button writes data to IndexedDB
+  ✓ navigates to unit page on successful import
+  ✓ shows error message for invalid JSON
+  ✓ shows duplicate warning for existing unit name
+```
+
+#### Flashcard Mode
+
+```
+FlashcardSession.test.tsx
+  ✓ renders configuration screen with category and direction options
+  ✓ starting a session shows the first card (German side by default)
+  ✓ clicking the card flips it to show the answer
+  ✓ "Got it" advances to next card and updates progress
+  ✓ "Missed it" advances to next card and resets bucket
+  ✓ progress bar updates after each card
+  ✓ shows summary screen after last card
+  ✓ summary shows correct/incorrect counts
+  ✓ "Practice missed" button starts new session with only missed cards
+```
+
+#### Sentence Builder
+
+```
+SentenceBuilder.test.tsx
+  ✓ renders English target sentence at top
+  ✓ renders draggable German tiles below
+  ✓ includes distractor tiles
+  ✓ tiles can be dragged into the answer zone (simulate with @testing-library/user-event)
+  ✓ "Check" button validates correct order → green highlight
+  ✓ "Check" button validates incorrect order → red highlight + correct answer shown
+  ✓ score updates based on attempt count
+```
+
+#### Cloze Tests
+
+```
+ClozeSession.test.tsx
+  ✓ renders sentence with blank
+  ✓ renders English translation below
+  ✓ multiple choice mode shows 4 option buttons
+  ✓ selecting correct option shows green feedback
+  ✓ selecting wrong option shows red feedback and correct answer
+  ✓ free-type mode shows text input
+  ✓ submitting correct answer (case insensitive) shows green feedback
+  ✓ submitting near-miss (Levenshtein 1) shows green feedback
+  ✓ auto-advances after correct answer
+```
+
+#### Progress & Export
+
+```
+ProgressPage.test.tsx
+  ✓ renders overall stats from SessionLog data
+  ✓ shows per-unit breakdown
+  ✓ shows bucket distribution
+
+SettingsPage.test.tsx
+  ✓ export progress generates valid JSON string
+  ✓ exported JSON contains FlashcardProgress and SessionLog records
+  ✓ import progress restores records to IndexedDB
+  ✓ reset progress clears FlashcardProgress but keeps units
+  ✓ delete unit removes unit and all associated data
+```
+
+### End-to-End Tests (Playwright)
+
+These run against the real built app in a Chromium browser. They test complete user workflows including IndexedDB persistence.
+
+```typescript
+// playwright.config.ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './e2e',
+  webServer: {
+    command: 'npm run preview',
+    port: 4173,
+    reuseExistingServer: !process.env.CI,
+  },
+  use: {
+    baseURL: 'http://localhost:4173',
+  },
+  projects: [
+    { name: 'mobile', use: { viewport: { width: 390, height: 844 } } },  // iPhone 14
+    { name: 'desktop', use: { viewport: { width: 1280, height: 720 } } },
+  ],
+});
+```
+
+#### Test Fixtures
+
+Create a fixture JSON file at `e2e/fixtures/test-unit.json` containing a small but complete unit (3 categories, 10 entries, 3 verb forms, 5 sentences) for use across all E2E tests.
+
+```typescript
+// e2e/helpers.ts
+import { Page } from '@playwright/test';
+import path from 'path';
+
+export async function importTestUnit(page: Page) {
+  await page.goto('/import');
+  const fileInput = page.locator('input[type="file"]');
+  await fileInput.setInputFiles(path.join(__dirname, 'fixtures/test-unit.json'));
+  await page.getByRole('button', { name: /import/i }).click();
+  await page.waitForURL(/\/unit\//);
+}
+```
+
+#### E2E Test Specs
+
+```
+e2e/import.spec.ts
+  ✓ full import workflow: select file → preview → import → unit appears on dashboard
+  ✓ importing same unit twice shows duplicate warning
+  ✓ imported data persists after page reload
+
+e2e/flashcards.spec.ts
+  ✓ complete flashcard session: config → cards → flip → answer → summary
+  ✓ progress persists: after a session, due count changes on unit page
+  ✓ "Practice missed" creates a follow-up session with only missed cards
+
+e2e/sentence-builder.spec.ts
+  ✓ complete builder session: config → drag tiles → check → summary
+  ✓ drag interaction works on mobile viewport (touch simulation)
+
+e2e/cloze.spec.ts
+  ✓ complete cloze session with multiple choice: select options → summary
+  ✓ complete cloze session with free typing: type answers → summary
+  ✓ typo tolerance accepts near-miss answers
+
+e2e/progress.spec.ts
+  ✓ progress page shows stats after completing sessions
+  ✓ export progress produces valid JSON
+  ✓ import progress restores data on a clean install
+  ✓ reset progress clears scores but keeps units
+
+e2e/pwa.spec.ts
+  ✓ service worker registers successfully
+  ✓ manifest is served with correct metadata
+  ✓ app loads in offline mode after initial visit (if feasible in test env)
+```
+
+### Test Data Strategy
+
+- **Unit tests:** use inline test data, constructed in `beforeEach` or via factory functions
+- **Integration tests:** use `fake-indexeddb` which gives Dexie a real IndexedDB implementation in jsdom — seed data in `beforeEach`, clear DB in `afterEach`
+- **E2E tests:** use a shared fixture JSON file; each test imports it fresh or relies on a pre-seeded state
+
+```typescript
+// src/test/factories.ts — test data factories
+export function makeEntry(overrides?: Partial<Entry>): Entry {
+  return {
+    unitId: 1,
+    categoryId: 1,
+    sourceId: 'ent_test',
+    german: 'spielen',
+    english: 'to play',
+    partOfSpeech: 'verb',
+    grammarNotes: '',
+    tags: [],
+    ...overrides,
+  };
+}
+
+export function makeFlashcardProgress(overrides?: Partial<FlashcardProgress>): FlashcardProgress {
+  return {
+    entryId: 1,
+    unitId: 1,
+    correctCount: 0,
+    incorrectCount: 0,
+    streak: 0,
+    lastSeen: new Date().toISOString(),
+    nextDue: new Date().toISOString(),
+    bucket: 0,
+    ...overrides,
+  };
+}
+
+// Similarly: makeUnit, makeCategory, makeVerbForm, makeSentence, etc.
+```
+
+### Coverage Targets
+
+- **Unit tests:** aim for 90%+ coverage on logic modules (`src/logic/`), 80%+ on database modules (`src/db/`)
+- **Integration tests:** cover every user-facing component's primary interaction path
+- **E2E tests:** cover every complete workflow (import → learn → review progress → export)
+
+### Testing in Each Phase
+
+| Phase | Unit Tests | Integration Tests | E2E Tests |
+|-------|-----------|-------------------|-----------|
+| 1 Foundation | DB schema, import logic, ID remapping | ImportPage, Dashboard | Import workflow, data persistence |
+| 2 Flashcards | Leitner logic, scoring | FlashcardSession | Full flashcard session |
+| 3 Builder | Tokeniser, distractors | SentenceBuilder | Full builder session with drag |
+| 4 Cloze | Cloze generation, Levenshtein | ClozeSession | Full cloze session both modes |
+| 5 Progress | Session aggregation | ProgressPage, SettingsPage | Export/import/reset progress |
+| 6 PWA | — | — | Service worker, offline, manifest |
+
+### CI Considerations
+
+If you set up a CI pipeline later (e.g. GitHub Actions):
+
+```yaml
+# .github/workflows/test.yml
+name: Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - run: npm run test -- --coverage
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: npm run test:e2e
 ```
 
 ## Implementation Phases
@@ -385,6 +772,7 @@ npm run preview
 - JSON import page with validation and ID remapping
 - Dashboard showing imported units
 - Basic routing
+- **Tests:** DB schema tests, import logic unit tests, ImportPage integration test, E2E import workflow
 
 ### Phase 2: Flashcards
 - Flashcard configuration screen
@@ -393,6 +781,7 @@ npm run preview
 - Leitner bucket logic and spaced repetition scheduling
 - Session summary and SessionLog recording
 - FlashcardProgress updates
+- **Tests:** Leitner logic unit tests, FlashcardSession integration test, E2E flashcard session
 
 ### Phase 3: Sentence Builder
 - Sentence builder configuration screen
@@ -400,6 +789,7 @@ npm run preview
 - Sentence tokenisation and distractor generation
 - Check/validation logic
 - Scoring and session logging
+- **Tests:** Tokeniser + distractor unit tests, SentenceBuilder integration test, E2E builder session
 
 ### Phase 4: Cloze Tests
 - Cloze configuration screen
@@ -407,6 +797,7 @@ npm run preview
 - Multiple choice and free-type input modes
 - Typo tolerance for free-type (Levenshtein)
 - Feedback animations and session logging
+- **Tests:** Cloze generation + Levenshtein unit tests, ClozeSession integration test, E2E both modes
 
 ### Phase 5: Progress & Settings
 - Progress dashboard with per-unit stats
@@ -414,6 +805,7 @@ npm run preview
 - Session history list
 - Export/import progress JSON
 - Reset and delete functionality
+- **Tests:** Aggregation unit tests, ProgressPage + SettingsPage integration tests, E2E export/import/reset
 
 ### Phase 6: PWA Polish
 - Service worker configuration
@@ -421,6 +813,7 @@ npm run preview
 - Install prompt handling
 - Offline indicator
 - Final responsive design pass
+- **Tests:** E2E service worker, manifest, and offline tests
 
 ## Notes
 
