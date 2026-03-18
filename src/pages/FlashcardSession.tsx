@@ -266,9 +266,32 @@ export default function FlashcardSession() {
 
         {/* Categories */}
         <section className="mb-6">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
-            Categories
-          </h2>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="font-semibold" style={{ color: '#2C2418' }}>
+              Categories
+            </h2>
+            {categories && categories.length > 0 && (
+              <button
+                onClick={() => {
+                  const allSelected = categories.every((c) =>
+                    config.selectedCategoryIds.has(c.id!)
+                  );
+                  setConfig((prev) => ({
+                    ...prev,
+                    selectedCategoryIds: allSelected
+                      ? new Set()
+                      : new Set(categories.map((c) => c.id!)),
+                  }));
+                }}
+                className="text-sm font-medium"
+                style={{ color: '#C4713B' }}
+              >
+                {categories.every((c) => config.selectedCategoryIds.has(c.id!))
+                  ? 'Deselect all'
+                  : 'Select all'}
+              </button>
+            )}
+          </div>
           {!categories ? (
             <p style={{ color: '#7A6855' }}>Loading…</p>
           ) : (
@@ -509,6 +532,9 @@ export default function FlashcardSession() {
                   style={{ color: '#2C2418' }}
                 >
                   {frontText}
+                </p>
+                <p className="text-xs font-medium mb-1" style={{ color: '#C4713B' }}>
+                  → {currentCard.showGerman ? 'English' : 'German'}
                 </p>
                 <p className="text-sm" style={{ color: '#7A6855' }}>
                   Tap to reveal
