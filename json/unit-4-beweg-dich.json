@@ -1,0 +1,1299 @@
+{
+  "unit": {
+    "name": "Beweg dich",
+    "description": "Giving instructions for fitness activities and body parts"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Key phrases",
+      "description": "Essential phrases for introducing the fitness topic",
+      "grammarNotes": ""
+    },
+    {
+      "id": "cat_2",
+      "name": "Possessive adjectives",
+      "description": "Words showing possession",
+      "grammarNotes": "Add 's' to names without apostrophe to show possession. Use apostrophe only if name ends in 's'"
+    },
+    {
+      "id": "cat_3",
+      "name": "Body parts (singular)",
+      "description": "Individual body parts with articles",
+      "grammarNotes": "Note the gender of each noun (der/die/das)"
+    },
+    {
+      "id": "cat_4",
+      "name": "Body parts (plural)",
+      "description": "Plural forms of body parts",
+      "grammarNotes": "All plural nouns take 'die' as the article"
+    },
+    {
+      "id": "cat_5",
+      "name": "Giving instructions - Fitness programme",
+      "description": "Commands and instructions for fitness activities",
+      "grammarNotes": "Imperative forms (commands) - verb comes first"
+    },
+    {
+      "id": "cat_6",
+      "name": "Opinions and extras",
+      "description": "Expressing opinions about fitness and injuries",
+      "grammarNotes": "Use of subordinating conjunctions: weil/da/obwohl/obschon/obgleich send verb to end of clause"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Das ist",
+      "english": "that is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "demonstrative"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "Das sind",
+      "english": "those are",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "plural form",
+      "tags": [
+        "demonstrative"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "Beweg dich",
+      "english": "get moving",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with reflexive pronoun",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "Die Bewegung",
+      "english": "movement/exercise",
+      "partOfSpeech": "noun",
+      "grammarNotes": "feminine noun",
+      "tags": []
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_1",
+      "german": "Der Sport",
+      "english": "sport",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine noun",
+      "tags": []
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_1",
+      "german": "Die beliebteste Sportart ist…",
+      "english": "The most popular type of sport is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "superlative adjective",
+      "tags": []
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_1",
+      "german": "Die olympische Sportart",
+      "english": "olympic sport",
+      "partOfSpeech": "noun",
+      "grammarNotes": "feminine noun",
+      "tags": []
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_1",
+      "german": "Beliebte Sport",
+      "english": "popular sport",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": []
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_1",
+      "german": "Er ist",
+      "english": "he is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": []
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_1",
+      "german": "Sie ist",
+      "english": "she is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": []
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_2",
+      "german": "mein(e)",
+      "english": "my",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective - add 'e' for feminine/plural",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_2",
+      "german": "dein(e)",
+      "english": "your",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective - informal singular",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_2",
+      "german": "sein(e)",
+      "english": "his",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_2",
+      "german": "ihr(e)",
+      "english": "her/their",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective - context dependent",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_2",
+      "german": "unser(e)",
+      "english": "our",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_2",
+      "german": "euer(e)",
+      "english": "your",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective - informal plural",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_2",
+      "german": "ihr(e)",
+      "english": "your",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive adjective - formal",
+      "tags": [
+        "possessive"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_2",
+      "german": "Johns",
+      "english": "John's",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive - name ending",
+      "tags": [
+        "possessive",
+        "example"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_2",
+      "german": "Gus'",
+      "english": "Gus'",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "possessive - name ending in 's'",
+      "tags": [
+        "possessive",
+        "example"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_3",
+      "german": "der Arm",
+      "english": "arm",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_3",
+      "german": "der Rücken",
+      "english": "back",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_3",
+      "german": "der Bauch",
+      "english": "stomach",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_3",
+      "german": "die Schulter",
+      "english": "shoulder",
+      "partOfSpeech": "noun",
+      "grammarNotes": "feminine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_3",
+      "german": "das Bein",
+      "english": "leg",
+      "partOfSpeech": "noun",
+      "grammarNotes": "neuter",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_3",
+      "german": "das Auge",
+      "english": "eye",
+      "partOfSpeech": "noun",
+      "grammarNotes": "neuter",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_3",
+      "german": "der Fuß",
+      "english": "foot",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_3",
+      "german": "das Kinn",
+      "english": "chin",
+      "partOfSpeech": "noun",
+      "grammarNotes": "neuter",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_3",
+      "german": "die Hand",
+      "english": "hand",
+      "partOfSpeech": "noun",
+      "grammarNotes": "feminine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_3",
+      "german": "der Mund",
+      "english": "mouth",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_3",
+      "german": "das Knie",
+      "english": "knee",
+      "partOfSpeech": "noun",
+      "grammarNotes": "neuter",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_3",
+      "german": "die Nase",
+      "english": "nose",
+      "partOfSpeech": "noun",
+      "grammarNotes": "feminine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_3",
+      "german": "der Kopf",
+      "english": "head",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_3",
+      "german": "das Ohr",
+      "english": "ear",
+      "partOfSpeech": "noun",
+      "grammarNotes": "neuter",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_3",
+      "german": "der Po",
+      "english": "bottom",
+      "partOfSpeech": "noun",
+      "grammarNotes": "masculine",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_4",
+      "german": "die Arme",
+      "english": "arms",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_4",
+      "german": "die Knie",
+      "english": "knees",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_4",
+      "german": "die Beine",
+      "english": "legs",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_4",
+      "german": "die Ohren",
+      "english": "ears",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_4",
+      "german": "die Füße",
+      "english": "feet",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_4",
+      "german": "die Schultern",
+      "english": "shoulders",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_4",
+      "german": "die Hände",
+      "english": "hands",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_4",
+      "german": "die Augen",
+      "english": "eyes",
+      "partOfSpeech": "noun",
+      "grammarNotes": "plural",
+      "tags": [
+        "body",
+        "plural"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_5",
+      "german": "Für alle Sportler sind Training und Aufwärmübung sehr wichtig",
+      "english": "Training and warm up exercises are important for all sportsmen",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": []
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_5",
+      "german": "Wir machen ein Fitnessprogramm",
+      "english": "we're doing a fitness programme",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": []
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_5",
+      "german": "Bist du fertig?",
+      "english": "Are you ready?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "question",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_5",
+      "german": "Ja, ich bin fertig!",
+      "english": "Yes, I'm ready!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": []
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_5",
+      "german": "Los! Geht's!",
+      "english": "Ready! Go!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "exclamation",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_5",
+      "german": "Also los! Musik bitte!",
+      "english": "So, ready! Music please!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_5",
+      "german": "Lauf!",
+      "english": "Run",
+      "partOfSpeech": "verb",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_5",
+      "german": "Sing!",
+      "english": "sing",
+      "partOfSpeech": "verb",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_5",
+      "german": "Spiel!",
+      "english": "play",
+      "partOfSpeech": "verb",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_5",
+      "german": "Mach zehn Liegestütze",
+      "english": "do 10 press ups",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_5",
+      "german": "Lauf/Jogg sechs Runden",
+      "english": "run/jog 6 laps",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_5",
+      "german": "Vergiss nicht, dich zu strecken!",
+      "english": "Don't forget to stretch",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with infinitive + zu",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_5",
+      "german": "Vergiss nicht, aufzuwärmen",
+      "english": "don't forget to warm up",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with separable verb infinitive",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_5",
+      "german": "Vergiss nicht, eine Abkühlung zu machen",
+      "english": "Don't forget to do a cool down",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with infinitive + zu",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_5",
+      "german": "Streck die Arme und den Rücken nach links!",
+      "english": "Stretch the arms and back to the left!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_5",
+      "german": "Streck die Arme und den Rücken nach rechts!",
+      "english": "Stretch the arms and back to the right!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_5",
+      "german": "Beug die Knie!",
+      "english": "Bend your knees!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_5",
+      "german": "Spring hoch!",
+      "english": "Jump high!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_5",
+      "german": "Lauf vorwärts!",
+      "english": "Run forwards!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_5",
+      "german": "Lauf rückwärts!",
+      "english": "Run backwards!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_5",
+      "german": "Setz dich!",
+      "english": "Sit down",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with reflexive pronoun",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_5",
+      "german": "Leg dich auf den Rücken!",
+      "english": "Lie on your back!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with reflexive pronoun",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_5",
+      "german": "Heb langsam die Beine!",
+      "english": "slowly lift your legs!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_5",
+      "german": "Steh auf!",
+      "english": "Stand up!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with separable verb",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_5",
+      "german": "Streck dich!",
+      "english": "Stretch yourself!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with reflexive pronoun",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_5",
+      "german": "Vergiss nicht, Wasser zu trinken!",
+      "english": "Don't forget to drink water!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "imperative with infinitive + zu",
+      "tags": [
+        "command"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_6",
+      "german": "Fitness ist mir sehr/nicht wichtig",
+      "english": "Fitness is very/not important to me",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_6",
+      "german": "Ich trainiere gern zweimal/dreimal/viermal pro Woche",
+      "english": "I like to train twice/three times/four times a week",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_6",
+      "german": "Aua! Mein Bein/Arm/Rücken tut weh!",
+      "english": "Ow! My leg/arm/back hurts!",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "injury"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_6",
+      "german": "Ich bin verletzt!",
+      "english": "I am injured",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "injury"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_6",
+      "german": "Ich habe mein(e)… verletzt!",
+      "english": "I have injured my…",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "perfect tense",
+      "tags": [
+        "injury"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_6",
+      "german": "Meiner Meinung nach ist ...Fußball/Rugby/Tennis/Schwimmen/Tanzen/Leichtathlethik/Turnen/Ballett die beste Sportart…",
+      "english": "In my opinion the best sport is … football/rugby/tennis/swimming/dancing/athletics/gymnastics/ballet",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "opinion expression",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_6",
+      "german": "denn",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "coordinating conjunction - normal word order",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_6",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "subordinating conjunction - verb to end",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_6",
+      "german": "da",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "subordinating conjunction - verb to end",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_6",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "subordinating conjunction - verb to end",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_79",
+      "categoryId": "cat_6",
+      "german": "obschon",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "subordinating conjunction - verb to end",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_80",
+      "categoryId": "cat_6",
+      "german": "obgleich",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "subordinating conjunction - verb to end",
+      "tags": [
+        "conjunction"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_49",
+      "infinitive": "laufen",
+      "present3rd": "läuft",
+      "perfectAux": "sein",
+      "pastParticiple": "gelaufen"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_50",
+      "infinitive": "singen",
+      "present3rd": "singt",
+      "perfectAux": "haben",
+      "pastParticiple": "gesungen"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_51",
+      "infinitive": "spielen",
+      "present3rd": "spielt",
+      "perfectAux": "haben",
+      "pastParticiple": "gespielt"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[demonstrative] [possessive] [bodyPart]",
+      "slots": [
+        "demonstrative",
+        "possessive",
+        "bodyPart"
+      ],
+      "description": "Simple identification of body part with possessive"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[imperative] [bodyPart]!",
+      "slots": [
+        "imperative",
+        "bodyPart"
+      ],
+      "description": "Direct command involving body part"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[subject] [verb] [object], [conjunction] [clause]",
+      "slots": [
+        "subject",
+        "verb",
+        "object",
+        "conjunction",
+        "clause"
+      ],
+      "description": "Compound sentence with coordinating or subordinating conjunction"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[opinion], [conjunction] [reason]",
+      "slots": [
+        "opinion",
+        "conjunction",
+        "reason"
+      ],
+      "description": "Opinion statement with reason clause"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[timePhrase] [verb] [subject] [object]",
+      "slots": [
+        "timePhrase",
+        "verb",
+        "subject",
+        "object"
+      ],
+      "description": "Sentence with time phrase inversion"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[injury], [conjunction] [action]",
+      "slots": [
+        "injury",
+        "conjunction",
+        "action"
+      ],
+      "description": "Injury statement with following clause"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[imperative] [reflexive]!",
+      "slots": [
+        "imperative",
+        "reflexive"
+      ],
+      "description": "Reflexive imperative command"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[subject] [opinion] [sport]",
+      "slots": [
+        "subject",
+        "opinion",
+        "sport"
+      ],
+      "description": "Opinion about sport or fitness"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Das ist mein Arm",
+      "english": "That is my arm",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_11",
+        "ent_20"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Das sind ihre Beine",
+      "english": "Those are her legs",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_14",
+        "ent_37"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Streck dich!",
+      "english": "Stretch yourself!",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_67"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Beug die Knie!",
+      "english": "Bend your knees!",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_59",
+        "ent_36"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Das ist seine Schulter",
+      "english": "That is his shoulder",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_13",
+        "ent_23"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Spring hoch!",
+      "english": "Jump high!",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_60"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Fitness ist mir sehr wichtig",
+      "english": "Fitness is very important to me",
+      "complexity": "simple",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_69"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Das sind unsere Füße",
+      "english": "Those are our feet",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_15",
+        "ent_39"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Wir machen ein Fitnessprogramm, denn die Bewegung ist wichtig",
+      "english": "We're doing a fitness programme, because exercise is important",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_44",
+        "ent_75",
+        "ent_4"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Aua! Mein Rücken tut weh, obwohl ich mich gestreckt habe",
+      "english": "Ow! My back hurts, although I stretched myself",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_71",
+        "ent_21",
+        "ent_78",
+        "ent_67"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Fitness ist mir sehr wichtig, denn der Sport ist gesund",
+      "english": "Fitness is very important to me, because sport is healthy",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_69",
+        "ent_75",
+        "ent_5"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Sie ist verletzt, weil ihr Knie weh tut",
+      "english": "She is injured, because her knee hurts",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_10",
+        "ent_72",
+        "ent_76",
+        "ent_14",
+        "ent_30"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Das ist Johns Kopf, denn er ist sehr groß",
+      "english": "That is John's head, because it is very big",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_18",
+        "ent_32",
+        "ent_75",
+        "ent_9"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Ich trainiere gern zweimal pro Woche, obwohl meine Schulter verletzt ist",
+      "english": "I like to train twice a week, although my shoulder is injured",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_70",
+        "ent_78",
+        "ent_11",
+        "ent_23",
+        "ent_72"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Das sind deine Augen, denn sie sind sehr schön",
+      "english": "Those are your eyes, because they are very beautiful",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_12",
+        "ent_42",
+        "ent_75",
+        "ent_10"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Jeden Tag machen wir ein Fitnessprogramm, weil die Bewegung sehr wichtig ist",
+      "english": "Every day we do a fitness programme, because exercise is very important",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_44",
+        "ent_76",
+        "ent_4"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Ich trainiere gern viermal pro Woche, da Fitness mir sehr wichtig ist",
+      "english": "I like to train four times a week, because fitness is very important to me",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_70",
+        "ent_77",
+        "ent_69"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Vergiss nicht, aufzuwärmen, weil Training ohne Aufwärmen gefährlich ist",
+      "english": "Don't forget to warm up, because training without warming up is dangerous",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_55",
+        "ent_76"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Meiner Meinung nach ist Fußball die beste Sportart, obwohl mein Knie verletzt ist",
+      "english": "In my opinion football is the best sport, although my knee is injured",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_74",
+        "ent_78",
+        "ent_11",
+        "ent_30",
+        "ent_72"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Aua! Meine Hand tut weh, da ich zehn Liegestütze gemacht habe",
+      "english": "Ow! My hand hurts, because I have done 10 press ups",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_71",
+        "ent_28",
+        "ent_77",
+        "ent_52"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Das ist dein Fuß, obgleich er sehr groß ist",
+      "english": "That is your foot, although it is very big",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_12",
+        "ent_26",
+        "ent_80",
+        "ent_9"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Jeden Tag trainiere ich zweimal, weil die beliebteste Sportart Tennis ist",
+      "english": "Every day I train twice, because the most popular sport is tennis",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_70",
+        "ent_76",
+        "ent_6"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-19T22:29:42.519Z",
+  "version": "1.0"
+}
