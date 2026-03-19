@@ -17,9 +17,15 @@ export async function importTestUnit(page: Page): Promise<void> {
 
   // Wait for success
   await page.waitForSelector('text=Import successful!');
+
+  // Navigate to the unit page
+  await page.getByRole('button', { name: /view unit/i }).click();
+  await page.waitForURL(/\/#\/unit\//);
 }
 
 export async function clearAppData(page: Page): Promise<void> {
+  // Navigate to app first so we're in the right security context for IndexedDB
+  await page.goto('/#/');
   await page.evaluate(async () => {
     const DBDeleteRequest = indexedDB.deleteDatabase('DeutschLearner');
     await new Promise<void>((resolve, reject) => {
