@@ -497,6 +497,7 @@ export default function FlashcardSession() {
         {/* Flashcard */}
         <div className="flex-1 flex flex-col items-center justify-center gap-6">
           <div
+            key={session.currentIndex}
             style={{ perspective: '1000px', width: '100%', maxWidth: '480px' }}
             onClick={!session.isFlipped ? handleFlip : undefined}
           >
