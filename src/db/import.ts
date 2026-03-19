@@ -150,7 +150,7 @@ export async function checkDuplicate(name: string): Promise<number | null> {
   return existing?.id ?? null;
 }
 
-async function deleteUnitData(unitId: number): Promise<void> {
+export async function deleteUnit(unitId: number): Promise<void> {
   // Get all entry IDs for this unit
   const entryIds = (await db.entries.where('unitId').equals(unitId).toArray()).map((e) => e.id!);
 
@@ -202,7 +202,7 @@ export async function importUnit(
         existingId
       );
     } else if (mode === 'replace') {
-      await deleteUnitData(existingId);
+      await deleteUnit(existingId);
     }
   }
 

@@ -8,6 +8,8 @@ import UnitOverview from './pages/UnitOverview';
 import FlashcardSession from './pages/FlashcardSession';
 import SentenceBuilder from './pages/SentenceBuilder';
 import ClozeSession from './pages/ClozeSession';
+import ProgressPage from './pages/ProgressPage';
+import SettingsPage from './pages/SettingsPage';
 import Layout from './components/Layout';
 
 const router = createHashRouter([
@@ -21,6 +23,8 @@ const router = createHashRouter([
       { path: 'unit/:id/flashcards', element: <FlashcardSession /> },
       { path: 'unit/:id/builder', element: <SentenceBuilder /> },
       { path: 'unit/:id/cloze', element: <ClozeSession /> },
+      { path: 'progress', element: <ProgressPage /> },
+      { path: 'settings', element: <SettingsPage /> },
     ],
   },
 ]);
