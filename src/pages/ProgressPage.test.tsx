@@ -8,12 +8,18 @@ async function seedDatabase() {
   const unitId = await db.units.add({
     name: 'Test Unit',
     description: '',
+    year: 9,
+    term: 'Spring',
+    unitNumber: 1,
     importedAt: new Date().toISOString(),
     version: '1.0',
   });
   const unit2Id = await db.units.add({
     name: 'Second Unit',
     description: '',
+    year: 9,
+    term: 'Autumn',
+    unitNumber: 2,
     importedAt: new Date().toISOString(),
     version: '1.0',
   });
@@ -184,6 +190,9 @@ describe('ProgressPage', () => {
     await db.units.add({
       name: 'Empty Unit',
       description: '',
+      year: 9,
+      term: 'Summer',
+      unitNumber: 1,
       importedAt: new Date().toISOString(),
       version: '1.0',
     });

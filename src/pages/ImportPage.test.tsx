@@ -41,6 +41,17 @@ function renderImportPage() {
   );
 }
 
+async function fillMetadata(user: ReturnType<typeof userEvent.setup>) {
+  const yearInput = screen.getByRole('spinbutton', { name: /school year/i });
+  const termSelect = screen.getByRole('combobox', { name: /term/i });
+  const unitNumberInput = screen.getByRole('spinbutton', { name: /unit number/i });
+  await user.clear(yearInput);
+  await user.type(yearInput, '9');
+  await user.selectOptions(termSelect, 'Spring');
+  await user.clear(unitNumberInput);
+  await user.type(unitNumberInput, '1');
+}
+
 afterEach(async () => {
   await db.units.clear();
   await db.categories.clear();
@@ -126,6 +137,8 @@ describe('ImportPage', () => {
       expect(screen.getByText('Test Import Unit')).toBeDefined();
     });
 
+    await fillMetadata(user);
+
     const importButton = screen.getByRole('button', { name: /import unit/i });
     await user.click(importButton);
 
@@ -151,6 +164,8 @@ describe('ImportPage', () => {
     await waitFor(() => {
       expect(screen.getByText('Test Import Unit')).toBeDefined();
     });
+
+    await fillMetadata(user);
 
     const importButton = screen.getByRole('button', { name: /import unit/i });
     await user.click(importButton);
@@ -196,6 +211,9 @@ describe('ImportPage', () => {
     await db.units.add({
       name: 'Test Import Unit',
       description: '',
+      year: 9,
+      term: 'Spring',
+      unitNumber: 1,
       importedAt: new Date().toISOString(),
       version: '1.0',
     });
@@ -212,7 +230,8 @@ describe('ImportPage', () => {
       expect(screen.getByText('Test Import Unit')).toBeDefined();
     });
 
-    // Click import
+    // Fill metadata then click import
+    await fillMetadata(user);
     const importButton = screen.getByRole('button', { name: /import unit/i });
     await user.click(importButton);
 
@@ -231,6 +250,9 @@ describe('ImportPage', () => {
     await db.units.add({
       name: 'Test Import Unit',
       description: '',
+      year: 9,
+      term: 'Spring',
+      unitNumber: 1,
       importedAt: new Date().toISOString(),
       version: '1.0',
     });
@@ -246,6 +268,7 @@ describe('ImportPage', () => {
       expect(screen.getByText('Test Import Unit')).toBeDefined();
     });
 
+    await fillMetadata(user);
     await user.click(screen.getByRole('button', { name: /import unit/i }));
 
     await waitFor(() => {

@@ -13,6 +13,9 @@ export function makeUnit(overrides?: Partial<Unit>): Unit {
   return {
     name: 'Test Unit',
     description: 'A test unit for learning',
+    year: 9,
+    term: 'Spring',
+    unitNumber: 1,
     importedAt: new Date().toISOString(),
     version: '1.0',
     ...overrides,

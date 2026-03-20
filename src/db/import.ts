@@ -13,6 +13,9 @@ import type {
 interface RawUnit {
   name: string;
   description: string;
+  year?: number;
+  term?: string;
+  unitNumber?: number;
 }
 
 interface RawCategory {
@@ -182,6 +185,9 @@ export async function deleteUnit(unitId: number): Promise<void> {
 
 export interface ImportOptions {
   mode?: 'skip' | 'replace';
+  year?: number;
+  term?: string;
+  unitNumber?: number;
 }
 
 export async function importUnit(
@@ -210,6 +216,9 @@ export async function importUnit(
   const unitRecord: Unit = {
     name: unitName,
     description: data.unit.description ?? '',
+    year: options.year ?? data.unit.year ?? 0,
+    term: options.term ?? data.unit.term ?? 'Unknown',
+    unitNumber: options.unitNumber ?? data.unit.unitNumber ?? 0,
     importedAt: now,
     version: data.version ?? '1.0',
   };

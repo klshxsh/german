@@ -10,6 +10,9 @@ async function seedDatabase() {
   const unitId = await db.units.add({
     name: 'Test Unit',
     description: 'A test unit',
+    year: 9,
+    term: 'Spring',
+    unitNumber: 1,
     importedAt: new Date().toISOString(),
     version: '1.0',
   });

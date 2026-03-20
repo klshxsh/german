@@ -3,6 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { importUnit, validateImportJson, ImportError, DuplicateUnitError } from '../db/import';
 import type { ImportJson } from '../db/import';
 
+const TERM_OPTIONS = ['Autumn', 'Spring', 'Summer'];
+
+interface UnitMetadata {
+  year: string;
+  term: string;
+  unitNumber: string;
+}
+
 interface PreviewData {
   json: ImportJson;
   categoryCount: number;
@@ -14,13 +22,21 @@ type DuplicateState = {
   name: string;
   existingId: number;
   json: ImportJson;
+  metadata: UnitMetadata;
 };
+
+function metadataIsValid(m: UnitMetadata): boolean {
+  return m.year.trim() !== '' && !isNaN(Number(m.year)) && Number(m.year) > 0 &&
+    m.term !== '' &&
+    m.unitNumber.trim() !== '' && !isNaN(Number(m.unitNumber)) && Number(m.unitNumber) > 0;
+}
 
 export default function ImportPage() {
   const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [preview, setPreview] = useState<PreviewData | null>(null);
+  const [metadata, setMetadata] = useState<UnitMetadata>({ year: '', term: '', unitNumber: '' });
   const [error, setError] = useState<string | null>(null);
   const [importing, setImporting] = useState(false);
   const [duplicate, setDuplicate] = useState<DuplicateState | null>(null);
@@ -41,12 +57,17 @@ export default function ImportPage() {
     if (file) await processFile(file);
   };
 
-  const handleImport = async (json: ImportJson, mode: 'skip' | 'replace' = 'skip') => {
+  const handleImport = async (json: ImportJson, meta: UnitMetadata, mode: 'skip' | 'replace' = 'skip') => {
     setImporting(true);
     setError(null);
 
     try {
-      const unitId = await importUnit(json, { mode });
+      const unitId = await importUnit(json, {
+        mode,
+        year: Number(meta.year),
+        term: meta.term,
+        unitNumber: Number(meta.unitNumber),
+      });
       setSuccessUnitId(unitId);
       setPreview(null);
       setDuplicate(null);
@@ -56,6 +77,7 @@ export default function ImportPage() {
           name: json.unit.name,
           existingId: err.existingId,
           json,
+          metadata: meta,
         });
       } else if (err instanceof ImportError) {
         setError(err.message);
@@ -93,6 +115,13 @@ export default function ImportPage() {
         count: json.entries.filter((e) => e.categoryId === cat.id).length,
       }));
       setPreview({ json, categoryCount: json.categories.length, entryCount: json.entries.length, entriesPerCategory });
+
+      // Pre-populate metadata from JSON if available
+      setMetadata({
+        year: json.unit.year ? String(json.unit.year) : '',
+        term: json.unit.term ?? '',
+        unitNumber: json.unit.unitNumber ? String(json.unit.unitNumber) : '',
+      });
     } catch (err) {
       if (err instanceof ImportError) {
         setError(err.message);
@@ -127,10 +156,13 @@ export default function ImportPage() {
     setError(null);
     setDuplicate(null);
     setSuccessUnitId(null);
+    setMetadata({ year: '', term: '', unitNumber: '' });
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
   };
+
+  const canImport = preview !== null && metadataIsValid(metadata);
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
@@ -267,7 +299,7 @@ export default function ImportPage() {
               </p>
               <div className="flex gap-2">
                 <button
-                  onClick={() => handleImport(duplicate.json, 'replace')}
+                  onClick={() => handleImport(duplicate.json, duplicate.metadata, 'replace')}
                   disabled={importing}
                   className="flex-1 py-2 px-3 rounded-lg text-sm font-medium text-white min-h-[44px]"
                   style={{ backgroundColor: '#C4713B' }}
@@ -343,11 +375,67 @@ export default function ImportPage() {
                 ))}
               </div>
 
+              {/* Unit grouping metadata */}
+              <div className="mb-5">
+                <h3 className="text-sm font-medium mb-3" style={{ color: '#2C2418' }}>
+                  Unit grouping
+                </h3>
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+                      Year *
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      placeholder="e.g. 9"
+                      value={metadata.year}
+                      onChange={(e) => setMetadata((m) => ({ ...m, year: e.target.value }))}
+                      className="w-full px-3 py-2 rounded-lg border text-sm"
+                      style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                      aria-label="School year"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+                      Term *
+                    </label>
+                    <select
+                      value={metadata.term}
+                      onChange={(e) => setMetadata((m) => ({ ...m, term: e.target.value }))}
+                      className="w-full px-3 py-2 rounded-lg border text-sm"
+                      style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                      aria-label="Term"
+                    >
+                      <option value="">Select...</option>
+                      {TERM_OPTIONS.map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+                      Unit # *
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      placeholder="e.g. 3"
+                      value={metadata.unitNumber}
+                      onChange={(e) => setMetadata((m) => ({ ...m, unitNumber: e.target.value }))}
+                      className="w-full px-3 py-2 rounded-lg border text-sm"
+                      style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                      aria-label="Unit number"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <button
-                onClick={() => handleImport(preview.json)}
-                disabled={importing}
+                onClick={() => handleImport(preview.json, metadata)}
+                disabled={importing || !canImport}
                 className="w-full py-3 rounded-lg font-medium text-white min-h-[44px] transition-opacity"
-                style={{ backgroundColor: '#C4713B', opacity: importing ? 0.7 : 1 }}
+                style={{ backgroundColor: '#C4713B', opacity: importing || !canImport ? 0.5 : 1 }}
                 aria-label="Import unit"
               >
                 {importing ? 'Importing...' : 'Import Unit'}

@@ -62,6 +62,24 @@ describe('DeutschDB schema', () => {
     expect(found?.name).toBe('Schulalltag');
   });
 
+  it('stores year, term, and unitNumber on units', async () => {
+    await db.units.add(makeUnit({ name: 'Grouped', year: 9, term: 'Spring', unitNumber: 3 }));
+
+    const found = await db.units.where('name').equals('Grouped').first();
+    expect(found?.year).toBe(9);
+    expect(found?.term).toBe('Spring');
+    expect(found?.unitNumber).toBe(3);
+  });
+
+  it('uses 0/Unknown/0 defaults for ungrouped units', async () => {
+    await db.units.add(makeUnit({ name: 'Ungrouped', year: 0, term: 'Unknown', unitNumber: 0 }));
+
+    const found = await db.units.where('name').equals('Ungrouped').first();
+    expect(found?.year).toBe(0);
+    expect(found?.term).toBe('Unknown');
+    expect(found?.unitNumber).toBe(0);
+  });
+
   it('stores and retrieves entries by unitId', async () => {
     const unitId = await db.units.add(makeUnit());
     const catId = await db.categories.add(makeCategory({ unitId }));

@@ -1,11 +1,25 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db/db';
+
+const TERM_OPTIONS = ['Autumn', 'Spring', 'Summer'];
+
+function formatUnitLabel(year: number, term: string, unitNumber: number): string | null {
+  if (!year || term === 'Unknown' || !unitNumber) return null;
+  return `Year ${year} · ${term} · Unit ${unitNumber}`;
+}
 
 export default function UnitOverview() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const unitId = id ? parseInt(id, 10) : null;
+
+  const [editing, setEditing] = useState(false);
+  const [editYear, setEditYear] = useState('');
+  const [editTerm, setEditTerm] = useState('');
+  const [editUnitNumber, setEditUnitNumber] = useState('');
+  const [saving, setSaving] = useState(false);
 
   const unit = useLiveQuery(
     () => (unitId !== null ? db.units.get(unitId) : undefined),
@@ -58,6 +72,30 @@ export default function UnitOverview() {
     );
   }
 
+  const unitLabel = formatUnitLabel(unit.year, unit.term, unit.unitNumber);
+
+  const startEditing = () => {
+    setEditYear(unit.year ? String(unit.year) : '');
+    setEditTerm(unit.term === 'Unknown' ? '' : (unit.term ?? ''));
+    setEditUnitNumber(unit.unitNumber ? String(unit.unitNumber) : '');
+    setEditing(true);
+  };
+
+  const handleSaveMetadata = async () => {
+    if (!unitId) return;
+    setSaving(true);
+    try {
+      await db.units.update(unitId, {
+        year: Number(editYear) || 0,
+        term: editTerm || 'Unknown',
+        unitNumber: Number(editUnitNumber) || 0,
+      });
+      setEditing(false);
+    } finally {
+      setSaving(false);
+    }
+  };
+
   return (
     <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
       <header className="flex items-center gap-3 mb-8">
@@ -80,8 +118,99 @@ export default function UnitOverview() {
               {unit.description}
             </p>
           )}
+          {unitLabel && (
+            <p className="text-xs mt-1 font-medium" style={{ color: '#C4713B' }}>
+              {unitLabel}
+            </p>
+          )}
         </div>
       </header>
+
+      {/* Unit metadata */}
+      <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: 'white' }}>
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-sm font-semibold" style={{ color: '#2C2418' }}>Unit Grouping</h2>
+          {!editing && (
+            <button
+              onClick={startEditing}
+              className="text-xs px-3 py-1 rounded-lg min-h-[32px]"
+              style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+              aria-label="Edit unit metadata"
+            >
+              Edit
+            </button>
+          )}
+        </div>
+
+        {editing ? (
+          <div>
+            <div className="grid grid-cols-3 gap-3 mb-3">
+              <div>
+                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Year</label>
+                <input
+                  type="number"
+                  min="1"
+                  placeholder="e.g. 9"
+                  value={editYear}
+                  onChange={(e) => setEditYear(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg border text-sm"
+                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  aria-label="School year"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Term</label>
+                <select
+                  value={editTerm}
+                  onChange={(e) => setEditTerm(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg border text-sm"
+                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  aria-label="Term"
+                >
+                  <option value="">Select...</option>
+                  {TERM_OPTIONS.map((t) => (
+                    <option key={t} value={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Unit #</label>
+                <input
+                  type="number"
+                  min="1"
+                  placeholder="e.g. 3"
+                  value={editUnitNumber}
+                  onChange={(e) => setEditUnitNumber(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg border text-sm"
+                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  aria-label="Unit number"
+                />
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={handleSaveMetadata}
+                disabled={saving}
+                className="flex-1 py-2 rounded-lg text-sm font-medium text-white min-h-[44px]"
+                style={{ backgroundColor: '#C4713B', opacity: saving ? 0.7 : 1 }}
+              >
+                {saving ? 'Saving...' : 'Save'}
+              </button>
+              <button
+                onClick={() => setEditing(false)}
+                className="flex-1 py-2 rounded-lg text-sm font-medium min-h-[44px]"
+                style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        ) : (
+          <p className="text-sm" style={{ color: '#7A6855' }}>
+            {unitLabel ?? <span style={{ color: '#A89880' }}>No grouping set — tap Edit to add year, term, and unit number</span>}
+          </p>
+        )}
+      </div>
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-3 mb-6">

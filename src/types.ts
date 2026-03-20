@@ -2,6 +2,9 @@ export interface Unit {
   id?: number;
   name: string;
   description: string;
+  year: number;       // school year, e.g. 9; 0 = ungrouped
+  term: string;       // e.g. "Autumn", "Spring", "Summer"; "Unknown" = ungrouped
+  unitNumber: number; // unit within the term; 0 = ungrouped
   importedAt: string;
   version: string;
 }
