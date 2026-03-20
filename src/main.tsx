@@ -10,6 +10,7 @@ import SentenceBuilder from './pages/SentenceBuilder';
 import ClozeSession from './pages/ClozeSession';
 import ProgressPage from './pages/ProgressPage';
 import SettingsPage from './pages/SettingsPage';
+import SearchPage from './pages/SearchPage';
 import Layout from './components/Layout';
 
 const router = createHashRouter([
@@ -19,6 +20,7 @@ const router = createHashRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: 'import', element: <ImportPage /> },
+      { path: 'search', element: <SearchPage /> },
       { path: 'unit/:id', element: <UnitOverview /> },
       { path: 'unit/:id/flashcards', element: <FlashcardSession /> },
       { path: 'unit/:id/builder', element: <SentenceBuilder /> },

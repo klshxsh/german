@@ -1,7 +1,10 @@
 {
   "unit": {
     "name": "In meinem Leben",
-    "description": "Talking about what you have done in your life using the perfect tense"
+    "description": "Talking about what you have done in your life using the perfect tense",
+    "year": 9,
+    "term": "Spring",
+    "unitNumber": 1
   },
   "categories": [
     {

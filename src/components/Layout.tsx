@@ -26,6 +26,20 @@ export default function Layout() {
         </NavLink>
 
         <NavLink
+          to="/search"
+          className={({ isActive }) =>
+            `flex flex-col items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
+              isActive ? 'text-[#C4713B]' : 'text-[#7A6855]'
+            }`
+          }
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <span>Search</span>
+        </NavLink>
+
+        <NavLink
           to="/progress"
           className={({ isActive }) =>
             `flex flex-col items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
