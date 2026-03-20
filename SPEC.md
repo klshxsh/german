@@ -27,6 +27,9 @@ interface Unit {
   id?: number;           // auto-increment
   name: string;
   description: string;
+  year: number;          // school year, e.g. 9
+  term: string;          // e.g. "Spring", "Autumn", "Summer"
+  unitNumber: number;    // unit within the term, e.g. 3
   importedAt: string;    // ISO timestamp
   version: string;       // from JSON export
 }
@@ -125,9 +128,9 @@ class DeutschDB extends Dexie {
   constructor() {
     super('DeutschLearner');
     this.version(1).stores({
-      units: '++id, name',
+      units: '++id, name, [year+term+unitNumber]',
       categories: '++id, unitId, sourceId',
-      entries: '++id, unitId, categoryId, sourceId, partOfSpeech',
+      entries: '++id, unitId, categoryId, sourceId, partOfSpeech, german, english',
       verbForms: '++id, unitId, entryId',
       sentenceTemplates: '++id, unitId, sourceId',
       generatedSentences: '++id, unitId, templateId, complexity',
@@ -142,15 +145,16 @@ class DeutschDB extends Dexie {
 
 The app imports JSON files exported from the Content Studio artifact. The import process:
 
-1. User selects a `.json` file via file picker
+1. User selects a `.json` file via file picker (or pastes JSON, or provides a URL — see Phase 6)
 2. App validates the structure (must have `unit`, `categories`, `entries` at minimum)
 3. Check for duplicate units (by name) — offer to replace or skip
-4. Insert `Unit` record, get auto-increment ID
-5. Insert `Category` records, building a `sourceId -> dexieId` mapping
-6. Insert `Entry` records, remapping `categoryId` from source IDs to Dexie IDs
-7. Insert `VerbForm` records, remapping `entryId`
-8. Insert `SentenceTemplate` and `GeneratedSentence` records, remapping IDs
-9. Initialise `FlashcardProgress` for all entries with bucket=0, nextDue=now
+4. Prompt the user for unit grouping metadata if not present in the JSON: **year** (number), **term** (Autumn/Spring/Summer), and **unit number** (number). Show these as editable fields pre-populated from the JSON if available, or blank if not. The user must fill these in before import proceeds.
+5. Insert `Unit` record (including year, term, unitNumber), get auto-increment ID
+6. Insert `Category` records, building a `sourceId -> dexieId` mapping
+7. Insert `Entry` records, remapping `categoryId` from source IDs to Dexie IDs
+8. Insert `VerbForm` records, remapping `entryId`
+9. Insert `SentenceTemplate` and `GeneratedSentence` records, remapping IDs
+10. Initialise `FlashcardProgress` for all entries with bucket=0, nextDue=now
 
 All inserts should be wrapped in a Dexie transaction for atomicity.
 
@@ -158,7 +162,7 @@ All inserts should be wrapped in a Dexie transaction for atomicity.
 
 ```json
 {
-  "unit": { "name": "...", "description": "..." },
+  "unit": { "name": "...", "description": "...", "year": 9, "term": "Spring", "unitNumber": 3 },
   "categories": [{ "id": "cat_1", "name": "...", ... }],
   "entries": [{ "id": "ent_1", "categoryId": "cat_1", "german": "...", "english": "...", ... }],
   "verbForms": [{ "id": "vf_1", "entryId": "ent_1", ... }],
@@ -169,11 +173,14 @@ All inserts should be wrapped in a Dexie transaction for atomicity.
 }
 ```
 
+Note: `year`, `term`, and `unitNumber` are optional in the JSON. If missing, the import page prompts the user to provide them. The Content Studio could be updated later to include these fields in the export.
+
 ## App Structure & Routing
 
 ```
-/                    → Dashboard (unit list, quick stats, recent activity)
+/                    → Dashboard (unit list grouped by year/term, quick stats)
 /import              → JSON import page
+/search              → Cross-unit vocabulary search
 /unit/:id            → Unit overview (category breakdown, progress summary)
 /unit/:id/flashcards → Flashcard mode
 /unit/:id/builder    → Sentence builder mode
@@ -186,18 +193,63 @@ All inserts should be wrapped in a Dexie transaction for atomicity.
 
 ### Dashboard (`/`)
 
-- List of imported units as cards showing: name, entry count, last practiced, overall accuracy %
+- Units displayed in a collapsible hierarchy: **Year → Term → Units**
+  - Top level: Year groups (e.g. "Year 9", "Year 10"), sorted descending (most recent first)
+  - Second level: Terms within each year (Autumn, Spring, Summer), sorted in chronological order
+  - Third level: Unit cards within each term, sorted by unit number
+- Each year group is collapsible (click to expand/collapse), with state persisted in IndexedDB
+- Each unit card shows: name, entry count, last practiced, overall accuracy %
+- Quick-start buttons for each learning mode on each unit card
 - "Import Unit" button (navigates to `/import`)
-- Quick-start buttons for each learning mode on each unit
 - If no units imported, show an onboarding message with import prompt
+- If a unit is missing year/term/unitNumber metadata, group it under an "Ungrouped" section at the bottom
+
+### Search Page (`/search`)
+
+A cross-unit vocabulary lookup tool. This is for when the user thinks "how do I say X in German?" or "I've seen this word before, which unit was it in?"
+
+**Search input:**
+- Single search bar at the top of the page, always visible
+- Searches both German and English fields simultaneously
+- Search is case-insensitive and uses substring matching (not just prefix)
+- Debounced input (300ms) to avoid excessive querying while typing
+- Results update live as the user types
+
+**Results display:**
+- Results grouped by unit (with year/term/unit label), then by category within each unit
+- Each result shows:
+  - The German text (with the matched substring highlighted)
+  - The English translation (with the matched substring highlighted)
+  - The category name (as a badge)
+  - The unit name and year/term label
+  - Part of speech
+- If the match is in a verb form (infinitive or past participle), also show the verb conjugation row
+- If the match appears in a generated sentence, show the full sentence with the match highlighted
+- Tap on a result to navigate to that unit's overview page
+
+**Search scope:**
+- Entries (german + english fields)
+- Verb forms (infinitive, present3rd, pastParticiple fields)
+- Generated sentences (german + english fields)
+
+**Implementation notes:**
+- Use Dexie's `where().startsWithIgnoreCase()` for indexed prefix searches, or `filter()` for substring matching. Since the dataset is small (hundreds of entries, not millions), a full table scan with `.filter()` is fine and gives more flexible matching.
+- Consider caching the full entry list in memory on page load for instant search — with typical worksheet sizes this will be well under 1MB.
+- Show a "No results" message with the search term when nothing matches
+- Show result count: "12 results across 3 units"
 
 ### Import Page (`/import`)
 
-- File picker accepting `.json`
-- Validation summary showing what was found (X categories, Y entries, Z sentences)
-- Preview of categories and entry count per category
-- Import button, with duplicate handling (replace / skip / cancel)
-- Success message with link to the unit page
+- Three import methods presented as tabs or segmented control: **File**, **Paste**, **URL**
+  - **File:** file picker accepting `.json` (works on desktop and mobile via Files/iCloud)
+  - **Paste:** large text area for pasting JSON directly (quickest on desktop from Content Studio)
+  - **URL:** text input for a raw JSON URL, e.g. GitHub Gist raw URL (best for phone import)
+- All three methods feed into the same validation and preview flow:
+  - Validation summary showing what was found (X categories, Y entries, Z sentences)
+  - Preview of categories and entry count per category
+  - Import button, with duplicate handling (replace / skip / cancel)
+  - Success message with link to the unit page
+- See Phase 6 for full details on the mobile import workflow
 
 ### Unit Overview (`/unit/:id`)
 
@@ -324,7 +376,7 @@ All inserts should be wrapped in a Dexie transaction for atomicity.
 - Desktop (1024px+): max-width container, sidebar nav option
 
 ### Navigation
-- Bottom tab bar on mobile: Dashboard, Progress, Settings
+- Bottom tab bar on mobile: Dashboard, Search, Progress, Settings
 - Learning mode pages have a back button and progress indicator in a top bar
 - Unit page is the hub — all three learning modes launch from here
 
@@ -807,13 +859,102 @@ jobs:
 - Reset and delete functionality
 - **Tests:** Aggregation unit tests, ProgressPage + SettingsPage integration tests, E2E export/import/reset
 
-### Phase 6: PWA Polish
-- Service worker configuration
-- App icons (generate from a simple SVG)
-- Install prompt handling
-- Offline indicator
-- Final responsive design pass
-- **Tests:** E2E service worker, manifest, and offline tests
+### Phase 6: Unit Grouping
+
+- Add `year`, `term`, and `unitNumber` fields to the Unit table (Dexie schema version bump)
+- Migration: existing units get `year: 0, term: "Unknown", unitNumber: 0` as defaults, with a prompt to edit them on next visit to the dashboard
+- Import flow: add editable year/term/unitNumber fields to the import preview screen, pre-populated from JSON if present
+- Dashboard: replace flat unit list with collapsible Year → Term → Unit hierarchy
+  - Year groups sorted descending (newest first)
+  - Terms sorted chronologically: Autumn → Spring → Summer
+  - Units sorted by unitNumber within each term
+  - Collapse state persisted in IndexedDB (or a simple `localStorage`-style key)
+  - "Ungrouped" section at the bottom for units with missing metadata
+- Unit overview page: show year/term/unit label in the header
+- Allow editing unit metadata (year, term, unitNumber) from the unit overview page
+- **Tests:**
+  - **Unit tests:** grouping sort logic (year descending, term chronological, unitNumber ascending), migration defaults
+  - **Integration tests:** Dashboard renders grouped hierarchy, collapse/expand works and persists, unit metadata editing saves correctly
+  - **E2E tests:** Import unit with metadata → appears in correct group on dashboard, edit metadata → unit moves to correct group
+
+### Phase 7: Cross-Unit Search
+
+- New `/search` route accessible from the bottom navigation bar
+- Search bar with debounced input (300ms), searches German and English fields simultaneously
+- Searches across: entries, verb forms (infinitive, present3rd, pastParticiple), and generated sentences
+- Case-insensitive substring matching using Dexie `.filter()`
+- Results grouped by unit (with year/term label), then by category
+- Each result shows: German text, English translation, category badge, unit label, part of speech
+- Matched substrings highlighted in both German and English text
+- Tapping a result navigates to the unit overview page
+- Result count displayed: "12 results across 3 units"
+- Empty state: "No results for '...'" message
+- **Tests:**
+  - **Unit tests:** search logic with various query types (German, English, partial match, case insensitive, umlaut handling)
+  - **Integration tests:** Search page renders results with highlighting, tapping result navigates, debounce works correctly, empty state displays
+  - **E2E tests:** Search across multiple units returns correct results, search for German and English terms both work
+
+### Phase 8: Mobile Import
+
+The existing file picker import works on desktop but is clunky on mobile. Add two additional import methods to the import page, presented as tabs or segmented control: **File**, **Paste**, **URL**.
+
+**Paste JSON import:**
+- Large text area where the user can paste the full JSON string
+- Validate on paste (or on a "Parse" button press)
+- Show the same preview/confirmation flow as the file import
+- This is the quickest path on desktop (copy from Content Studio export modal, paste into app)
+
+**Import from URL:**
+- Text input field for a URL pointing to a raw JSON file
+- Fetch the URL, parse the JSON, then show the same preview/confirmation flow
+- Must handle CORS — works with GitHub Gist raw URLs (`https://gist.githubusercontent.com/...`), GitHub Pages, and any server with permissive CORS headers
+- Show a clear error if the fetch fails (network error, CORS blocked, invalid JSON)
+- Optionally: save recently used URLs in IndexedDB so the user can re-import updated versions easily
+- This is the best path for phone import — the user saves their JSON exports as GitHub Gists (or to any static host), then just pastes the URL on the phone
+
+**Suggested workflow for phone users:**
+1. Export JSON from Content Studio (copy to clipboard)
+2. Create a GitHub Gist and paste the JSON (or save to a file on GitHub Pages / iCloud-accessible location)
+3. On phone, open the app → Import → URL tab → paste the Gist raw URL → Import
+4. Bookmark or save the URL for future re-imports when content is updated
+
+- **Tests:**
+  - **Unit tests:** URL fetch logic with mocked responses (success, CORS error, invalid JSON, network failure)
+  - **Integration tests:** Paste import flow renders and validates, URL import flow fetches and validates, tab switching works
+  - **E2E tests:** Complete import via paste, complete import via URL (using a local test server for the fixture JSON)
+
+### Phase 9: PWA Polish
+
+#### PWA Configuration
+- Service worker via vite-plugin-pwa with Workbox and `registerType: 'autoUpdate'`
+- Cache strategy: precache all app assets (JS, CSS, HTML, fonts, icons) at install time
+- App manifest with `"display": "standalone"`, portrait orientation, theme colour `#C4713B`
+- App icons at 192x192 and 512x512 (generate from a simple SVG)
+
+#### Install Prompt
+- Detect if the app is running in a browser (not yet installed) using `window.matchMedia('(display-mode: standalone)')`
+- If not installed, show a dismissable banner with platform-specific instructions:
+  - **iOS:** "Tap the share button ↑ then 'Add to Home Screen'"
+  - **Android:** "Tap the menu ⋮ then 'Install app'" (or handle the `beforeinstallprompt` event to show a native install button)
+- Store dismissal in IndexedDB so the banner doesn't reappear after the user dismisses it
+- The banner should be subtle and not block usage — a small strip at the top or bottom
+
+#### Offline Indicator
+- Detect online/offline state via `navigator.onLine` and the `online`/`offline` window events
+- When offline, show a small non-intrusive indicator (e.g. a thin amber bar at the top: "You're offline — everything still works")
+- All learning modes work fully offline since data is in IndexedDB and app is cached
+
+#### Final Responsive Pass
+- Test all pages on mobile viewport (390×844 iPhone 14, 360×800 common Android)
+- Ensure touch targets are at least 44px
+- Flashcard flip gesture area should be the full card, not just a small button
+- Sentence builder drag-and-drop must work well with touch (verify @dnd-kit touch sensor)
+- Bottom navigation bar should not overlap with iOS safe area (use `env(safe-area-inset-bottom)`)
+- Import page tabs/segments should be usable with one hand
+
+- **Tests:**
+  - **Integration tests:** Install banner display/dismissal, offline indicator shows/hides
+  - **E2E tests:** Service worker registration, manifest served correctly, offline mode loads app
 
 ## Notes
 
