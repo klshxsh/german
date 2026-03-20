@@ -1,0 +1,1527 @@
+{
+  "unit": {
+    "name": "Explaining how your role model inspires you",
+    "description": "A worksheet focused on discussing role models, their achievements, and future aspirations in German"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Questions",
+      "description": "Key questions about role models and future plans",
+      "grammarNotes": "Question formation using wer, warum, was, wie"
+    },
+    {
+      "id": "cat_2",
+      "name": "Perfect Tense Activities",
+      "description": "What your role model has done (past achievements)",
+      "grammarNotes": "Perfect tense using sein and haben auxiliaries with past participles"
+    },
+    {
+      "id": "cat_3",
+      "name": "Role Model Professions",
+      "description": "Different professions and occupations",
+      "grammarNotes": "Nouns with masculine/feminine forms indicated by (in) suffix"
+    },
+    {
+      "id": "cat_4",
+      "name": "In the future",
+      "description": "Future tense constructions and future plans",
+      "grammarNotes": "Future tense using werden + infinitive, also reflexive future constructions"
+    },
+    {
+      "id": "cat_5",
+      "name": "Connectives",
+      "description": "Conjunctions and linking words",
+      "grammarNotes": "Includes coordinating conjunctions, subordinating conjunctions (VERB to END), and adverbial connectives (FLIP FLOP word order)"
+    },
+    {
+      "id": "cat_6",
+      "name": "Qualifiers",
+      "description": "Intensifying adverbs and modifiers",
+      "grammarNotes": "Adverbs that modify adjectives and verbs to express degree"
+    },
+    {
+      "id": "cat_7",
+      "name": "Adjectives",
+      "description": "Descriptive adjectives for people and experiences",
+      "grammarNotes": "Adjectives used to describe role models and their qualities"
+    },
+    {
+      "id": "cat_8",
+      "name": "Opening Phrases",
+      "description": "Starter phrases for discussing role models",
+      "grammarNotes": "Present tense phrases introducing the topic"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Wer ist dein Vorbild?",
+      "english": "who is your role model?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question with wer",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "Warum ist er oder sie eine Inspiration für dich?",
+      "english": "Why is he or she an inspiration for you?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question with warum",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "Was macht er oder sie?",
+      "english": "What does he or she do?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question with was, present tense",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "Was hat er oder sie gemacht?",
+      "english": "What has he or she done?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question with was, perfect tense",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_1",
+      "german": "Wie ist er oder sie?",
+      "english": "What is he or she like?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question with wie",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_1",
+      "german": "Was wirst du später machen?",
+      "english": "what will you do later?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question with was, future tense",
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_2",
+      "german": "nach Afrika gefahren",
+      "english": "went to Africa",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with sein",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_2",
+      "german": "berühmt geworden",
+      "english": "became famous",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with sein",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_2",
+      "german": "erfolgreich geworden",
+      "english": "became successful",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with sein",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_2",
+      "german": "mit Kindern gearbeitet",
+      "english": "worked with children",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_2",
+      "german": "Leute glücklich gemacht",
+      "english": "made people happy",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_2",
+      "german": "interessante Erlebnisse gehabt",
+      "english": "had interesting experiences",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_2",
+      "german": "viele Preise gewonnen",
+      "english": "won lots of prizes",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_2",
+      "german": "viele Länder gesehen",
+      "english": "seen lots of countries",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_2",
+      "german": "viel Geld verdient",
+      "english": "earnt lots of money",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_2",
+      "german": "viel trainiert",
+      "english": "trained a lot",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Perfect tense with haben",
+      "tags": [
+        "perfect",
+        "achievement"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "Politiker",
+      "english": "politician",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_3",
+      "german": "Fußballspieler(in)",
+      "english": "footballer",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/feminine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_3",
+      "german": "Schauspieler(in)",
+      "english": "actor",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/feminine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_3",
+      "german": "Sportler(in)",
+      "english": "sportsman",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/feminine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_3",
+      "german": "Lehrer(in)",
+      "english": "teacher",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/feminine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_3",
+      "german": "Chef(in)",
+      "english": "boss",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/feminine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_3",
+      "german": "Musiker(in)",
+      "english": "musician",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/feminine noun",
+      "tags": [
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "Ich werde",
+      "english": "I will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Future tense auxiliary, 1st person singular",
+      "tags": [
+        "future",
+        "auxiliary"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_4",
+      "german": "Du wirst",
+      "english": "you will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Future tense auxiliary, 2nd person singular",
+      "tags": [
+        "future",
+        "auxiliary"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_4",
+      "german": "Er/sie/es/man wird",
+      "english": "he/she/it/you will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Future tense auxiliary, 3rd person singular",
+      "tags": [
+        "future",
+        "auxiliary"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_4",
+      "german": "Wir werden",
+      "english": "we will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Future tense auxiliary, 1st person plural",
+      "tags": [
+        "future",
+        "auxiliary"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_4",
+      "german": "Ihr werdet",
+      "english": "You will plural",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Future tense auxiliary, 2nd person plural",
+      "tags": [
+        "future",
+        "auxiliary"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_4",
+      "german": "Sie/sie werden",
+      "english": "You formal/they will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Future tense auxiliary, 3rd person plural/formal",
+      "tags": [
+        "future",
+        "auxiliary"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_4",
+      "german": "hart arbeiten",
+      "english": "work hard",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_4",
+      "german": "Sport treiben/machen",
+      "english": "do sport",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_4",
+      "german": "in Asien/Afrika/Europa arbeiten",
+      "english": "work in Asia/Africa/Europe",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_4",
+      "german": "viel Geld verdienen",
+      "english": "earn lots of money",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_4",
+      "german": "für Menschenrechte Kämpfen",
+      "english": "to fight for human rights",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_4",
+      "german": "Tanzenstunden nehmen",
+      "english": "take dancing lessons",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_4",
+      "german": "das Geld einer Hilfsorganisation spenden",
+      "english": "donate the money to an aid organisation",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_4",
+      "german": "Theater studieren",
+      "english": "study drama",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_4",
+      "german": "nicht Politiker werden",
+      "english": "not become a politician",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive for future tense with negation",
+      "tags": [
+        "future",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_4",
+      "german": "Ich werde mich",
+      "english": "I will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive future tense, 1st person singular",
+      "tags": [
+        "future",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_4",
+      "german": "Er wird sich",
+      "english": "He will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive future tense, 3rd person singular masculine",
+      "tags": [
+        "future",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_4",
+      "german": "Sie wird sich",
+      "english": "she will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive future tense, 3rd person singular feminine",
+      "tags": [
+        "future",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_4",
+      "german": "Wir werden uns",
+      "english": "we will",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive future tense, 1st person plural",
+      "tags": [
+        "future",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_4",
+      "german": "bemühen",
+      "english": "try",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive verb infinitive",
+      "tags": [
+        "future",
+        "reflexive",
+        "action"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_4",
+      "german": "Arzt/Ärztin zu werden",
+      "english": "to become a doctor",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with zu",
+      "tags": [
+        "future",
+        "goal"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_4",
+      "german": "Medaille zu gewinnen",
+      "english": "to win medals",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with zu",
+      "tags": [
+        "future",
+        "goal"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_4",
+      "german": "mit Kindern zu arbeiten",
+      "english": "to work with children",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with zu",
+      "tags": [
+        "future",
+        "goal"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_4",
+      "german": "bei einer Hilfsorganisationen zu arbeiten",
+      "english": "to work at an aid organisation",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with zu",
+      "tags": [
+        "future",
+        "goal"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_5",
+      "german": "und",
+      "english": "and",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Coordinating conjunction",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_5",
+      "german": "aber",
+      "english": "but",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Coordinating conjunction",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_5",
+      "german": "denn",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Coordinating conjunction",
+      "tags": [
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_5",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - VERB to END",
+      "tags": [
+        "conjunction",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_5",
+      "german": "da",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - VERB to END",
+      "tags": [
+        "conjunction",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_5",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - VERB to END",
+      "tags": [
+        "conjunction",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_5",
+      "german": "damit",
+      "english": "so that",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - VERB to END",
+      "tags": [
+        "conjunction",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_5",
+      "german": "wenn",
+      "english": "if/when/whenever",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - VERB to END",
+      "tags": [
+        "conjunction",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_5",
+      "german": "jedoch",
+      "english": "however",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Adverbial connective - FLIP FLOP word order",
+      "tags": [
+        "conjunction",
+        "adverbial"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_5",
+      "german": "deshalb",
+      "english": "therefore",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Adverbial connective - FLIP FLOP word order",
+      "tags": [
+        "conjunction",
+        "adverbial"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_5",
+      "german": "deswegen",
+      "english": "As a result",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Adverbial connective - FLIP FLOP word order",
+      "tags": [
+        "conjunction",
+        "adverbial"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_5",
+      "german": "außerdem",
+      "english": "furthermore",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Adverbial connective - FLIP FLOP word order",
+      "tags": [
+        "conjunction",
+        "adverbial"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_6",
+      "german": "sehr",
+      "english": "very",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_6",
+      "german": "ziemlich",
+      "english": "quite",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_6",
+      "german": "ein bisschen",
+      "english": "a bit",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_6",
+      "german": "äußerst",
+      "english": "extremely",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_6",
+      "german": "völlig",
+      "english": "completely",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_6",
+      "german": "ganz",
+      "english": "totally",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_6",
+      "german": "total",
+      "english": "totally",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_6",
+      "german": "wirklich",
+      "english": "really",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_6",
+      "german": "unglaublich",
+      "english": "unbelievably",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_6",
+      "german": "erstaunlich",
+      "english": "amazingly",
+      "partOfSpeech": "qualifier",
+      "grammarNotes": "Intensifying adverb",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_7",
+      "german": "inspirierend",
+      "english": "inspiring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_7",
+      "german": "toll",
+      "english": "great",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_7",
+      "german": "berühmt",
+      "english": "famous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_7",
+      "german": "wichtig",
+      "english": "important",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_7",
+      "german": "schwierig",
+      "english": "difficult",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_7",
+      "german": "spannend",
+      "english": "exciting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_7",
+      "german": "interessant",
+      "english": "interesting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_7",
+      "german": "erfüllend",
+      "english": "fulfilling",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Descriptive adjective",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_8",
+      "german": "Er/sie ist",
+      "english": "he/she",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opening phrase with sein",
+      "tags": [
+        "starter"
+      ]
+    },
+    {
+      "id": "ent_79",
+      "categoryId": "cat_8",
+      "german": "inspiriert mich",
+      "english": "inspires me",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense, 3rd person singular",
+      "tags": [
+        "starter"
+      ]
+    },
+    {
+      "id": "ent_80",
+      "categoryId": "cat_8",
+      "german": "Ich möchte wie … sein",
+      "english": "I would like to be like...",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Expressing desire with möchte",
+      "tags": [
+        "starter"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_7",
+      "infinitive": "fahren",
+      "present3rd": "fährt",
+      "perfectAux": "sein",
+      "pastParticiple": "gefahren"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_8",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_9",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_4",
+      "entryId": "ent_10",
+      "infinitive": "arbeiten",
+      "present3rd": "arbeitet",
+      "perfectAux": "haben",
+      "pastParticiple": "gearbeitet"
+    },
+    {
+      "id": "vf_5",
+      "entryId": "ent_11",
+      "infinitive": "machen",
+      "present3rd": "macht",
+      "perfectAux": "haben",
+      "pastParticiple": "gemacht"
+    },
+    {
+      "id": "vf_6",
+      "entryId": "ent_12",
+      "infinitive": "haben",
+      "present3rd": "hat",
+      "perfectAux": "haben",
+      "pastParticiple": "gehabt"
+    },
+    {
+      "id": "vf_7",
+      "entryId": "ent_13",
+      "infinitive": "gewinnen",
+      "present3rd": "gewinnt",
+      "perfectAux": "haben",
+      "pastParticiple": "gewonnen"
+    },
+    {
+      "id": "vf_8",
+      "entryId": "ent_14",
+      "infinitive": "sehen",
+      "present3rd": "sieht",
+      "perfectAux": "haben",
+      "pastParticiple": "gesehen"
+    },
+    {
+      "id": "vf_9",
+      "entryId": "ent_15",
+      "infinitive": "verdienen",
+      "present3rd": "verdient",
+      "perfectAux": "haben",
+      "pastParticiple": "verdient"
+    },
+    {
+      "id": "vf_10",
+      "entryId": "ent_16",
+      "infinitive": "trainieren",
+      "present3rd": "trainiert",
+      "perfectAux": "haben",
+      "pastParticiple": "trainiert"
+    },
+    {
+      "id": "vf_11",
+      "entryId": "ent_30",
+      "infinitive": "arbeiten",
+      "present3rd": "arbeitet",
+      "perfectAux": "haben",
+      "pastParticiple": "gearbeitet"
+    },
+    {
+      "id": "vf_12",
+      "entryId": "ent_31",
+      "infinitive": "treiben/machen",
+      "present3rd": "treibt/macht",
+      "perfectAux": "haben",
+      "pastParticiple": "getrieben/gemacht"
+    },
+    {
+      "id": "vf_13",
+      "entryId": "ent_33",
+      "infinitive": "verdienen",
+      "present3rd": "verdient",
+      "perfectAux": "haben",
+      "pastParticiple": "verdient"
+    },
+    {
+      "id": "vf_14",
+      "entryId": "ent_34",
+      "infinitive": "kämpfen",
+      "present3rd": "kämpft",
+      "perfectAux": "haben",
+      "pastParticiple": "gekämpft"
+    },
+    {
+      "id": "vf_15",
+      "entryId": "ent_35",
+      "infinitive": "nehmen",
+      "present3rd": "nimmt",
+      "perfectAux": "haben",
+      "pastParticiple": "genommen"
+    },
+    {
+      "id": "vf_16",
+      "entryId": "ent_36",
+      "infinitive": "spenden",
+      "present3rd": "spendet",
+      "perfectAux": "haben",
+      "pastParticiple": "gespendet"
+    },
+    {
+      "id": "vf_17",
+      "entryId": "ent_37",
+      "infinitive": "studieren",
+      "present3rd": "studiert",
+      "perfectAux": "haben",
+      "pastParticiple": "studiert"
+    },
+    {
+      "id": "vf_18",
+      "entryId": "ent_43",
+      "infinitive": "sich bemühen",
+      "present3rd": "bemüht sich",
+      "perfectAux": "haben",
+      "pastParticiple": "bemüht"
+    },
+    {
+      "id": "vf_19",
+      "entryId": "ent_79",
+      "infinitive": "inspirieren",
+      "present3rd": "inspiriert",
+      "perfectAux": "haben",
+      "pastParticiple": "inspiriert"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[subject] ist [qualifier] [adjective], [connective] [subject_pronoun] hat [perfect_achievement]",
+      "slots": [
+        "subject",
+        "qualifier",
+        "adjective",
+        "connective",
+        "subject_pronoun",
+        "perfect_achievement"
+      ],
+      "description": "Describes role model with qualifier and adjective, then states achievement in perfect tense"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[future_auxiliary] [future_action], [connective] [subject_clause]",
+      "slots": [
+        "future_auxiliary",
+        "future_action",
+        "connective",
+        "subject_clause"
+      ],
+      "description": "States future intention with coordinating connective and reason"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[subject] [opening_phrase] [profession], [subordinating_connective] [subject_pronoun] [perfect_achievement]",
+      "slots": [
+        "subject",
+        "opening_phrase",
+        "profession",
+        "subordinating_connective",
+        "subject_pronoun",
+        "perfect_achievement"
+      ],
+      "description": "Identifies profession with subordinating clause explaining achievement"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[reflexive_future] [goal], [adverbial_connective] [future_auxiliary] [subject_pronoun] [future_action]",
+      "slots": [
+        "reflexive_future",
+        "goal",
+        "adverbial_connective",
+        "future_auxiliary",
+        "subject_pronoun",
+        "future_action"
+      ],
+      "description": "Reflexive future construction with adverbial connective for consequence"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[subject] hat [perfect_achievement] [connective] ist [qualifier] [adjective]",
+      "slots": [
+        "subject",
+        "perfect_achievement",
+        "connective",
+        "qualifier",
+        "adjective"
+      ],
+      "description": "Perfect tense achievement followed by coordinating conjunction and description"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[time_phrase] [future_auxiliary] [subject] [future_action], [subordinating_connective] das [adjective] ist",
+      "slots": [
+        "time_phrase",
+        "future_auxiliary",
+        "subject",
+        "future_action",
+        "subordinating_connective",
+        "adjective"
+      ],
+      "description": "Complex sentence with time phrase inversion and subordinate clause evaluation"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[subject] [opening_phrase] [qualifier] [adjective], [connective] [subject_pronoun] [opening_phrase] [profession]",
+      "slots": [
+        "subject",
+        "opening_phrase",
+        "qualifier",
+        "adjective",
+        "connective",
+        "subject_pronoun",
+        "opening_phrase",
+        "profession"
+      ],
+      "description": "Subject description with profession identification using coordinating conjunction"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[subordinating_connective] [subject] [perfect_achievement], [adverbial_connective] [subject_verb] [qualifier] [adjective]",
+      "slots": [
+        "subordinating_connective",
+        "subject",
+        "perfect_achievement",
+        "adverbial_connective",
+        "subject_verb",
+        "qualifier",
+        "adjective"
+      ],
+      "description": "Complex sentence beginning with subordinate clause followed by adverbial connective"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Sie ist sehr inspirierend",
+      "english": "She is very inspiring",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_60",
+        "ent_70"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Er ist Musiker, denn er hat viele Preise gewonnen",
+      "english": "He is a musician, because he has won lots of prizes",
+      "complexity": "compound",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_23",
+        "ent_50",
+        "ent_13"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Ich werde hart arbeiten",
+      "english": "I will work hard",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_24",
+        "ent_30"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Sie ist Lehrerin, weil sie mit Kindern gearbeitet hat",
+      "english": "She is a teacher, because she worked with children",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_21",
+        "ent_51",
+        "ent_10"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Er hat viel Geld verdient und ist berühmt geworden",
+      "english": "He has earned lots of money and became famous",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_15",
+        "ent_48",
+        "ent_8"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Ich werde Theater studieren, damit ich Schauspieler werde",
+      "english": "I will study drama, so that I become an actor",
+      "complexity": "complex",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_24",
+        "ent_37",
+        "ent_54",
+        "ent_19"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Sie ist ziemlich erfüllend",
+      "english": "She is quite fulfilling",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_61",
+        "ent_77"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Er wird sich bemühen, Medaille zu gewinnen, deshalb wird er viel trainieren",
+      "english": "He will try to win medals, therefore he will train a lot",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_40",
+        "ent_43",
+        "ent_45",
+        "ent_57",
+        "ent_26",
+        "ent_16"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Sie inspiriert mich total",
+      "english": "She totally inspires me",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_79",
+        "ent_66"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Er ist Sportler, denn er hat interessante Erlebnisse gehabt",
+      "english": "He is a sportsman, because he has had interesting experiences",
+      "complexity": "compound",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_20",
+        "ent_50",
+        "ent_12"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Weil sie nach Afrika gefahren ist, ist sie äußerst wichtig",
+      "english": "Because she went to Africa, she is extremely important",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_51",
+        "ent_7",
+        "ent_78",
+        "ent_63",
+        "ent_73"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Ich werde in Afrika arbeiten, aber ich werde nicht Politiker werden",
+      "english": "I will work in Africa, but I will not become a politician",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_24",
+        "ent_32",
+        "ent_49",
+        "ent_38"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Sie hat Leute glücklich gemacht",
+      "english": "She has made people happy",
+      "complexity": "simple",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_11"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Er ist wirklich toll, obwohl er nicht berühmt geworden ist",
+      "english": "He is really great, although he has not become famous",
+      "complexity": "complex",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_67",
+        "ent_71",
+        "ent_53",
+        "ent_8"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Wir werden uns bemühen, mit Kindern zu arbeiten",
+      "english": "We will try to work with children",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_42",
+        "ent_43",
+        "ent_46"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Sie ist Fußballspielerin und hat viele Länder gesehen",
+      "english": "She is a footballer and has seen lots of countries",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_18",
+        "ent_48",
+        "ent_14"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Wenn er erfolgreich geworden ist, wird er das Geld einer Hilfsorganisation spenden",
+      "english": "If he has become successful, he will donate the money to an aid organisation",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_55",
+        "ent_9",
+        "ent_26",
+        "ent_36"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Er ist ein bisschen schwierig",
+      "english": "He is a bit difficult",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_78",
+        "ent_62",
+        "ent_74"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Sie wird sich bemühen, Arzt zu werden, außerdem wird sie Sport treiben",
+      "english": "She will try to become a doctor, furthermore she will do sport",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_41",
+        "ent_43",
+        "ent_44",
+        "ent_59",
+        "ent_26",
+        "ent_31"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Er hat viel trainiert, denn er ist völlig erfüllend",
+      "english": "He has trained a lot, because he is completely fulfilling",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_16",
+        "ent_50",
+        "ent_78",
+        "ent_64",
+        "ent_77"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Da sie Lehrer ist, hat sie interessante Erlebnisse gehabt",
+      "english": "Because she is a teacher, she has had interesting experiences",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_52",
+        "ent_78",
+        "ent_21",
+        "ent_12"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Ich werde viel Geld verdienen, deswegen werde ich für Menschenrechte kämpfen",
+      "english": "I will earn lots of money, as a result I will fight for human rights",
+      "complexity": "complex",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_24",
+        "ent_33",
+        "ent_58",
+        "ent_34"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-20T22:27:37.820Z",
+  "version": "1.0"
+}
