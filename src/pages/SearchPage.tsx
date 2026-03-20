@@ -83,13 +83,25 @@ function ResultCard({
           {result.matchedSentences.map((s) => (
             <div
               key={s.id}
-              className="mt-2 text-xs rounded-lg p-2 italic"
+              className="mt-2 text-xs rounded-lg p-2 italic flex items-start justify-between gap-2"
               style={{ backgroundColor: '#F6F1EB', color: '#7A6855' }}
               data-testid="matched-sentence"
             >
-              <Highlight text={s.german} query={query} />
-              <span className="mx-1 not-italic">—</span>
-              <Highlight text={s.english} query={query} />
+              <span>
+                <Highlight text={s.german} query={query} />
+                <span className="mx-1 not-italic">—</span>
+                <Highlight text={s.english} query={query} />
+              </span>
+              <button
+                onClick={(e) => { e.stopPropagation(); navigator.clipboard.writeText(`${s.german} — ${s.english}`); }}
+                className="not-italic flex-shrink-0 p-0.5 rounded opacity-50 hover:opacity-100 transition-opacity min-h-[24px] min-w-[24px] flex items-center justify-center"
+                aria-label="Copy sentence"
+                title="Copy sentence"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
             </div>
           ))}
         </div>
