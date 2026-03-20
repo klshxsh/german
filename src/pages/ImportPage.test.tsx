@@ -62,9 +62,64 @@ afterEach(async () => {
   await db.flashcardProgress.clear();
   await db.sessionLogs.clear();
   mockNavigate.mockClear();
+  vi.restoreAllMocks();
+  localStorage.clear();
 });
 
-describe('ImportPage', () => {
+// ── Tab switching ─────────────────────────────────────────────────────────────
+
+describe('ImportPage — tab switching', () => {
+  it('renders three tabs: File, Paste, URL', () => {
+    renderImportPage();
+    expect(screen.getByRole('tab', { name: /file/i })).toBeDefined();
+    expect(screen.getByRole('tab', { name: /paste/i })).toBeDefined();
+    expect(screen.getByRole('tab', { name: /url/i })).toBeDefined();
+  });
+
+  it('File tab is selected by default', () => {
+    renderImportPage();
+    expect(screen.getByRole('tab', { name: /file/i }).getAttribute('aria-selected')).toBe('true');
+  });
+
+  it('clicking Paste tab shows textarea', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+
+    expect(screen.getByRole('textbox', { name: /paste json/i })).toBeDefined();
+  });
+
+  it('clicking URL tab shows URL input', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    expect(screen.getByRole('textbox', { name: /json url/i })).toBeDefined();
+  });
+
+  it('switching tabs clears error messages', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    // Trigger an error on paste tab
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+    await user.click(screen.getByRole('button', { name: /parse pasted json/i }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('alert')).toBeDefined();
+    });
+
+    // Switch tab — error should clear
+    await user.click(screen.getByRole('tab', { name: /file/i }));
+    expect(screen.queryByRole('alert')).toBeNull();
+  });
+});
+
+// ── File tab ──────────────────────────────────────────────────────────────────
+
+describe('ImportPage — File tab', () => {
   it('renders file picker and import button area', () => {
     renderImportPage();
 
@@ -97,9 +152,7 @@ describe('ImportPage', () => {
     await user.upload(input, file);
 
     await waitFor(() => {
-      // Category count
       expect(screen.getByText('2')).toBeDefined();
-      // Entry count
       expect(screen.getByText('3')).toBeDefined();
     });
   });
@@ -118,9 +171,7 @@ describe('ImportPage', () => {
       expect(screen.getByText('Nouns')).toBeDefined();
     });
 
-    // Verbs has 2 entries
     expect(screen.getByText('2 entries')).toBeDefined();
-    // Nouns has 1 entry
     expect(screen.getByText('1 entry')).toBeDefined();
   });
 
@@ -193,7 +244,7 @@ describe('ImportPage', () => {
     const user = userEvent.setup();
     renderImportPage();
 
-    const badJson = { unit: { name: 'Test' } }; // missing categories and entries
+    const badJson = { unit: { name: 'Test' } };
     const file = new File([JSON.stringify(badJson)], 'bad.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -207,7 +258,6 @@ describe('ImportPage', () => {
   it('shows duplicate warning for existing unit name', async () => {
     const user = userEvent.setup();
 
-    // Import first time directly
     await db.units.add({
       name: 'Test Import Unit',
       description: '',
@@ -225,17 +275,14 @@ describe('ImportPage', () => {
 
     await user.upload(input, file);
 
-    // Preview shows up first
     await waitFor(() => {
       expect(screen.getByText('Test Import Unit')).toBeDefined();
     });
 
-    // Fill metadata then click import
     await fillMetadata(user);
     const importButton = screen.getByRole('button', { name: /import unit/i });
     await user.click(importButton);
 
-    // Duplicate warning should appear
     await waitFor(() => {
       expect(screen.getByLabelText('Duplicate unit warning')).toBeDefined();
     });
@@ -246,7 +293,6 @@ describe('ImportPage', () => {
   it('replace mode re-imports and overwrites existing unit', async () => {
     const user = userEvent.setup();
 
-    // Import first time
     await db.units.add({
       name: 'Test Import Unit',
       description: '',
@@ -275,15 +321,304 @@ describe('ImportPage', () => {
       expect(screen.getByLabelText('Duplicate unit warning')).toBeDefined();
     });
 
-    // Click Replace
     await user.click(screen.getByRole('button', { name: /replace/i }));
 
     await waitFor(() => {
       expect(screen.getByText('Import successful!')).toBeDefined();
     });
 
-    // Only one unit should exist
     const units = await db.units.toArray();
     expect(units).toHaveLength(1);
+  });
+});
+
+// ── Paste tab ─────────────────────────────────────────────────────────────────
+
+describe('ImportPage — Paste tab', () => {
+  it('shows error when Parse JSON is clicked with empty textarea', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+    await user.click(screen.getByRole('button', { name: /parse pasted json/i }));
+
+    await waitFor(() => {
+      expect(screen.getByRole('alert')).toBeDefined();
+    });
+  });
+
+  it('shows preview after pasting valid JSON and clicking Parse', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+
+    const textarea = screen.getByRole('textbox', { name: /paste json/i });
+    await user.click(textarea);
+    await user.paste(JSON.stringify(validTestJson));
+
+    await user.click(screen.getByRole('button', { name: /parse pasted json/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Test Import Unit')).toBeDefined();
+    });
+  });
+
+  it('shows error for invalid JSON pasted', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+
+    const textarea = screen.getByRole('textbox', { name: /paste json/i });
+    await user.click(textarea);
+    await user.paste('{ not valid json }');
+
+    await user.click(screen.getByRole('button', { name: /parse pasted json/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Import failed')).toBeDefined();
+    });
+  });
+
+  it('shows error for JSON missing required fields', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+
+    const textarea = screen.getByRole('textbox', { name: /paste json/i });
+    await user.click(textarea);
+    await user.paste(JSON.stringify({ unit: { name: 'Test' } }));
+
+    await user.click(screen.getByRole('button', { name: /parse pasted json/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Import failed')).toBeDefined();
+    });
+  });
+
+  it('imports pasted JSON into IndexedDB after completing the preview form', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /paste/i }));
+
+    const textarea = screen.getByRole('textbox', { name: /paste json/i });
+    await user.click(textarea);
+    await user.paste(JSON.stringify(validTestJson));
+
+    await user.click(screen.getByRole('button', { name: /parse pasted json/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Test Import Unit')).toBeDefined();
+    });
+
+    await fillMetadata(user);
+    await user.click(screen.getByRole('button', { name: /import unit/i }));
+
+    await waitFor(async () => {
+      const units = await db.units.toArray();
+      expect(units).toHaveLength(1);
+      expect(units[0].name).toBe('Test Import Unit');
+    });
+  });
+});
+
+// ── URL tab ───────────────────────────────────────────────────────────────────
+
+describe('ImportPage — URL tab', () => {
+  it('shows URL input and Fetch button', async () => {
+    const user = userEvent.setup();
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    expect(screen.getByRole('textbox', { name: /json url/i })).toBeDefined();
+    expect(screen.getByRole('button', { name: /fetch json from url/i })).toBeDefined();
+  });
+
+  it('shows preview after successful URL fetch', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: 'OK',
+      text: () => Promise.resolve(JSON.stringify(validTestJson)),
+    });
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Test Import Unit')).toBeDefined();
+    });
+  });
+
+  it('shows error on network failure', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockRejectedValue(new TypeError('Failed to fetch'));
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Import failed')).toBeDefined();
+    });
+
+    const alert = screen.getByRole('alert');
+    expect(alert.textContent).toMatch(/network error/i);
+  });
+
+  it('shows error on non-ok HTTP response (404)', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockResolvedValue({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
+      text: () => Promise.resolve(''),
+    });
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Import failed')).toBeDefined();
+    });
+  });
+
+  it('shows error when URL returns invalid JSON', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: 'OK',
+      text: () => Promise.resolve('<html>not json</html>'),
+    });
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Import failed')).toBeDefined();
+    });
+
+    const alert = screen.getByRole('alert');
+    expect(alert.textContent).toMatch(/valid json/i);
+  });
+
+  it('shows error when URL returns JSON missing required fields', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: 'OK',
+      text: () => Promise.resolve(JSON.stringify({ unit: { name: 'Test' } })),
+    });
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Import failed')).toBeDefined();
+    });
+  });
+
+  it('saves URL to recently used after successful fetch', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: 'OK',
+      text: () => Promise.resolve(JSON.stringify(validTestJson)),
+    });
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Test Import Unit')).toBeDefined();
+    });
+
+    // Recent URL should appear
+    await waitFor(() => {
+      expect(screen.getByText('Recently used')).toBeDefined();
+      expect(screen.getByRole('button', { name: /use recent url/i })).toBeDefined();
+    });
+  });
+
+  it('imports URL-fetched JSON into IndexedDB after completing the preview form', async () => {
+    const user = userEvent.setup();
+
+    globalThis.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      statusText: 'OK',
+      text: () => Promise.resolve(JSON.stringify(validTestJson)),
+    });
+
+    renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /url/i }));
+
+    const urlInput = screen.getByRole('textbox', { name: /json url/i });
+    await user.type(urlInput, 'https://example.com/unit.json');
+
+    await user.click(screen.getByRole('button', { name: /fetch json from url/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Test Import Unit')).toBeDefined();
+    });
+
+    await fillMetadata(user);
+    await user.click(screen.getByRole('button', { name: /import unit/i }));
+
+    await waitFor(async () => {
+      const units = await db.units.toArray();
+      expect(units).toHaveLength(1);
+      expect(units[0].name).toBe('Test Import Unit');
+    });
   });
 });
