@@ -8,6 +8,7 @@ import type {
   GeneratedSentence,
   FlashcardProgress,
   SessionLog,
+  AppSetting,
 } from '../types';
 
 export class DeutschDB extends Dexie {
@@ -19,6 +20,7 @@ export class DeutschDB extends Dexie {
   generatedSentences!: Table<GeneratedSentence>;
   flashcardProgress!: Table<FlashcardProgress>;
   sessionLogs!: Table<SessionLog>;
+  appSettings!: Table<AppSetting>;
 
   constructor() {
     super('DeutschLearner');
@@ -53,6 +55,17 @@ export class DeutschDB extends Dexie {
             if (unit.unitNumber === undefined) unit.unitNumber = 0;
           });
       });
+    this.version(3).stores({
+      units: '++id, name, [year+term+unitNumber]',
+      categories: '++id, unitId, sourceId',
+      entries: '++id, unitId, categoryId, sourceId, partOfSpeech',
+      verbForms: '++id, unitId, entryId',
+      sentenceTemplates: '++id, unitId, sourceId',
+      generatedSentences: '++id, unitId, templateId, complexity',
+      flashcardProgress: '++id, entryId, unitId, nextDue, bucket',
+      sessionLogs: '++id, unitId, mode, startedAt',
+      appSettings: '++id, &key',
+    });
   }
 }
 

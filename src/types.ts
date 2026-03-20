@@ -81,3 +81,9 @@ export interface SessionLog {
   correctAnswers: number;
   entryIds: number[];
 }
+
+export interface AppSetting {
+  id?: number;
+  key: string;
+  value: string;
+}
