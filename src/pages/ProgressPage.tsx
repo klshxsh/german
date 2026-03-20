@@ -122,8 +122,15 @@ export default function ProgressPage() {
                   className="rounded-xl p-4"
                   style={{ backgroundColor: '#EDE8E0' }}
                 >
-                  <div className="font-medium mb-3" style={{ color: '#2C2418' }}>
-                    {unit.name}
+                  <div className="mb-3">
+                    <div className="font-medium" style={{ color: '#2C2418' }}>
+                      {unit.name}
+                    </div>
+                    {unit.year > 0 && unit.term !== 'Unknown' && unit.unitNumber > 0 && (
+                      <div className="text-xs mt-0.5" style={{ color: '#A89880' }}>
+                        Year {unit.year} · {unit.term} · Unit {unit.unitNumber}
+                      </div>
+                    )}
                   </div>
                   {total === 0 ? (
                     <p className="text-sm" style={{ color: '#7A6855' }}>
@@ -199,8 +206,13 @@ export default function ProgressPage() {
                       {modeLabel(session.mode)}
                     </div>
                     <div className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
-                      {unit?.name ?? 'Unknown unit'} · {formatDate(session.startedAt)}{' '}
-                      {formatTime(session.startedAt)}
+                      {unit?.name ?? 'Unknown unit'}
+                      {unit && unit.year > 0 && unit.term !== 'Unknown' && unit.unitNumber > 0 && (
+                        <span style={{ color: '#A89880' }}>
+                          {' '}(Y{unit.year} · {unit.term} · U{unit.unitNumber})
+                        </span>
+                      )}
+                      {' '}· {formatDate(session.startedAt)} {formatTime(session.startedAt)}
                     </div>
                   </div>
                   <div className="text-right">

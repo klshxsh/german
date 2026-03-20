@@ -39,6 +39,11 @@ function UnitCard({ unit, entryCount }: UnitCardProps) {
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
+          {unit.unitNumber > 0 && (
+            <p className="text-xs font-medium mb-0.5" style={{ color: '#A89880' }}>
+              Unit {unit.unitNumber}
+            </p>
+          )}
           <h3 className="text-base font-semibold truncate" style={{ color: '#2C2418' }}>
             {unit.name}
           </h3>
