@@ -110,6 +110,11 @@ interface SessionLog {
   correctAnswers: number;
   entryIds: number[];     // entries tested in this session
 }
+
+interface UserSettings {
+  id: string;             // key name: "theme", "userName", "userAvatar", "soundEnabled"
+  value: string;          // JSON-encoded value
+}
 ```
 
 ### Dexie Database Definition
@@ -124,6 +129,7 @@ class DeutschDB extends Dexie {
   generatedSentences!: Table<GeneratedSentence>;
   flashcardProgress!: Table<FlashcardProgress>;
   sessionLogs!: Table<SessionLog>;
+  userSettings!: Table<UserSettings>;
 
   constructor() {
     super('DeutschLearner');
@@ -136,6 +142,7 @@ class DeutschDB extends Dexie {
       generatedSentences: '++id, unitId, templateId, complexity',
       flashcardProgress: '++id, entryId, unitId, nextDue, bucket',
       sessionLogs: '++id, unitId, mode, startedAt',
+      userSettings: 'id',
     });
   }
 }
@@ -955,6 +962,141 @@ The existing file picker import works on desktop but is clunky on mobile. Add tw
 - **Tests:**
   - **Integration tests:** Install banner display/dismissal, offline indicator shows/hides
   - **E2E tests:** Service worker registration, manifest served correctly, offline mode loads app
+
+### Phase 10: Personalisation
+
+#### Colour Themes
+
+Provide 6 curated colour themes. Each theme defines CSS custom properties for: background, surface, border, text, text-muted, accent, accent-light, success, and danger. The active theme is stored in IndexedDB and applied on app load by setting CSS variables on the document root.
+
+**Themes:**
+
+| Name | Accent | Background | Vibe |
+|------|--------|------------|------|
+| Terracotta (default) | `#C4713B` | `#F6F1EB` | Warm, papery, the current look |
+| Ocean | `#2B7A9E` | `#F0F6F9` | Cool blue, calm |
+| Forest | `#4A7C59` | `#F2F5F0` | Earthy green, natural |
+| Lavender | `#7B5EA7` | `#F5F2F8` | Soft purple, gentle |
+| Slate | `#64748B` | `#F8FAFC` | Neutral grey, clean |
+| Midnight | `#8B9FCA` | `#1A1D2E` | Dark mode, easy on eyes at night |
+
+**Settings UI:**
+- Grid of 6 theme swatches (coloured circles or small preview cards)
+- Active theme has a check mark or highlighted border
+- Tap to switch — applies immediately with a smooth transition
+- Midnight theme also needs to adjust text colours, borders, surface colours etc. for readability on dark backgrounds
+
+**Implementation:**
+- Define themes as a constant map in `src/logic/themes.ts`
+- On app load, read the saved theme from IndexedDB and set CSS variables on `document.documentElement`
+- All existing Tailwind/inline colours should be refactored to use CSS variables where they don't already
+- Transition: `transition: background-color 0.3s, color 0.3s` on body/root for smooth theme switching
+
+#### User Profile (Name & Avatar)
+
+**Settings UI:**
+- "Your Profile" section at the top of the settings page
+- Text input for name (max 20 characters)
+- Quick-pick emoji grid: 24-30 suggested emoji options arranged in a grid, organised loosely by category:
+  - Animals: 🐱 🐶 🦊 🐻 🐼 🦉 🐸 🦋
+  - People: 🧑‍🎓 🧑‍💻 🧑‍🚀 🦸 🧙 🥷
+  - Objects: ⭐ 🔥 🎯 🎸 🎨 📚 🏆 ⚡
+  - Flags: 🇩🇪 🇬🇧 🇪🇺
+- Additionally, a small text input field labelled "Or choose your own:" where the user can type or paste any emoji from their system emoji picker (Cmd+Ctrl+Space on Mac, long-press on phone keyboard). Validate that the input is a single emoji character/sequence.
+- Selected emoji (whether from grid or custom input) shown large with a highlight border
+- Name and avatar stored in the `userSettings` table
+
+**Dashboard greeting:**
+- Top of the dashboard shows: "[avatar emoji] Hallo, [name]!" in the display font
+- If no name is set, show: "Willkommen!" with a prompt to set a name in settings
+- Keep it simple — one line, not a big hero section
+
+#### Sound Effects
+
+Short audio feedback for learning mode interactions, generated programmatically using the **Web Audio API**. No audio files are bundled — sounds are synthesised at runtime using oscillators, which keeps the app lightweight and fully offline-capable.
+
+**Sound triggers:**
+- **Correct answer:** bright, short chime (~0.3s) — plays on correct flashcard, cloze, or sentence builder answer
+- **Incorrect answer:** soft, low tone (~0.3s) — not punishing, just a gentle nudge
+- **Session complete:** celebratory ascending arpeggio (~1s)
+
+**Sound designs (Web Audio API):**
+
+```typescript
+// src/logic/sounds.ts
+
+// Shared: create a single AudioContext, lazily initialised
+// All sounds use GainNode for volume envelope (attack/decay)
+
+playCorrect():
+  - Waveform: sine
+  - Frequency: 880Hz (A5) → 1760Hz (A6) quick pitch rise over 0.15s
+  - Gain envelope: attack 0.01s, sustain 0.1s, decay 0.2s to 0
+  - Duration: ~0.3s total
+  - Character: bright, rising "ding"
+
+playIncorrect():
+  - Waveform: sine
+  - Frequency: 330Hz (E4) → 220Hz (A3) gentle pitch fall over 0.2s
+  - Gain envelope: attack 0.01s, sustain 0.1s, decay 0.2s to 0
+  - Duration: ~0.3s total
+  - Character: soft, descending tone — informative, not punishing
+
+playComplete():
+  - Three sequential notes forming a rising arpeggio:
+    - Note 1: 523Hz (C5), starts at 0.0s, duration 0.2s
+    - Note 2: 659Hz (E5), starts at 0.15s, duration 0.2s
+    - Note 3: 784Hz (G5), starts at 0.3s, duration 0.4s
+  - Waveform: sine for all three
+  - Each note: attack 0.01s, sustain, decay to 0
+  - Final note holds slightly longer and fades out
+  - Duration: ~0.7s total
+  - Character: cheerful major chord arpeggio, celebratory without being obnoxious
+```
+
+**Implementation:**
+- Create a single `AudioContext` instance, stored in the module. Initialise lazily on first call.
+- Each `play*()` function creates OscillatorNode(s) and GainNode(s), connects them, schedules start/stop, and lets them garbage-collect after playback.
+- Each function checks the sound-enabled setting before playing. If disabled, return immediately (no-op).
+- Export three functions: `playCorrect()`, `playIncorrect()`, `playComplete()`
+- Export `initAudio()` — call this on the first user tap in any learning session to resume the AudioContext (required for iOS).
+
+**iOS audio unlock:**
+- iOS Safari suspends the AudioContext until a user gesture triggers `audioContext.resume()`
+- Call `initAudio()` in the `onClick` handler of the first interactive element in each learning session (e.g. "Start" button on the config screen, or the first card tap)
+- This is invisible to the user — no extra UI needed
+
+**Settings UI:**
+- "Sound Effects" toggle switch in settings
+- Default: enabled
+- Stored in the `userSettings` table (key: `"soundEnabled"`, value: `"true"` or `"false"`)
+- When toggled off, all `play*()` functions become no-ops
+
+#### Settings Table (Dexie)
+
+Add a general-purpose settings table for all personalisation data:
+
+```typescript
+interface UserSettings {
+  id: string;        // key name, e.g. "theme", "userName", "userAvatar", "soundEnabled"
+  value: string;     // stored as JSON string
+}
+
+// In Dexie schema:
+userSettings: 'id'   // primary key is the setting name
+```
+
+This avoids adding a new table for every setting. Access via helper functions:
+
+```typescript
+async function getSetting(key: string, defaultValue?: string): Promise<string | undefined>
+async function setSetting(key: string, value: string): Promise<void>
+```
+
+- **Tests:**
+  - **Unit tests:** theme CSS variable generation from theme object, sound module plays/mutes based on setting, getSetting/setSetting with defaults
+  - **Integration tests:** settings page renders theme grid and applies selection, name input saves and appears on dashboard, avatar picker selects and displays, sound toggle enables/disables, greeting shows correct name or fallback
+  - **E2E tests:** change theme → persists across page reload, set name and avatar → dashboard greeting updates, toggle sound off → no audio on correct answer
 
 ## Notes
 
