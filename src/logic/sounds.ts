@@ -8,19 +8,29 @@ export function setSoundEnabled(enabled: boolean): void {
   soundEnabled = enabled;
 }
 
-function getCtx(): AudioContext {
+function getCtx(): AudioContext | null {
   if (!audioCtx) {
+    if (typeof AudioContext === 'undefined') return null;
     audioCtx = new AudioContext();
   }
   return audioCtx;
 }
 
 /**
- * Call on the first user gesture in each learning session to resume AudioContext.
- * Required for iOS Safari which suspends the context until a user gesture.
+ * Resume the AudioContext if suspended. Call on the first user gesture in a
+ * learning session. On iOS Safari and Chrome the context starts suspended until
+ * a user gesture triggers resume().
  */
 export function initAudio(): void {
   const ctx = getCtx();
+  if (!ctx) return;
+  if (ctx.state === 'suspended') {
+    void ctx.resume();
+  }
+}
+
+/** Resume ctx if needed — safe to call from any click handler. */
+function resumeIfSuspended(ctx: AudioContext): void {
   if (ctx.state === 'suspended') {
     void ctx.resume();
   }
@@ -32,6 +42,8 @@ export function initAudio(): void {
 export function playCorrect(): void {
   if (!soundEnabled) return;
   const ctx = getCtx();
+  if (!ctx) return;
+  resumeIfSuspended(ctx);
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
   osc.connect(gain);
@@ -57,6 +69,8 @@ export function playCorrect(): void {
 export function playIncorrect(): void {
   if (!soundEnabled) return;
   const ctx = getCtx();
+  if (!ctx) return;
+  resumeIfSuspended(ctx);
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
   osc.connect(gain);
@@ -82,6 +96,8 @@ export function playIncorrect(): void {
 export function playComplete(): void {
   if (!soundEnabled) return;
   const ctx = getCtx();
+  if (!ctx) return;
+  resumeIfSuspended(ctx);
 
   const notes = [
     { freq: 523, start: 0.0, duration: 0.2 },   // C5

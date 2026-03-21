@@ -25,6 +25,7 @@ import { logSession } from '../db/progress';
 import { tokenise } from '../logic/tokeniser';
 import { getDistractors } from '../logic/distractor';
 import { calculateSentenceScore, calculateSessionSummary, formatElapsedTime } from '../logic/scoring';
+import { initAudio, playCorrect, playIncorrect, playComplete } from '../logic/sounds';
 import type { Entry, GeneratedSentence } from '../types';
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -186,6 +187,7 @@ export default function SentenceBuilder() {
   );
 
   async function startSession() {
+    initAudio();
     setNoSentencesMessage(null);
 
     // Load sentences
@@ -373,6 +375,12 @@ export default function SentenceBuilder() {
     const answerText = questionState.answerTiles.map((t) => t.text.toLowerCase()).join(' ');
     const isCorrect = correctText === answerText;
 
+    if (isCorrect) {
+      playCorrect();
+    } else {
+      playIncorrect();
+    }
+
     const newAttempts = questionState.attempts + 1;
     const score = calculateSentenceScore(newAttempts, isCorrect);
 
@@ -421,6 +429,7 @@ export default function SentenceBuilder() {
         ),
       });
 
+      playComplete();
       setSession({ ...session, results: newResults });
       setPhase('summary');
     } else {

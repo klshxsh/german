@@ -5,6 +5,7 @@ import { db } from '../db/db';
 import { getProgressForUnit, updateProgress, logSession } from '../db/progress';
 import { applyAnswer, getDueCards } from '../logic/leitner';
 import { calculateSessionSummary, formatElapsedTime } from '../logic/scoring';
+import { initAudio, playCorrect, playIncorrect, playComplete } from '../logic/sounds';
 import type { Entry, FlashcardProgress } from '../types';
 
 type Phase = 'config' | 'session' | 'summary';
@@ -147,6 +148,7 @@ export default function FlashcardSession() {
   }
 
   async function startSession(entriesOverride?: Entry[]) {
+    initAudio();
     setNoCardsMessage(null);
     const cards = await buildCards(entriesOverride);
     if (!cards) {
@@ -187,6 +189,12 @@ export default function FlashcardSession() {
     ];
     const nextIndex = session.currentIndex + 1;
 
+    if (correct) {
+      playCorrect();
+    } else {
+      playIncorrect();
+    }
+
     if (nextIndex >= session.cards.length) {
       const endedAt = new Date().toISOString();
       const correctCount = newResults.filter((r) => r.correct).length;
@@ -201,6 +209,7 @@ export default function FlashcardSession() {
           .map((c) => c.entry.id)
           .filter((id): id is number => id !== undefined),
       });
+      playComplete();
       setSession({ ...session, results: newResults });
       setPhase('summary');
     } else {

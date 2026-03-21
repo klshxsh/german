@@ -5,6 +5,7 @@ import { logSession } from '../db/progress';
 import { generateClozeQuestion, type BlankType, type ClozeQuestion } from '../logic/cloze';
 import { isAcceptableAnswer } from '../logic/levenshtein';
 import { calculateSessionSummary, formatElapsedTime } from '../logic/scoring';
+import { initAudio, playCorrect, playIncorrect, playComplete } from '../logic/sounds';
 import type { Entry } from '../types';
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -72,6 +73,7 @@ export default function ClozeSession() {
   }
 
   async function startSession() {
+    initAudio();
     setNoQuestionsMessage(null);
 
     const sentences = await db.generatedSentences.where('unitId').equals(unitId).toArray();
@@ -128,9 +130,12 @@ export default function ClozeSession() {
     setSession({ ...session, questionState: newState });
 
     if (isCorrect) {
+      playCorrect();
       autoAdvanceTimer.current = setTimeout(() => {
         advanceQuestion(session.results, newState, session.questions, session.currentIndex, session.startedAt);
       }, 1500);
+    } else {
+      playIncorrect();
     }
   }
 
@@ -149,9 +154,12 @@ export default function ClozeSession() {
     setSession({ ...session, questionState: newState });
 
     if (isCorrect) {
+      playCorrect();
       autoAdvanceTimer.current = setTimeout(() => {
         advanceQuestion(session.results, newState, session.questions, session.currentIndex, session.startedAt);
       }, 1500);
+    } else {
+      playIncorrect();
     }
   }
 
@@ -191,6 +199,7 @@ export default function ClozeSession() {
         entryIds: questions.flatMap((q) => q.entryIds),
       });
 
+      playComplete();
       setSession((prev) =>
         prev ? { ...prev, results: newResults, currentIndex: nextIndex } : null
       );
