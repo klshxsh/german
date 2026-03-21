@@ -2,6 +2,9 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import { applyTheme } from './logic/themes';
+import { setSoundEnabled } from './logic/sounds';
+import { getSetting } from './db/settings';
 import Dashboard from './pages/Dashboard';
 import ImportPage from './pages/ImportPage';
 import UnitOverview from './pages/UnitOverview';
@@ -12,6 +15,14 @@ import ProgressPage from './pages/ProgressPage';
 import SettingsPage from './pages/SettingsPage';
 import SearchPage from './pages/SearchPage';
 import Layout from './components/Layout';
+
+// Apply persisted theme and sound setting on startup
+Promise.all([
+  getSetting('theme').then((theme) => applyTheme(theme ?? 'terracotta')),
+  getSetting('soundEnabled').then((val) => setSoundEnabled(val !== 'false')),
+]).catch(() => {
+  applyTheme('terracotta');
+});
 
 const router = createHashRouter([
   {

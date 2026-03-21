@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import { db } from '../db/db';
+import { setSetting } from '../db/settings';
 
 const mockNavigate = vi.fn();
 vi.mock('react-router-dom', async () => {
@@ -36,6 +37,7 @@ afterEach(async () => {
   await db.entries.clear();
   await db.flashcardProgress.clear();
   await db.sessionLogs.clear();
+  await db.userSettings.clear();
   mockNavigate.mockClear();
   localStorage.clear();
 });
@@ -208,6 +210,51 @@ describe('Dashboard', () => {
       expect(screen.getByText('Grouped')).toBeDefined();
       expect(screen.getByText('Ungrouped')).toBeDefined();
       expect(screen.getByText('Not Grouped')).toBeDefined();
+    });
+  });
+});
+
+// ─── Phase 10: Personalised Greeting ─────────────────────────────────────────
+
+describe('Dashboard — Greeting', () => {
+  it('shows "Willkommen!" when no name is set', async () => {
+    renderDashboard();
+    await waitFor(() => {
+      expect(screen.getByText(/Willkommen!/)).toBeInTheDocument();
+    });
+  });
+
+  it('shows "Set your name" link when no name is set', async () => {
+    renderDashboard();
+    await waitFor(() => {
+      expect(screen.getByText('Set your name')).toBeInTheDocument();
+    });
+  });
+
+  it('shows "Hallo, [name]!" when a name is saved', async () => {
+    await setSetting('userName', 'Emma');
+    renderDashboard();
+    await waitFor(() => {
+      expect(screen.getByText(/Hallo, Emma!/)).toBeInTheDocument();
+    });
+  });
+
+  it('shows avatar before the greeting when avatar is set', async () => {
+    await setSetting('userName', 'Max');
+    await setSetting('userAvatar', '🐶');
+    renderDashboard();
+    await waitFor(() => {
+      expect(screen.getByText(/🐶.*Hallo, Max!/)).toBeInTheDocument();
+    });
+  });
+
+  it('shows greeting without avatar when only name is set', async () => {
+    await setSetting('userName', 'Luisa');
+    renderDashboard();
+    await waitFor(() => {
+      const greeting = screen.getByText(/Hallo, Luisa!/);
+      expect(greeting).toBeInTheDocument();
+      expect(greeting.textContent).not.toMatch(/undefined/);
     });
   });
 });

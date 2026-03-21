@@ -87,3 +87,8 @@ export interface AppSetting {
   key: string;
   value: string;
 }
+
+export interface UserSettings {
+  id: string;    // key name: "theme", "userName", "userAvatar", "soundEnabled"
+  value: string; // JSON-encoded value
+}

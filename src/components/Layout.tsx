@@ -4,7 +4,7 @@ import { OfflineIndicator } from './OfflineIndicator';
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F6F1EB', color: '#2C2418' }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}>
       <InstallBanner />
       <OfflineIndicator />
       <main className="flex-1 pb-20">
@@ -13,8 +13,8 @@ export default function Layout() {
       <nav
         className="fixed bottom-0 left-0 right-0 border-t flex justify-around items-center z-10"
         style={{
-          backgroundColor: '#F6F1EB',
-          borderColor: '#D4C8B8',
+          backgroundColor: 'var(--color-bg)',
+          borderColor: 'var(--color-border)',
           height: 'calc(4rem + env(safe-area-inset-bottom))',
           paddingBottom: 'env(safe-area-inset-bottom)',
         }}

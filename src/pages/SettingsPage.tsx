@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db/db';
 import { deleteUnit } from '../db/import';
+import { getSetting, setSetting } from '../db/settings';
+import { THEMES, applyTheme } from '../logic/themes';
+import { setSoundEnabled } from '../logic/sounds';
 import {
   exportProgressData,
   importProgressData,
@@ -13,15 +16,89 @@ type ConfirmAction =
   | { type: 'reset' }
   | { type: 'deleteUnit'; unitId: number; unitName: string };
 
+const EMOJI_OPTIONS = [
+  // Animals
+  '🐱', '🐶', '🦊', '🐻', '🐼', '🦉', '🐸', '🦋',
+  // People
+  '🧑‍🎓', '🧑‍💻', '🧑‍🚀', '🦸', '🧙', '🥷',
+  // Objects
+  '⭐', '🔥', '🎯', '🎸', '🎨', '📚', '🏆', '⚡',
+  // Flags
+  '🇩🇪', '🇬🇧', '🇪🇺',
+];
+
+function isSingleEmoji(str: string): boolean {
+  const trimmed = str.trim();
+  if (!trimmed) return false;
+  if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const segments = [...new (Intl as any).Segmenter().segment(trimmed)] as unknown[];
+    return segments.length === 1;
+  }
+  // Fallback: emoji sequences are typically 1–8 code points
+  const points = [...trimmed];
+  return points.length >= 1 && points.length <= 8;
+}
+
 export default function SettingsPage() {
   const units = useLiveQuery(() => db.units.toArray(), []);
 
+  // Personalisation state
+  const savedTheme = useLiveQuery(() => getSetting('theme', 'terracotta'), []);
+  const savedName = useLiveQuery(() => getSetting('userName', ''), []);
+  const savedAvatar = useLiveQuery(() => getSetting('userAvatar', ''), []);
+  const savedSound = useLiveQuery(() => getSetting('soundEnabled', 'true'), []);
+
+  const [nameInput, setNameInput] = useState('');
+  const [customEmoji, setCustomEmoji] = useState('');
+  const [customEmojiError, setCustomEmojiError] = useState('');
+
+  // Keep nameInput in sync with saved value on first load
+  useEffect(() => {
+    if (savedName !== undefined) {
+      setNameInput(savedName ?? '');
+    }
+  }, [savedName]);
+
+  // Progress state
   const [exportJson, setExportJson] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [importError, setImportError] = useState<string | null>(null);
   const [importSuccess, setImportSuccess] = useState(false);
   const [confirmAction, setConfirmAction] = useState<ConfirmAction | null>(null);
   const [actionDone, setActionDone] = useState<string | null>(null);
+
+  async function handleThemeSelect(themeId: string) {
+    applyTheme(themeId);
+    await setSetting('theme', themeId);
+  }
+
+  async function handleNameSave() {
+    const trimmed = nameInput.trim().slice(0, 20);
+    await setSetting('userName', trimmed);
+  }
+
+  async function handleAvatarSelect(emoji: string) {
+    await setSetting('userAvatar', emoji);
+    setCustomEmoji('');
+    setCustomEmojiError('');
+  }
+
+  async function handleCustomEmojiSave() {
+    const trimmed = customEmoji.trim();
+    if (!isSingleEmoji(trimmed)) {
+      setCustomEmojiError('Please enter a single emoji character.');
+      return;
+    }
+    setCustomEmojiError('');
+    await setSetting('userAvatar', trimmed);
+    setCustomEmoji('');
+  }
+
+  async function handleSoundToggle(enabled: boolean) {
+    setSoundEnabled(enabled);
+    await setSetting('soundEnabled', enabled ? 'true' : 'false');
+  }
 
   async function handleExport() {
     const data = await exportProgressData();
@@ -85,6 +162,9 @@ export default function SettingsPage() {
     setConfirmAction(null);
   }
 
+  const activeThemeId = savedTheme ?? 'terracotta';
+  const isSoundOn = savedSound !== 'false';
+
   return (
     <div className="max-w-2xl mx-auto p-4 pb-8">
       <h1 className="text-2xl font-bold mb-6" style={{ color: '#2C2418' }}>
@@ -105,6 +185,208 @@ export default function SettingsPage() {
           </button>
         </div>
       )}
+
+      {/* Your Profile */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-4" style={{ color: '#2C2418' }}>
+          Your Profile
+        </h2>
+
+        {/* Name */}
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-1" style={{ color: '#2C2418' }}>
+            Name
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={nameInput}
+              onChange={(e) => setNameInput(e.target.value.slice(0, 20))}
+              onKeyDown={(e) => e.key === 'Enter' && void handleNameSave()}
+              maxLength={20}
+              placeholder="Your name"
+              className="flex-1 rounded-xl px-3 py-2 border text-sm"
+              style={{
+                backgroundColor: '#EDE8E0',
+                borderColor: '#D4C8B8',
+                color: '#2C2418',
+                minHeight: '44px',
+              }}
+              aria-label="Name input"
+            />
+            <button
+              onClick={() => void handleNameSave()}
+              className="rounded-xl px-4 py-2 text-sm font-medium text-white"
+              style={{ backgroundColor: '#C4713B', minHeight: '44px' }}
+            >
+              Save
+            </button>
+          </div>
+          {savedName && (
+            <p className="text-xs mt-1" style={{ color: '#7A6855' }}>
+              Saved: {savedName}
+            </p>
+          )}
+        </div>
+
+        {/* Avatar */}
+        <div>
+          <label className="block text-sm font-medium mb-2" style={{ color: '#2C2418' }}>
+            Avatar
+          </label>
+          <div className="flex flex-wrap gap-2 mb-3" role="group" aria-label="Emoji avatar picker">
+            {EMOJI_OPTIONS.map((emoji) => (
+              <button
+                key={emoji}
+                onClick={() => void handleAvatarSelect(emoji)}
+                className="text-2xl rounded-xl p-2 transition-transform active:scale-90"
+                style={{
+                  minWidth: '44px',
+                  minHeight: '44px',
+                  backgroundColor: savedAvatar === emoji ? '#C4713B' : '#EDE8E0',
+                  outline: savedAvatar === emoji ? '2px solid #C4713B' : 'none',
+                  outlineOffset: '2px',
+                }}
+                aria-label={`Select ${emoji} avatar`}
+                aria-pressed={savedAvatar === emoji}
+              >
+                {emoji}
+              </button>
+            ))}
+          </div>
+
+          <div>
+            <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+              Or choose your own:
+            </label>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={customEmoji}
+                onChange={(e) => {
+                  setCustomEmoji(e.target.value);
+                  setCustomEmojiError('');
+                }}
+                placeholder="Paste emoji here"
+                className="w-24 rounded-xl px-3 py-2 border text-center text-xl"
+                style={{
+                  backgroundColor: '#EDE8E0',
+                  borderColor: customEmojiError ? '#C0392B' : '#D4C8B8',
+                  color: '#2C2418',
+                  minHeight: '44px',
+                }}
+                aria-label="Custom emoji input"
+              />
+              <button
+                onClick={() => void handleCustomEmojiSave()}
+                className="rounded-xl px-4 py-2 text-sm font-medium"
+                style={{
+                  backgroundColor: '#EDE8E0',
+                  color: '#2C2418',
+                  minHeight: '44px',
+                }}
+              >
+                Use
+              </button>
+            </div>
+            {customEmojiError && (
+              <p className="text-xs mt-1" style={{ color: '#C0392B' }}>
+                {customEmojiError}
+              </p>
+            )}
+          </div>
+
+          {savedAvatar && (
+            <p className="text-sm mt-2" style={{ color: '#7A6855' }}>
+              Current avatar: <span className="text-xl">{savedAvatar}</span>
+            </p>
+          )}
+        </div>
+      </section>
+
+      {/* Colour Themes */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-4" style={{ color: '#2C2418' }}>
+          Colour Theme
+        </h2>
+        <div className="grid grid-cols-3 gap-3" role="group" aria-label="Colour theme selector">
+          {THEMES.map((theme) => {
+            const isActive = activeThemeId === theme.id;
+            return (
+              <button
+                key={theme.id}
+                onClick={() => void handleThemeSelect(theme.id)}
+                className="rounded-xl p-3 flex flex-col items-center gap-2 border-2 transition-all"
+                style={{
+                  backgroundColor: theme.colors.bg,
+                  borderColor: isActive ? theme.colors.accent : theme.colors.border,
+                  minHeight: '44px',
+                }}
+                aria-label={`${theme.name} theme`}
+                aria-pressed={isActive}
+                data-testid={`theme-${theme.id}`}
+              >
+                <div
+                  className="w-8 h-8 rounded-full"
+                  style={{ backgroundColor: theme.colors.accent }}
+                />
+                <span
+                  className="text-xs font-medium"
+                  style={{ color: theme.colors.text }}
+                >
+                  {theme.name}
+                </span>
+                {isActive && (
+                  <svg
+                    className="w-4 h-4"
+                    style={{ color: theme.colors.accent }}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Sound Effects */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+          Sound Effects
+        </h2>
+        <p className="text-sm mb-3" style={{ color: '#7A6855' }}>
+          Audio feedback for correct and incorrect answers during learning sessions.
+        </p>
+        <label className="flex items-center gap-3 cursor-pointer" style={{ minHeight: '44px' }}>
+          <div className="relative">
+            <input
+              type="checkbox"
+              checked={isSoundOn}
+              onChange={(e) => void handleSoundToggle(e.target.checked)}
+              className="sr-only"
+              aria-label="Sound effects toggle"
+              role="switch"
+              aria-checked={isSoundOn}
+            />
+            <div
+              className="w-12 h-6 rounded-full transition-colors"
+              style={{ backgroundColor: isSoundOn ? '#C4713B' : '#D4C8B8' }}
+            />
+            <div
+              className="absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform"
+              style={{ transform: isSoundOn ? 'translateX(1.625rem)' : 'translateX(0.125rem)' }}
+            />
+          </div>
+          <span className="text-sm font-medium" style={{ color: '#2C2418' }}>
+            {isSoundOn ? 'On' : 'Off'}
+          </span>
+        </label>
+      </section>
 
       {/* Export Progress */}
       <section className="mb-8">

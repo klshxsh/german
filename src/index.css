@@ -2,8 +2,15 @@
 
 :root {
   font-family: 'DM Sans', system-ui, sans-serif;
-  background-color: #F6F1EB;
-  color: #2C2418;
+  --color-bg: #F6F1EB;
+  --color-surface: #FFFFFF;
+  --color-border: #D4C8B8;
+  --color-text: #2C2418;
+  --color-text-muted: #7A6855;
+  --color-accent: #C4713B;
+  --color-accent-light: #EDE8E0;
+  --color-success: #5B8C5A;
+  --color-danger: #C0392B;
 }
 
 * {
@@ -13,5 +20,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #F6F1EB;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
 }

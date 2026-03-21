@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db/db';
+import { getSetting } from '../db/settings';
 import { groupUnits } from '../logic/grouping';
 import type { Unit } from '../types';
 
@@ -97,6 +98,9 @@ export default function Dashboard() {
 
   const units = useLiveQuery(() => db.units.toArray(), []);
 
+  const userName = useLiveQuery(() => getSetting('userName'), []);
+  const userAvatar = useLiveQuery(() => getSetting('userAvatar'), []);
+
   const unitEntryCounts = useLiveQuery(async () => {
     if (!units) return {};
     const counts: Record<number, number> = {};
@@ -127,9 +131,22 @@ export default function Dashboard() {
     <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
       <header className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
-            Deutsch Learner
-          </h1>
+          {userName ? (
+            <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+              {userAvatar ? `${userAvatar} ` : ''}Hallo, {userName}!
+            </h1>
+          ) : (
+            <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+              Willkommen!{' '}
+              <button
+                onClick={() => navigate('/settings')}
+                className="text-base font-normal underline"
+                style={{ color: '#C4713B' }}
+              >
+                Set your name
+              </button>
+            </h1>
+          )}
           <p className="text-sm mt-1" style={{ color: '#7A6855' }}>
             Your German learning journey
           </p>
