@@ -28,8 +28,8 @@ interface Unit {
   name: string;
   description: string;
   year: number;          // school year, e.g. 9
-  term: string;          // e.g. "Spring", "Autumn", "Summer"
-  unitNumber: number;    // unit within the term, e.g. 3
+  chapter: number;       // chapter number, e.g. 3
+  unitNumber: number;    // unit within the chapter, e.g. 1
   importedAt: string;    // ISO timestamp
   version: string;       // from JSON export
 }
@@ -128,7 +128,7 @@ class DeutschDB extends Dexie {
   constructor() {
     super('DeutschLearner');
     this.version(1).stores({
-      units: '++id, name, [year+term+unitNumber]',
+      units: '++id, name, [year+chapter+unitNumber]',
       categories: '++id, unitId, sourceId',
       entries: '++id, unitId, categoryId, sourceId, partOfSpeech, german, english',
       verbForms: '++id, unitId, entryId',
@@ -148,8 +148,8 @@ The app imports JSON files exported from the Content Studio artifact. The import
 1. User selects a `.json` file via file picker (or pastes JSON, or provides a URL — see Phase 6)
 2. App validates the structure (must have `unit`, `categories`, `entries` at minimum)
 3. Check for duplicate units (by name) — offer to replace or skip
-4. Prompt the user for unit grouping metadata if not present in the JSON: **year** (number), **term** (Autumn/Spring/Summer), and **unit number** (number). Show these as editable fields pre-populated from the JSON if available, or blank if not. The user must fill these in before import proceeds.
-5. Insert `Unit` record (including year, term, unitNumber), get auto-increment ID
+4. Prompt the user for unit grouping metadata if not present in the JSON: **year** (number), **chapter** (number), and **unit number** (number). Show these as editable fields pre-populated from the JSON if available, or blank if not. The user must fill these in before import proceeds.
+5. Insert `Unit` record (including year, chapter, unitNumber), get auto-increment ID
 6. Insert `Category` records, building a `sourceId -> dexieId` mapping
 7. Insert `Entry` records, remapping `categoryId` from source IDs to Dexie IDs
 8. Insert `VerbForm` records, remapping `entryId`
@@ -162,7 +162,7 @@ All inserts should be wrapped in a Dexie transaction for atomicity.
 
 ```json
 {
-  "unit": { "name": "...", "description": "...", "year": 9, "term": "Spring", "unitNumber": 3 },
+  "unit": { "name": "...", "description": "...", "year": 9, "chapter": 3, "unitNumber": 1 },
   "categories": [{ "id": "cat_1", "name": "...", ... }],
   "entries": [{ "id": "ent_1", "categoryId": "cat_1", "german": "...", "english": "...", ... }],
   "verbForms": [{ "id": "vf_1", "entryId": "ent_1", ... }],
@@ -173,12 +173,12 @@ All inserts should be wrapped in a Dexie transaction for atomicity.
 }
 ```
 
-Note: `year`, `term`, and `unitNumber` are optional in the JSON. If missing, the import page prompts the user to provide them. The Content Studio could be updated later to include these fields in the export.
+Note: `year`, `chapter`, and `unitNumber` are optional in the JSON. If missing, the import page prompts the user to provide them. The Content Studio could be updated later to include these fields in the export.
 
 ## App Structure & Routing
 
 ```
-/                    → Dashboard (unit list grouped by year/term, quick stats)
+/                    → Dashboard (unit list grouped by year/chapter, quick stats)
 /import              → JSON import page
 /search              → Cross-unit vocabulary search
 /unit/:id            → Unit overview (category breakdown, progress summary)
@@ -193,16 +193,16 @@ Note: `year`, `term`, and `unitNumber` are optional in the JSON. If missing, the
 
 ### Dashboard (`/`)
 
-- Units displayed in a collapsible hierarchy: **Year → Term → Units**
+- Units displayed in a collapsible hierarchy: **Year → Chapter → Units**
   - Top level: Year groups (e.g. "Year 9", "Year 10"), sorted descending (most recent first)
-  - Second level: Terms within each year (Autumn, Spring, Summer), sorted in chronological order
-  - Third level: Unit cards within each term, sorted by unit number
+  - Second level: Chapters within each year (e.g. "Chapter 1", "Chapter 2"), sorted numerically
+  - Third level: Unit cards within each chapter, sorted by unit number
 - Each year group is collapsible (click to expand/collapse), with state persisted in IndexedDB
 - Each unit card shows: name, entry count, last practiced, overall accuracy %
 - Quick-start buttons for each learning mode on each unit card
 - "Import Unit" button (navigates to `/import`)
 - If no units imported, show an onboarding message with import prompt
-- If a unit is missing year/term/unitNumber metadata, group it under an "Ungrouped" section at the bottom
+- If a unit is missing year/chapter/unitNumber metadata, group it under an "Ungrouped" section at the bottom
 
 ### Search Page (`/search`)
 
@@ -216,12 +216,12 @@ A cross-unit vocabulary lookup tool. This is for when the user thinks "how do I 
 - Results update live as the user types
 
 **Results display:**
-- Results grouped by unit (with year/term/unit label), then by category within each unit
+- Results grouped by unit (with year/chapter/unit label), then by category within each unit
 - Each result shows:
   - The German text (with the matched substring highlighted)
   - The English translation (with the matched substring highlighted)
   - The category name (as a badge)
-  - The unit name and year/term label
+  - The unit name and year/chapter label
   - Part of speech
 - If the match is in a verb form (infinitive or past participle), also show the verb conjugation row
 - If the match appears in a generated sentence, show the full sentence with the match highlighted
@@ -861,19 +861,19 @@ jobs:
 
 ### Phase 6: Unit Grouping
 
-- Add `year`, `term`, and `unitNumber` fields to the Unit table (Dexie schema version bump)
-- Migration: existing units get `year: 0, term: "Unknown", unitNumber: 0` as defaults, with a prompt to edit them on next visit to the dashboard
-- Import flow: add editable year/term/unitNumber fields to the import preview screen, pre-populated from JSON if present
-- Dashboard: replace flat unit list with collapsible Year → Term → Unit hierarchy
+- Add `year`, `chapter`, and `unitNumber` fields to the Unit table (Dexie schema version bump)
+- Migration: existing units get `year: 0, chapter: 0, unitNumber: 0` as defaults, with a prompt to edit them on next visit to the dashboard
+- Import flow: add editable year/chapter/unitNumber fields to the import preview screen, pre-populated from JSON if present
+- Dashboard: replace flat unit list with collapsible Year → Chapter → Unit hierarchy
   - Year groups sorted descending (newest first)
-  - Terms sorted chronologically: Autumn → Spring → Summer
-  - Units sorted by unitNumber within each term
+  - Chapters sorted numerically ascending (e.g. Chapter 1, Chapter 2, ...)
+  - Units sorted by unitNumber within each chapter
   - Collapse state persisted in IndexedDB (or a simple `localStorage`-style key)
   - "Ungrouped" section at the bottom for units with missing metadata
-- Unit overview page: show year/term/unit label in the header
-- Allow editing unit metadata (year, term, unitNumber) from the unit overview page
+- Unit overview page: show year/chapter/unit label in the header
+- Allow editing unit metadata (year, chapter, unitNumber) from the unit overview page
 - **Tests:**
-  - **Unit tests:** grouping sort logic (year descending, term chronological, unitNumber ascending), migration defaults
+  - **Unit tests:** grouping sort logic (year descending, chapter ascending, unitNumber ascending), migration defaults
   - **Integration tests:** Dashboard renders grouped hierarchy, collapse/expand works and persists, unit metadata editing saves correctly
   - **E2E tests:** Import unit with metadata → appears in correct group on dashboard, edit metadata → unit moves to correct group
 
@@ -883,7 +883,7 @@ jobs:
 - Search bar with debounced input (300ms), searches German and English fields simultaneously
 - Searches across: entries, verb forms (infinitive, present3rd, pastParticiple), and generated sentences
 - Case-insensitive substring matching using Dexie `.filter()`
-- Results grouped by unit (with year/term label), then by category
+- Results grouped by unit (with year/chapter label), then by category
 - Each result shows: German text, English translation, category badge, unit label, part of speech
 - Matched substrings highlighted in both German and English text
 - Tapping a result navigates to the unit overview page
