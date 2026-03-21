@@ -3,11 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db/db';
 
-const TERM_OPTIONS = ['Autumn', 'Spring', 'Summer'];
-
-function formatUnitLabel(year: number, term: string, unitNumber: number): string | null {
-  if (!year || term === 'Unknown' || !unitNumber) return null;
-  return `Year ${year} · ${term} · Unit ${unitNumber}`;
+function formatUnitLabel(year: number, chapter: number, unitNumber: number): string | null {
+  if (!year || !chapter || !unitNumber) return null;
+  return `Year ${year} · Chapter ${chapter} · Unit ${unitNumber}`;
 }
 
 export default function UnitOverview() {
@@ -17,7 +15,7 @@ export default function UnitOverview() {
 
   const [editing, setEditing] = useState(false);
   const [editYear, setEditYear] = useState('');
-  const [editTerm, setEditTerm] = useState('');
+  const [editChapter, setEditChapter] = useState('');
   const [editUnitNumber, setEditUnitNumber] = useState('');
   const [saving, setSaving] = useState(false);
 
@@ -72,11 +70,11 @@ export default function UnitOverview() {
     );
   }
 
-  const unitLabel = formatUnitLabel(unit.year, unit.term, unit.unitNumber);
+  const unitLabel = formatUnitLabel(unit.year, unit.chapter, unit.unitNumber);
 
   const startEditing = () => {
     setEditYear(unit.year ? String(unit.year) : '');
-    setEditTerm(unit.term === 'Unknown' ? '' : (unit.term ?? ''));
+    setEditChapter(unit.chapter ? String(unit.chapter) : '');
     setEditUnitNumber(unit.unitNumber ? String(unit.unitNumber) : '');
     setEditing(true);
   };
@@ -87,7 +85,7 @@ export default function UnitOverview() {
     try {
       await db.units.update(unitId, {
         year: Number(editYear) || 0,
-        term: editTerm || 'Unknown',
+        chapter: Number(editChapter) || 0,
         unitNumber: Number(editUnitNumber) || 0,
       });
       setEditing(false);
@@ -159,19 +157,17 @@ export default function UnitOverview() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Term</label>
-                <select
-                  value={editTerm}
-                  onChange={(e) => setEditTerm(e.target.value)}
+                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Chapter</label>
+                <input
+                  type="number"
+                  min="1"
+                  placeholder="e.g. 3"
+                  value={editChapter}
+                  onChange={(e) => setEditChapter(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border text-sm"
                   style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
-                  aria-label="Term"
-                >
-                  <option value="">Select...</option>
-                  {TERM_OPTIONS.map((t) => (
-                    <option key={t} value={t}>{t}</option>
-                  ))}
-                </select>
+                  aria-label="Chapter number"
+                />
               </div>
               <div>
                 <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Unit #</label>
@@ -207,7 +203,7 @@ export default function UnitOverview() {
           </div>
         ) : (
           <p className="text-sm" style={{ color: '#7A6855' }}>
-            {unitLabel ?? <span style={{ color: '#A89880' }}>No grouping set — tap Edit to add year, term, and unit number</span>}
+            {unitLabel ?? <span style={{ color: '#A89880' }}>No grouping set — tap Edit to add year, chapter, and unit number</span>}
           </p>
         )}
       </div>

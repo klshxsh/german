@@ -3,8 +3,8 @@ export interface Unit {
   name: string;
   description: string;
   year: number;       // school year, e.g. 9; 0 = ungrouped
-  term: string;       // e.g. "Autumn", "Spring", "Summer"; "Unknown" = ungrouped
-  unitNumber: number; // unit within the term; 0 = ungrouped
+  chapter: number;    // chapter number, e.g. 3; 0 = ungrouped
+  unitNumber: number; // unit within the chapter; 0 = ungrouped
   importedAt: string;
   version: string;
 }

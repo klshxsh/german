@@ -179,7 +179,7 @@ export default function Dashboard() {
         </div>
       ) : (
         <div className="space-y-6">
-          {/* Year → Term → Unit hierarchy */}
+          {/* Year → Chapter → Unit hierarchy */}
           {grouped && grouped.yearGroups.map((yearGroup) => {
             const isCollapsed = collapsed.has(yearGroup.year);
             return (
@@ -209,16 +209,16 @@ export default function Dashboard() {
 
                 {!isCollapsed && (
                   <div className="space-y-5 pl-1">
-                    {yearGroup.terms.map((termGroup) => (
-                      <div key={termGroup.term}>
+                    {yearGroup.chapters.map((chapterGroup) => (
+                      <div key={chapterGroup.chapter}>
                         <h3
                           className="text-sm font-semibold uppercase tracking-wide mb-3"
                           style={{ color: '#7A6855' }}
                         >
-                          {termGroup.term}
+                          Chapter {chapterGroup.chapter}
                         </h3>
                         <div className="space-y-3">
-                          {termGroup.units.map((unit) => (
+                          {chapterGroup.units.map((unit) => (
                             <UnitCard
                               key={unit.id}
                               unit={unit}

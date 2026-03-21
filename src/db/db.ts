@@ -66,6 +66,30 @@ export class DeutschDB extends Dexie {
       sessionLogs: '++id, unitId, mode, startedAt',
       appSettings: '++id, &key',
     });
+    this.version(4)
+      .stores({
+        units: '++id, name, [year+chapter+unitNumber]',
+        categories: '++id, unitId, sourceId',
+        entries: '++id, unitId, categoryId, sourceId, partOfSpeech',
+        verbForms: '++id, unitId, entryId',
+        sentenceTemplates: '++id, unitId, sourceId',
+        generatedSentences: '++id, unitId, templateId, complexity',
+        flashcardProgress: '++id, entryId, unitId, nextDue, bucket',
+        sessionLogs: '++id, unitId, mode, startedAt',
+        appSettings: '++id, &key',
+      })
+      .upgrade((tx) => {
+        return tx
+          .table('units')
+          .toCollection()
+          .modify((unit: Record<string, unknown>) => {
+            // Migrate term (string) → chapter (number)
+            if (unit.chapter === undefined) {
+              unit.chapter = 0;
+            }
+            delete unit.term;
+          });
+      });
   }
 }
 

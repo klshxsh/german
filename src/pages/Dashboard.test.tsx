@@ -48,12 +48,12 @@ describe('Dashboard', () => {
     });
   });
 
-  it('renders grouped units in Year → Term hierarchy', async () => {
+  it('renders grouped units in Year → Chapter hierarchy', async () => {
     await db.units.add({
       name: 'Schulalltag',
       description: '',
       year: 9,
-      term: 'Spring',
+      chapter: 1,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
       version: '1.0',
@@ -63,22 +63,22 @@ describe('Dashboard', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Year 9')).toBeDefined();
-      expect(screen.getByText('Spring')).toBeDefined();
+      expect(screen.getByText('Chapter 1')).toBeDefined();
       expect(screen.getByText('Schulalltag')).toBeDefined();
     });
   });
 
   it('sorts years descending', async () => {
     await db.units.add({
-      name: 'Year 8 Unit', description: '', year: 8, term: 'Autumn', unitNumber: 1,
+      name: 'Year 8 Unit', description: '', year: 8, chapter: 1, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
     await db.units.add({
-      name: 'Year 10 Unit', description: '', year: 10, term: 'Autumn', unitNumber: 1,
+      name: 'Year 10 Unit', description: '', year: 10, chapter: 1, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
     await db.units.add({
-      name: 'Year 9 Unit', description: '', year: 9, term: 'Autumn', unitNumber: 1,
+      name: 'Year 9 Unit', description: '', year: 9, chapter: 1, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
 
@@ -96,7 +96,7 @@ describe('Dashboard', () => {
 
   it('shows ungrouped section for units with missing metadata', async () => {
     await db.units.add({
-      name: 'Orphaned Unit', description: '', year: 0, term: 'Unknown', unitNumber: 0,
+      name: 'Orphaned Unit', description: '', year: 0, chapter: 0, unitNumber: 0,
       importedAt: new Date().toISOString(), version: '1.0',
     });
 
@@ -110,7 +110,7 @@ describe('Dashboard', () => {
 
   it('collapses and expands a year group', async () => {
     await db.units.add({
-      name: 'Freizeit', description: '', year: 9, term: 'Autumn', unitNumber: 1,
+      name: 'Freizeit', description: '', year: 9, chapter: 1, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
 
@@ -140,7 +140,7 @@ describe('Dashboard', () => {
 
   it('persists collapse state in localStorage', async () => {
     await db.units.add({
-      name: 'Hobby', description: '', year: 9, term: 'Spring', unitNumber: 2,
+      name: 'Hobby', description: '', year: 9, chapter: 1, unitNumber: 2,
       importedAt: new Date().toISOString(), version: '1.0',
     });
 
@@ -169,35 +169,35 @@ describe('Dashboard', () => {
     expect(screen.queryByText('Hobby')).toBeNull();
   });
 
-  it('shows multiple terms sorted chronologically', async () => {
+  it('shows multiple chapters sorted numerically', async () => {
     await db.units.add({
-      name: 'Summer Unit', description: '', year: 9, term: 'Summer', unitNumber: 1,
+      name: 'Chapter 3 Unit', description: '', year: 9, chapter: 3, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
     await db.units.add({
-      name: 'Autumn Unit', description: '', year: 9, term: 'Autumn', unitNumber: 1,
+      name: 'Chapter 1 Unit', description: '', year: 9, chapter: 1, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
 
     renderDashboard();
 
     await waitFor(() => {
-      expect(screen.getByText('Summer Unit')).toBeDefined();
-      expect(screen.getByText('Autumn Unit')).toBeDefined();
+      expect(screen.getByText('Chapter 3 Unit')).toBeDefined();
+      expect(screen.getByText('Chapter 1 Unit')).toBeDefined();
     });
 
-    const termLabels = screen.getAllByText(/^(Autumn|Spring|Summer)$/);
-    expect(termLabels[0].textContent).toBe('Autumn');
-    expect(termLabels[1].textContent).toBe('Summer');
+    const chapterLabels = screen.getAllByText(/^Chapter \d+$/);
+    expect(chapterLabels[0].textContent).toBe('Chapter 1');
+    expect(chapterLabels[1].textContent).toBe('Chapter 3');
   });
 
   it('shows both grouped and ungrouped units', async () => {
     await db.units.add({
-      name: 'Grouped', description: '', year: 9, term: 'Spring', unitNumber: 1,
+      name: 'Grouped', description: '', year: 9, chapter: 1, unitNumber: 1,
       importedAt: new Date().toISOString(), version: '1.0',
     });
     await db.units.add({
-      name: 'Not Grouped', description: '', year: 0, term: 'Unknown', unitNumber: 0,
+      name: 'Not Grouped', description: '', year: 0, chapter: 0, unitNumber: 0,
       importedAt: new Date().toISOString(), version: '1.0',
     });
 

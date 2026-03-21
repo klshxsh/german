@@ -43,11 +43,12 @@ function renderImportPage() {
 
 async function fillMetadata(user: ReturnType<typeof userEvent.setup>) {
   const yearInput = screen.getByRole('spinbutton', { name: /school year/i });
-  const termSelect = screen.getByRole('combobox', { name: /term/i });
+  const chapterInput = screen.getByRole('spinbutton', { name: /chapter number/i });
   const unitNumberInput = screen.getByRole('spinbutton', { name: /unit number/i });
   await user.clear(yearInput);
   await user.type(yearInput, '9');
-  await user.selectOptions(termSelect, 'Spring');
+  await user.clear(chapterInput);
+  await user.type(chapterInput, '1');
   await user.clear(unitNumberInput);
   await user.type(unitNumberInput, '1');
 }
@@ -262,7 +263,7 @@ describe('ImportPage — File tab', () => {
       name: 'Test Import Unit',
       description: '',
       year: 9,
-      term: 'Spring',
+      chapter: 1,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
       version: '1.0',
@@ -297,7 +298,7 @@ describe('ImportPage — File tab', () => {
       name: 'Test Import Unit',
       description: '',
       year: 9,
-      term: 'Spring',
+      chapter: 1,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
       version: '1.0',

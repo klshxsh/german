@@ -277,34 +277,34 @@ describe('importUnit', () => {
     expect(progress).toHaveLength(3); // only from second import
   });
 
-  it('uses year/term/unitNumber from import options', async () => {
-    const unitId = await importUnit(minimalJson, { year: 10, term: 'Autumn', unitNumber: 2 });
+  it('uses year/chapter/unitNumber from import options', async () => {
+    const unitId = await importUnit(minimalJson, { year: 10, chapter: 2, unitNumber: 2 });
 
     const unit = await db.units.get(unitId);
     expect(unit?.year).toBe(10);
-    expect(unit?.term).toBe('Autumn');
+    expect(unit?.chapter).toBe(2);
     expect(unit?.unitNumber).toBe(2);
   });
 
-  it('falls back to 0/Unknown/0 when no year/term/unitNumber provided', async () => {
+  it('falls back to 0/0/0 when no year/chapter/unitNumber provided', async () => {
     const unitId = await importUnit(minimalJson);
 
     const unit = await db.units.get(unitId);
     expect(unit?.year).toBe(0);
-    expect(unit?.term).toBe('Unknown');
+    expect(unit?.chapter).toBe(0);
     expect(unit?.unitNumber).toBe(0);
   });
 
-  it('uses year/term/unitNumber from JSON when not in options', async () => {
+  it('uses year/chapter/unitNumber from JSON when not in options', async () => {
     const jsonWithMeta: ImportJson = {
       ...minimalJson,
-      unit: { ...minimalJson.unit, year: 9, term: 'Spring', unitNumber: 3 },
+      unit: { ...minimalJson.unit, year: 9, chapter: 3, unitNumber: 3 },
     };
     const unitId = await importUnit(jsonWithMeta);
 
     const unit = await db.units.get(unitId);
     expect(unit?.year).toBe(9);
-    expect(unit?.term).toBe('Spring');
+    expect(unit?.chapter).toBe(3);
     expect(unit?.unitNumber).toBe(3);
   });
 

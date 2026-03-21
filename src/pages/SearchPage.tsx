@@ -6,8 +6,8 @@ import { search, type EntrySearchResult } from '../logic/search';
 import type { Unit } from '../types';
 
 function unitLabel(unit: Unit): string {
-  if (unit.year === 0 || unit.term === 'Unknown') return unit.name;
-  const parts = [`Year ${unit.year}`, unit.term];
+  if (unit.year === 0 || unit.chapter === 0) return unit.name;
+  const parts = [`Year ${unit.year}`, `Chapter ${unit.chapter}`];
   if (unit.unitNumber > 0) parts.push(`Unit ${unit.unitNumber}`);
   return parts.join(' · ');
 }

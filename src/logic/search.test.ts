@@ -3,7 +3,7 @@ import { search } from './search';
 import { makeEntry, makeCategory, makeUnit, makeVerbForm, makeGeneratedSentence } from '../test/factories';
 import type { Entry, Category, Unit, VerbForm, GeneratedSentence } from '../types';
 
-const unit1: Unit = makeUnit({ id: 1, name: 'Unit 1', year: 9, term: 'Spring', unitNumber: 1 });
+const unit1: Unit = makeUnit({ id: 1, name: 'Unit 1', year: 9, chapter: 1, unitNumber: 1 });
 const cat1: Category = makeCategory({ id: 1, unitId: 1, name: 'Verbs', sourceId: 'cat_1' });
 const entry1: Entry = makeEntry({ id: 1, unitId: 1, categoryId: 1, german: 'spielen', english: 'to play', sourceId: 'ent_1' });
 
@@ -107,7 +107,7 @@ describe('search', () => {
   });
 
   it('groups results by unit correctly', () => {
-    const unit2: Unit = makeUnit({ id: 2, name: 'Unit 2', year: 9, term: 'Autumn', unitNumber: 2 });
+    const unit2: Unit = makeUnit({ id: 2, name: 'Unit 2', year: 9, chapter: 2, unitNumber: 2 });
     const cat2: Category = makeCategory({ id: 2, unitId: 2, name: 'Nouns', sourceId: 'cat_2' });
     const entry2: Entry = makeEntry({ id: 2, unitId: 2, categoryId: 2, german: 'spielen', english: 'to play', sourceId: 'ent_2' });
 
@@ -135,7 +135,7 @@ describe('search', () => {
   });
 
   it('reports correct totalResults and unitCount across multiple units', () => {
-    const unit2: Unit = makeUnit({ id: 2, name: 'Unit 2', year: 10, term: 'Spring', unitNumber: 1 });
+    const unit2: Unit = makeUnit({ id: 2, name: 'Unit 2', year: 10, chapter: 1, unitNumber: 1 });
     const cat2: Category = makeCategory({ id: 2, unitId: 2, name: 'Cat 2', sourceId: 'cat_2' });
     const entries: Entry[] = [
       makeEntry({ id: 1, unitId: 1, categoryId: 1, german: 'laufen', english: 'to run', sourceId: 'e1' }),

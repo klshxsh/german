@@ -4,7 +4,6 @@ import { importUnit, validateImportJson, ImportError, DuplicateUnitError } from 
 import type { ImportJson } from '../db/import';
 import { fetchJson, FetchJsonError } from '../logic/fetchJson';
 
-const TERM_OPTIONS = ['Autumn', 'Spring', 'Summer'];
 const RECENT_URLS_KEY = 'deutsch-recent-urls';
 const MAX_RECENT_URLS = 5;
 
@@ -12,7 +11,7 @@ type ActiveTab = 'file' | 'paste' | 'url';
 
 interface UnitMetadata {
   year: string;
-  term: string;
+  chapter: string;
   unitNumber: string;
 }
 
@@ -35,7 +34,9 @@ function metadataIsValid(m: UnitMetadata): boolean {
     m.year.trim() !== '' &&
     !isNaN(Number(m.year)) &&
     Number(m.year) > 0 &&
-    m.term !== '' &&
+    m.chapter.trim() !== '' &&
+    !isNaN(Number(m.chapter)) &&
+    Number(m.chapter) > 0 &&
     m.unitNumber.trim() !== '' &&
     !isNaN(Number(m.unitNumber)) &&
     Number(m.unitNumber) > 0
@@ -72,7 +73,7 @@ export default function ImportPage() {
   const [dragging, setDragging] = useState(false);
 
   const [preview, setPreview] = useState<PreviewData | null>(null);
-  const [metadata, setMetadata] = useState<UnitMetadata>({ year: '', term: '', unitNumber: '' });
+  const [metadata, setMetadata] = useState<UnitMetadata>({ year: '', chapter: '', unitNumber: '' });
   const [error, setError] = useState<string | null>(null);
   const [importing, setImporting] = useState(false);
   const [duplicate, setDuplicate] = useState<DuplicateState | null>(null);
@@ -92,7 +93,7 @@ export default function ImportPage() {
     });
     setMetadata({
       year: json.unit.year ? String(json.unit.year) : '',
-      term: json.unit.term ?? '',
+      chapter: json.unit.chapter ? String(json.unit.chapter) : '',
       unitNumber: json.unit.unitNumber ? String(json.unit.unitNumber) : '',
     });
   };
@@ -224,7 +225,7 @@ export default function ImportPage() {
       const unitId = await importUnit(json, {
         mode,
         year: Number(meta.year),
-        term: meta.term,
+        chapter: Number(meta.chapter),
         unitNumber: Number(meta.unitNumber),
       });
       setSuccessUnitId(unitId);
@@ -245,7 +246,7 @@ export default function ImportPage() {
 
   const handleReset = () => {
     clearResults();
-    setMetadata({ year: '', term: '', unitNumber: '' });
+    setMetadata({ year: '', chapter: '', unitNumber: '' });
     setPasteText('');
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
@@ -610,20 +611,18 @@ export default function ImportPage() {
                   </div>
                   <div>
                     <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
-                      Term *
+                      Chapter *
                     </label>
-                    <select
-                      value={metadata.term}
-                      onChange={(e) => setMetadata((m) => ({ ...m, term: e.target.value }))}
+                    <input
+                      type="number"
+                      min="1"
+                      placeholder="e.g. 3"
+                      value={metadata.chapter}
+                      onChange={(e) => setMetadata((m) => ({ ...m, chapter: e.target.value }))}
                       className="w-full px-3 py-2 rounded-lg border text-sm"
                       style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
-                      aria-label="Term"
-                    >
-                      <option value="">Select...</option>
-                      {TERM_OPTIONS.map((t) => (
-                        <option key={t} value={t}>{t}</option>
-                      ))}
-                    </select>
+                      aria-label="Chapter number"
+                    />
                   </div>
                   <div>
                     <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>

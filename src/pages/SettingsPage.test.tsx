@@ -11,7 +11,7 @@ async function seedDatabase() {
     name: 'Test Unit',
     description: 'A test unit',
     year: 9,
-    term: 'Spring',
+    chapter: 1,
     unitNumber: 1,
     importedAt: new Date().toISOString(),
     version: '1.0',

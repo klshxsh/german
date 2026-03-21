@@ -126,9 +126,9 @@ export default function ProgressPage() {
                     <div className="font-medium" style={{ color: '#2C2418' }}>
                       {unit.name}
                     </div>
-                    {unit.year > 0 && unit.term !== 'Unknown' && unit.unitNumber > 0 && (
+                    {unit.year > 0 && unit.chapter > 0 && unit.unitNumber > 0 && (
                       <div className="text-xs mt-0.5" style={{ color: '#A89880' }}>
-                        Year {unit.year} · {unit.term} · Unit {unit.unitNumber}
+                        Year {unit.year} · Chapter {unit.chapter} · Unit {unit.unitNumber}
                       </div>
                     )}
                   </div>
@@ -207,9 +207,9 @@ export default function ProgressPage() {
                     </div>
                     <div className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
                       {unit?.name ?? 'Unknown unit'}
-                      {unit && unit.year > 0 && unit.term !== 'Unknown' && unit.unitNumber > 0 && (
+                      {unit && unit.year > 0 && unit.chapter > 0 && unit.unitNumber > 0 && (
                         <span style={{ color: '#A89880' }}>
-                          {' '}(Y{unit.year} · {unit.term} · U{unit.unitNumber})
+                          {' '}(Y{unit.year} · Ch{unit.chapter} · U{unit.unitNumber})
                         </span>
                       )}
                       {' '}· {formatDate(session.startedAt)} {formatTime(session.startedAt)}
