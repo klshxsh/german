@@ -1,0 +1,1310 @@
+{
+  "unit": {
+    "name": "Grundschule vs Sekundarschule",
+    "description": "Comparing primary school and secondary school experiences in German"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Grundschule (Primary School)",
+      "description": "Descriptions and characteristics of primary school using past tense",
+      "grammarNotes": "Uses imperfect tense (hatten, mussten, durften, gab, waren) to describe past experiences"
+    },
+    {
+      "id": "cat_2",
+      "name": "Sekundarschule (Secondary School)",
+      "description": "Descriptions and characteristics of secondary school using present tense",
+      "grammarNotes": "Uses present tense (haben, müssen, dürfen, gibt, sind) to describe current experiences"
+    },
+    {
+      "id": "cat_3",
+      "name": "Opinion phrases",
+      "description": "Phrases to express opinions about activities or experiences",
+      "grammarNotes": "Uses es ist/war constructions with adjectives"
+    },
+    {
+      "id": "cat_4",
+      "name": "Qualifiers/Intensifiers",
+      "description": "Adverbs to modify adjectives and add nuance",
+      "grammarNotes": "Used before adjectives to intensify or diminish meaning"
+    },
+    {
+      "id": "cat_5",
+      "name": "Superlatives",
+      "description": "Superlative adjectives to describe the most extreme characteristics",
+      "grammarNotes": "Used with der/die/das + adjective + -ste ending"
+    },
+    {
+      "id": "cat_6",
+      "name": "Comparatives",
+      "description": "Comparative adjectives to make comparisons",
+      "grammarNotes": "Used with als (than) to compare; adjective + -er ending"
+    },
+    {
+      "id": "cat_7",
+      "name": "Positive adjectives",
+      "description": "Positive descriptive adjectives for experiences",
+      "grammarNotes": "Adjectives expressing positive qualities or experiences"
+    },
+    {
+      "id": "cat_8",
+      "name": "Negative adjectives",
+      "description": "Negative descriptive adjectives for experiences",
+      "grammarNotes": "Adjectives expressing negative qualities or experiences"
+    },
+    {
+      "id": "cat_9",
+      "name": "Relative clauses with finden",
+      "description": "Relative clause constructions expressing personal opinions",
+      "grammarNotes": "Uses 'was ich... fand' (which I found...) to add subjective commentary"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Wir hatten keine Hausaufgaben",
+      "english": "we had no homework",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Imperfect tense of haben",
+      "tags": [
+        "homework",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "Wir mussten in einem Klassenzimmer bleiben",
+      "english": "we had to stay in one classroom",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb müssen in imperfect",
+      "tags": [
+        "classroom",
+        "rules"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "Es gab kein Schwimmbad/Sportzentrum",
+      "english": "there was no swimming pool/sports center",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Imperfect of geben (es gab)",
+      "tags": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "Die Grundschule hatte 200 Schüler",
+      "english": "the primary school had 200 pupils",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Imperfect tense",
+      "tags": [
+        "size",
+        "pupils"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_1",
+      "german": "Wir durften einen Klassen-Hamster/Klassentier haben",
+      "english": "we were allowed to have a class hamster/pet",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb dürfen in imperfect",
+      "tags": [
+        "pets",
+        "rules"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_1",
+      "german": "Die Lehrer und Lehrerinnen waren freundlicher",
+      "english": "the teachers were friendlier",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Comparative adjective with imperfect of sein",
+      "tags": [
+        "teachers",
+        "comparative"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_1",
+      "german": "Die Klassenzimmer waren bunter/kleiner",
+      "english": "the classrooms were more colourful/smaller",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Comparative adjectives with imperfect of sein",
+      "tags": [
+        "classroom",
+        "comparative"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_2",
+      "german": "Wir haben viele Hausaufgaben/Prüfungen",
+      "english": "we have lots of homework/tests",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Present tense of haben",
+      "tags": [
+        "homework",
+        "tests"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_2",
+      "german": "Wir müssen das Klassenzimmer wechseln",
+      "english": "we have to change classrooms",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb müssen in present",
+      "tags": [
+        "classroom",
+        "rules"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_2",
+      "german": "Es gibt ein Schwimmbad/Sportzentrum",
+      "english": "there is a swimming pool/sport center",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Present tense of geben (es gibt)",
+      "tags": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_2",
+      "german": "Die Sekundarschule hat 1000 Schüler",
+      "english": "the secondary school has 1000 pupils",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Present tense",
+      "tags": [
+        "size",
+        "pupils"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_2",
+      "german": "Wir dürfen kein Klassentier haben",
+      "english": "we are not allowed to have a class pet",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb dürfen in present with negation",
+      "tags": [
+        "pets",
+        "rules"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_2",
+      "german": "Die Lehrer und Lehrerinnen sind streng",
+      "english": "the teachers are strict",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Present tense of sein",
+      "tags": [
+        "teachers"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_2",
+      "german": "Die Klassenzimmer sind größer",
+      "english": "the classrooms are bigger",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Comparative adjective with present of sein",
+      "tags": [
+        "classroom",
+        "comparative"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_3",
+      "german": "es ist/war sehr unterhaltsam",
+      "english": "it is/was very entertaining",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with qualifier",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_3",
+      "german": "das macht Spaß",
+      "english": "it is fun",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Present tense idiomatic expression",
+      "tags": [
+        "opinion",
+        "enjoyment"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "das hat Spaß gemacht",
+      "english": "it was fun",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Perfect tense idiomatic expression",
+      "tags": [
+        "opinion",
+        "enjoyment",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_3",
+      "german": "es ist/war äußerst lehrreich",
+      "english": "it is/was extremely educational",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with intensifier",
+      "tags": [
+        "opinion",
+        "educational"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_3",
+      "german": "es ist/war ziemlich informativ",
+      "english": "it is/was quite informative",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with qualifier",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_3",
+      "german": "es ist/war immer sehr unterhaltsam",
+      "english": "it is/was always very entertaining",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with frequency adverb",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_3",
+      "german": "es ist/war wirklich praktisch",
+      "english": "it is/was really practical",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with intensifier",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_3",
+      "german": "was … ist/war",
+      "english": "which is/was",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Relative pronoun for adding descriptive clauses",
+      "tags": [
+        "relative clause"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_4",
+      "german": "äußerst",
+      "english": "extremely",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "wirklich",
+      "english": "really",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_4",
+      "german": "sehr",
+      "english": "very",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Common intensifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_4",
+      "german": "total",
+      "english": "totally",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_4",
+      "german": "zu",
+      "english": "too",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Indicates excess",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_4",
+      "german": "ziemlich",
+      "english": "quite",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Moderate intensifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_4",
+      "german": "ein bisschen",
+      "english": "a little bit",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Mild qualifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_4",
+      "german": "nicht",
+      "english": "not",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Negation",
+      "tags": [
+        "qualifier",
+        "negation"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_5",
+      "german": "älteste",
+      "english": "oldest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of alt",
+      "tags": [
+        "superlative",
+        "age"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_5",
+      "german": "größte",
+      "english": "tallest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of groß",
+      "tags": [
+        "superlative",
+        "size"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_5",
+      "german": "er war der…",
+      "english": "he was the…",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Masculine superlative construction",
+      "tags": [
+        "superlative",
+        "masculine"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_5",
+      "german": "sie war die…",
+      "english": "she was the…",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Feminine superlative construction",
+      "tags": [
+        "superlative",
+        "feminine"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_5",
+      "german": "fleißigste",
+      "english": "most hard working",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of fleißig",
+      "tags": [
+        "superlative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_5",
+      "german": "kleinste",
+      "english": "smallest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of klein",
+      "tags": [
+        "superlative",
+        "size"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_5",
+      "german": "intelligenteste",
+      "english": "most intelligent",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of intelligent",
+      "tags": [
+        "superlative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_5",
+      "german": "sportlichste",
+      "english": "sportiest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of sportlich",
+      "tags": [
+        "superlative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_5",
+      "german": "lauteste",
+      "english": "loudest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of laut",
+      "tags": [
+        "superlative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_5",
+      "german": "musikalischste",
+      "english": "most musical",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of musikalisch",
+      "tags": [
+        "superlative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_5",
+      "german": "ungepflegteste",
+      "english": "scruffiest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of ungepflegt",
+      "tags": [
+        "superlative",
+        "appearance"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_5",
+      "german": "frechste",
+      "english": "cheekiest",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Superlative form of frech",
+      "tags": [
+        "superlative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_6",
+      "german": "älter",
+      "english": "older",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of alt",
+      "tags": [
+        "comparative",
+        "age"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_6",
+      "german": "größer",
+      "english": "taller",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of groß",
+      "tags": [
+        "comparative",
+        "size"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_6",
+      "german": "er war …(ADJECTIVE)... als...",
+      "english": "he was … than...",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Masculine comparative construction with als",
+      "tags": [
+        "comparative",
+        "masculine"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_6",
+      "german": "sie war …(ADJECTIVE)... als...",
+      "english": "she was … than...",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Feminine comparative construction with als",
+      "tags": [
+        "comparative",
+        "feminine"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_6",
+      "german": "fleißiger",
+      "english": "more hardworking",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of fleißig",
+      "tags": [
+        "comparative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_6",
+      "german": "kleiner",
+      "english": "smaller",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of klein",
+      "tags": [
+        "comparative",
+        "size"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_6",
+      "german": "intelligenter",
+      "english": "more intelligent",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of intelligent",
+      "tags": [
+        "comparative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_6",
+      "german": "sportlicher",
+      "english": "sportier",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of sportlich",
+      "tags": [
+        "comparative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_6",
+      "german": "lauter",
+      "english": "louder",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of laut",
+      "tags": [
+        "comparative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_6",
+      "german": "musikalischer",
+      "english": "more musical",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of musikalisch",
+      "tags": [
+        "comparative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_6",
+      "german": "ungepflegter",
+      "english": "scruffier",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of ungepflegt",
+      "tags": [
+        "comparative",
+        "appearance"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_6",
+      "german": "frecher",
+      "english": "cheekier",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Comparative form of frech",
+      "tags": [
+        "comparative",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_7",
+      "german": "gerecht",
+      "english": "fair",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_7",
+      "german": "fair",
+      "english": "fair",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor (borrowed from English)",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_7",
+      "german": "spannend",
+      "english": "exciting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_7",
+      "german": "faszinierend",
+      "english": "fascinating",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_7",
+      "german": "interessant",
+      "english": "interesting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_7",
+      "german": "lustig",
+      "english": "funny",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_7",
+      "german": "unterhaltsam",
+      "english": "entertaining",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_7",
+      "german": "unvergesslich",
+      "english": "unforgettable",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Positive descriptor",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_8",
+      "german": "blöd",
+      "english": "stupid",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_8",
+      "german": "nervig",
+      "english": "annoying",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_8",
+      "german": "langweilig",
+      "english": "boring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_8",
+      "german": "kindisch",
+      "english": "childish",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_8",
+      "german": "schrecklich",
+      "english": "terrible",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_8",
+      "german": "furchtbar",
+      "english": "awful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_8",
+      "german": "unhygienisch",
+      "english": "unhygienic",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_8",
+      "german": "deprimierend",
+      "english": "depressing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_8",
+      "german": "enttäuschend",
+      "english": "disappointing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Negative descriptor",
+      "tags": [
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_9",
+      "german": "was ich nervig fand",
+      "english": "which I found annoying",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_9",
+      "german": "was ich ungerecht fand",
+      "english": "which I found unfair",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_9",
+      "german": "was ich blöd fand",
+      "english": "which I found stupid",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_9",
+      "german": "was ich kindisch fand",
+      "english": "which I found childish",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_9",
+      "german": "was ich faszinierend fand",
+      "english": "which I found fascinating",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_9",
+      "german": "was ich unvergesslich fand",
+      "english": "which I found unforgettable",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_9",
+      "german": "was ich unterhaltsam fand",
+      "english": "which I found entertaining",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with finden in imperfect",
+      "tags": [
+        "opinion",
+        "positive"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_16",
+      "infinitive": "machen",
+      "present3rd": "macht",
+      "perfectAux": "haben",
+      "pastParticiple": "gemacht"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_17",
+      "infinitive": "machen",
+      "present3rd": "macht",
+      "perfectAux": "haben",
+      "pastParticiple": "gemacht"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[Grundschule_phrase], was [qualifier] [positive_adj] war",
+      "slots": [
+        "Grundschule_phrase",
+        "qualifier",
+        "positive_adj"
+      ],
+      "description": "Primary school statement with relative clause expressing positive opinion"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[Sekundarschule_phrase], aber [Grundschule_phrase]",
+      "slots": [
+        "Sekundarschule_phrase",
+        "Grundschule_phrase"
+      ],
+      "description": "Compound sentence contrasting secondary and primary school with 'aber'"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[superlative_construction] [superlative_adj] Schüler",
+      "slots": [
+        "superlative_construction",
+        "superlative_adj"
+      ],
+      "description": "Superlative statement about a student"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[comparative_construction] [comparative_adj] als [comparison_point]",
+      "slots": [
+        "comparative_construction",
+        "comparative_adj",
+        "comparison_point"
+      ],
+      "description": "Comparative statement using als"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[Sekundarschule_phrase], was [relative_clause_finden]",
+      "slots": [
+        "Sekundarschule_phrase",
+        "relative_clause_finden"
+      ],
+      "description": "Secondary school statement with relative clause expressing personal opinion"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[Grundschule_phrase], denn [opinion_phrase]",
+      "slots": [
+        "Grundschule_phrase",
+        "opinion_phrase"
+      ],
+      "description": "Primary school statement with reason using 'denn'"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "In der Grundschule [past_phrase], und [opinion_phrase]",
+      "slots": [
+        "past_phrase",
+        "opinion_phrase"
+      ],
+      "description": "Compound sentence about primary school with coordinating conjunction"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[Sekundarschule_phrase], [qualifier] [negative_adj]",
+      "slots": [
+        "Sekundarschule_phrase",
+        "qualifier",
+        "negative_adj"
+      ],
+      "description": "Secondary school statement with qualified negative adjective"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Wir hatten keine Hausaufgaben",
+      "english": "We had no homework",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Die Sekundarschule hat 1000 Schüler, aber die Grundschule hatte 200 Schüler",
+      "english": "The secondary school has 1000 pupils, but the primary school had 200 pupils",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_11",
+        "ent_4"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Sie war die fleißigste Schülerin",
+      "english": "She was the most hardworking student",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_34",
+        "ent_35"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Wir durften einen Klassen-Hamster haben, was sehr unterhaltsam war",
+      "english": "We were allowed to have a class hamster, which was very entertaining",
+      "complexity": "complex",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_5",
+        "ent_25",
+        "ent_61"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Die Klassenzimmer sind größer",
+      "english": "The classrooms are bigger",
+      "complexity": "simple",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_14"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Wir haben viele Hausaufgaben, was ich nervig fand",
+      "english": "We have lots of homework, which I found annoying",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_8",
+        "ent_72"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Die Lehrer und Lehrerinnen waren freundlicher, denn das macht Spaß",
+      "english": "The teachers were friendlier, because it is fun",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_6",
+        "ent_16"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Er war der sportlichste Schüler",
+      "english": "He was the sportiest student",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_33",
+        "ent_38"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Es gab kein Schwimmbad, was ich blöd fand",
+      "english": "There was no swimming pool, which I found stupid",
+      "complexity": "complex",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_74"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Wir müssen das Klassenzimmer wechseln, total nervig",
+      "english": "We have to change classrooms, totally annoying",
+      "complexity": "simple",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_26",
+        "ent_64"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Die Klassenzimmer waren bunter, und das hat Spaß gemacht",
+      "english": "The classrooms were more colourful, and it was fun",
+      "complexity": "compound",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_7",
+        "ent_17"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Sie war intelligenter als ihr Bruder",
+      "english": "She was more intelligent than her brother",
+      "complexity": "simple",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_46",
+        "ent_49"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Wir dürfen kein Klassentier haben, was ich ungerecht fand",
+      "english": "We are not allowed to have a class pet, which I found unfair",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_12",
+        "ent_73"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Die Lehrer und Lehrerinnen sind streng",
+      "english": "The teachers are strict",
+      "complexity": "simple",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_13"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "In der Grundschule mussten wir in einem Klassenzimmer bleiben, und es war äußerst lehrreich",
+      "english": "In primary school we had to stay in one classroom, and it was extremely educational",
+      "complexity": "compound",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_18"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Er war der lauteste Schüler",
+      "english": "He was the loudest student",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_33",
+        "ent_39"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Es gibt ein Schwimmbad, was wirklich praktisch ist",
+      "english": "There is a swimming pool, which is really practical",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_10",
+        "ent_21"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Die Grundschule hatte 200 Schüler, aber die Sekundarschule hat 1000 Schüler",
+      "english": "The primary school had 200 pupils, but the secondary school has 1000 pupils",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_11"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Sie war die musikalischste Schülerin",
+      "english": "She was the most musical student",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_34",
+        "ent_40"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Wir hatten keine Hausaufgaben, was ich faszinierend fand",
+      "english": "We had no homework, which I found fascinating",
+      "complexity": "complex",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_76"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Er war größer als seine Schwester",
+      "english": "He was taller than his sister",
+      "complexity": "simple",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_45",
+        "ent_44"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Wir haben viele Prüfungen, ziemlich langweilig",
+      "english": "We have lots of tests, quite boring",
+      "complexity": "simple",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_8",
+        "ent_28",
+        "ent_65"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-21T11:00:20.569Z",
+  "version": "1.0"
+}
