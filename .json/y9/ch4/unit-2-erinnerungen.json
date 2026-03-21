@@ -1,0 +1,1476 @@
+{
+  "unit": {
+    "name": "Erinnerungen",
+    "description": "Memories - Talking about childhood, past abilities, and reflections on growing up"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Time Phrases - Age and Life Stages",
+      "description": "Expressions for talking about different ages and times in the past and present",
+      "grammarNotes": "Uses 'mit' + dative for age expressions, 'als' clauses for past events"
+    },
+    {
+      "id": "cat_2",
+      "name": "Modal Verbs - können",
+      "description": "Past and present forms of können (can/could) - ability",
+      "grammarNotes": "Preterite: konnte/konnten; Present: kann/können"
+    },
+    {
+      "id": "cat_3",
+      "name": "Modal Verbs - dürfen",
+      "description": "Past and present forms of dürfen (to be allowed to)",
+      "grammarNotes": "Preterite: durfte/durften; Present: darf/dürfen"
+    },
+    {
+      "id": "cat_4",
+      "name": "Modal Verbs - müssen",
+      "description": "Past and present forms of müssen (to have to/must)",
+      "grammarNotes": "Preterite: musste/mussten; Present: muss/müssen"
+    },
+    {
+      "id": "cat_5",
+      "name": "Activities - Abilities",
+      "description": "Infinitive verbs describing childhood abilities and activities",
+      "grammarNotes": "Used with modal verbs (konnte, kann, etc.)"
+    },
+    {
+      "id": "cat_6",
+      "name": "Activities - Permissions and Obligations",
+      "description": "Infinitive phrases describing what one was/is allowed or required to do",
+      "grammarNotes": "Used with dürfen and müssen"
+    },
+    {
+      "id": "cat_7",
+      "name": "Opinion Phrases and Qualifiers",
+      "description": "Sentence starters and adverbs for expressing opinions and qualifying statements",
+      "grammarNotes": "Can be used as sentence introducers or adverbs"
+    },
+    {
+      "id": "cat_8",
+      "name": "Adjectives - Evaluations",
+      "description": "Adjectives for evaluating childhood and life experiences",
+      "grammarNotes": "Used predicatively after 'war' or attributively with noun endings"
+    },
+    {
+      "id": "cat_9",
+      "name": "Connectives - Reasons",
+      "description": "Conjunctions for giving reasons and explanations",
+      "grammarNotes": "denn = coordinating (verb second); weil/da/obwohl = subordinating (verb final)"
+    },
+    {
+      "id": "cat_10",
+      "name": "Reason Phrases",
+      "description": "Complete sentence phrases explaining why childhood was good or bad",
+      "grammarNotes": "Used after subordinating conjunctions or as independent statements"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "mit sechs Monaten",
+      "english": "at six months old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Prepositional phrase with dative",
+      "tags": [
+        "age",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "mit einem Jahr",
+      "english": "at one year old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Prepositional phrase with dative",
+      "tags": [
+        "age",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "mit sechs Jahren",
+      "english": "at six years old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Prepositional phrase with dative plural",
+      "tags": [
+        "age",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "mit zehn Jahren",
+      "english": "at ten years old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Prepositional phrase with dative plural",
+      "tags": [
+        "age",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_1",
+      "german": "als ich sechs Monate alt war",
+      "english": "when I was six months old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause with 'als' (verb final position)",
+      "tags": [
+        "age",
+        "time",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_1",
+      "german": "als ich sechs Jahre alt war",
+      "english": "when I was six years old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause with 'als' (verb final position)",
+      "tags": [
+        "age",
+        "time",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_1",
+      "german": "als ich zehn Jahre alt war",
+      "english": "when I was ten years old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause with 'als' (verb final position)",
+      "tags": [
+        "age",
+        "time",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_1",
+      "german": "Heute",
+      "english": "today",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Time adverb",
+      "tags": [
+        "time",
+        "present"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_1",
+      "german": "Heutzutage",
+      "english": "nowadays",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Time adverb",
+      "tags": [
+        "time",
+        "present"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_1",
+      "german": "Jetzt",
+      "english": "now",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Time adverb",
+      "tags": [
+        "time",
+        "present"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_2",
+      "german": "konnte ich",
+      "english": "I could",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Preterite 1st/3rd person singular of können",
+      "tags": [
+        "modal",
+        "past",
+        "ability"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_2",
+      "german": "konnte ich nicht",
+      "english": "I could not",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Negative preterite of können",
+      "tags": [
+        "modal",
+        "past",
+        "ability",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_2",
+      "german": "konnten wir",
+      "english": "we could",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Preterite plural of können",
+      "tags": [
+        "modal",
+        "past",
+        "ability"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_2",
+      "german": "kann ich",
+      "english": "I can",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present 1st person singular of können",
+      "tags": [
+        "modal",
+        "present",
+        "ability"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_2",
+      "german": "kann ich nicht",
+      "english": "I can't",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Negative present of können",
+      "tags": [
+        "modal",
+        "present",
+        "ability",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_2",
+      "german": "können wir",
+      "english": "we can",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present plural of können",
+      "tags": [
+        "modal",
+        "present",
+        "ability"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "durfte ich",
+      "english": "I was allowed to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Preterite 1st/3rd person singular of dürfen",
+      "tags": [
+        "modal",
+        "past",
+        "permission"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_3",
+      "german": "durfte ich nicht",
+      "english": "I was not allowed to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Negative preterite of dürfen",
+      "tags": [
+        "modal",
+        "past",
+        "permission",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_3",
+      "german": "durften wir",
+      "english": "we were allowed to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Preterite plural of dürfen",
+      "tags": [
+        "modal",
+        "past",
+        "permission"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_3",
+      "german": "darf ich",
+      "english": "I am allowed to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present 1st person singular of dürfen",
+      "tags": [
+        "modal",
+        "present",
+        "permission"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_3",
+      "german": "darf ich nicht",
+      "english": "I am not allowed to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Negative present of dürfen",
+      "tags": [
+        "modal",
+        "present",
+        "permission",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_3",
+      "german": "dürfen wir",
+      "english": "we are allowed to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present plural of dürfen",
+      "tags": [
+        "modal",
+        "present",
+        "permission"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_4",
+      "german": "musste ich",
+      "english": "I had to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Preterite 1st/3rd person singular of müssen",
+      "tags": [
+        "modal",
+        "past",
+        "obligation"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "musste ich nicht",
+      "english": "I didn't have to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Negative preterite of müssen",
+      "tags": [
+        "modal",
+        "past",
+        "obligation",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_4",
+      "german": "mussten wir",
+      "english": "we had to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Preterite plural of müssen",
+      "tags": [
+        "modal",
+        "past",
+        "obligation"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_4",
+      "german": "muss ich",
+      "english": "I have to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present 1st person singular of müssen",
+      "tags": [
+        "modal",
+        "present",
+        "obligation"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_4",
+      "german": "muss ich nicht",
+      "english": "I don't have to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Negative present of müssen",
+      "tags": [
+        "modal",
+        "present",
+        "obligation",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_4",
+      "german": "müssen wir",
+      "english": "we have to",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present plural of müssen",
+      "tags": [
+        "modal",
+        "present",
+        "obligation"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_5",
+      "german": "lächeln",
+      "english": "laugh",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive",
+      "tags": [
+        "activity",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_5",
+      "german": "laufen",
+      "english": "run",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive, strong verb",
+      "tags": [
+        "activity",
+        "childhood",
+        "movement"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_5",
+      "german": "sprechen",
+      "english": "talk",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive, strong verb",
+      "tags": [
+        "activity",
+        "childhood",
+        "communication"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_5",
+      "german": "bis 20 zählen",
+      "english": "count to 20",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "childhood",
+        "learning"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_5",
+      "german": "meinen Namen schreiben",
+      "english": "write my name",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "childhood",
+        "learning"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_5",
+      "german": "lesen",
+      "english": "read",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive, strong verb",
+      "tags": [
+        "activity",
+        "childhood",
+        "learning"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_5",
+      "german": "schwimmen",
+      "english": "swim",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive, strong verb",
+      "tags": [
+        "activity",
+        "childhood",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_5",
+      "german": "Rad fahren",
+      "english": "ride a bike",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase, separable",
+      "tags": [
+        "activity",
+        "childhood",
+        "movement"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_5",
+      "german": "die Uhr lesen",
+      "english": "tell the time",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "childhood",
+        "learning"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_5",
+      "german": "Fußball spielen",
+      "english": "play football",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "childhood",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_6",
+      "german": "alleine in die Schule gehen",
+      "english": "go to school alone",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with directional preposition",
+      "tags": [
+        "activity",
+        "independence",
+        "school"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_6",
+      "german": "alleine ins Kino gehen",
+      "english": "go to the cinema alone",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with directional preposition",
+      "tags": [
+        "activity",
+        "independence",
+        "leisure"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_6",
+      "german": "alleine in die Stadt gehen",
+      "english": "go to town alone",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with directional preposition",
+      "tags": [
+        "activity",
+        "independence"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_6",
+      "german": "draußen spielen",
+      "english": "play outside",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "childhood",
+        "outdoor"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_6",
+      "german": "mein eigenes Handy haben",
+      "english": "have my own mobile phone",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "possession",
+        "technology"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_6",
+      "german": "Schokolade/Süßigkeiten essen",
+      "english": "eat chocolate/sweets",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_6",
+      "german": "um 18 Uhr nach Hause zurückkommen",
+      "english": "come home at 6pm",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with separable verb",
+      "tags": [
+        "activity",
+        "time",
+        "routine"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_6",
+      "german": "um 19 Uhr ins Bett gehen",
+      "english": "go to bed at 7pm",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "time",
+        "routine"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_6",
+      "german": "Zeit mit meiner Familie verbringen",
+      "english": "spend time with my family",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase with inseparable verb",
+      "tags": [
+        "activity",
+        "family"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_6",
+      "german": "immer zu Hause helfen",
+      "english": "always help at home",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "chores",
+        "home"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_6",
+      "german": "meine Hausaufgaben machen",
+      "english": "do my homework",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "school",
+        "studying"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_6",
+      "german": "Sport machen",
+      "english": "do sport",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "sport",
+        "health"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_6",
+      "german": "gesund essen",
+      "english": "eat healthy food",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "health",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_6",
+      "german": "einen Job haben",
+      "english": "have a job",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "activity",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_7",
+      "german": "Meiner Ansicht nach",
+      "english": "in my opinion",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Fixed expression, dative case",
+      "tags": [
+        "opinion",
+        "sentence-starter"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_7",
+      "german": "Laut meinen Freunden",
+      "english": "according to my friends",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Prepositional phrase with dative",
+      "tags": [
+        "opinion",
+        "sentence-starter"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_7",
+      "german": "Insgesamt",
+      "english": "overall",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Sentence adverb",
+      "tags": [
+        "qualifier",
+        "summary"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_7",
+      "german": "Leider",
+      "english": "unfortunately",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Sentence adverb",
+      "tags": [
+        "qualifier",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_7",
+      "german": "Glücklicherweise",
+      "english": "luckily",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Sentence adverb",
+      "tags": [
+        "qualifier",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_8",
+      "german": "war meine Kindheit",
+      "english": "my childhood was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Preterite of sein with subject",
+      "tags": [
+        "evaluation",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_8",
+      "german": "war das Leben",
+      "english": "life was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Preterite of sein with subject",
+      "tags": [
+        "evaluation",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_8",
+      "german": "eine wunderbare Erfahrung",
+      "english": "a wonderful experience",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun with attributive adjective",
+      "tags": [
+        "evaluation",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_8",
+      "german": "eine furchtbare Erfahrung",
+      "english": "an awful experience",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun with attributive adjective",
+      "tags": [
+        "evaluation",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_8",
+      "german": "lohnenswert",
+      "english": "worthwhile",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "evaluation",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_8",
+      "german": "unvergesslich",
+      "english": "unforgettable",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "evaluation",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_8",
+      "german": "eine Katastrophe",
+      "english": "a disaster",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun",
+      "tags": [
+        "evaluation",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_8",
+      "german": "schrecklich",
+      "english": "terrible",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "evaluation",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_9",
+      "german": "denn",
+      "english": "because/for",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Coordinating conjunction - normal word order (verb second)",
+      "tags": [
+        "reason",
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_9",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb final position",
+      "tags": [
+        "reason",
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_9",
+      "german": "da",
+      "english": "since/as",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb final position",
+      "tags": [
+        "reason",
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_9",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb final position",
+      "tags": [
+        "contrast",
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_9",
+      "german": "obschon",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb final position, more formal",
+      "tags": [
+        "contrast",
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_9",
+      "german": "obgleich",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb final position, more formal",
+      "tags": [
+        "contrast",
+        "conjunction"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_10",
+      "german": "ich hatte viel Freiheit",
+      "english": "I had a lot of freedom",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Complete sentence with preterite of haben",
+      "tags": [
+        "reason",
+        "positive",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_10",
+      "german": "ich hatte viel Spaß",
+      "english": "I had lots of fun",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Complete sentence with preterite of haben",
+      "tags": [
+        "reason",
+        "positive",
+        "past"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_10",
+      "german": "ich konnte Zeit mit meinen Freunden verbringen",
+      "english": "I could spend time with my friends",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb construction with infinitive",
+      "tags": [
+        "reason",
+        "positive",
+        "past",
+        "social"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_10",
+      "german": "ich konnte mein Lieblingshobby machen",
+      "english": "I could do my favourite hobby",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb construction with infinitive",
+      "tags": [
+        "reason",
+        "positive",
+        "past",
+        "hobbies"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_10",
+      "german": "ich konnte über alles mit meiner Familie reden",
+      "english": "I could talk about everything with my family",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb construction with infinitive",
+      "tags": [
+        "reason",
+        "positive",
+        "past",
+        "family"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_10",
+      "german": "ich war glücklich",
+      "english": "I was happy",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Preterite of sein with predicative adjective",
+      "tags": [
+        "reason",
+        "positive",
+        "past",
+        "emotion"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_10",
+      "german": "ich war traurig",
+      "english": "I was sad",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Preterite of sein with predicative adjective",
+      "tags": [
+        "reason",
+        "negative",
+        "past",
+        "emotion"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_29",
+      "infinitive": "lächeln",
+      "present3rd": "lächelt",
+      "perfectAux": "haben",
+      "pastParticiple": "gelächelt"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_30",
+      "infinitive": "laufen",
+      "present3rd": "läuft",
+      "perfectAux": "sein",
+      "pastParticiple": "gelaufen"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_31",
+      "infinitive": "sprechen",
+      "present3rd": "spricht",
+      "perfectAux": "haben",
+      "pastParticiple": "gesprochen"
+    },
+    {
+      "id": "vf_4",
+      "entryId": "ent_34",
+      "infinitive": "lesen",
+      "present3rd": "liest",
+      "perfectAux": "haben",
+      "pastParticiple": "gelesen"
+    },
+    {
+      "id": "vf_5",
+      "entryId": "ent_35",
+      "infinitive": "schwimmen",
+      "present3rd": "schwimmt",
+      "perfectAux": "sein",
+      "pastParticiple": "geschwommen"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[timePhrase] [modalPast] [activity]",
+      "slots": [
+        "timePhrase",
+        "modalPast",
+        "activity"
+      ],
+      "description": "Simple past ability or permission statement with time phrase"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[timeAdverb] [modalPresent] [activity]",
+      "slots": [
+        "timeAdverb",
+        "modalPresent",
+        "activity"
+      ],
+      "description": "Simple present ability, permission, or obligation statement"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[evaluation], [connective] [reasonPhrase]",
+      "slots": [
+        "evaluation",
+        "connective",
+        "reasonPhrase"
+      ],
+      "description": "Compound sentence with evaluation and reason using coordinating conjunction"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[evaluation], [subordinatingConnective] [reasonPhrase]",
+      "slots": [
+        "evaluation",
+        "subordinatingConnective",
+        "reasonPhrase"
+      ],
+      "description": "Complex sentence with evaluation and subordinate reason clause"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[qualifier] [modalPast] [activity], [connective] [reasonPhrase]",
+      "slots": [
+        "qualifier",
+        "modalPast",
+        "activity",
+        "connective",
+        "reasonPhrase"
+      ],
+      "description": "Compound sentence with qualified modal statement and reason"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[timePhrase] [modalPast] [activity], [subordinatingConnective] [reasonPhrase]",
+      "slots": [
+        "timePhrase",
+        "modalPast",
+        "activity",
+        "subordinatingConnective",
+        "reasonPhrase"
+      ],
+      "description": "Complex sentence with past modal ability and subordinate reason clause"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[opinionPhrase] [evaluation]",
+      "slots": [
+        "opinionPhrase",
+        "evaluation"
+      ],
+      "description": "Simple evaluative statement with opinion phrase"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[alsClause], [modalPast] [activity]",
+      "slots": [
+        "alsClause",
+        "modalPast",
+        "activity"
+      ],
+      "description": "Complex sentence with 'als' subordinate clause followed by main clause"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Mit sechs Monaten konnte ich lächeln",
+      "english": "At six months old I could laugh",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_11",
+        "ent_29"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Mit einem Jahr konnte ich laufen",
+      "english": "At one year old I could run",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_11",
+        "ent_30"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Heute kann ich schwimmen",
+      "english": "Today I can swim",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_8",
+        "ent_14",
+        "ent_35"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Jetzt muss ich meine Hausaufgaben machen",
+      "english": "Now I have to do my homework",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_10",
+        "ent_26",
+        "ent_49"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Mit zehn Jahren durfte ich nicht alleine in die Stadt gehen",
+      "english": "At ten years old I was not allowed to go to town alone",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_18",
+        "ent_41"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Heutzutage darf ich mein eigenes Handy haben",
+      "english": "Nowadays I am allowed to have my own mobile phone",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_9",
+        "ent_20",
+        "ent_43"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Meine Kindheit war eine wunderbare Erfahrung, denn ich hatte viel Freiheit",
+      "english": "My childhood was a wonderful experience, because I had a lot of freedom",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_58",
+        "ent_60",
+        "ent_66",
+        "ent_72"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Das Leben war schrecklich, denn ich war traurig",
+      "english": "Life was terrible, because I was sad",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_59",
+        "ent_65",
+        "ent_66",
+        "ent_78"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Meine Kindheit war unvergesslich, weil ich viel Spaß hatte",
+      "english": "My childhood was unforgettable, because I had lots of fun",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_58",
+        "ent_63",
+        "ent_67",
+        "ent_73"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Das Leben war lohnenswert, da ich konnte Zeit mit meinen Freunden verbringen",
+      "english": "Life was worthwhile, since I could spend time with my friends",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_59",
+        "ent_62",
+        "ent_68",
+        "ent_74"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Glücklicherweise durfte ich draußen spielen, denn ich war glücklich",
+      "english": "Luckily I was allowed to play outside, because I was happy",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_57",
+        "ent_17",
+        "ent_42",
+        "ent_66",
+        "ent_77"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Leider musste ich immer zu Hause helfen, obwohl ich konnte mein Lieblingshobby machen",
+      "english": "Unfortunately I had to always help at home, although I could do my favourite hobby",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_56",
+        "ent_23",
+        "ent_48",
+        "ent_69",
+        "ent_75"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Mit sechs Jahren konnte ich lesen, weil ich konnte über alles mit meiner Familie reden",
+      "english": "At six years old I could read, because I could talk about everything with my family",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_11",
+        "ent_34",
+        "ent_67",
+        "ent_76"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Mit zehn Jahren durfte ich Fußball spielen, da ich hatte viel Freiheit",
+      "english": "At ten years old I was allowed to play football, since I had a lot of freedom",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_17",
+        "ent_38",
+        "ent_68",
+        "ent_72"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Meiner Ansicht nach war meine Kindheit eine Katastrophe",
+      "english": "In my opinion my childhood was a disaster",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_53",
+        "ent_58",
+        "ent_64"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Laut meinen Freunden war das Leben eine furchtbare Erfahrung",
+      "english": "According to my friends life was an awful experience",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_54",
+        "ent_59",
+        "ent_61"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Als ich sechs Jahre alt war, konnte ich sprechen",
+      "english": "When I was six years old, I could talk",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_6",
+        "ent_11",
+        "ent_31"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Als ich zehn Jahre alt war, konnte ich nicht die Uhr lesen",
+      "english": "When I was ten years old, I could not tell the time",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_7",
+        "ent_12",
+        "ent_37"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Mit sechs Jahren musste ich um 19 Uhr ins Bett gehen",
+      "english": "At six years old I had to go to bed at 7pm",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_23",
+        "ent_46"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Insgesamt war meine Kindheit unvergesslich, obgleich ich musste gesund essen",
+      "english": "Overall my childhood was unforgettable, although I had to eat healthy food",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_55",
+        "ent_58",
+        "ent_63",
+        "ent_71",
+        "ent_23",
+        "ent_51"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Mit zehn Jahren konnte ich bis 20 zählen, denn ich hatte viel Spaß",
+      "english": "At ten years old I could count to 20, because I had lots of fun",
+      "complexity": "compound",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_11",
+        "ent_32",
+        "ent_66",
+        "ent_73"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Als ich sechs Monate alt war, konnte ich nicht Rad fahren",
+      "english": "When I was six months old, I could not ride a bike",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_5",
+        "ent_12",
+        "ent_36"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-21T11:35:48.277Z",
+  "version": "1.0"
+}
