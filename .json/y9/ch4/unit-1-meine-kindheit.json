@@ -1,0 +1,1573 @@
+{
+  "unit": {
+    "name": "Meine Kindheit - Sonnet 4.6 - Reviewed",
+    "description": "My childhood - discussing past experiences, favorite things, and future aspirations"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Time phrases - childhood",
+      "description": "Temporal expressions for talking about childhood",
+      "grammarNotes": "Used with imperfect tense (war, hatte) to set the time context"
+    },
+    {
+      "id": "cat_2",
+      "name": "Possessions in childhood",
+      "description": "Things one had as a child",
+      "grammarNotes": "Used with 'hatte ich' (I had). Note accusative case markers: einen (masculine), eine (feminine), ein (neuter), viele (plural)"
+    },
+    {
+      "id": "cat_3",
+      "name": "Personal qualities in childhood",
+      "description": "Adjectives describing how one was as a child",
+      "grammarNotes": "Used with 'war ich' (I was)"
+    },
+    {
+      "id": "cat_4",
+      "name": "Connectives",
+      "description": "Connecting words and phrases for complex sentences",
+      "grammarNotes": "weil/da/obwohl/obschon/obgleich send the verb to the end of the clause"
+    },
+    {
+      "id": "cat_5",
+      "name": "Opinion phrases",
+      "description": "Expressions for giving opinions about the past",
+      "grammarNotes": "Used to introduce evaluative statements"
+    },
+    {
+      "id": "cat_6",
+      "name": "Positive qualifiers",
+      "description": "Positive adjectives for describing experiences",
+      "grammarNotes": "Adjectives used to evaluate past experiences positively"
+    },
+    {
+      "id": "cat_7",
+      "name": "Negative qualifiers",
+      "description": "Negative adjectives for describing experiences",
+      "grammarNotes": "Adjectives used to evaluate past experiences negatively"
+    },
+    {
+      "id": "cat_8",
+      "name": "Meine Lieblingssachen - time phrases",
+      "description": "Time phrases for discussing favorite things",
+      "grammarNotes": "Temporal expressions used when talking about favorite things in childhood"
+    },
+    {
+      "id": "cat_9",
+      "name": "Meine Lieblingssachen - sentence starters",
+      "description": "Sentence structures for stating favorite things",
+      "grammarNotes": "Used with 'war' (was) or 'waren' (were) depending on the subject"
+    },
+    {
+      "id": "cat_10",
+      "name": "Favorite foods",
+      "description": "Common favorite foods from childhood",
+      "grammarNotes": "Nouns used with 'mein Lieblingsessen'"
+    },
+    {
+      "id": "cat_11",
+      "name": "Favorite TV programs",
+      "description": "TV shows popular in childhood",
+      "grammarNotes": "Used with 'meine Lieblingssendung'"
+    },
+    {
+      "id": "cat_12",
+      "name": "Favorite hobbies",
+      "description": "Activities enjoyed in childhood",
+      "grammarNotes": "Nouns or infinitives used with 'mein Lieblingshobby'"
+    },
+    {
+      "id": "cat_13",
+      "name": "Favorite toys",
+      "description": "Toys from childhood",
+      "grammarNotes": "Used with 'mein Lieblingsspielzeug'"
+    },
+    {
+      "id": "cat_14",
+      "name": "Favorite clothing",
+      "description": "Favorite items of clothing",
+      "grammarNotes": "Used with 'mein Lieblingskleidungstück'. Note gender: mein (masculine/neuter), meine (feminine)"
+    },
+    {
+      "id": "cat_15",
+      "name": "Future - conditional phrases",
+      "description": "Conditional and temporal phrases for talking about the future",
+      "grammarNotes": "Wenn-clauses. 'Wenn ich ... hätte' uses subjunctive II (Konjunktiv II)"
+    },
+    {
+      "id": "cat_16",
+      "name": "Future - main clause starters",
+      "description": "Phrases to express future intentions",
+      "grammarNotes": "Used with würde + infinitive or möchte + infinitive"
+    },
+    {
+      "id": "cat_17",
+      "name": "Future - activities",
+      "description": "Things one would like to do in the future",
+      "grammarNotes": "Infinitive phrases used with würde/möchte"
+    },
+    {
+      "id": "cat_18",
+      "name": "Future - connectives",
+      "description": "Connectives for explaining future plans",
+      "grammarNotes": "weil/obwohl/obschon/obgleich send verb to end. 'was' is a relative pronoun"
+    },
+    {
+      "id": "cat_19",
+      "name": "Future - descriptive adjectives",
+      "description": "Adjectives describing future experiences",
+      "grammarNotes": "Used with 'sein wird' (will be)"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Als ich fünf/zehn Jahre alt war",
+      "english": "when I was 5/10 years old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "Als ich klein war",
+      "english": "when I was small",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "Als ich jünger war",
+      "english": "when I was younger",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "Als ich in der Grundschule war",
+      "english": "when I was in primary school",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood",
+        "school"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_2",
+      "german": "ein tolles Rad",
+      "english": "a great bike",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Accusative case (neuter): ein Rad",
+      "tags": [
+        "possession",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_2",
+      "german": "eine komische Mütze",
+      "english": "a crazy hat",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Accusative case (feminine): eine Mütze",
+      "tags": [
+        "possession",
+        "childhood",
+        "clothing"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_2",
+      "german": "einen kleinen VW",
+      "english": "a small VW",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Accusative case (masculine): einen VW",
+      "tags": [
+        "possession",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_2",
+      "german": "viele Kuscheltiere",
+      "english": "lots of soft toys",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural",
+      "tags": [
+        "possession",
+        "childhood",
+        "toys"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_2",
+      "german": "viele Puppen",
+      "english": "lots of dolls",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural",
+      "tags": [
+        "possession",
+        "childhood",
+        "toys"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_3",
+      "german": "modisch",
+      "english": "fashionable",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_3",
+      "german": "nicht modisch",
+      "english": "not fashionable",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_3",
+      "german": "begabt",
+      "english": "talented",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_3",
+      "german": "nicht begabt",
+      "english": "not talented",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_3",
+      "german": "abenteuerlustig",
+      "english": "adventurous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_3",
+      "german": "nicht abenteuerlustig",
+      "english": "not adventurous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_3",
+      "german": "glücklich",
+      "english": "happy",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "positive"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "nicht glücklich",
+      "english": "not happy",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicate adjective",
+      "tags": [
+        "personality",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_4",
+      "german": "denn",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Coordinating conjunction - normal word order",
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_4",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_4",
+      "german": "da",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_4",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "contrast"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_4",
+      "german": "obschon",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "contrast"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_4",
+      "german": "obgleich",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "contrast"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "was … war",
+      "english": "which was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with 'was'",
+      "tags": [
+        "relative"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_5",
+      "german": "Meiner Meinung nach war es",
+      "english": "in my opinion, it was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion expression",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_5",
+      "german": "Ich bin der Meinung, dass es … war",
+      "english": "I am of the opinion that it was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion expression with dass-clause (verb to end)",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_6",
+      "german": "toll",
+      "english": "great",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_6",
+      "german": "fantastisch",
+      "english": "fantastic",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_6",
+      "german": "super",
+      "english": "super",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_6",
+      "german": "wunderbar",
+      "english": "wonderful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_6",
+      "german": "praktisch",
+      "english": "practical",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_6",
+      "german": "beeindruckend",
+      "english": "impressive",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_6",
+      "german": "angenehm",
+      "english": "pleasant",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_6",
+      "german": "wichtig",
+      "english": "important",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_6",
+      "german": "faszinierend",
+      "english": "fascinating",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "positive",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_7",
+      "german": "schlecht",
+      "english": "bad",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_7",
+      "german": "furchtbar",
+      "english": "awful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_7",
+      "german": "schrecklich",
+      "english": "terrible",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_7",
+      "german": "langweilig",
+      "english": "boring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_7",
+      "german": "enttäuschend",
+      "english": "disappointing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_7",
+      "german": "unangenehm",
+      "english": "unpleasant",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_7",
+      "german": "deprimierend",
+      "english": "depressing",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "negative",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_8",
+      "german": "Als ich fünf/zehn Jahre alt war",
+      "english": "when I was 5/10 years old",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_8",
+      "german": "Als ich klein war",
+      "english": "when I was small",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_8",
+      "german": "Als ich jünger war",
+      "english": "when I was younger",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_8",
+      "german": "Als ich in der Grundschule war",
+      "english": "when I was in primary school",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal subordinate clause with 'als'",
+      "tags": [
+        "time",
+        "childhood",
+        "school"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_9",
+      "german": "war mein Lieblingsessen",
+      "english": "my favourite food was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Inverted word order, subject is neuter singular",
+      "tags": [
+        "favorites"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_9",
+      "german": "war meine Lieblingssendung",
+      "english": "my favourite program was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Inverted word order, subject is feminine singular",
+      "tags": [
+        "favorites"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_9",
+      "german": "war mein Lieblingshobby",
+      "english": "my favourite hobby was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Inverted word order, subject is neuter singular",
+      "tags": [
+        "favorites"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_9",
+      "german": "war mein Lieblingsspielzeug",
+      "english": "my favourite toy was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Inverted word order, subject is neuter singular",
+      "tags": [
+        "favorites"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_9",
+      "german": "war mein Lieblingskleidungsstück",
+      "english": "my favourite item of clothing was",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Inverted word order, subject is neuter singular",
+      "tags": [
+        "favorites"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_10",
+      "german": "Pizza",
+      "english": "pizza",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_10",
+      "german": "Pommes",
+      "english": "chips",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural noun",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_10",
+      "german": "Nudeln",
+      "english": "pasta",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural noun",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_10",
+      "german": "Kartoffeln",
+      "english": "potatoes",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural noun",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_10",
+      "german": "Schokolade",
+      "english": "chocolate",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_11",
+      "german": "The Simpsons",
+      "english": "The Simpsons",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Proper noun - TV show",
+      "tags": [
+        "TV"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_11",
+      "german": "Teletubbies",
+      "english": "Teletubbies",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Proper noun - TV show",
+      "tags": [
+        "TV"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_12",
+      "german": "Fußball",
+      "english": "football",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine noun",
+      "tags": [
+        "hobby",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_12",
+      "german": "Xbox",
+      "english": "xbox",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun (die Xbox)",
+      "tags": [
+        "hobby",
+        "gaming"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_12",
+      "german": "einkaufen",
+      "english": "shopping",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive used as noun",
+      "tags": [
+        "hobby",
+        "activity"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_12",
+      "german": "Fallschirmspringen",
+      "english": "skydiving",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Neuter noun (das Fallschirmspringen)",
+      "tags": [
+        "hobby",
+        "sport"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_12",
+      "german": "wandern",
+      "english": "hiking",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Infinitive used as noun",
+      "tags": [
+        "hobby",
+        "activity"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_13",
+      "german": "mein Teddybär",
+      "english": "my teddybear",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine noun",
+      "tags": [
+        "toy"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_13",
+      "german": "meine Kuscheltiere",
+      "english": "my soft toys",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural noun",
+      "tags": [
+        "toy"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_13",
+      "german": "meine Puppen",
+      "english": "my dolls",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Plural noun",
+      "tags": [
+        "toy"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_14",
+      "german": "mein T-shirt",
+      "english": "my t-shirt",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Neuter noun",
+      "tags": [
+        "clothing"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_14",
+      "german": "meine Mütze",
+      "english": "my hat",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun",
+      "tags": [
+        "clothing"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_14",
+      "german": "mein Mantel",
+      "english": "my coat",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine noun",
+      "tags": [
+        "clothing"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_15",
+      "german": "Wenn ich mehr Geld hätte",
+      "english": "If I had more money",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Conditional clause using Konjunktiv II (subjunctive)",
+      "tags": [
+        "future",
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_15",
+      "german": "Wenn ich älter bin",
+      "english": "When I am older",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Temporal clause using present tense for future",
+      "tags": [
+        "future",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_15",
+      "german": "Wenn ich mehr Zeit hätte",
+      "english": "if I had more time",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Conditional clause using Konjunktiv II (subjunctive)",
+      "tags": [
+        "future",
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_15",
+      "german": "Wenn ich die Gelegenheit hätte",
+      "english": "If I had the opportunity",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Conditional clause using Konjunktiv II (subjunctive)",
+      "tags": [
+        "future",
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_16",
+      "german": "würde ich gern",
+      "english": "I would like to",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Conditional main clause with würde + infinitive",
+      "tags": [
+        "future",
+        "intention"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_16",
+      "german": "möchte ich",
+      "english": "I would like to",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Modal verb möchte + infinitive",
+      "tags": [
+        "future",
+        "intention"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_17",
+      "german": "ein tolles Rad kaufen",
+      "english": "buy a great bike",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "future",
+        "purchase"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_17",
+      "german": "eine komische Mütze tragen",
+      "english": "wear a crazy hat",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "future",
+        "clothing"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_17",
+      "german": "einen kleinen VW kaufen",
+      "english": "buy a small VW",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "future",
+        "purchase"
+      ]
+    },
+    {
+      "id": "ent_79",
+      "categoryId": "cat_17",
+      "german": "viele Kuscheltiere haben",
+      "english": "have lots of soft toys",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "future",
+        "possession"
+      ]
+    },
+    {
+      "id": "ent_80",
+      "categoryId": "cat_17",
+      "german": "viele Puppen haben",
+      "english": "have lots of dolls",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "future",
+        "possession"
+      ]
+    },
+    {
+      "id": "ent_81",
+      "categoryId": "cat_17",
+      "german": "meine Lieblingsgerichte essen",
+      "english": "eat my fav. food",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Infinitive phrase",
+      "tags": [
+        "future",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_82",
+      "categoryId": "cat_18",
+      "german": "weil es … sein wird",
+      "english": "because it will be",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause with weil - verb (sein wird) at end",
+      "tags": [
+        "reason",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_83",
+      "categoryId": "cat_18",
+      "german": "was … sein wird",
+      "english": "which will be",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Relative clause with was",
+      "tags": [
+        "relative",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_84",
+      "categoryId": "cat_19",
+      "german": "inspirierend",
+      "english": "inspiring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "positive",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_85",
+      "categoryId": "cat_19",
+      "german": "toll",
+      "english": "great",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "positive",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_86",
+      "categoryId": "cat_19",
+      "german": "wichtig",
+      "english": "important",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "positive",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_87",
+      "categoryId": "cat_19",
+      "german": "schwierig",
+      "english": "difficult",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "neutral",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_88",
+      "categoryId": "cat_19",
+      "german": "spannend",
+      "english": "exciting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "positive",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_89",
+      "categoryId": "cat_19",
+      "german": "interessant",
+      "english": "interesting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "positive",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_90",
+      "categoryId": "cat_19",
+      "german": "erfüllend",
+      "english": "fulfilling",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Future description",
+      "tags": [
+        "positive",
+        "future"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_61",
+      "infinitive": "einkaufen",
+      "present3rd": "kauft ein",
+      "perfectAux": "haben",
+      "pastParticiple": "eingekauft"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_63",
+      "infinitive": "wandern",
+      "present3rd": "wandert",
+      "perfectAux": "sein",
+      "pastParticiple": "gewandert"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[timePhrase], hatte ich [possession]",
+      "slots": [
+        "timePhrase",
+        "possession"
+      ],
+      "description": "Simple past statement about childhood possessions with time phrase at the beginning"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[timePhrase], war ich [quality]",
+      "slots": [
+        "timePhrase",
+        "quality"
+      ],
+      "description": "Simple past statement about personal qualities in childhood"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[timePhrase], war [favorite] [item]",
+      "slots": [
+        "timePhrase",
+        "favorite",
+        "item"
+      ],
+      "description": "Simple past statement about favorite things"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[timePhrase], war ich [quality], [connective] ich [possession] hatte",
+      "slots": [
+        "timePhrase",
+        "quality",
+        "connective",
+        "possession"
+      ],
+      "description": "Compound sentence connecting quality and possession with coordinating conjunction"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[timePhrase], hatte ich [possession], [connective] es [evaluationAdj] war",
+      "slots": [
+        "timePhrase",
+        "possession",
+        "connective",
+        "evaluationAdj"
+      ],
+      "description": "Compound sentence with evaluation using coordinating conjunction"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[timePhrase], hatte ich [possession], [connective] ich [quality] war",
+      "slots": [
+        "timePhrase",
+        "possession",
+        "connective",
+        "quality"
+      ],
+      "description": "Complex sentence with subordinate clause explaining reason"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[conditionalPhrase], [futureStarter] [futureActivity], [futureConnective] [futureAdj] sein wird",
+      "slots": [
+        "conditionalPhrase",
+        "futureStarter",
+        "futureActivity",
+        "futureConnective",
+        "futureAdj"
+      ],
+      "description": "Complex conditional sentence about future plans with subordinate clause"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[opinionPhrase] [evaluationAdj], [connective] ich [possession] hatte",
+      "slots": [
+        "opinionPhrase",
+        "evaluationAdj",
+        "connective",
+        "possession"
+      ],
+      "description": "Complex sentence expressing opinion about past with subordinate clause"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Als ich klein war, hatte ich viele Kuscheltiere",
+      "english": "When I was small, I had lots of soft toys",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_8"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Als ich fünf Jahre alt war, war ich glücklich",
+      "english": "When I was five years old, I was happy",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_16"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Als ich jünger war, war Pizza mein Lieblingsessen",
+      "english": "When I was younger, my favourite food was pizza",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_47",
+        "ent_52"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Als ich in der Grundschule war, hatte ich ein tolles Rad",
+      "english": "When I was in primary school, I had a great bike",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_5"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Als ich klein war, war Teletubbies meine Lieblingssendung",
+      "english": "When I was small, my favourite program was Teletubbies",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_44",
+        "ent_48",
+        "ent_58"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Als ich zehn Jahre alt war, war ich abenteuerlustig",
+      "english": "When I was ten years old, I was adventurous",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_43",
+        "ent_14"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Als ich jünger war, war Fußball mein Lieblingshobby",
+      "english": "When I was younger, my favourite hobby was football",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_45",
+        "ent_49",
+        "ent_59"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Als ich klein war, war ich begabt, denn ich hatte eine komische Mütze",
+      "english": "When I was small, I was talented, because I had a crazy hat",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_12",
+        "ent_18",
+        "ent_6"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Als ich in der Grundschule war, hatte ich viele Puppen, denn ich war glücklich",
+      "english": "When I was in primary school, I had lots of dolls, because I was happy",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_9",
+        "ent_18",
+        "ent_16"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Als ich fünf Jahre alt war, hatte ich einen kleinen VW, denn es war toll",
+      "english": "When I was five years old, I had a small VW, because it was great",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_7",
+        "ent_18",
+        "ent_27"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Als ich jünger war, war ich modisch, denn ich hatte eine komische Mütze",
+      "english": "When I was younger, I was fashionable, because I had a crazy hat",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_10",
+        "ent_18",
+        "ent_6"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Als ich zehn Jahre alt war, war Schokolade mein Lieblingsessen, denn es war fantastisch",
+      "english": "When I was ten years old, my favourite food was chocolate, because it was fantastic",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_43",
+        "ent_47",
+        "ent_56",
+        "ent_18",
+        "ent_28"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Als ich klein war, war mein Teddybär mein Lieblingsspielzeug, denn ich war nicht abenteuerlustig",
+      "english": "When I was small, my favourite toy was my teddybear, because I was not adventurous",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_50",
+        "ent_64",
+        "ent_18",
+        "ent_15"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Als ich in der Grundschule war, hatte ich viele Kuscheltiere, obwohl ich nicht glücklich war",
+      "english": "When I was in primary school, I had lots of soft toys, although I was not happy",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_8",
+        "ent_21",
+        "ent_17"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Als ich jünger war, war meine Mütze mein Lieblingskleidungsstück, was wichtig war",
+      "english": "When I was younger, my favourite item of clothing was my hat, which was important",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_51",
+        "ent_68",
+        "ent_24",
+        "ent_34"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Als ich klein war, hatte ich ein tolles Rad, weil ich abenteuerlustig war",
+      "english": "When I was small, I had a great bike, because I was adventurous",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_5",
+        "ent_19",
+        "ent_14"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Meiner Meinung nach war es fantastisch, da ich viele Puppen hatte",
+      "english": "In my opinion, it was fantastic, because I had lots of dolls",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_25",
+        "ent_28",
+        "ent_20",
+        "ent_9"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Als ich fünf Jahre alt war, war Wandern mein Lieblingshobby, was faszinierend war",
+      "english": "When I was five years old, my favourite hobby was hiking, which was fascinating",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_1",
+        "ent_49",
+        "ent_63",
+        "ent_24",
+        "ent_35"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Wenn ich mehr Geld hätte, würde ich gern ein tolles Rad kaufen, weil es toll sein wird",
+      "english": "If I had more money, I would like to buy a great bike, because it will be great",
+      "complexity": "complex",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_70",
+        "ent_74",
+        "ent_76",
+        "ent_82",
+        "ent_85"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Wenn ich älter bin, möchte ich viele Kuscheltiere haben, was interessant sein wird",
+      "english": "When I am older, I would like to have lots of soft toys, which will be interesting",
+      "complexity": "complex",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_71",
+        "ent_75",
+        "ent_79",
+        "ent_83",
+        "ent_89"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Wenn ich mehr Zeit hätte, würde ich gern meine Lieblingsgerichte essen, weil es erfüllend sein wird",
+      "english": "If I had more time, I would like to eat my favourite food, because it will be fulfilling",
+      "complexity": "complex",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_72",
+        "ent_74",
+        "ent_81",
+        "ent_82",
+        "ent_90"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Wenn ich die Gelegenheit hätte, möchte ich einen kleinen VW kaufen, was spannend sein wird",
+      "english": "If I had the opportunity, I would like to buy a small VW, which will be exciting",
+      "complexity": "complex",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_73",
+        "ent_75",
+        "ent_78",
+        "ent_83",
+        "ent_88"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-21T23:04:19.231Z",
+  "version": "1.0"
+}
