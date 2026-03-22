@@ -220,6 +220,7 @@ export async function importUnit(
     chapter: options.chapter ?? data.unit.chapter ?? 0,
     unitNumber: options.unitNumber ?? data.unit.unitNumber ?? 0,
     importedAt: now,
+    exportedAt: data.exportedAt ?? '',
     version: data.version ?? '1.0',
   };
 

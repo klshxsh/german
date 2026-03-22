@@ -5,7 +5,8 @@ export interface Unit {
   year: number;       // school year, e.g. 9; 0 = ungrouped
   chapter: number;    // chapter number, e.g. 3; 0 = ungrouped
   unitNumber: number; // unit within the chapter; 0 = ungrouped
-  importedAt: string;
+  importedAt: string; // ISO timestamp — when the user imported it
+  exportedAt: string; // ISO timestamp — from the JSON file's exportedAt field
   version: string;
 }
 

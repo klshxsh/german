@@ -6,6 +6,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export async function importTestUnit(page: Page): Promise<void> {
   await page.goto('/#/import');
+
+  // Switch to File tab (Browse is the default)
+  await page.getByRole('tab', { name: /file/i }).click();
+
   const fileInput = page.locator('input[type="file"]');
   await fileInput.setInputFiles(path.join(__dirname, 'fixtures', 'test-unit.json'));
 

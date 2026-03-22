@@ -19,6 +19,7 @@ async function seedDatabase() {
     chapter: 1,
     unitNumber: 1,
     importedAt: new Date().toISOString(),
+    exportedAt: '',
     version: '1.0',
   });
 

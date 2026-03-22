@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { importUnit, validateImportJson, ImportError, DuplicateUnitError } from '../db/import';
 import type { ImportJson } from '../db/import';
 import { fetchJson, FetchJsonError } from '../logic/fetchJson';
+import { BrowseTab } from './BrowseTab';
 
 const RECENT_URLS_KEY = 'deutsch-recent-urls';
 const MAX_RECENT_URLS = 5;
 
-type ActiveTab = 'file' | 'paste' | 'url';
+type ActiveTab = 'browse' | 'file' | 'paste' | 'url';
 
 interface UnitMetadata {
   year: string;
@@ -65,7 +66,7 @@ export default function ImportPage() {
   const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [activeTab, setActiveTab] = useState<ActiveTab>('file');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('browse');
   const [pasteText, setPasteText] = useState('');
   const [urlInput, setUrlInput] = useState('');
   const [isFetching, setIsFetching] = useState(false);
@@ -323,7 +324,7 @@ export default function ImportPage() {
             role="tablist"
             aria-label="Import method"
           >
-            {(['file', 'paste', 'url'] as const).map((tab) => (
+            {(['browse', 'file', 'paste', 'url'] as const).map((tab) => (
               <button
                 key={tab}
                 role="tab"
@@ -335,10 +336,13 @@ export default function ImportPage() {
                   color: activeTab === tab ? 'var(--color-text)' : 'var(--color-text-muted)',
                 }}
               >
-                {tab === 'file' ? 'File' : tab === 'paste' ? 'Paste' : 'URL'}
+                {tab === 'browse' ? 'Browse' : tab === 'file' ? 'File' : tab === 'paste' ? 'Paste' : 'URL'}
               </button>
             ))}
           </div>
+
+          {/* Browse tab */}
+          {activeTab === 'browse' && <BrowseTab />}
 
           {/* File tab */}
           {activeTab === 'file' && (

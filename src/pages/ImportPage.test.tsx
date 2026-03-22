@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach, vi } from 'vitest';
+import { describe, it, expect, afterEach, beforeEach, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
@@ -53,6 +53,21 @@ async function fillMetadata(user: ReturnType<typeof userEvent.setup>) {
   await user.type(unitNumberInput, '1');
 }
 
+// Default fetch mock — returns empty content index so BrowseTab doesn't error out
+const emptyIndex = { generatedAt: '', units: [] };
+
+beforeEach(() => {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn().mockImplementation((url: string) => {
+      if (String(url).includes('index.json')) {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+      }
+      return Promise.reject(new TypeError('Unmocked fetch: ' + url));
+    })
+  );
+});
+
 afterEach(async () => {
   await db.units.clear();
   await db.categories.clear();
@@ -64,22 +79,24 @@ afterEach(async () => {
   await db.sessionLogs.clear();
   mockNavigate.mockClear();
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
   localStorage.clear();
 });
 
 // ── Tab switching ─────────────────────────────────────────────────────────────
 
 describe('ImportPage — tab switching', () => {
-  it('renders three tabs: File, Paste, URL', () => {
+  it('renders four tabs: Browse, File, Paste, URL', () => {
     renderImportPage();
+    expect(screen.getByRole('tab', { name: /browse/i })).toBeDefined();
     expect(screen.getByRole('tab', { name: /file/i })).toBeDefined();
     expect(screen.getByRole('tab', { name: /paste/i })).toBeDefined();
     expect(screen.getByRole('tab', { name: /url/i })).toBeDefined();
   });
 
-  it('File tab is selected by default', () => {
+  it('Browse tab is selected by default', () => {
     renderImportPage();
-    expect(screen.getByRole('tab', { name: /file/i }).getAttribute('aria-selected')).toBe('true');
+    expect(screen.getByRole('tab', { name: /browse/i }).getAttribute('aria-selected')).toBe('true');
   });
 
   it('clicking Paste tab shows textarea', async () => {
@@ -121,8 +138,11 @@ describe('ImportPage — tab switching', () => {
 // ── File tab ──────────────────────────────────────────────────────────────────
 
 describe('ImportPage — File tab', () => {
-  it('renders file picker and import button area', () => {
+  it('renders file picker after switching to File tab', async () => {
+    const user = userEvent.setup();
     renderImportPage();
+
+    await user.click(screen.getByRole('tab', { name: /file/i }));
 
     expect(screen.getByText('Import Unit')).toBeDefined();
     const fileInput = document.querySelector('input[type="file"]');
@@ -133,6 +153,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -147,6 +168,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -162,6 +184,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -180,6 +203,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -208,6 +232,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -231,6 +256,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File(['{ this is not valid json }'], 'bad.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -245,6 +271,7 @@ describe('ImportPage — File tab', () => {
     const user = userEvent.setup();
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const badJson = { unit: { name: 'Test' } };
     const file = new File([JSON.stringify(badJson)], 'bad.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
@@ -266,11 +293,13 @@ describe('ImportPage — File tab', () => {
       chapter: 1,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
+      exportedAt: '',
       version: '1.0',
     });
 
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -301,11 +330,13 @@ describe('ImportPage — File tab', () => {
       chapter: 1,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
+      exportedAt: '',
       version: '1.0',
     });
 
     renderImportPage();
 
+    await user.click(screen.getByRole('tab', { name: /file/i }));
     const file = new File([JSON.stringify(validTestJson)], 'test.json', { type: 'application/json' });
     const input = document.querySelector('input[type="file"]') as HTMLInputElement;
 
@@ -442,12 +473,18 @@ describe('ImportPage — URL tab', () => {
   it('shows preview after successful URL fetch', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      status: 200,
-      statusText: 'OK',
-      text: () => Promise.resolve(JSON.stringify(validTestJson)),
-    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.resolve({
+          ok: true, status: 200, statusText: 'OK',
+          text: () => Promise.resolve(JSON.stringify(validTestJson)),
+        });
+      })
+    );
 
     renderImportPage();
 
@@ -466,7 +503,15 @@ describe('ImportPage — URL tab', () => {
   it('shows error on network failure', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockRejectedValue(new TypeError('Failed to fetch'));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.reject(new TypeError('Failed to fetch'));
+      })
+    );
 
     renderImportPage();
 
@@ -488,12 +533,15 @@ describe('ImportPage — URL tab', () => {
   it('shows error on non-ok HTTP response (404)', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: false,
-      status: 404,
-      statusText: 'Not Found',
-      text: () => Promise.resolve(''),
-    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.resolve({ ok: false, status: 404, statusText: 'Not Found', text: () => Promise.resolve('') });
+      })
+    );
 
     renderImportPage();
 
@@ -512,12 +560,18 @@ describe('ImportPage — URL tab', () => {
   it('shows error when URL returns invalid JSON', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      status: 200,
-      statusText: 'OK',
-      text: () => Promise.resolve('<html>not json</html>'),
-    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.resolve({
+          ok: true, status: 200, statusText: 'OK',
+          text: () => Promise.resolve('<html>not json</html>'),
+        });
+      })
+    );
 
     renderImportPage();
 
@@ -539,12 +593,18 @@ describe('ImportPage — URL tab', () => {
   it('shows error when URL returns JSON missing required fields', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      status: 200,
-      statusText: 'OK',
-      text: () => Promise.resolve(JSON.stringify({ unit: { name: 'Test' } })),
-    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.resolve({
+          ok: true, status: 200, statusText: 'OK',
+          text: () => Promise.resolve(JSON.stringify({ unit: { name: 'Test' } })),
+        });
+      })
+    );
 
     renderImportPage();
 
@@ -563,12 +623,18 @@ describe('ImportPage — URL tab', () => {
   it('saves URL to recently used after successful fetch', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      status: 200,
-      statusText: 'OK',
-      text: () => Promise.resolve(JSON.stringify(validTestJson)),
-    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.resolve({
+          ok: true, status: 200, statusText: 'OK',
+          text: () => Promise.resolve(JSON.stringify(validTestJson)),
+        });
+      })
+    );
 
     renderImportPage();
 
@@ -593,12 +659,18 @@ describe('ImportPage — URL tab', () => {
   it('imports URL-fetched JSON into IndexedDB after completing the preview form', async () => {
     const user = userEvent.setup();
 
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      status: 200,
-      statusText: 'OK',
-      text: () => Promise.resolve(JSON.stringify(validTestJson)),
-    });
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(emptyIndex) });
+        }
+        return Promise.resolve({
+          ok: true, status: 200, statusText: 'OK',
+          text: () => Promise.resolve(JSON.stringify(validTestJson)),
+        });
+      })
+    );
 
     renderImportPage();
 
@@ -620,6 +692,187 @@ describe('ImportPage — URL tab', () => {
       const units = await db.units.toArray();
       expect(units).toHaveLength(1);
       expect(units[0].name).toBe('Test Import Unit');
+    });
+  });
+});
+
+// ── Browse tab ─────────────────────────────────────────────────────────────────
+
+const mockIndex = {
+  generatedAt: '2026-03-22T10:00:00.000Z',
+  units: [
+    {
+      year: 9,
+      chapter: 1,
+      unitNumber: 1,
+      name: 'Mein Vorbild',
+      description: 'Talking about role models',
+      entryCount: 24,
+      version: '1.0',
+      exportedAt: '2026-03-15T14:30:00.000Z',
+      path: 'y9/ch1/unit-1-mein-vorbild.json',
+    },
+    {
+      year: 9,
+      chapter: 4,
+      unitNumber: 1,
+      name: 'Meine Kindheit',
+      description: 'My childhood',
+      entryCount: 18,
+      version: '1.0',
+      exportedAt: '2026-03-10T10:00:00.000Z',
+      path: 'y9/ch4/unit-1-meine-kindheit.json',
+    },
+  ],
+};
+
+const browseUnitJson = {
+  unit: { name: 'Mein Vorbild', description: 'Talking about role models' },
+  categories: [{ id: 'cat_1', name: 'Adjectives', description: '', grammarNotes: '' }],
+  entries: [
+    { id: 'ent_1', categoryId: 'cat_1', german: 'toll', english: 'great', partOfSpeech: 'adjective', grammarNotes: '', tags: [] },
+  ],
+  version: '1.0',
+  exportedAt: '2026-03-15T14:30:00.000Z',
+};
+
+describe('ImportPage — Browse tab', () => {
+  it('shows Browse tab content by default', () => {
+    renderImportPage();
+    expect(screen.getByRole('tab', { name: /browse/i }).getAttribute('aria-selected')).toBe('true');
+  });
+
+  it('shows loading spinner while fetching index', () => {
+    vi.stubGlobal('fetch', vi.fn().mockReturnValue(new Promise(() => {})));
+    renderImportPage();
+    expect(screen.getByLabelText('Loading content')).toBeDefined();
+  });
+
+  it('renders grouped unit list after index loads', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(mockIndex) })
+    );
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByText('Year 9')).toBeDefined();
+      expect(screen.getByText('Chapter 1')).toBeDefined();
+      expect(screen.getByText('Mein Vorbild')).toBeDefined();
+      expect(screen.getByText('Meine Kindheit')).toBeDefined();
+    });
+  });
+
+  it('shows Import button for units not yet imported', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(mockIndex) })
+    );
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /import mein vorbild/i })).toBeDefined();
+    });
+  });
+
+  it('shows Imported badge for a locally imported unit with matching exportedAt', async () => {
+    await db.units.add({
+      name: 'Mein Vorbild',
+      description: '',
+      year: 9,
+      chapter: 1,
+      unitNumber: 1,
+      importedAt: new Date().toISOString(),
+      exportedAt: '2026-03-15T14:30:00.000Z',
+      version: '1.0',
+    });
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(mockIndex) })
+    );
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByLabelText('Mein Vorbild already imported')).toBeDefined();
+    });
+  });
+
+  it('shows Update button when remote exportedAt is newer than local', async () => {
+    await db.units.add({
+      name: 'Mein Vorbild',
+      description: '',
+      year: 9,
+      chapter: 1,
+      unitNumber: 1,
+      importedAt: new Date().toISOString(),
+      exportedAt: '2026-03-01T00:00:00.000Z', // older than remote 2026-03-15
+      version: '1.0',
+    });
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(mockIndex) })
+    );
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /update mein vorbild/i })).toBeDefined();
+    });
+  });
+
+  it('shows fetch error state when index.json fails to load', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Network error')));
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByText(/couldn't load available content/i)).toBeDefined();
+      expect(screen.getByRole('button', { name: /retry/i })).toBeDefined();
+    });
+  });
+
+  it('shows empty state when index has no units', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve({ generatedAt: '', units: [] }) })
+    );
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByText(/no content available yet/i)).toBeDefined();
+    });
+  });
+
+  it('imports a unit from the browse tab and stores it in IndexedDB', async () => {
+    const user = userEvent.setup();
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockImplementation((url: string) => {
+        if (String(url).includes('index.json')) {
+          return Promise.resolve({ ok: true, json: () => Promise.resolve(mockIndex) });
+        }
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(browseUnitJson) });
+      })
+    );
+
+    renderImportPage();
+
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /import mein vorbild/i })).toBeDefined();
+    });
+
+    await user.click(screen.getByRole('button', { name: /import mein vorbild/i }));
+
+    await waitFor(async () => {
+      const units = await db.units.toArray();
+      expect(units.some((u) => u.name === 'Mein Vorbild')).toBe(true);
     });
   });
 });

@@ -58,6 +58,7 @@ describe('Dashboard', () => {
       chapter: 1,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
+      exportedAt: '',
       version: '1.0',
     });
 
@@ -73,15 +74,15 @@ describe('Dashboard', () => {
   it('sorts years descending', async () => {
     await db.units.add({
       name: 'Year 8 Unit', description: '', year: 8, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
     await db.units.add({
       name: 'Year 10 Unit', description: '', year: 10, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
     await db.units.add({
       name: 'Year 9 Unit', description: '', year: 9, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
 
     renderDashboard();
@@ -99,7 +100,7 @@ describe('Dashboard', () => {
   it('shows ungrouped section for units with missing metadata', async () => {
     await db.units.add({
       name: 'Orphaned Unit', description: '', year: 0, chapter: 0, unitNumber: 0,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
 
     renderDashboard();
@@ -113,7 +114,7 @@ describe('Dashboard', () => {
   it('collapses and expands a year group', async () => {
     await db.units.add({
       name: 'Freizeit', description: '', year: 9, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
 
     const user = userEvent.setup();
@@ -143,7 +144,7 @@ describe('Dashboard', () => {
   it('persists collapse state in localStorage', async () => {
     await db.units.add({
       name: 'Hobby', description: '', year: 9, chapter: 1, unitNumber: 2,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
 
     const user = userEvent.setup();
@@ -174,11 +175,11 @@ describe('Dashboard', () => {
   it('shows multiple chapters sorted numerically', async () => {
     await db.units.add({
       name: 'Chapter 3 Unit', description: '', year: 9, chapter: 3, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
     await db.units.add({
       name: 'Chapter 1 Unit', description: '', year: 9, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
 
     renderDashboard();
@@ -196,11 +197,11 @@ describe('Dashboard', () => {
   it('shows both grouped and ungrouped units', async () => {
     await db.units.add({
       name: 'Grouped', description: '', year: 9, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
     await db.units.add({
       name: 'Not Grouped', description: '', year: 0, chapter: 0, unitNumber: 0,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
 
     renderDashboard();

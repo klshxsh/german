@@ -31,6 +31,7 @@ async function seedData() {
     chapter: 1,
     unitNumber: 1,
     importedAt: new Date().toISOString(),
+    exportedAt: '',
     version: '1.0',
   });
   const catId = await db.categories.add({
@@ -206,11 +207,11 @@ describe('SearchPage', () => {
   it('displays results from multiple units with unit names', async () => {
     const unitId1 = await db.units.add({
       name: 'Unit Alpha', description: '', year: 9, chapter: 1, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
     const unitId2 = await db.units.add({
       name: 'Unit Beta', description: '', year: 9, chapter: 2, unitNumber: 1,
-      importedAt: new Date().toISOString(), version: '1.0',
+      importedAt: new Date().toISOString(), exportedAt: '', version: '1.0',
     });
     const catId1 = await db.categories.add({ unitId: unitId1, sourceId: 'c1', name: 'Cat A', description: '', grammarNotes: '' });
     const catId2 = await db.categories.add({ unitId: unitId2, sourceId: 'c2', name: 'Cat B', description: '', grammarNotes: '' });

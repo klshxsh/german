@@ -12,6 +12,7 @@ async function seedDatabase() {
     chapter: 1,
     unitNumber: 1,
     importedAt: new Date().toISOString(),
+    exportedAt: '',
     version: '1.0',
   });
   const unit2Id = await db.units.add({
@@ -21,6 +22,7 @@ async function seedDatabase() {
     chapter: 1,
     unitNumber: 2,
     importedAt: new Date().toISOString(),
+    exportedAt: '',
     version: '1.0',
   });
 
@@ -194,6 +196,7 @@ describe('ProgressPage', () => {
       chapter: 2,
       unitNumber: 1,
       importedAt: new Date().toISOString(),
+      exportedAt: '',
       version: '1.0',
     });
     renderProgress();

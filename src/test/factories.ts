@@ -17,6 +17,7 @@ export function makeUnit(overrides?: Partial<Unit>): Unit {
     chapter: 1,
     unitNumber: 1,
     importedAt: new Date().toISOString(),
+    exportedAt: '',
     version: '1.0',
     ...overrides,
   };

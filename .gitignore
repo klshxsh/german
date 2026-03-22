@@ -47,3 +47,7 @@ Thumbs.db
 
 # Misc
 *.local
+
+# The generated index file and json
+public/content/
+

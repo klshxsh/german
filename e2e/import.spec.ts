@@ -10,12 +10,23 @@ const fixturePath = path.join(__dirname, 'fixtures', 'test-unit.json');
 test.beforeEach(async ({ page }) => {
   await page.goto('/#/');
   await clearAppData(page);
+  // Return an empty content index so the Browse tab doesn't show a fetch error
+  await page.route('**/content/index.json', (route) => {
+    route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ generatedAt: '', units: [] }),
+    });
+  });
 });
 
 // ── File import ───────────────────────────────────────────────────────────────
 
 test('full import workflow: select file → preview → import → unit appears on dashboard', async ({ page }) => {
   await page.goto('/#/import');
+
+  // Switch to File tab (Browse is now the default)
+  await page.getByRole('tab', { name: /file/i }).click();
 
   const fileInput = page.locator('input[type="file"]');
   await fileInput.setInputFiles(fixturePath);
@@ -35,6 +46,7 @@ test('full import workflow: select file → preview → import → unit appears 
 
 test('imported unit appears on dashboard', async ({ page }) => {
   await page.goto('/#/import');
+  await page.getByRole('tab', { name: /file/i }).click();
   const fileInput = page.locator('input[type="file"]');
   await fileInput.setInputFiles(fixturePath);
   await page.waitForSelector('button[aria-label="Import unit"]');
@@ -48,6 +60,7 @@ test('imported unit appears on dashboard', async ({ page }) => {
 
 test('importing same unit twice shows duplicate warning', async ({ page }) => {
   await page.goto('/#/import');
+  await page.getByRole('tab', { name: /file/i }).click();
   const fileInput = page.locator('input[type="file"]');
   await fileInput.setInputFiles(fixturePath);
   await page.waitForSelector('button[aria-label="Import unit"]');
@@ -57,6 +70,7 @@ test('importing same unit twice shows duplicate warning', async ({ page }) => {
   // Navigate away then back so the component remounts fresh
   await page.goto('/#/');
   await page.goto('/#/import');
+  await page.getByRole('tab', { name: /file/i }).click();
   const fileInput2 = page.locator('input[type="file"]');
   await fileInput2.setInputFiles(fixturePath);
   await page.waitForSelector('button[aria-label="Import unit"]');
@@ -70,6 +84,7 @@ test('importing same unit twice shows duplicate warning', async ({ page }) => {
 
 test('imported data persists after page reload', async ({ page }) => {
   await page.goto('/#/import');
+  await page.getByRole('tab', { name: /file/i }).click();
   const fileInput = page.locator('input[type="file"]');
   await fileInput.setInputFiles(fixturePath);
   await page.waitForSelector('button[aria-label="Import unit"]');
