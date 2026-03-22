@@ -53,6 +53,10 @@ export async function resetAllProgress(): Promise<void> {
   });
 }
 
+export async function resetSessionHistory(): Promise<void> {
+  await db.sessionLogs.clear();
+}
+
 export interface ProgressExport {
   exportedAt: string;
   version: string;

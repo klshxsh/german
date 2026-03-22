@@ -117,9 +117,9 @@ function SortableTile({ tile, inAnswer, onClick }: TileProps) {
 
   const combinedStyle = {
     ...style,
-    backgroundColor: inAnswer ? '#EDE8E0' : 'white',
-    borderColor: '#D4C8B8',
-    color: '#2C2418',
+    backgroundColor: inAnswer ? 'var(--color-accent-light)' : 'var(--color-surface)',
+    borderColor: 'var(--color-border)',
+    color: 'var(--color-text)',
   };
 
   return (
@@ -142,9 +142,9 @@ function DragOverlayTile({ tile }: { tile: Tile }) {
     <div
       className="px-3 py-2 rounded-lg text-sm font-medium border select-none min-h-[44px] flex items-center"
       style={{
-        backgroundColor: 'white',
-        borderColor: '#C4713B',
-        color: '#2C2418',
+        backgroundColor: 'var(--color-surface)',
+        borderColor: 'var(--color-accent)',
+        color: 'var(--color-text)',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
       }}
     >
@@ -452,12 +452,12 @@ export default function SentenceBuilder() {
           <button
             onClick={() => navigate(`/unit/${unitId}`)}
             className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-            style={{ backgroundColor: '#EDE8E0' }}
+            style={{ backgroundColor: 'var(--color-accent-light)' }}
             aria-label="Go back"
           >
             <svg
               className="w-5 h-5"
-              style={{ color: '#2C2418' }}
+              style={{ color: 'var(--color-text)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -470,14 +470,14 @@ export default function SentenceBuilder() {
               />
             </svg>
           </button>
-          <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+          <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
             Sentence Builder
           </h1>
         </header>
 
         {/* Complexity */}
         <section className="mb-6">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Complexity
           </h2>
           <div className="space-y-2">
@@ -492,7 +492,7 @@ export default function SentenceBuilder() {
               <label
                 key={value}
                 className="flex items-center gap-3 p-3 rounded-xl cursor-pointer"
-                style={{ backgroundColor: 'white' }}
+                style={{ backgroundColor: 'var(--color-surface)' }}
               >
                 <input
                   type="radio"
@@ -500,9 +500,9 @@ export default function SentenceBuilder() {
                   value={value}
                   checked={config.complexity === value}
                   onChange={() => setConfig((prev) => ({ ...prev, complexity: value }))}
-                  className="w-5 h-5 accent-[#C4713B]"
+                  className="w-5 h-5"
                 />
-                <span style={{ color: '#2C2418' }}>{label}</span>
+                <span style={{ color: 'var(--color-text)' }}>{label}</span>
               </label>
             ))}
           </div>
@@ -510,7 +510,7 @@ export default function SentenceBuilder() {
 
         {/* Count */}
         <section className="mb-8">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Number of sentences
           </h2>
           <select
@@ -520,9 +520,9 @@ export default function SentenceBuilder() {
             }
             className="w-full p-3 rounded-xl border"
             style={{
-              backgroundColor: 'white',
-              borderColor: '#D4C8B8',
-              color: '#2C2418',
+              backgroundColor: 'var(--color-surface)',
+              borderColor: 'var(--color-border)',
+              color: 'var(--color-text)',
             }}
             aria-label="Number of sentences"
           >
@@ -533,7 +533,7 @@ export default function SentenceBuilder() {
         </section>
 
         {noSentencesMessage && (
-          <p className="mb-4 text-sm text-center" style={{ color: '#C0392B' }}>
+          <p className="mb-4 text-sm text-center" style={{ color: 'var(--color-danger)' }}>
             {noSentencesMessage}
           </p>
         )}
@@ -541,7 +541,7 @@ export default function SentenceBuilder() {
         <button
           onClick={startSession}
           className="w-full py-4 rounded-xl font-semibold text-white min-h-[56px]"
-          style={{ backgroundColor: '#C4713B' }}
+          style={{ backgroundColor: 'var(--color-accent)' }}
         >
           Start Session
         </button>
@@ -561,12 +561,13 @@ export default function SentenceBuilder() {
     const answerIds = questionState.answerTiles.map((t) => t.id);
     const poolIds = questionState.poolTiles.map((t) => t.id);
 
-    const feedbackBg =
+    // Use hex values for alpha tint trick; fallback border/bg use CSS vars
+    const feedbackHex =
       questionState.checked && questionState.correct !== null
         ? questionState.correct
           ? '#5B8C5A'
           : '#C0392B'
-        : undefined;
+        : null;
 
     return (
       <DndContext
@@ -580,12 +581,12 @@ export default function SentenceBuilder() {
             <button
               onClick={() => setPhase('config')}
               className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-              style={{ backgroundColor: '#EDE8E0' }}
+              style={{ backgroundColor: 'var(--color-accent-light)' }}
               aria-label="Go back"
             >
               <svg
                 className="w-5 h-5"
-                style={{ color: '#2C2418' }}
+                style={{ color: 'var(--color-text)' }}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -599,12 +600,12 @@ export default function SentenceBuilder() {
               </svg>
             </button>
             <div className="flex-1">
-              <div className="flex justify-between text-sm mb-1" style={{ color: '#7A6855' }}>
+              <div className="flex justify-between text-sm mb-1" style={{ color: 'var(--color-text-muted)' }}>
                 <span>Q {current} of {total}</span>
               </div>
               <div
                 className="h-2 rounded-full overflow-hidden"
-                style={{ backgroundColor: '#EDE8E0' }}
+                style={{ backgroundColor: 'var(--color-accent-light)' }}
                 role="progressbar"
                 aria-valuenow={current - 1}
                 aria-valuemin={0}
@@ -614,7 +615,7 @@ export default function SentenceBuilder() {
                   className="h-full rounded-full transition-all"
                   style={{
                     width: `${progressPct}%`,
-                    backgroundColor: '#C4713B',
+                    backgroundColor: 'var(--color-accent)',
                   }}
                 />
               </div>
@@ -624,19 +625,19 @@ export default function SentenceBuilder() {
           {/* English translation */}
           <div
             className="rounded-xl p-4 mb-3"
-            style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
+            style={{ backgroundColor: 'var(--color-surface)', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
           >
-            <p className="text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+            <p className="text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>
               Translate to German:
             </p>
-            <p className="text-lg font-semibold" style={{ color: '#2C2418' }}>
+            <p className="text-lg font-semibold" style={{ color: 'var(--color-text)' }}>
               {question.sentence.english}
             </p>
           </div>
 
           {/* Answer zone */}
           <div className="mb-3">
-            <p className="text-sm font-medium mb-2" style={{ color: '#7A6855' }}>
+            <p className="text-sm font-medium mb-2" style={{ color: 'var(--color-text-muted)' }}>
               Your answer:
             </p>
             <SortableContext items={answerIds} strategy={horizontalListSortingStrategy}>
@@ -644,12 +645,14 @@ export default function SentenceBuilder() {
                 id="answer-zone"
                 className="min-h-[60px] rounded-xl border-2 border-dashed p-3 flex flex-wrap gap-2 transition-colors"
                 style={{
-                  borderColor: feedbackBg ?? '#D4C8B8',
-                  backgroundColor: feedbackBg ? `${feedbackBg}18` : '#F6F1EB',
+                  borderColor: feedbackHex
+                    ? (questionState.correct ? 'var(--color-success)' : 'var(--color-danger)')
+                    : 'var(--color-border)',
+                  backgroundColor: feedbackHex ? `${feedbackHex}18` : 'var(--color-bg)',
                 }}
               >
                 {questionState.answerTiles.length === 0 && (
-                  <p className="text-sm" style={{ color: '#7A6855' }}>
+                  <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
                     Drop tiles here or click tiles below…
                   </p>
                 )}
@@ -668,15 +671,15 @@ export default function SentenceBuilder() {
             {questionState.checked && questionState.correct !== null && (
               <div className="mt-2">
                 {questionState.correct ? (
-                  <p className="text-sm font-medium" style={{ color: '#5B8C5A' }}>
+                  <p className="text-sm font-medium" style={{ color: 'var(--color-success)' }}>
                     Correct!
                   </p>
                 ) : (
                   <div>
-                    <p className="text-sm font-medium" style={{ color: '#C0392B' }}>
+                    <p className="text-sm font-medium" style={{ color: 'var(--color-danger)' }}>
                       Not quite. The correct answer is:
                     </p>
-                    <p className="text-sm mt-1 font-semibold" style={{ color: '#2C2418' }}>
+                    <p className="text-sm mt-1 font-semibold" style={{ color: 'var(--color-text)' }}>
                       {question.correctTokens.map((t) => t.text).join(' ')}
                     </p>
                   </div>
@@ -687,14 +690,14 @@ export default function SentenceBuilder() {
 
           {/* Tile pool */}
           <div className="mb-4">
-            <p className="text-sm font-medium mb-2" style={{ color: '#7A6855' }}>
+            <p className="text-sm font-medium mb-2" style={{ color: 'var(--color-text-muted)' }}>
               Available tiles:
             </p>
             <SortableContext items={poolIds} strategy={horizontalListSortingStrategy}>
               <DroppableZone
                 id="pool-zone"
                 className="min-h-[60px] rounded-xl p-3 flex flex-wrap gap-2"
-                style={{ backgroundColor: '#EDE8E0' }}
+                style={{ backgroundColor: 'var(--color-accent-light)' }}
               >
                 {questionState.poolTiles.map((tile) => (
                   <SortableTile
@@ -715,7 +718,7 @@ export default function SentenceBuilder() {
                 onClick={checkAnswer}
                 disabled={questionState.answerTiles.length === 0}
                 className="flex-1 py-4 rounded-xl font-semibold text-white min-h-[56px] disabled:opacity-50"
-                style={{ backgroundColor: '#C4713B' }}
+                style={{ backgroundColor: 'var(--color-accent)' }}
               >
                 Check
               </button>
@@ -723,7 +726,7 @@ export default function SentenceBuilder() {
               <button
                 onClick={nextQuestion}
                 className="flex-1 py-4 rounded-xl font-semibold text-white min-h-[56px]"
-                style={{ backgroundColor: '#C4713B' }}
+                style={{ backgroundColor: 'var(--color-accent)' }}
               >
                 {currentIndex + 1 >= questions.length ? 'See Results' : 'Next'}
               </button>
@@ -755,46 +758,46 @@ export default function SentenceBuilder() {
 
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
-        <h1 className="text-2xl font-bold mb-2" style={{ color: '#2C2418' }}>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>
           Session Complete!
         </h1>
 
         {/* Score */}
         <div
           className="rounded-xl p-4 mb-6 text-center"
-          style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
+          style={{ backgroundColor: 'var(--color-surface)', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
         >
-          <p className="text-4xl font-bold mb-1" style={{ color: '#C4713B' }}>
+          <p className="text-4xl font-bold mb-1" style={{ color: 'var(--color-accent)' }}>
             {totalScore} / {maxScore}
           </p>
-          <p className="text-sm" style={{ color: '#7A6855' }}>
+          <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
             points
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-3 mb-6">
-          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-            <p className="text-2xl font-bold" style={{ color: '#5B8C5A' }}>
+          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-success)' }}>
               {correctAnswers}
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Correct
             </p>
           </div>
-          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-            <p className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
               {summary.accuracyPercent}%
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Accuracy
             </p>
           </div>
-          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-            <p className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
               {formatElapsedTime(summary.elapsedMs)}
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Time
             </p>
           </div>
@@ -803,7 +806,7 @@ export default function SentenceBuilder() {
         <button
           onClick={() => navigate(`/unit/${unitId}`)}
           className="w-full py-3 rounded-xl font-semibold min-h-[48px]"
-          style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+          style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
         >
           Back to unit
         </button>

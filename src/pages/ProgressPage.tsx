@@ -35,7 +35,7 @@ export default function ProgressPage() {
 
   if (!units || !allProgress || !allSessions) {
     return (
-      <div className="p-4 text-center" style={{ color: '#7A6855' }}>
+      <div className="p-4 text-center" style={{ color: 'var(--color-text-muted)' }}>
         Loading…
       </div>
     );
@@ -57,7 +57,7 @@ export default function ProgressPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-4 pb-8">
-      <h1 className="text-2xl font-bold mb-6" style={{ color: '#2C2418' }}>
+      <h1 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text)' }}>
         Progress
       </h1>
 
@@ -65,34 +65,34 @@ export default function ProgressPage() {
       <div className="grid grid-cols-3 gap-3 mb-8">
         <div
           className="rounded-xl p-4 text-center"
-          style={{ backgroundColor: '#EDE8E0' }}
+          style={{ backgroundColor: 'var(--color-accent-light)' }}
         >
-          <div className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+          <div className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
             {totalEntries}
           </div>
-          <div className="text-xs mt-1" style={{ color: '#7A6855' }}>
+          <div className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>
             Total Cards
           </div>
         </div>
         <div
           className="rounded-xl p-4 text-center"
-          style={{ backgroundColor: '#EDE8E0' }}
+          style={{ backgroundColor: 'var(--color-accent-light)' }}
         >
-          <div className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+          <div className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
             {totalQuestions > 0 ? `${overallAccuracy}%` : '—'}
           </div>
-          <div className="text-xs mt-1" style={{ color: '#7A6855' }}>
+          <div className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>
             Accuracy
           </div>
         </div>
         <div
           className="rounded-xl p-4 text-center"
-          style={{ backgroundColor: '#EDE8E0' }}
+          style={{ backgroundColor: 'var(--color-accent-light)' }}
         >
-          <div className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+          <div className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
             {sessionsCount}
           </div>
-          <div className="text-xs mt-1" style={{ color: '#7A6855' }}>
+          <div className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>
             Sessions
           </div>
         </div>
@@ -100,12 +100,12 @@ export default function ProgressPage() {
 
       {/* Per-unit bucket breakdown */}
       {units.length === 0 ? (
-        <p className="text-center mb-8" style={{ color: '#7A6855' }}>
+        <p className="text-center mb-8" style={{ color: 'var(--color-text-muted)' }}>
           No units imported yet.
         </p>
       ) : (
         <div className="mb-8">
-          <h2 className="text-lg font-semibold mb-4" style={{ color: '#2C2418' }}>
+          <h2 className="text-lg font-semibold mb-4" style={{ color: 'var(--color-text)' }}>
             Leitner Buckets by Unit
           </h2>
           <div className="space-y-4">
@@ -120,20 +120,20 @@ export default function ProgressPage() {
                 <div
                   key={unit.id}
                   className="rounded-xl p-4"
-                  style={{ backgroundColor: '#EDE8E0' }}
+                  style={{ backgroundColor: 'var(--color-accent-light)' }}
                 >
                   <div className="mb-3">
-                    <div className="font-medium" style={{ color: '#2C2418' }}>
+                    <div className="font-medium" style={{ color: 'var(--color-text)' }}>
                       {unit.name}
                     </div>
                     {unit.year > 0 && unit.chapter > 0 && unit.unitNumber > 0 && (
-                      <div className="text-xs mt-0.5" style={{ color: '#A89880' }}>
+                      <div className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
                         Year {unit.year} · Chapter {unit.chapter} · Unit {unit.unitNumber}
                       </div>
                     )}
                   </div>
                   {total === 0 ? (
-                    <p className="text-sm" style={{ color: '#7A6855' }}>
+                    <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
                       No progress data
                     </p>
                   ) : (
@@ -159,7 +159,7 @@ export default function ProgressPage() {
                           <span
                             key={i}
                             className="text-xs flex items-center gap-1"
-                            style={{ color: '#7A6855' }}
+                            style={{ color: 'var(--color-text-muted)' }}
                           >
                             <span
                               className="inline-block w-2 h-2 rounded-full"
@@ -180,11 +180,11 @@ export default function ProgressPage() {
 
       {/* Session history */}
       <div>
-        <h2 className="text-lg font-semibold mb-4" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-4" style={{ color: 'var(--color-text)' }}>
           Session History
         </h2>
         {allSessions.length === 0 ? (
-          <p className="text-center" style={{ color: '#7A6855' }}>
+          <p className="text-center" style={{ color: 'var(--color-text-muted)' }}>
             No sessions yet.
           </p>
         ) : (
@@ -199,16 +199,16 @@ export default function ProgressPage() {
                 <div
                   key={session.id}
                   className="rounded-xl p-3 flex items-center justify-between"
-                  style={{ backgroundColor: '#EDE8E0' }}
+                  style={{ backgroundColor: 'var(--color-accent-light)' }}
                 >
                   <div>
-                    <div className="font-medium text-sm" style={{ color: '#2C2418' }}>
+                    <div className="font-medium text-sm" style={{ color: 'var(--color-text)' }}>
                       {modeLabel(session.mode)}
                     </div>
-                    <div className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+                    <div className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
                       {unit?.name ?? 'Unknown unit'}
                       {unit && unit.year > 0 && unit.chapter > 0 && unit.unitNumber > 0 && (
-                        <span style={{ color: '#A89880' }}>
+                        <span>
                           {' '}(Y{unit.year} · Ch{unit.chapter} · U{unit.unitNumber})
                         </span>
                       )}
@@ -216,10 +216,10 @@ export default function ProgressPage() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-sm" style={{ color: '#C4713B' }}>
+                    <div className="font-semibold text-sm" style={{ color: 'var(--color-accent)' }}>
                       {session.correctAnswers}/{session.totalQuestions}
                     </div>
-                    <div className="text-xs" style={{ color: '#7A6855' }}>
+                    <div className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
                       {accuracy}%
                     </div>
                   </div>

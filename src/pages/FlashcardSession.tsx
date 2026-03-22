@@ -250,12 +250,12 @@ export default function FlashcardSession() {
           <button
             onClick={() => navigate(`/unit/${unitId}`)}
             className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-            style={{ backgroundColor: '#EDE8E0' }}
+            style={{ backgroundColor: 'var(--color-accent-light)' }}
             aria-label="Go back"
           >
             <svg
               className="w-5 h-5"
-              style={{ color: '#2C2418' }}
+              style={{ color: 'var(--color-text)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -268,7 +268,7 @@ export default function FlashcardSession() {
               />
             </svg>
           </button>
-          <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+          <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
             Flashcards
           </h1>
         </header>
@@ -276,7 +276,7 @@ export default function FlashcardSession() {
         {/* Categories */}
         <section className="mb-6">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="font-semibold" style={{ color: '#2C2418' }}>
+            <h2 className="font-semibold" style={{ color: 'var(--color-text)' }}>
               Categories
             </h2>
             {categories && categories.length > 0 && (
@@ -293,7 +293,7 @@ export default function FlashcardSession() {
                   }));
                 }}
                 className="text-sm font-medium"
-                style={{ color: '#C4713B' }}
+                style={{ color: 'var(--color-accent)' }}
               >
                 {categories.every((c) => config.selectedCategoryIds.has(c.id!))
                   ? 'Deselect all'
@@ -302,23 +302,23 @@ export default function FlashcardSession() {
             )}
           </div>
           {!categories ? (
-            <p style={{ color: '#7A6855' }}>Loading…</p>
+            <p style={{ color: 'var(--color-text-muted)' }}>Loading…</p>
           ) : (
             <div className="space-y-2">
               {categories.map((cat) => (
                 <label
                   key={cat.id}
                   className="flex items-center gap-3 p-3 rounded-xl cursor-pointer"
-                  style={{ backgroundColor: 'white' }}
+                  style={{ backgroundColor: 'var(--color-surface)' }}
                 >
                   <input
                     type="checkbox"
                     checked={config.selectedCategoryIds.has(cat.id!)}
                     onChange={() => toggleCategory(cat.id!)}
-                    className="w-5 h-5 accent-[#C4713B]"
+                    className="w-5 h-5"
                     aria-label={cat.name}
                   />
-                  <span style={{ color: '#2C2418' }}>{cat.name}</span>
+                  <span style={{ color: 'var(--color-text)' }}>{cat.name}</span>
                 </label>
               ))}
             </div>
@@ -327,7 +327,7 @@ export default function FlashcardSession() {
 
         {/* Direction */}
         <section className="mb-6">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Direction
           </h2>
           <div className="space-y-2">
@@ -341,7 +341,7 @@ export default function FlashcardSession() {
               <label
                 key={value}
                 className="flex items-center gap-3 p-3 rounded-xl cursor-pointer"
-                style={{ backgroundColor: 'white' }}
+                style={{ backgroundColor: 'var(--color-surface)' }}
               >
                 <input
                   type="radio"
@@ -351,9 +351,9 @@ export default function FlashcardSession() {
                   onChange={() =>
                     setConfig((prev) => ({ ...prev, direction: value }))
                   }
-                  className="w-5 h-5 accent-[#C4713B]"
+                  className="w-5 h-5"
                 />
-                <span style={{ color: '#2C2418' }}>{label}</span>
+                <span style={{ color: 'var(--color-text)' }}>{label}</span>
               </label>
             ))}
           </div>
@@ -361,7 +361,7 @@ export default function FlashcardSession() {
 
         {/* Count */}
         <section className="mb-6">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Number of cards
           </h2>
           <select
@@ -378,9 +378,9 @@ export default function FlashcardSession() {
             }}
             className="w-full p-3 rounded-xl border"
             style={{
-              backgroundColor: 'white',
-              borderColor: '#D4C8B8',
-              color: '#2C2418',
+              backgroundColor: 'var(--color-surface)',
+              borderColor: 'var(--color-border)',
+              color: 'var(--color-text)',
             }}
             aria-label="Number of cards"
           >
@@ -394,7 +394,7 @@ export default function FlashcardSession() {
 
         {/* Strategy */}
         <section className="mb-8">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Selection strategy
           </h2>
           <select
@@ -407,9 +407,9 @@ export default function FlashcardSession() {
             }
             className="w-full p-3 rounded-xl border"
             style={{
-              backgroundColor: 'white',
-              borderColor: '#D4C8B8',
-              color: '#2C2418',
+              backgroundColor: 'var(--color-surface)',
+              borderColor: 'var(--color-border)',
+              color: 'var(--color-text)',
             }}
             aria-label="Selection strategy"
           >
@@ -420,7 +420,7 @@ export default function FlashcardSession() {
         </section>
 
         {noCardsMessage && (
-          <p className="mb-4 text-sm text-center" style={{ color: '#C0392B' }}>
+          <p className="mb-4 text-sm text-center" style={{ color: 'var(--color-danger)' }}>
             {noCardsMessage}
           </p>
         )}
@@ -429,7 +429,7 @@ export default function FlashcardSession() {
           onClick={() => startSession()}
           disabled={!canStart}
           className="w-full py-4 rounded-xl font-semibold text-white min-h-[56px] disabled:opacity-50"
-          style={{ backgroundColor: '#C4713B' }}
+          style={{ backgroundColor: 'var(--color-accent)' }}
         >
           Start Session
         </button>
@@ -461,12 +461,12 @@ export default function FlashcardSession() {
           <button
             onClick={() => setPhase('config')}
             className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-            style={{ backgroundColor: '#EDE8E0' }}
+            style={{ backgroundColor: 'var(--color-accent-light)' }}
             aria-label="Go back"
           >
             <svg
               className="w-5 h-5"
-              style={{ color: '#2C2418' }}
+              style={{ color: 'var(--color-text)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -480,13 +480,13 @@ export default function FlashcardSession() {
             </svg>
           </button>
           <div className="flex-1">
-            <div className="flex justify-between text-sm mb-1" style={{ color: '#7A6855' }}>
+            <div className="flex justify-between text-sm mb-1" style={{ color: 'var(--color-text-muted)' }}>
               <span>Card {current} of {total}</span>
               <span>{session.results.filter((r) => r.correct).length} correct</span>
             </div>
             <div
               className="h-2 rounded-full overflow-hidden"
-              style={{ backgroundColor: '#EDE8E0' }}
+              style={{ backgroundColor: 'var(--color-accent-light)' }}
               role="progressbar"
               aria-valuenow={current - 1}
               aria-valuemin={0}
@@ -496,7 +496,7 @@ export default function FlashcardSession() {
                 className="h-full rounded-full transition-all"
                 style={{
                   width: `${progressPct}%`,
-                  backgroundColor: '#C4713B',
+                  backgroundColor: 'var(--color-accent)',
                 }}
               />
             </div>
@@ -527,7 +527,7 @@ export default function FlashcardSession() {
                   WebkitBackfaceVisibility: 'hidden',
                   position: 'absolute',
                   inset: 0,
-                  backgroundColor: 'white',
+                  backgroundColor: 'var(--color-surface)',
                   borderRadius: '16px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -539,14 +539,14 @@ export default function FlashcardSession() {
               >
                 <p
                   className="text-3xl font-bold text-center mb-4"
-                  style={{ color: '#2C2418' }}
+                  style={{ color: 'var(--color-text)' }}
                 >
                   {frontText}
                 </p>
-                <p className="text-xs font-medium mb-1" style={{ color: '#C4713B' }}>
+                <p className="text-xs font-medium mb-1" style={{ color: 'var(--color-accent)' }}>
                   → {currentCard.showGerman ? 'English' : 'German'}
                 </p>
-                <p className="text-sm" style={{ color: '#7A6855' }}>
+                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
                   Tap to reveal
                 </p>
               </div>
@@ -558,7 +558,7 @@ export default function FlashcardSession() {
                   WebkitBackfaceVisibility: 'hidden',
                   position: 'absolute',
                   inset: 0,
-                  backgroundColor: 'white',
+                  backgroundColor: 'var(--color-surface)',
                   borderRadius: '16px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -569,24 +569,24 @@ export default function FlashcardSession() {
                   boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
                 }}
               >
-                <p className="text-sm mb-2" style={{ color: '#7A6855' }}>
+                <p className="text-sm mb-2" style={{ color: 'var(--color-text-muted)' }}>
                   {backHintText}
                 </p>
                 <p
                   className="text-3xl font-bold text-center mb-2"
-                  style={{ color: '#2C2418' }}
+                  style={{ color: 'var(--color-text)' }}
                 >
                   {backPrimaryText}
                 </p>
                 {currentCard.entry.grammarNotes && (
-                  <p className="text-xs text-center mt-2" style={{ color: '#7A6855' }}>
+                  <p className="text-xs text-center mt-2" style={{ color: 'var(--color-text-muted)' }}>
                     {currentCard.entry.grammarNotes}
                   </p>
                 )}
                 {currentCard.entry.partOfSpeech && (
                   <span
                     className="mt-3 text-xs px-2 py-1 rounded-full"
-                    style={{ backgroundColor: '#EDE8E0', color: '#7A6855' }}
+                    style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text-muted)' }}
                   >
                     {currentCard.entry.partOfSpeech}
                   </span>
@@ -601,14 +601,14 @@ export default function FlashcardSession() {
               <button
                 onClick={() => handleAnswer(false)}
                 className="flex-1 py-4 rounded-xl font-semibold min-h-[56px]"
-                style={{ backgroundColor: '#C0392B', color: 'white' }}
+                style={{ backgroundColor: 'var(--color-danger)', color: 'white' }}
               >
                 Missed it
               </button>
               <button
                 onClick={() => handleAnswer(true)}
                 className="flex-1 py-4 rounded-xl font-semibold min-h-[56px]"
-                style={{ backgroundColor: '#5B8C5A', color: 'white' }}
+                style={{ backgroundColor: 'var(--color-success)', color: 'white' }}
               >
                 Got it
               </button>
@@ -635,7 +635,7 @@ export default function FlashcardSession() {
 
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
-        <h1 className="text-2xl font-bold mb-2" style={{ color: '#2C2418' }}>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>
           Session Complete!
         </h1>
 
@@ -643,37 +643,37 @@ export default function FlashcardSession() {
         <div className="grid grid-cols-3 gap-3 mb-6">
           <div
             className="rounded-xl p-4 text-center"
-            style={{ backgroundColor: 'white' }}
+            style={{ backgroundColor: 'var(--color-surface)' }}
           >
-            <p className="text-2xl font-bold" style={{ color: '#5B8C5A' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-success)' }}>
               {correctCount}
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Correct
             </p>
           </div>
           <div
             className="rounded-xl p-4 text-center"
-            style={{ backgroundColor: 'white' }}
+            style={{ backgroundColor: 'var(--color-surface)' }}
           >
             <p
               className="text-2xl font-bold"
-              style={{ color: '#C4713B' }}
+              style={{ color: 'var(--color-accent)' }}
             >
               {summary.accuracyPercent}%
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Accuracy
             </p>
           </div>
           <div
             className="rounded-xl p-4 text-center"
-            style={{ backgroundColor: 'white' }}
+            style={{ backgroundColor: 'var(--color-surface)' }}
           >
-            <p className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
               {formatElapsedTime(summary.elapsedMs)}
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Time
             </p>
           </div>
@@ -682,7 +682,7 @@ export default function FlashcardSession() {
         {/* Missed cards */}
         {missedCards.length > 0 && (
           <div className="mb-6">
-            <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+            <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
               Missed cards ({missedCards.length})
             </h2>
             <div className="space-y-2">
@@ -690,12 +690,12 @@ export default function FlashcardSession() {
                 <div
                   key={r.entry.id}
                   className="rounded-xl p-3 flex justify-between"
-                  style={{ backgroundColor: 'white' }}
+                  style={{ backgroundColor: 'var(--color-surface)' }}
                 >
-                  <span className="font-medium" style={{ color: '#2C2418' }}>
+                  <span className="font-medium" style={{ color: 'var(--color-text)' }}>
                     {r.entry.german}
                   </span>
-                  <span style={{ color: '#7A6855' }}>{r.entry.english}</span>
+                  <span style={{ color: 'var(--color-text-muted)' }}>{r.entry.english}</span>
                 </div>
               ))}
             </div>
@@ -703,7 +703,7 @@ export default function FlashcardSession() {
             <button
               onClick={handlePracticeMissed}
               className="w-full mt-4 py-3 rounded-xl font-semibold min-h-[48px]"
-              style={{ backgroundColor: '#C4713B', color: 'white' }}
+              style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}
             >
               Practice missed cards
             </button>
@@ -713,7 +713,7 @@ export default function FlashcardSession() {
         <button
           onClick={() => navigate(`/unit/${unitId}`)}
           className="w-full py-3 rounded-xl font-semibold min-h-[48px]"
-          style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+          style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
         >
           Back to unit
         </button>

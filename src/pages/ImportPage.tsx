@@ -264,51 +264,51 @@ export default function ImportPage() {
         <button
           onClick={() => navigate('/')}
           className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-          style={{ backgroundColor: '#EDE8E0' }}
+          style={{ backgroundColor: 'var(--color-accent-light)' }}
           aria-label="Go back"
         >
-          <svg className="w-5 h-5" style={{ color: '#2C2418' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" style={{ color: 'var(--color-text)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <div>
-          <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+          <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
             Import Unit
           </h1>
-          <p className="text-sm mt-0.5" style={{ color: '#7A6855' }}>
+          <p className="text-sm mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
             Import JSON from Content Studio
           </p>
         </div>
       </header>
 
       {successUnitId !== null ? (
-        <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: 'white' }}>
+        <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
           <div
             className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
             style={{ backgroundColor: '#E8F4E8' }}
           >
-            <svg className="w-8 h-8" style={{ color: '#5B8C5A' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-8 h-8" style={{ color: 'var(--color-success)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+          <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
             Import successful!
           </h2>
-          <p className="text-sm mb-6" style={{ color: '#7A6855' }}>
+          <p className="text-sm mb-6" style={{ color: 'var(--color-text-muted)' }}>
             Your unit has been imported and is ready to study.
           </p>
           <div className="flex flex-col gap-3">
             <button
               onClick={() => navigate(`/unit/${successUnitId}`)}
               className="w-full py-3 rounded-lg font-medium text-white min-h-[44px]"
-              style={{ backgroundColor: '#C4713B' }}
+              style={{ backgroundColor: 'var(--color-accent)' }}
             >
               View Unit
             </button>
             <button
               onClick={handleReset}
               className="w-full py-3 rounded-lg font-medium min-h-[44px]"
-              style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+              style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
             >
               Import Another
             </button>
@@ -319,7 +319,7 @@ export default function ImportPage() {
           {/* Tab bar */}
           <div
             className="flex rounded-xl p-1 gap-1"
-            style={{ backgroundColor: '#EDE8E0' }}
+            style={{ backgroundColor: 'var(--color-accent-light)' }}
             role="tablist"
             aria-label="Import method"
           >
@@ -331,8 +331,8 @@ export default function ImportPage() {
                 onClick={() => switchTab(tab)}
                 className="flex-1 py-2 px-3 rounded-lg text-sm font-medium min-h-[44px] transition-colors"
                 style={{
-                  backgroundColor: activeTab === tab ? 'white' : 'transparent',
-                  color: activeTab === tab ? '#2C2418' : '#7A6855',
+                  backgroundColor: activeTab === tab ? 'var(--color-surface)' : 'transparent',
+                  color: activeTab === tab ? 'var(--color-text)' : 'var(--color-text-muted)',
                 }}
               >
                 {tab === 'file' ? 'File' : tab === 'paste' ? 'Paste' : 'URL'}
@@ -345,8 +345,8 @@ export default function ImportPage() {
             <div
               className="rounded-2xl p-6 border-2 border-dashed"
               style={{
-                borderColor: dragging ? '#C4713B' : preview ? '#C4713B' : '#D4C8B8',
-                backgroundColor: dragging ? '#FDF5EF' : 'white',
+                borderColor: dragging ? 'var(--color-accent)' : preview ? 'var(--color-accent)' : 'var(--color-border)',
+                backgroundColor: dragging ? 'var(--color-accent-light)' : 'var(--color-surface)',
               }}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
@@ -356,16 +356,16 @@ export default function ImportPage() {
                 <div className="text-center">
                   <div
                     className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: '#EDE8E0' }}
+                    style={{ backgroundColor: 'var(--color-accent-light)' }}
                   >
-                    <svg className="w-6 h-6" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                     </svg>
                   </div>
-                  <p className="font-medium" style={{ color: '#2C2418' }}>
+                  <p className="font-medium" style={{ color: 'var(--color-text)' }}>
                     Choose a JSON file
                   </p>
-                  <p className="text-sm mt-1" style={{ color: '#7A6855' }}>
+                  <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>
                     or drag and drop here
                   </p>
                 </div>
@@ -384,9 +384,9 @@ export default function ImportPage() {
 
           {/* Paste tab */}
           {activeTab === 'paste' && (
-            <div className="rounded-2xl p-6 space-y-4" style={{ backgroundColor: 'white' }}>
+            <div className="rounded-2xl p-6 space-y-4" style={{ backgroundColor: 'var(--color-surface)' }}>
               <div>
-                <label htmlFor="paste-input" className="block text-sm font-medium mb-2" style={{ color: '#2C2418' }}>
+                <label htmlFor="paste-input" className="block text-sm font-medium mb-2" style={{ color: 'var(--color-text)' }}>
                   Paste JSON here
                 </label>
                 <textarea
@@ -396,14 +396,14 @@ export default function ImportPage() {
                   placeholder='{"unit": {"name": "..."}, "categories": [...], "entries": [...]}'
                   rows={8}
                   className="w-full px-3 py-2 rounded-lg border text-sm font-mono resize-none"
-                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                   aria-label="Paste JSON"
                 />
               </div>
               <button
                 onClick={handleParsePaste}
                 className="w-full py-3 rounded-lg font-medium text-white min-h-[44px]"
-                style={{ backgroundColor: '#C4713B' }}
+                style={{ backgroundColor: 'var(--color-accent)' }}
                 aria-label="Parse pasted JSON"
               >
                 Parse JSON
@@ -413,9 +413,9 @@ export default function ImportPage() {
 
           {/* URL tab */}
           {activeTab === 'url' && (
-            <div className="rounded-2xl p-6 space-y-4" style={{ backgroundColor: 'white' }}>
+            <div className="rounded-2xl p-6 space-y-4" style={{ backgroundColor: 'var(--color-surface)' }}>
               <div>
-                <label htmlFor="url-input" className="block text-sm font-medium mb-2" style={{ color: '#2C2418' }}>
+                <label htmlFor="url-input" className="block text-sm font-medium mb-2" style={{ color: 'var(--color-text)' }}>
                   JSON URL
                 </label>
                 <div className="flex gap-2">
@@ -427,7 +427,7 @@ export default function ImportPage() {
                     onKeyDown={(e) => e.key === 'Enter' && handleFetchUrl()}
                     placeholder="https://gist.githubusercontent.com/..."
                     className="flex-1 px-3 py-2 rounded-lg border text-sm min-h-[44px]"
-                    style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                    style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                     aria-label="JSON URL"
                   />
                   <button
@@ -435,7 +435,7 @@ export default function ImportPage() {
                     disabled={!urlInput.trim() || isFetching}
                     className="px-4 py-2 rounded-lg font-medium text-white min-h-[44px] flex-shrink-0 transition-opacity"
                     style={{
-                      backgroundColor: '#C4713B',
+                      backgroundColor: 'var(--color-accent)',
                       opacity: !urlInput.trim() || isFetching ? 0.5 : 1,
                     }}
                     aria-label="Fetch JSON from URL"
@@ -443,14 +443,14 @@ export default function ImportPage() {
                     {isFetching ? 'Fetching…' : 'Fetch'}
                   </button>
                 </div>
-                <p className="text-xs mt-2" style={{ color: '#7A6855' }}>
+                <p className="text-xs mt-2" style={{ color: 'var(--color-text-muted)' }}>
                   Works with GitHub Gist raw URLs, GitHub Pages, or any server with CORS enabled.
                 </p>
               </div>
 
               {recentUrls.length > 0 && (
                 <div>
-                  <p className="text-xs font-medium mb-2" style={{ color: '#7A6855' }}>
+                  <p className="text-xs font-medium mb-2" style={{ color: 'var(--color-text-muted)' }}>
                     Recently used
                   </p>
                   <ul className="space-y-1">
@@ -462,7 +462,7 @@ export default function ImportPage() {
                             handleFetchUrl(url);
                           }}
                           className="w-full text-left px-3 py-2 rounded-lg text-xs truncate min-h-[44px] flex items-center"
-                          style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+                          style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
                           aria-label={`Use recent URL: ${url}`}
                         >
                           {url}
@@ -482,11 +482,11 @@ export default function ImportPage() {
               style={{ backgroundColor: '#FDF0EF' }}
               role="alert"
             >
-              <svg className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#C0392B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'var(--color-danger)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div>
-                <p className="font-medium text-sm" style={{ color: '#C0392B' }}>
+                <p className="font-medium text-sm" style={{ color: 'var(--color-danger)' }}>
                   Import failed
                 </p>
                 <p className="text-sm mt-0.5" style={{ color: '#7A3327' }}>
@@ -507,7 +507,7 @@ export default function ImportPage() {
               <h3 className="font-semibold text-sm mb-1" style={{ color: '#8B6914' }}>
                 Unit already exists
               </h3>
-              <p className="text-sm mb-4" style={{ color: '#7A6855' }}>
+              <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)' }}>
                 A unit named <strong>"{duplicate.name}"</strong> has already been imported. What would you like to do?
               </p>
               <div className="flex gap-2">
@@ -515,21 +515,21 @@ export default function ImportPage() {
                   onClick={() => handleImport(duplicate.json, duplicate.metadata, 'replace')}
                   disabled={importing}
                   className="flex-1 py-2 px-3 rounded-lg text-sm font-medium text-white min-h-[44px]"
-                  style={{ backgroundColor: '#C4713B' }}
+                  style={{ backgroundColor: 'var(--color-accent)' }}
                 >
                   Replace
                 </button>
                 <button
                   onClick={() => navigate(`/unit/${duplicate.existingId}`)}
                   className="flex-1 py-2 px-3 rounded-lg text-sm font-medium min-h-[44px]"
-                  style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+                  style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
                 >
                   Keep existing
                 </button>
                 <button
                   onClick={handleReset}
                   className="flex-1 py-2 px-3 rounded-lg text-sm font-medium min-h-[44px]"
-                  style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+                  style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
                 >
                   Cancel
                 </button>
@@ -539,49 +539,49 @@ export default function ImportPage() {
 
           {/* Preview */}
           {preview && !duplicate && (
-            <div className="rounded-2xl p-6" style={{ backgroundColor: 'white' }}>
-              <h2 className="font-semibold text-lg mb-1" style={{ color: '#2C2418' }}>
+            <div className="rounded-2xl p-6" style={{ backgroundColor: 'var(--color-surface)' }}>
+              <h2 className="font-semibold text-lg mb-1" style={{ color: 'var(--color-text)' }}>
                 {preview.json.unit.name}
               </h2>
               {preview.json.unit.description && (
-                <p className="text-sm mb-4" style={{ color: '#7A6855' }}>
+                <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)' }}>
                   {preview.json.unit.description}
                 </p>
               )}
 
               <div className="grid grid-cols-2 gap-3 mb-5">
-                <div className="rounded-xl p-3 text-center" style={{ backgroundColor: '#EDE8E0' }}>
-                  <p className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+                <div className="rounded-xl p-3 text-center" style={{ backgroundColor: 'var(--color-accent-light)' }}>
+                  <p className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
                     {preview.categoryCount}
                   </p>
-                  <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+                  <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
                     {preview.categoryCount === 1 ? 'Category' : 'Categories'}
                   </p>
                 </div>
-                <div className="rounded-xl p-3 text-center" style={{ backgroundColor: '#EDE8E0' }}>
-                  <p className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+                <div className="rounded-xl p-3 text-center" style={{ backgroundColor: 'var(--color-accent-light)' }}>
+                  <p className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
                     {preview.entryCount}
                   </p>
-                  <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+                  <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
                     {preview.entryCount === 1 ? 'Entry' : 'Entries'}
                   </p>
                 </div>
               </div>
 
               <div className="space-y-2 mb-5">
-                <h3 className="text-sm font-medium" style={{ color: '#2C2418' }}>
+                <h3 className="text-sm font-medium" style={{ color: 'var(--color-text)' }}>
                   Categories
                 </h3>
                 {preview.entriesPerCategory.map((cat) => (
                   <div
                     key={cat.name}
                     className="flex items-center justify-between py-2 px-3 rounded-lg"
-                    style={{ backgroundColor: '#EDE8E0' }}
+                    style={{ backgroundColor: 'var(--color-accent-light)' }}
                   >
-                    <span className="text-sm truncate flex-1 mr-2" style={{ color: '#2C2418' }}>
+                    <span className="text-sm truncate flex-1 mr-2" style={{ color: 'var(--color-text)' }}>
                       {cat.name}
                     </span>
-                    <span className="text-sm font-medium flex-shrink-0" style={{ color: '#C4713B' }}>
+                    <span className="text-sm font-medium flex-shrink-0" style={{ color: 'var(--color-accent)' }}>
                       {cat.count} {cat.count === 1 ? 'entry' : 'entries'}
                     </span>
                   </div>
@@ -590,12 +590,12 @@ export default function ImportPage() {
 
               {/* Unit grouping metadata */}
               <div className="mb-5">
-                <h3 className="text-sm font-medium mb-3" style={{ color: '#2C2418' }}>
+                <h3 className="text-sm font-medium mb-3" style={{ color: 'var(--color-text)' }}>
                   Unit grouping
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
                   <div>
-                    <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+                    <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>
                       Year *
                     </label>
                     <input
@@ -605,12 +605,12 @@ export default function ImportPage() {
                       value={metadata.year}
                       onChange={(e) => setMetadata((m) => ({ ...m, year: e.target.value }))}
                       className="w-full px-3 py-2 rounded-lg border text-sm"
-                      style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                      style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                       aria-label="School year"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+                    <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>
                       Chapter *
                     </label>
                     <input
@@ -620,12 +620,12 @@ export default function ImportPage() {
                       value={metadata.chapter}
                       onChange={(e) => setMetadata((m) => ({ ...m, chapter: e.target.value }))}
                       className="w-full px-3 py-2 rounded-lg border text-sm"
-                      style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                      style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                       aria-label="Chapter number"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+                    <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>
                       Unit # *
                     </label>
                     <input
@@ -635,7 +635,7 @@ export default function ImportPage() {
                       value={metadata.unitNumber}
                       onChange={(e) => setMetadata((m) => ({ ...m, unitNumber: e.target.value }))}
                       className="w-full px-3 py-2 rounded-lg border text-sm"
-                      style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                      style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                       aria-label="Unit number"
                     />
                   </div>
@@ -646,7 +646,7 @@ export default function ImportPage() {
                 onClick={() => handleImport(preview.json, metadata)}
                 disabled={importing || !canImport}
                 className="w-full py-3 rounded-lg font-medium text-white min-h-[44px] transition-opacity"
-                style={{ backgroundColor: '#C4713B', opacity: importing || !canImport ? 0.5 : 1 }}
+                style={{ backgroundColor: 'var(--color-accent)', opacity: importing || !canImport ? 0.5 : 1 }}
                 aria-label="Import unit"
               >
                 {importing ? 'Importing...' : 'Import Unit'}

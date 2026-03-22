@@ -49,7 +49,7 @@ export default function UnitOverview() {
   if (unitId === null || isNaN(unitId)) {
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8">
-        <p style={{ color: '#C0392B' }}>Invalid unit ID.</p>
+        <p style={{ color: 'var(--color-danger)' }}>Invalid unit ID.</p>
       </div>
     );
   }
@@ -57,7 +57,7 @@ export default function UnitOverview() {
   if (unit === undefined) {
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8">
-        <p style={{ color: '#7A6855' }}>Loading...</p>
+        <p style={{ color: 'var(--color-text-muted)' }}>Loading...</p>
       </div>
     );
   }
@@ -65,7 +65,7 @@ export default function UnitOverview() {
   if (unit === null) {
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8">
-        <p style={{ color: '#C0392B' }}>Unit not found.</p>
+        <p style={{ color: 'var(--color-danger)' }}>Unit not found.</p>
       </div>
     );
   }
@@ -100,24 +100,24 @@ export default function UnitOverview() {
         <button
           onClick={() => navigate('/')}
           className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-          style={{ backgroundColor: '#EDE8E0' }}
+          style={{ backgroundColor: 'var(--color-accent-light)' }}
           aria-label="Go back"
         >
-          <svg className="w-5 h-5" style={{ color: '#2C2418' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" style={{ color: 'var(--color-text)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <div className="flex-1 min-w-0">
-          <h1 className="text-2xl font-bold truncate" style={{ color: '#2C2418' }}>
+          <h1 className="text-2xl font-bold truncate" style={{ color: 'var(--color-text)' }}>
             {unit.name}
           </h1>
           {unit.description && (
-            <p className="text-sm mt-0.5 line-clamp-2" style={{ color: '#7A6855' }}>
+            <p className="text-sm mt-0.5 line-clamp-2" style={{ color: 'var(--color-text-muted)' }}>
               {unit.description}
             </p>
           )}
           {unitLabel && (
-            <p className="text-xs mt-1 font-medium" style={{ color: '#C4713B' }}>
+            <p className="text-xs mt-1 font-medium" style={{ color: 'var(--color-accent)' }}>
               {unitLabel}
             </p>
           )}
@@ -125,14 +125,14 @@ export default function UnitOverview() {
       </header>
 
       {/* Unit metadata */}
-      <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: 'white' }}>
+      <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: 'var(--color-surface)' }}>
         <div className="flex items-center justify-between mb-2">
-          <h2 className="text-sm font-semibold" style={{ color: '#2C2418' }}>Unit Grouping</h2>
+          <h2 className="text-sm font-semibold" style={{ color: 'var(--color-text)' }}>Unit Grouping</h2>
           {!editing && (
             <button
               onClick={startEditing}
               className="text-xs px-3 py-1 rounded-lg min-h-[32px]"
-              style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+              style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
               aria-label="Edit unit metadata"
             >
               Edit
@@ -144,7 +144,7 @@ export default function UnitOverview() {
           <div>
             <div className="grid grid-cols-3 gap-3 mb-3">
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Year</label>
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>Year</label>
                 <input
                   type="number"
                   min="1"
@@ -152,12 +152,12 @@ export default function UnitOverview() {
                   value={editYear}
                   onChange={(e) => setEditYear(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border text-sm"
-                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                   aria-label="School year"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Chapter</label>
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>Chapter</label>
                 <input
                   type="number"
                   min="1"
@@ -165,12 +165,12 @@ export default function UnitOverview() {
                   value={editChapter}
                   onChange={(e) => setEditChapter(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border text-sm"
-                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                   aria-label="Chapter number"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>Unit #</label>
+                <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>Unit #</label>
                 <input
                   type="number"
                   min="1"
@@ -178,7 +178,7 @@ export default function UnitOverview() {
                   value={editUnitNumber}
                   onChange={(e) => setEditUnitNumber(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border text-sm"
-                  style={{ borderColor: '#D4C8B8', color: '#2C2418' }}
+                  style={{ borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
                   aria-label="Unit number"
                 />
               </div>
@@ -188,41 +188,41 @@ export default function UnitOverview() {
                 onClick={handleSaveMetadata}
                 disabled={saving}
                 className="flex-1 py-2 rounded-lg text-sm font-medium text-white min-h-[44px]"
-                style={{ backgroundColor: '#C4713B', opacity: saving ? 0.7 : 1 }}
+                style={{ backgroundColor: 'var(--color-accent)', opacity: saving ? 0.7 : 1 }}
               >
                 {saving ? 'Saving...' : 'Save'}
               </button>
               <button
                 onClick={() => setEditing(false)}
                 className="flex-1 py-2 rounded-lg text-sm font-medium min-h-[44px]"
-                style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+                style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
               >
                 Cancel
               </button>
             </div>
           </div>
         ) : (
-          <p className="text-sm" style={{ color: '#7A6855' }}>
-            {unitLabel ?? <span style={{ color: '#A89880' }}>No grouping set — tap Edit to add year, chapter, and unit number</span>}
+          <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
+            {unitLabel ?? <span style={{ color: 'var(--color-text-muted)' }}>No grouping set — tap Edit to add year, chapter, and unit number</span>}
           </p>
         )}
       </div>
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-          <p className="text-3xl font-bold" style={{ color: '#C4713B' }}>
+        <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+          <p className="text-3xl font-bold" style={{ color: 'var(--color-accent)' }}>
             {entryCount ?? '...'}
           </p>
-          <p className="text-sm mt-0.5" style={{ color: '#7A6855' }}>
+          <p className="text-sm mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
             Total entries
           </p>
         </div>
-        <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-          <p className="text-3xl font-bold" style={{ color: '#C4713B' }}>
+        <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+          <p className="text-3xl font-bold" style={{ color: 'var(--color-accent)' }}>
             {categories?.length ?? '...'}
           </p>
-          <p className="text-sm mt-0.5" style={{ color: '#7A6855' }}>
+          <p className="text-sm mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
             Categories
           </p>
         </div>
@@ -230,32 +230,32 @@ export default function UnitOverview() {
 
       {/* Learning mode cards */}
       <div className="space-y-3 mb-6">
-        <h2 className="font-semibold" style={{ color: '#2C2418' }}>
+        <h2 className="font-semibold" style={{ color: 'var(--color-text)' }}>
           Learning Modes
         </h2>
         <button
           onClick={() => navigate(`/unit/${unitId}/flashcards`)}
           className="w-full rounded-xl p-4 flex items-center gap-4 text-left min-h-[64px]"
-          style={{ backgroundColor: 'white' }}
+          style={{ backgroundColor: 'var(--color-surface)' }}
         >
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#EDE8E0' }}>
-            <svg className="w-5 h-5" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--color-accent-light)' }}>
+            <svg className="w-5 h-5" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
           </div>
           <div className="flex-1">
-            <p className="font-medium" style={{ color: '#2C2418' }}>Flashcards</p>
-            <p className="text-sm" style={{ color: '#7A6855' }}>Tap to flip, rate your recall</p>
+            <p className="font-medium" style={{ color: 'var(--color-text)' }}>Flashcards</p>
+            <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Tap to flip, rate your recall</p>
           </div>
           {dueCount !== undefined && dueCount > 0 && (
             <span
               className="text-xs font-semibold px-2 py-1 rounded-full"
-              style={{ backgroundColor: '#C4713B', color: 'white' }}
+              style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}
             >
               {dueCount} due
             </span>
           )}
-          <svg className="w-5 h-5 ml-auto" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 ml-auto" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -263,18 +263,18 @@ export default function UnitOverview() {
         <button
           onClick={() => navigate(`/unit/${unitId}/builder`)}
           className="w-full rounded-xl p-4 flex items-center gap-4 text-left min-h-[64px]"
-          style={{ backgroundColor: 'white' }}
+          style={{ backgroundColor: 'var(--color-surface)' }}
         >
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#EDE8E0' }}>
-            <svg className="w-5 h-5" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--color-accent-light)' }}>
+            <svg className="w-5 h-5" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
           <div>
-            <p className="font-medium" style={{ color: '#2C2418' }}>Sentence Builder</p>
-            <p className="text-sm" style={{ color: '#7A6855' }}>Drag words to build sentences</p>
+            <p className="font-medium" style={{ color: 'var(--color-text)' }}>Sentence Builder</p>
+            <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Drag words to build sentences</p>
           </div>
-          <svg className="w-5 h-5 ml-auto" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 ml-auto" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -282,18 +282,18 @@ export default function UnitOverview() {
         <button
           onClick={() => navigate(`/unit/${unitId}/cloze`)}
           className="w-full rounded-xl p-4 flex items-center gap-4 text-left min-h-[64px]"
-          style={{ backgroundColor: 'white' }}
+          style={{ backgroundColor: 'var(--color-surface)' }}
         >
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#EDE8E0' }}>
-            <svg className="w-5 h-5" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--color-accent-light)' }}>
+            <svg className="w-5 h-5" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
           </div>
           <div>
-            <p className="font-medium" style={{ color: '#2C2418' }}>Cloze Tests</p>
-            <p className="text-sm" style={{ color: '#7A6855' }}>Fill in the blanks</p>
+            <p className="font-medium" style={{ color: 'var(--color-text)' }}>Cloze Tests</p>
+            <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Fill in the blanks</p>
           </div>
-          <svg className="w-5 h-5 ml-auto" style={{ color: '#C4713B' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 ml-auto" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -302,18 +302,18 @@ export default function UnitOverview() {
       {/* Categories */}
       {categories && categories.length > 0 && (
         <div className="space-y-2">
-          <h2 className="font-semibold" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold" style={{ color: 'var(--color-text)' }}>
             Categories
           </h2>
           {categories.map((cat) => (
             <div
               key={cat.id}
               className="rounded-xl p-4"
-              style={{ backgroundColor: 'white' }}
+              style={{ backgroundColor: 'var(--color-surface)' }}
             >
-              <p className="font-medium text-sm" style={{ color: '#2C2418' }}>{cat.name}</p>
+              <p className="font-medium text-sm" style={{ color: 'var(--color-text)' }}>{cat.name}</p>
               {cat.description && (
-                <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>{cat.description}</p>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>{cat.description}</p>
               )}
             </div>
           ))}

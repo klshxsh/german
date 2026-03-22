@@ -245,19 +245,19 @@ describe('SettingsPage', () => {
     renderSettings();
 
     await waitFor(() => {
-      expect(screen.getByText('Reset All Progress')).toBeInTheDocument();
+      expect(screen.getByText('Reset Leitner Buckets')).toBeInTheDocument();
     });
 
-    await user.click(screen.getByText('Reset All Progress'));
+    await user.click(screen.getByText('Reset Leitner Buckets'));
 
     await waitFor(() => {
-      expect(screen.getByText('Reset Progress?')).toBeInTheDocument();
+      expect(screen.getByText('Reset Leitner Buckets?')).toBeInTheDocument();
     });
 
     await user.click(screen.getByText('Reset'));
 
     await waitFor(() => {
-      expect(screen.getByText('Progress has been reset.')).toBeInTheDocument();
+      expect(screen.getByText('Leitner buckets have been reset.')).toBeInTheDocument();
     });
 
     const unitCount = await db.units.count();
@@ -314,13 +314,13 @@ describe('SettingsPage', () => {
     renderSettings();
 
     await waitFor(() => {
-      expect(screen.getByText('Reset All Progress')).toBeInTheDocument();
+      expect(screen.getByText('Reset Leitner Buckets')).toBeInTheDocument();
     });
 
-    await user.click(screen.getByText('Reset All Progress'));
+    await user.click(screen.getByText('Reset Leitner Buckets'));
 
     await waitFor(() => {
-      expect(screen.getByText('Reset Progress?')).toBeInTheDocument();
+      expect(screen.getByText('Reset Leitner Buckets?')).toBeInTheDocument();
     });
 
     await user.click(screen.getByText('Cancel'));

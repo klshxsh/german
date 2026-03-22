@@ -9,11 +9,13 @@ import {
   exportProgressData,
   importProgressData,
   resetAllProgress,
+  resetSessionHistory,
   type ProgressExport,
 } from '../db/progress';
 
 type ConfirmAction =
   | { type: 'reset' }
+  | { type: 'resetSessions' }
   | { type: 'deleteUnit'; unitId: number; unitName: string };
 
 const EMOJI_OPTIONS = [
@@ -153,7 +155,10 @@ export default function SettingsPage() {
 
     if (confirmAction.type === 'reset') {
       await resetAllProgress();
-      setActionDone('Progress has been reset.');
+      setActionDone('Leitner buckets have been reset.');
+    } else if (confirmAction.type === 'resetSessions') {
+      await resetSessionHistory();
+      setActionDone('Session history has been cleared.');
     } else if (confirmAction.type === 'deleteUnit') {
       await deleteUnit(confirmAction.unitId);
       setActionDone(`"${confirmAction.unitName}" has been deleted.`);
@@ -167,7 +172,7 @@ export default function SettingsPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-4 pb-8">
-      <h1 className="text-2xl font-bold mb-6" style={{ color: '#2C2418' }}>
+      <h1 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text)' }}>
         Settings
       </h1>
 
@@ -188,13 +193,13 @@ export default function SettingsPage() {
 
       {/* Your Profile */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-4" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-4" style={{ color: 'var(--color-text)' }}>
           Your Profile
         </h2>
 
         {/* Name */}
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-1" style={{ color: '#2C2418' }}>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-text)' }}>
             Name
           </label>
           <div className="flex gap-2">
@@ -207,9 +212,9 @@ export default function SettingsPage() {
               placeholder="Your name"
               className="flex-1 rounded-xl px-3 py-2 border text-sm"
               style={{
-                backgroundColor: '#EDE8E0',
-                borderColor: '#D4C8B8',
-                color: '#2C2418',
+                backgroundColor: 'var(--color-accent-light)',
+                borderColor: 'var(--color-border)',
+                color: 'var(--color-text)',
                 minHeight: '44px',
               }}
               aria-label="Name input"
@@ -217,13 +222,13 @@ export default function SettingsPage() {
             <button
               onClick={() => void handleNameSave()}
               className="rounded-xl px-4 py-2 text-sm font-medium text-white"
-              style={{ backgroundColor: '#C4713B', minHeight: '44px' }}
+              style={{ backgroundColor: 'var(--color-accent)', minHeight: '44px' }}
             >
               Save
             </button>
           </div>
           {savedName && (
-            <p className="text-xs mt-1" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>
               Saved: {savedName}
             </p>
           )}
@@ -231,7 +236,7 @@ export default function SettingsPage() {
 
         {/* Avatar */}
         <div>
-          <label className="block text-sm font-medium mb-2" style={{ color: '#2C2418' }}>
+          <label className="block text-sm font-medium mb-2" style={{ color: 'var(--color-text)' }}>
             Avatar
           </label>
           <div className="flex flex-wrap gap-2 mb-3" role="group" aria-label="Emoji avatar picker">
@@ -243,8 +248,8 @@ export default function SettingsPage() {
                 style={{
                   minWidth: '44px',
                   minHeight: '44px',
-                  backgroundColor: savedAvatar === emoji ? '#C4713B' : '#EDE8E0',
-                  outline: savedAvatar === emoji ? '2px solid #C4713B' : 'none',
+                  backgroundColor: savedAvatar === emoji ? 'var(--color-accent)' : 'var(--color-accent-light)',
+                  outline: savedAvatar === emoji ? '2px solid var(--color-accent)' : 'none',
                   outlineOffset: '2px',
                 }}
                 aria-label={`Select ${emoji} avatar`}
@@ -256,7 +261,7 @@ export default function SettingsPage() {
           </div>
 
           <div>
-            <label className="block text-xs font-medium mb-1" style={{ color: '#7A6855' }}>
+            <label className="block text-xs font-medium mb-1" style={{ color: 'var(--color-text-muted)' }}>
               Or choose your own:
             </label>
             <div className="flex gap-2">
@@ -270,9 +275,9 @@ export default function SettingsPage() {
                 placeholder="Paste emoji here"
                 className="w-24 rounded-xl px-3 py-2 border text-center text-xl"
                 style={{
-                  backgroundColor: '#EDE8E0',
-                  borderColor: customEmojiError ? '#C0392B' : '#D4C8B8',
-                  color: '#2C2418',
+                  backgroundColor: 'var(--color-accent-light)',
+                  borderColor: customEmojiError ? 'var(--color-danger)' : 'var(--color-border)',
+                  color: 'var(--color-text)',
                   minHeight: '44px',
                 }}
                 aria-label="Custom emoji input"
@@ -281,8 +286,8 @@ export default function SettingsPage() {
                 onClick={() => void handleCustomEmojiSave()}
                 className="rounded-xl px-4 py-2 text-sm font-medium"
                 style={{
-                  backgroundColor: '#EDE8E0',
-                  color: '#2C2418',
+                  backgroundColor: 'var(--color-accent-light)',
+                  color: 'var(--color-text)',
                   minHeight: '44px',
                 }}
               >
@@ -290,14 +295,14 @@ export default function SettingsPage() {
               </button>
             </div>
             {customEmojiError && (
-              <p className="text-xs mt-1" style={{ color: '#C0392B' }}>
+              <p className="text-xs mt-1" style={{ color: 'var(--color-danger)' }}>
                 {customEmojiError}
               </p>
             )}
           </div>
 
           {savedAvatar && (
-            <p className="text-sm mt-2" style={{ color: '#7A6855' }}>
+            <p className="text-sm mt-2" style={{ color: 'var(--color-text-muted)' }}>
               Current avatar: <span className="text-xl">{savedAvatar}</span>
             </p>
           )}
@@ -306,7 +311,7 @@ export default function SettingsPage() {
 
       {/* Colour Themes */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-4" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-4" style={{ color: 'var(--color-text)' }}>
           Colour Theme
         </h2>
         <div className="grid grid-cols-3 gap-3" role="group" aria-label="Colour theme selector">
@@ -356,10 +361,10 @@ export default function SettingsPage() {
 
       {/* Sound Effects */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
           Sound Effects
         </h2>
-        <p className="text-sm mb-3" style={{ color: '#7A6855' }}>
+        <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)' }}>
           Audio feedback for correct and incorrect answers during learning sessions.
         </p>
         <label className="flex items-center gap-3 cursor-pointer" style={{ minHeight: '44px' }}>
@@ -375,14 +380,14 @@ export default function SettingsPage() {
             />
             <div
               className="w-12 h-6 rounded-full transition-colors"
-              style={{ backgroundColor: isSoundOn ? '#C4713B' : '#D4C8B8' }}
+              style={{ backgroundColor: isSoundOn ? 'var(--color-accent)' : 'var(--color-border)' }}
             />
             <div
               className="absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform"
               style={{ transform: isSoundOn ? 'translateX(1.625rem)' : 'translateX(0.125rem)' }}
             />
           </div>
-          <span className="text-sm font-medium" style={{ color: '#2C2418' }}>
+          <span className="text-sm font-medium" style={{ color: 'var(--color-text)' }}>
             {isSoundOn ? 'On' : 'Off'}
           </span>
         </label>
@@ -390,16 +395,16 @@ export default function SettingsPage() {
 
       {/* Export Progress */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
           Export Progress
         </h2>
-        <p className="text-sm mb-3" style={{ color: '#7A6855' }}>
+        <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)' }}>
           Generate a JSON snapshot of all your progress data to back up or transfer to another device.
         </p>
         <button
           onClick={handleExport}
           className="rounded-xl px-5 py-3 font-medium text-white"
-          style={{ backgroundColor: '#C4713B', minHeight: '44px' }}
+          style={{ backgroundColor: 'var(--color-accent)', minHeight: '44px' }}
         >
           Generate Export
         </button>
@@ -407,15 +412,15 @@ export default function SettingsPage() {
         {exportJson && (
           <div className="mt-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium" style={{ color: '#2C2418' }}>
+              <span className="text-sm font-medium" style={{ color: 'var(--color-text)' }}>
                 Progress JSON
               </span>
               <button
                 onClick={handleCopy}
                 className="rounded-lg px-3 py-1.5 text-sm font-medium"
                 style={{
-                  backgroundColor: copied ? '#5B8C5A' : '#EDE8E0',
-                  color: copied ? 'white' : '#2C2418',
+                  backgroundColor: copied ? 'var(--color-success)' : 'var(--color-accent-light)',
+                  color: copied ? 'white' : 'var(--color-text)',
                 }}
               >
                 {copied ? 'Copied!' : 'Copy to Clipboard'}
@@ -427,9 +432,9 @@ export default function SettingsPage() {
               rows={8}
               className="w-full rounded-xl p-3 text-xs font-mono border resize-none"
               style={{
-                backgroundColor: '#EDE8E0',
-                borderColor: '#D4C8B8',
-                color: '#2C2418',
+                backgroundColor: 'var(--color-accent-light)',
+                borderColor: 'var(--color-border)',
+                color: 'var(--color-text)',
               }}
             />
           </div>
@@ -438,17 +443,17 @@ export default function SettingsPage() {
 
       {/* Import Progress */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
           Import Progress
         </h2>
-        <p className="text-sm mb-3" style={{ color: '#7A6855' }}>
+        <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)' }}>
           Restore progress from a previously exported JSON file.
         </p>
         <label
           className="inline-block rounded-xl px-5 py-3 font-medium cursor-pointer"
           style={{
-            backgroundColor: '#EDE8E0',
-            color: '#2C2418',
+            backgroundColor: 'var(--color-accent-light)',
+            color: 'var(--color-text)',
             minHeight: '44px',
           }}
         >
@@ -462,12 +467,12 @@ export default function SettingsPage() {
         </label>
 
         {importError && (
-          <p className="mt-2 text-sm" style={{ color: '#C0392B' }}>
+          <p className="mt-2 text-sm" style={{ color: 'var(--color-danger)' }}>
             {importError}
           </p>
         )}
         {importSuccess && (
-          <p className="mt-2 text-sm" style={{ color: '#5B8C5A' }}>
+          <p className="mt-2 text-sm" style={{ color: 'var(--color-success)' }}>
             Progress imported successfully!
           </p>
         )}
@@ -475,36 +480,50 @@ export default function SettingsPage() {
 
       {/* Reset Progress */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
           Reset Progress
         </h2>
-        <p className="text-sm mb-3" style={{ color: '#7A6855' }}>
-          Clear all flashcard progress and session history. Your imported units will not be affected.
+        <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)' }}>
+          Clear Leitner bucket data or session history independently. Your imported units will not be affected.
         </p>
-        <button
-          onClick={() => setConfirmAction({ type: 'reset' })}
-          className="rounded-xl px-5 py-3 font-medium"
-          style={{
-            backgroundColor: '#FDF0EC',
-            color: '#C0392B',
-            border: '1px solid #F5B7B1',
-            minHeight: '44px',
-          }}
-        >
-          Reset All Progress
-        </button>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <button
+            onClick={() => setConfirmAction({ type: 'reset' })}
+            className="rounded-xl px-5 py-3 font-medium"
+            style={{
+              backgroundColor: 'var(--color-accent-light)',
+              color: 'var(--color-danger)',
+              border: '1px solid var(--color-border)',
+              minHeight: '44px',
+            }}
+          >
+            Reset Leitner Buckets
+          </button>
+          <button
+            onClick={() => setConfirmAction({ type: 'resetSessions' })}
+            className="rounded-xl px-5 py-3 font-medium"
+            style={{
+              backgroundColor: 'var(--color-accent-light)',
+              color: 'var(--color-danger)',
+              border: '1px solid var(--color-border)',
+              minHeight: '44px',
+            }}
+          >
+            Clear Session History
+          </button>
+        </div>
       </section>
 
       {/* Delete Unit */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
           Delete Unit
         </h2>
-        <p className="text-sm mb-3" style={{ color: '#7A6855' }}>
+        <p className="text-sm mb-3" style={{ color: 'var(--color-text-muted)' }}>
           Remove a unit and all its data including progress records.
         </p>
         {!units || units.length === 0 ? (
-          <p className="text-sm" style={{ color: '#7A6855' }}>
+          <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
             No units to delete.
           </p>
         ) : (
@@ -513,9 +532,9 @@ export default function SettingsPage() {
               <div
                 key={unit.id}
                 className="flex items-center justify-between rounded-xl p-3"
-                style={{ backgroundColor: '#EDE8E0' }}
+                style={{ backgroundColor: 'var(--color-accent-light)' }}
               >
-                <span className="font-medium text-sm" style={{ color: '#2C2418' }}>
+                <span className="font-medium text-sm" style={{ color: 'var(--color-text)' }}>
                   {unit.name}
                 </span>
                 <button
@@ -528,9 +547,9 @@ export default function SettingsPage() {
                   }
                   className="rounded-lg px-3 py-1.5 text-sm font-medium"
                   style={{
-                    backgroundColor: '#FDF0EC',
-                    color: '#C0392B',
-                    border: '1px solid #F5B7B1',
+                    backgroundColor: 'var(--color-surface)',
+                    color: 'var(--color-danger)',
+                    border: '1px solid var(--color-border)',
                     minHeight: '44px',
                   }}
                 >
@@ -544,15 +563,15 @@ export default function SettingsPage() {
 
       {/* About */}
       <section>
-        <h2 className="text-lg font-semibold mb-2" style={{ color: '#2C2418' }}>
+        <h2 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text)' }}>
           About
         </h2>
         <div
           className="rounded-xl p-4 text-sm space-y-1"
-          style={{ backgroundColor: '#EDE8E0', color: '#7A6855' }}
+          style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text-muted)' }}
         >
           <p>
-            <span className="font-medium" style={{ color: '#2C2418' }}>
+            <span className="font-medium" style={{ color: 'var(--color-text)' }}>
               Deutsch Learner
             </span>{' '}
             v1.0
@@ -572,30 +591,40 @@ export default function SettingsPage() {
         >
           <div
             className="w-full max-w-sm rounded-2xl p-6"
-            style={{ backgroundColor: '#F6F1EB' }}
+            style={{ backgroundColor: 'var(--color-bg)' }}
           >
-            <h3 className="text-lg font-bold mb-3" style={{ color: '#2C2418' }}>
-              {confirmAction.type === 'reset' ? 'Reset Progress?' : 'Delete Unit?'}
-            </h3>
-            <p className="text-sm mb-6" style={{ color: '#7A6855' }}>
+            <h3 className="text-lg font-bold mb-3" style={{ color: 'var(--color-text)' }}>
               {confirmAction.type === 'reset'
-                ? 'This will clear all flashcard progress and session history. Your imported units will remain. This cannot be undone.'
-                : `This will permanently delete "${confirmAction.unitName}" and all its data including progress. This cannot be undone.`}
+                ? 'Reset Leitner Buckets?'
+                : confirmAction.type === 'resetSessions'
+                  ? 'Clear Session History?'
+                  : 'Delete Unit?'}
+            </h3>
+            <p className="text-sm mb-6" style={{ color: 'var(--color-text-muted)' }}>
+              {confirmAction.type === 'reset'
+                ? 'This will reset all Leitner bucket positions to zero. Your session history and imported units will not be affected. This cannot be undone.'
+                : confirmAction.type === 'resetSessions'
+                  ? 'This will permanently delete all session history and accuracy data. Your Leitner buckets and imported units will not be affected. This cannot be undone.'
+                  : `This will permanently delete "${confirmAction.unitName}" and all its data including progress. This cannot be undone.`}
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => setConfirmAction(null)}
                 className="flex-1 rounded-xl py-3 font-medium"
-                style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+                style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
               >
                 Cancel
               </button>
               <button
                 onClick={handleConfirm}
                 className="flex-1 rounded-xl py-3 font-medium text-white"
-                style={{ backgroundColor: '#C0392B' }}
+                style={{ backgroundColor: 'var(--color-danger)' }}
               >
-                {confirmAction.type === 'reset' ? 'Reset' : 'Delete'}
+                {confirmAction.type === 'reset'
+                  ? 'Reset'
+                  : confirmAction.type === 'resetSessions'
+                    ? 'Clear'
+                    : 'Delete'}
               </button>
             </div>
           </div>

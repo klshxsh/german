@@ -239,12 +239,12 @@ export default function ClozeSession() {
           <button
             onClick={() => navigate(`/unit/${unitId}`)}
             className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-            style={{ backgroundColor: '#EDE8E0' }}
+            style={{ backgroundColor: 'var(--color-accent-light)' }}
             aria-label="Go back"
           >
             <svg
               className="w-5 h-5"
-              style={{ color: '#2C2418' }}
+              style={{ color: 'var(--color-text)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -252,14 +252,14 @@ export default function ClozeSession() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <h1 className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+          <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
             Cloze Tests
           </h1>
         </header>
 
         {/* Blank type */}
         <section className="mb-6">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             What to blank
           </h2>
           <div className="space-y-2">
@@ -275,7 +275,7 @@ export default function ClozeSession() {
               <label
                 key={value}
                 className="flex items-center gap-3 p-3 rounded-xl cursor-pointer"
-                style={{ backgroundColor: 'white' }}
+                style={{ backgroundColor: 'var(--color-surface)' }}
               >
                 <input
                   type="radio"
@@ -283,9 +283,9 @@ export default function ClozeSession() {
                   value={value}
                   checked={config.blankType === value}
                   onChange={() => setConfig((prev) => ({ ...prev, blankType: value }))}
-                  className="w-5 h-5 accent-[#C4713B]"
+                  className="w-5 h-5"
                 />
-                <span style={{ color: '#2C2418' }}>{label}</span>
+                <span style={{ color: 'var(--color-text)' }}>{label}</span>
               </label>
             ))}
           </div>
@@ -293,7 +293,7 @@ export default function ClozeSession() {
 
         {/* Mode */}
         <section className="mb-6">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Answer mode
           </h2>
           <div className="space-y-2">
@@ -306,7 +306,7 @@ export default function ClozeSession() {
               <label
                 key={value}
                 className="flex items-center gap-3 p-3 rounded-xl cursor-pointer"
-                style={{ backgroundColor: 'white' }}
+                style={{ backgroundColor: 'var(--color-surface)' }}
               >
                 <input
                   type="radio"
@@ -314,9 +314,9 @@ export default function ClozeSession() {
                   value={value}
                   checked={config.mode === value}
                   onChange={() => setConfig((prev) => ({ ...prev, mode: value }))}
-                  className="w-5 h-5 accent-[#C4713B]"
+                  className="w-5 h-5"
                 />
-                <span style={{ color: '#2C2418' }}>{label}</span>
+                <span style={{ color: 'var(--color-text)' }}>{label}</span>
               </label>
             ))}
           </div>
@@ -324,7 +324,7 @@ export default function ClozeSession() {
 
         {/* Count */}
         <section className="mb-8">
-          <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+          <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
             Number of questions
           </h2>
           <select
@@ -334,9 +334,9 @@ export default function ClozeSession() {
             }
             className="w-full p-3 rounded-xl border"
             style={{
-              backgroundColor: 'white',
-              borderColor: '#D4C8B8',
-              color: '#2C2418',
+              backgroundColor: 'var(--color-surface)',
+              borderColor: 'var(--color-border)',
+              color: 'var(--color-text)',
             }}
             aria-label="Number of questions"
           >
@@ -347,7 +347,7 @@ export default function ClozeSession() {
         </section>
 
         {noQuestionsMessage && (
-          <p className="mb-4 text-sm text-center" style={{ color: '#C0392B' }}>
+          <p className="mb-4 text-sm text-center" style={{ color: 'var(--color-danger)' }}>
             {noQuestionsMessage}
           </p>
         )}
@@ -355,7 +355,7 @@ export default function ClozeSession() {
         <button
           onClick={startSession}
           className="w-full py-4 rounded-xl font-semibold text-white min-h-[56px]"
-          style={{ backgroundColor: '#C4713B' }}
+          style={{ backgroundColor: 'var(--color-accent)' }}
         >
           Start Session
         </button>
@@ -372,8 +372,10 @@ export default function ClozeSession() {
     const current = currentIndex + 1;
     const progressPct = ((current - 1) / total) * 100;
 
-    const feedbackColor =
-      answered && isCorrect !== null ? (isCorrect ? '#5B8C5A' : '#C0392B') : undefined;
+    const feedbackBorderColor =
+      answered && isCorrect !== null
+        ? isCorrect ? 'var(--color-success)' : 'var(--color-danger)'
+        : undefined;
 
     return (
       <div className="max-w-2xl mx-auto px-4 pt-6 pb-4">
@@ -385,12 +387,12 @@ export default function ClozeSession() {
               setPhase('config');
             }}
             className="p-2 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"
-            style={{ backgroundColor: '#EDE8E0' }}
+            style={{ backgroundColor: 'var(--color-accent-light)' }}
             aria-label="Go back"
           >
             <svg
               className="w-5 h-5"
-              style={{ color: '#2C2418' }}
+              style={{ color: 'var(--color-text)' }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -399,12 +401,12 @@ export default function ClozeSession() {
             </svg>
           </button>
           <div className="flex-1">
-            <div className="flex justify-between text-sm mb-1" style={{ color: '#7A6855' }}>
+            <div className="flex justify-between text-sm mb-1" style={{ color: 'var(--color-text-muted)' }}>
               <span>Q {current} of {total}</span>
             </div>
             <div
               className="h-2 rounded-full overflow-hidden"
-              style={{ backgroundColor: '#EDE8E0' }}
+              style={{ backgroundColor: 'var(--color-accent-light)' }}
               role="progressbar"
               aria-valuenow={current - 1}
               aria-valuemin={0}
@@ -412,7 +414,7 @@ export default function ClozeSession() {
             >
               <div
                 className="h-full rounded-full transition-all"
-                style={{ width: `${progressPct}%`, backgroundColor: '#C4713B' }}
+                style={{ width: `${progressPct}%`, backgroundColor: 'var(--color-accent)' }}
               />
             </div>
           </div>
@@ -422,18 +424,18 @@ export default function ClozeSession() {
         <div
           className="rounded-xl p-4 mb-3"
           style={{
-            backgroundColor: 'white',
+            backgroundColor: 'var(--color-surface)',
             boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-            borderLeft: feedbackColor ? `4px solid ${feedbackColor}` : undefined,
+            borderLeft: feedbackBorderColor ? `4px solid ${feedbackBorderColor}` : undefined,
           }}
         >
-          <p className="text-xs font-medium mb-2" style={{ color: '#7A6855' }}>
+          <p className="text-xs font-medium mb-2" style={{ color: 'var(--color-text-muted)' }}>
             Fill in the blank:
           </p>
-          <p className="text-lg font-semibold" style={{ color: '#2C2418' }}>
+          <p className="text-lg font-semibold" style={{ color: 'var(--color-text)' }}>
             {question.sentenceWithBlank}
           </p>
-          <p className="text-sm mt-2" style={{ color: '#7A6855' }}>
+          <p className="text-sm mt-2" style={{ color: 'var(--color-text-muted)' }}>
             {question.englishHint}
           </p>
         </div>
@@ -443,19 +445,19 @@ export default function ClozeSession() {
           {config.mode === 'multiple-choice' ? (
             <div className="grid grid-cols-2 gap-3">
               {question.options.map((option, idx) => {
-                let bgColor = 'white';
-                let borderColor = '#D4C8B8';
-                let textColor = '#2C2418';
+                let bgColor = 'var(--color-surface)';
+                let borderColor = 'var(--color-border)';
+                let textColor = 'var(--color-text)';
 
                 if (answered) {
                   if (option === question.correctAnswer) {
                     bgColor = '#EBF5EA';
-                    borderColor = '#5B8C5A';
-                    textColor = '#5B8C5A';
+                    borderColor = 'var(--color-success)';
+                    textColor = 'var(--color-success)';
                   } else if (option === questionState.userAnswer && !isCorrect) {
                     bgColor = '#FDECEA';
-                    borderColor = '#C0392B';
-                    textColor = '#C0392B';
+                    borderColor = 'var(--color-danger)';
+                    textColor = 'var(--color-danger)';
                   }
                 }
 
@@ -487,9 +489,9 @@ export default function ClozeSession() {
                   placeholder="Type your answer…"
                   className="flex-1 p-3 rounded-xl border text-sm"
                   style={{
-                    backgroundColor: 'white',
-                    borderColor: feedbackColor ?? '#D4C8B8',
-                    color: '#2C2418',
+                    backgroundColor: 'var(--color-surface)',
+                    borderColor: feedbackBorderColor ?? 'var(--color-border)',
+                    color: 'var(--color-text)',
                   }}
                   aria-label="Free type answer"
                 />
@@ -497,7 +499,7 @@ export default function ClozeSession() {
                   onClick={handleFreeTypeSubmit}
                   disabled={answered || !freeTypeInput.trim()}
                   className="px-4 py-3 rounded-xl font-semibold text-white min-h-[48px] disabled:opacity-50"
-                  style={{ backgroundColor: '#C4713B' }}
+                  style={{ backgroundColor: 'var(--color-accent)' }}
                 >
                   Submit
                 </button>
@@ -510,17 +512,17 @@ export default function ClozeSession() {
         {answered && isCorrect !== null && (
           <div className="mb-4">
             {isCorrect ? (
-              <p className="text-sm font-medium" style={{ color: '#5B8C5A' }}>
+              <p className="text-sm font-medium" style={{ color: 'var(--color-success)' }}>
                 Correct! {isCorrect && config.mode === 'free-type' && questionState.userAnswer.toLowerCase() !== question.correctAnswer.toLowerCase()
                   ? `(accepted — close enough to "${question.correctAnswer}")`
                   : ''}
               </p>
             ) : (
               <div>
-                <p className="text-sm font-medium" style={{ color: '#C0392B' }}>
+                <p className="text-sm font-medium" style={{ color: 'var(--color-danger)' }}>
                   Not quite.
                 </p>
-                <p className="text-sm mt-1" style={{ color: '#2C2418' }}>
+                <p className="text-sm mt-1" style={{ color: 'var(--color-text)' }}>
                   Correct answer: <span className="font-semibold">{question.correctAnswer}</span>
                 </p>
               </div>
@@ -533,7 +535,7 @@ export default function ClozeSession() {
           <button
             onClick={handleNext}
             className="w-full py-4 rounded-xl font-semibold text-white min-h-[56px]"
-            style={{ backgroundColor: '#C4713B' }}
+            style={{ backgroundColor: 'var(--color-accent)' }}
           >
             {currentIndex + 1 >= questions.length ? 'See Results' : 'Next'}
           </button>
@@ -541,7 +543,7 @@ export default function ClozeSession() {
 
         {/* Auto-advance indicator */}
         {answered && isCorrect && (
-          <p className="text-center text-sm" style={{ color: '#7A6855' }}>
+          <p className="text-center text-sm" style={{ color: 'var(--color-text-muted)' }}>
             Advancing…
           </p>
         )}
@@ -561,38 +563,38 @@ export default function ClozeSession() {
 
     return (
       <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
-        <h1 className="text-2xl font-bold mb-2" style={{ color: '#2C2418' }}>
+        <h1 className="text-2xl font-bold mb-2" style={{ color: 'var(--color-text)' }}>
           Session Complete!
         </h1>
 
         {/* Score */}
         <div
           className="rounded-xl p-4 mb-6 text-center"
-          style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
+          style={{ backgroundColor: 'var(--color-surface)', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
         >
-          <p className="text-4xl font-bold mb-1" style={{ color: '#C4713B' }}>
+          <p className="text-4xl font-bold mb-1" style={{ color: 'var(--color-accent)' }}>
             {correctAnswers} / {results.length}
           </p>
-          <p className="text-sm" style={{ color: '#7A6855' }}>
+          <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
             correct
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 gap-3 mb-6">
-          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-            <p className="text-2xl font-bold" style={{ color: '#C4713B' }}>
+          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>
               {summary.accuracyPercent}%
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Accuracy
             </p>
           </div>
-          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'white' }}>
-            <p className="text-2xl font-bold" style={{ color: '#2C2418' }}>
+          <div className="rounded-xl p-4 text-center" style={{ backgroundColor: 'var(--color-surface)' }}>
+            <p className="text-2xl font-bold" style={{ color: 'var(--color-text)' }}>
               {formatElapsedTime(summary.elapsedMs)}
             </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6855' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
               Time
             </p>
           </div>
@@ -601,7 +603,7 @@ export default function ClozeSession() {
         {/* Missed items */}
         {missedResults.length > 0 && (
           <div className="mb-6">
-            <h2 className="font-semibold mb-3" style={{ color: '#2C2418' }}>
+            <h2 className="font-semibold mb-3" style={{ color: 'var(--color-text)' }}>
               Review missed answers
             </h2>
             <div className="space-y-2">
@@ -609,18 +611,18 @@ export default function ClozeSession() {
                 <div
                   key={idx}
                   className="rounded-xl p-3"
-                  style={{ backgroundColor: 'white', borderLeft: '3px solid #C0392B' }}
+                  style={{ backgroundColor: 'var(--color-surface)', borderLeft: '3px solid var(--color-danger)' }}
                 >
-                  <p className="text-sm" style={{ color: '#7A6855' }}>
+                  <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
                     {r.question.sentenceWithBlank}
                   </p>
                   <p className="text-sm mt-1">
-                    <span style={{ color: '#7A6855' }}>Answer: </span>
-                    <span className="font-semibold" style={{ color: '#2C2418' }}>
+                    <span style={{ color: 'var(--color-text-muted)' }}>Answer: </span>
+                    <span className="font-semibold" style={{ color: 'var(--color-text)' }}>
                       {r.question.correctAnswer}
                     </span>
                     {r.userAnswer && (
-                      <span style={{ color: '#C0392B' }}> (you said: {r.userAnswer})</span>
+                      <span style={{ color: 'var(--color-danger)' }}> (you said: {r.userAnswer})</span>
                     )}
                   </p>
                 </div>
@@ -632,7 +634,7 @@ export default function ClozeSession() {
         <button
           onClick={() => navigate(`/unit/${unitId}`)}
           className="w-full py-3 rounded-xl font-semibold min-h-[48px]"
-          style={{ backgroundColor: '#EDE8E0', color: '#2C2418' }}
+          style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text)' }}
         >
           Back to unit
         </button>

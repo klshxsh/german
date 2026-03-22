@@ -39,7 +39,7 @@ function ResultCard({
   return (
     <div
       className="rounded-xl p-4 cursor-pointer transition-transform active:scale-[0.98]"
-      style={{ backgroundColor: 'white' }}
+      style={{ backgroundColor: 'var(--color-surface)' }}
       onClick={onNavigate}
       role="button"
       tabIndex={0}
@@ -49,28 +49,28 @@ function ResultCard({
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-2 flex-wrap">
-            <span className="font-semibold text-base" style={{ color: '#2C2418' }}>
+            <span className="font-semibold text-base" style={{ color: 'var(--color-text)' }}>
               <Highlight text={result.entry.german} query={query} />
             </span>
-            <span className="text-sm" style={{ color: '#7A6855' }}>
+            <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
               <Highlight text={result.entry.english} query={query} />
             </span>
           </div>
           <div className="flex items-center gap-2 mt-1.5 flex-wrap">
             <span
               className="text-xs px-2 py-0.5 rounded-full font-medium"
-              style={{ backgroundColor: '#EDE8E0', color: '#7A6855' }}
+              style={{ backgroundColor: 'var(--color-accent-light)', color: 'var(--color-text-muted)' }}
             >
               {result.category.name}
             </span>
-            <span className="text-xs" style={{ color: '#A89880' }}>
+            <span className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
               {result.entry.partOfSpeech}
             </span>
           </div>
           {result.matchedVerbForm && (
             <div
               className="mt-2 text-xs rounded-lg p-2"
-              style={{ backgroundColor: '#F6F1EB', color: '#7A6855' }}
+              style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text-muted)' }}
               data-testid="verb-form-row"
             >
               <span className="font-medium">Verb: </span>
@@ -84,7 +84,7 @@ function ResultCard({
             <div
               key={s.id}
               className="mt-2 text-xs rounded-lg p-2 italic flex items-start justify-between gap-2"
-              style={{ backgroundColor: '#F6F1EB', color: '#7A6855' }}
+              style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text-muted)' }}
               data-testid="matched-sentence"
             >
               <span>
@@ -107,7 +107,7 @@ function ResultCard({
         </div>
         <svg
           className="w-4 h-4 flex-shrink-0 mt-1"
-          style={{ color: '#C4713B' }}
+          style={{ color: 'var(--color-accent)' }}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -146,7 +146,7 @@ export default function SearchPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 pt-8 pb-4">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold mb-4" style={{ color: '#2C2418' }}>
+        <h1 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text)' }}>
           Search
         </h1>
         <div className="relative">
@@ -156,7 +156,7 @@ export default function SearchPage() {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             className="w-full px-4 py-3 pr-10 rounded-xl border text-base outline-none min-h-[44px]"
-            style={{ backgroundColor: 'white', borderColor: '#D4C8B8', color: '#2C2418' }}
+            style={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
             aria-label="Search vocabulary"
             data-testid="search-input"
           />
@@ -166,7 +166,7 @@ export default function SearchPage() {
               className="absolute right-3 top-1/2 -translate-y-1/2 p-1"
               aria-label="Clear search"
             >
-              <svg className="w-5 h-5" style={{ color: '#7A6855' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" style={{ color: 'var(--color-text-muted)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -175,26 +175,26 @@ export default function SearchPage() {
       </header>
 
       {isLoading ? (
-        <div className="text-center py-12" style={{ color: '#7A6855' }}>
+        <div className="text-center py-12" style={{ color: 'var(--color-text-muted)' }}>
           Loading...
         </div>
       ) : !query ? (
-        <div className="text-center py-12" style={{ color: '#7A6855' }}>
+        <div className="text-center py-12" style={{ color: 'var(--color-text-muted)' }}>
           <svg className="w-12 h-12 mx-auto mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <p>Type to search across all units</p>
         </div>
       ) : results && results.totalResults === 0 ? (
-        <div className="text-center py-12" style={{ color: '#7A6855' }} data-testid="no-results">
-          <p className="font-medium" style={{ color: '#2C2418' }}>
+        <div className="text-center py-12" style={{ color: 'var(--color-text-muted)' }} data-testid="no-results">
+          <p className="font-medium" style={{ color: 'var(--color-text)' }}>
             No results for &ldquo;{query}&rdquo;
           </p>
           <p className="text-sm mt-1">Try a different word or check your spelling</p>
         </div>
       ) : results ? (
         <div>
-          <p className="text-sm mb-4" style={{ color: '#7A6855' }} data-testid="result-count">
+          <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)' }} data-testid="result-count">
             {results.totalResults} {results.totalResults === 1 ? 'result' : 'results'} across{' '}
             {results.unitCount} {results.unitCount === 1 ? 'unit' : 'units'}
           </p>
@@ -202,10 +202,10 @@ export default function SearchPage() {
             {results.groups.map((group) => (
               <div key={group.unitId}>
                 <div className="mb-3">
-                  <h2 className="font-semibold text-base" style={{ color: '#2C2418' }}>
+                  <h2 className="font-semibold text-base" style={{ color: 'var(--color-text)' }}>
                     {group.unit.name}
                   </h2>
-                  <p className="text-xs" style={{ color: '#A89880' }}>
+                  <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
                     {unitLabel(group.unit)}
                   </p>
                 </div>
@@ -214,7 +214,7 @@ export default function SearchPage() {
                     <div key={catGroup.categoryId}>
                       <h3
                         className="text-xs font-semibold uppercase tracking-wide mb-2"
-                        style={{ color: '#7A6855' }}
+                        style={{ color: 'var(--color-text-muted)' }}
                       >
                         {catGroup.category.name}
                       </h3>

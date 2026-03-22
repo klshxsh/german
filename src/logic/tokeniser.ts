@@ -7,7 +7,7 @@ export interface Token {
 
 export function tokenise(sentence: string, entries: Entry[]): Token[] {
   // Split into word parts and punctuation
-  const parts = sentence.match(/[a-zA-ZäöüÄÖÜß0-9]+|[^a-zA-ZäöüÄÖÜß0-9\s]/g) ?? [];
+  const parts = sentence.match(/[a-zA-ZäöüÄÖÜß0-9]+(?:'[a-zA-ZäöüÄÖÜß0-9]+)*|[^a-zA-ZäöüÄÖÜß0-9'\s]/g) ?? [];
 
   // Sort entries by word count descending (greedy multi-word matching)
   const sorted = [...entries].sort((a, b) => {
