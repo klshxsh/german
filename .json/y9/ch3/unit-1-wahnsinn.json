@@ -1,0 +1,1551 @@
+{
+  "unit": {
+    "name": "Wahnsinn! Discussing crazy ambitions",
+    "description": "A unit focused on discussing extreme activities, ambitions, and hypothetical situations using the conditional tense (würde) and personality adjectives"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Personality Adjectives",
+      "description": "Adjectives describing personality traits related to bravery and adventure",
+      "grammarNotes": "Used with 'Bist du...?' and 'Ich bin...' constructions"
+    },
+    {
+      "id": "cat_2",
+      "name": "Qualifiers and Intensifiers",
+      "description": "Adverbs that modify adjectives to show degree or intensity",
+      "grammarNotes": "Used before adjectives to indicate how much of that quality someone has"
+    },
+    {
+      "id": "cat_3",
+      "name": "Time Phrases",
+      "description": "Temporal expressions used at the beginning of sentences",
+      "grammarNotes": "When placed at the beginning of a sentence, these cause verb-subject inversion (FLIP FLOP THE VERB AND PRONOUN)"
+    },
+    {
+      "id": "cat_4",
+      "name": "Conditional Mood - würde",
+      "description": "Conditional forms expressing what one would do",
+      "grammarNotes": "Formed with würde + infinitive at the end of the clause. Conjugates like a modal verb."
+    },
+    {
+      "id": "cat_5",
+      "name": "Conditional Phrases with würde",
+      "description": "Common phrases using the conditional mood",
+      "grammarNotes": "Express willingness, likelihood, or preference in hypothetical situations"
+    },
+    {
+      "id": "cat_6",
+      "name": "Extreme Activities",
+      "description": "Verbs and phrases describing adventurous or extreme activities",
+      "grammarNotes": "Infinitive forms used after würde in conditional sentences"
+    },
+    {
+      "id": "cat_7",
+      "name": "Preparation and Training Activities",
+      "description": "Activities related to preparing for extreme challenges",
+      "grammarNotes": "Infinitive forms used after würde"
+    },
+    {
+      "id": "cat_8",
+      "name": "Reflexive Verbs - Conditional",
+      "description": "Reflexive pronouns used with würde for self-referential actions",
+      "grammarNotes": "Reflexive pronoun changes with subject: mich, dich, sich, uns, euch, sich"
+    },
+    {
+      "id": "cat_9",
+      "name": "Reflexive Verb Activities",
+      "description": "Reflexive verbs describing preparation and emotional states",
+      "grammarNotes": "Used with reflexive pronouns and würde for conditional meaning"
+    },
+    {
+      "id": "cat_10",
+      "name": "Reasons and Opinions",
+      "description": "Phrases expressing reasons for or against doing extreme activities",
+      "grammarNotes": "Often used with subordinating conjunctions like weil, da, obwohl"
+    },
+    {
+      "id": "cat_11",
+      "name": "High Frequency Words",
+      "description": "Common words and small grammatical elements",
+      "grammarNotes": "Includes negations, prepositions, and other functional words"
+    },
+    {
+      "id": "cat_12",
+      "name": "Subordinating Conjunctions",
+      "description": "Conjunctions that send the verb to the end of the clause",
+      "grammarNotes": "weil/da (because) and obwohl/obschon (although) require verb-final word order"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "abenteuerlustig",
+      "english": "adventurous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_1",
+      "german": "ängstlich",
+      "english": "fearful",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_1",
+      "german": "mutig",
+      "english": "brave",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_1",
+      "german": "vorsichtig",
+      "english": "cautious",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_1",
+      "german": "kühn",
+      "english": "daring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_1",
+      "german": "feige",
+      "english": "cowardly",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_1",
+      "german": "verrückt",
+      "english": "crazy",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_2",
+      "german": "äußerst",
+      "english": "extremely",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_2",
+      "german": "wirklich",
+      "english": "really",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_2",
+      "german": "sehr",
+      "english": "very",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_2",
+      "german": "total",
+      "english": "totally",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_2",
+      "german": "ziemlich",
+      "english": "quite",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_2",
+      "german": "ein bisschen",
+      "english": "a little bit",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_2",
+      "german": "gar nicht",
+      "english": "not at all",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_3",
+      "german": "Zuerst",
+      "english": "first of all",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Causes verb-subject inversion",
+      "tags": [
+        "time",
+        "sequence"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_3",
+      "german": "Dann",
+      "english": "then",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Causes verb-subject inversion",
+      "tags": [
+        "time",
+        "sequence"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_3",
+      "german": "Danach",
+      "english": "afterwards",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Causes verb-subject inversion",
+      "tags": [
+        "time",
+        "sequence"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_3",
+      "german": "Später",
+      "english": "later",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Causes verb-subject inversion",
+      "tags": [
+        "time",
+        "sequence"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_3",
+      "german": "In einem Jahr",
+      "english": "in 1 year",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Causes verb-subject inversion",
+      "tags": [
+        "time",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_3",
+      "german": "In drei Jahren",
+      "english": "in 3 years",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Causes verb-subject inversion",
+      "tags": [
+        "time",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_4",
+      "german": "Ich würde",
+      "english": "I would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Conditional auxiliary, 1st person singular",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_4",
+      "german": "Du würdest",
+      "english": "You would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Conditional auxiliary, 2nd person singular",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_4",
+      "german": "Er/sie/es/man würde",
+      "english": "He/she/it/you would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Conditional auxiliary, 3rd person singular",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_4",
+      "german": "Wir würden",
+      "english": "We would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Conditional auxiliary, 1st person plural",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_4",
+      "german": "Ihr würdet",
+      "english": "You plural would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Conditional auxiliary, 2nd person plural",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_4",
+      "german": "Sie/sie würden",
+      "english": "You formal/they would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Conditional auxiliary, formal/3rd person plural",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_5",
+      "german": "Ich würde das nie machen",
+      "english": "I would never do that",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "negation"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_5",
+      "german": "Ich würde das bestimmt machen",
+      "english": "I would definitely do that",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "affirmation"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_5",
+      "german": "Ich würde das vielleicht machen",
+      "english": "I would maybe do that",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "possibility"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_5",
+      "german": "Ich würde gern",
+      "english": "I would like",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_5",
+      "german": "Du würdest gern",
+      "english": "You would like",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_5",
+      "german": "Er/sie/es/man würde gern",
+      "english": "He/she/it/you would like",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_5",
+      "german": "Wir würden gern",
+      "english": "We would like",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_5",
+      "german": "Ihr würdet gern",
+      "english": "You plural would like",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "conditional",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_6",
+      "german": "mit Haifischen schwimmen",
+      "english": "swim with sharks",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "water"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_6",
+      "german": "Extrembügeln machen",
+      "english": "do extreme ironing",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_6",
+      "german": "Fallschirm springen",
+      "english": "go sky diving",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "air"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_6",
+      "german": "zum Mond fliegen",
+      "english": "fly to the moon",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "space"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_6",
+      "german": "Kakerlaken essen",
+      "english": "eat cockroaches",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_6",
+      "german": "den Mount Everest besteigen",
+      "english": "climb Mount Everest",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "mountain"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_6",
+      "german": "Zorbing machen",
+      "english": "go zorbing",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_6",
+      "german": "durch eine Wüste joggen",
+      "english": "jog through a desert",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "desert"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_6",
+      "german": "Insekten essen",
+      "english": "eat insects",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_6",
+      "german": "in den Alpen wandern",
+      "english": "hike in the alps",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "mountain"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_6",
+      "german": "in der Wüste Rad fahren",
+      "english": "to cycle in the desert",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "desert"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_6",
+      "german": "Brennnessel essen",
+      "english": "to eat stinging nettles",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_6",
+      "german": "mit Krokodilen schwimmen",
+      "english": "to swim with crocodiles",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "water"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_6",
+      "german": "zum Mars fliegen",
+      "english": "fly to Mars",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "extreme",
+        "space"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_7",
+      "german": "viel trainieren",
+      "english": "train lots",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "preparation"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_7",
+      "german": "einen schweren Rucksack tragen",
+      "english": "wear a heavy rucksack",
+      "partOfSpeech": "verb",
+      "grammarNotes": "",
+      "tags": [
+        "preparation"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_7",
+      "german": "gesund essen und Energiegetränke trinken",
+      "english": "eat healthily and drink energy drinks",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "preparation",
+        "food"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_8",
+      "german": "Ich würde mich",
+      "english": "I would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive conditional, 1st person singular",
+      "tags": [
+        "conditional",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_8",
+      "german": "Du würdest dich",
+      "english": "You would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive conditional, 2nd person singular",
+      "tags": [
+        "conditional",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_8",
+      "german": "Er/sie/es/man würde sich",
+      "english": "He/she/it/you would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive conditional, 3rd person singular",
+      "tags": [
+        "conditional",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_8",
+      "german": "Wir würden uns",
+      "english": "We would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive conditional, 1st person plural",
+      "tags": [
+        "conditional",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_8",
+      "german": "Ihr würdet euch",
+      "english": "You plural would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive conditional, 2nd person plural",
+      "tags": [
+        "conditional",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_8",
+      "german": "Sie/sie würden sich",
+      "english": "You formal/they would",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive conditional, formal/3rd person plural",
+      "tags": [
+        "conditional",
+        "reflexive"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_9",
+      "german": "sehr gut vorbereiten",
+      "english": "prepare very well",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive verb",
+      "tags": [
+        "reflexive",
+        "preparation"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_9",
+      "german": "darauf freuen",
+      "english": "look forward to it",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive verb",
+      "tags": [
+        "reflexive",
+        "emotion"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_9",
+      "german": "verletzen",
+      "english": "get injured",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive verb",
+      "tags": [
+        "reflexive",
+        "danger"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_9",
+      "german": "aufregen",
+      "english": "get nervous/agitated",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive verb",
+      "tags": [
+        "reflexive",
+        "emotion"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_9",
+      "german": "vorstellen",
+      "english": "imagine",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Reflexive verb",
+      "tags": [
+        "reflexive",
+        "thought"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_10",
+      "german": "Ich bin extrem/äußerst/total/ganz/ein bisschen mutig/feige/verrückt",
+      "english": "I am extremely/extremely/totally/completely/a bit daring/cowardly/crazy",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_10",
+      "german": "es wäre zu gefährlich/beängstigend",
+      "english": "It would be too dangerous/scary",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_10",
+      "german": "Ich bin Adrenalinjunkie",
+      "english": "I'm an adrenaline junkie",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_10",
+      "german": "Ich würde mich lieber zu Hause entspannen",
+      "english": "I would rather relax at home",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_10",
+      "german": "Ich bin viel zu faul",
+      "english": "I am far too lazy",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "personality"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_10",
+      "german": "Ich würde lieber Xbox/Playstation spielen",
+      "english": "I would prefer to play xbox/playstation",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "preference"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_10",
+      "german": "Bergsteigen ist mein Hobby",
+      "english": "mountain climbing is my hobby",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "opinion",
+        "hobby"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_10",
+      "german": "Ich muss für meinen Traumurlaub sparen",
+      "english": "I must save up for my dream holiday",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "reason",
+        "planning"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_10",
+      "german": "Ich werde das in den nächsten drei Jahren schaffen",
+      "english": "I will achieve this in the next three years",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "",
+      "tags": [
+        "planning",
+        "future"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_11",
+      "german": "nicht",
+      "english": "not",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_11",
+      "german": "in",
+      "english": "in/into",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Two-way preposition",
+      "tags": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_11",
+      "german": "auf",
+      "english": "on/onto",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Two-way preposition",
+      "tags": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_11",
+      "german": "gefährlich",
+      "english": "dangerous",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "",
+      "tags": [
+        "description"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_11",
+      "german": "Wahnsinn!",
+      "english": "Madness!",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Exclamation",
+      "tags": [
+        "exclamation"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_11",
+      "german": "seit",
+      "english": "since/for",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Preposition taking dative",
+      "tags": [
+        "preposition",
+        "time"
+      ]
+    },
+    {
+      "id": "ent_78",
+      "categoryId": "cat_11",
+      "german": "hier",
+      "english": "here",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "location"
+      ]
+    },
+    {
+      "id": "ent_79",
+      "categoryId": "cat_11",
+      "german": "dort",
+      "english": "there",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "",
+      "tags": [
+        "location"
+      ]
+    },
+    {
+      "id": "ent_80",
+      "categoryId": "cat_12",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Sends verb to end of clause",
+      "tags": [
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_81",
+      "categoryId": "cat_12",
+      "german": "da",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Sends verb to end of clause",
+      "tags": [
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_82",
+      "categoryId": "cat_12",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Sends verb to end of clause",
+      "tags": [
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_83",
+      "categoryId": "cat_12",
+      "german": "obschon",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Sends verb to end of clause",
+      "tags": [
+        "subordinating"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_35",
+      "infinitive": "schwimmen",
+      "present3rd": "schwimmt",
+      "perfectAux": "sein",
+      "pastParticiple": "geschwommen"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_36",
+      "infinitive": "machen",
+      "present3rd": "macht",
+      "perfectAux": "haben",
+      "pastParticiple": "gemacht"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_37",
+      "infinitive": "springen",
+      "present3rd": "springt",
+      "perfectAux": "sein",
+      "pastParticiple": "gesprungen"
+    },
+    {
+      "id": "vf_4",
+      "entryId": "ent_38",
+      "infinitive": "fliegen",
+      "present3rd": "fliegt",
+      "perfectAux": "sein",
+      "pastParticiple": "geflogen"
+    },
+    {
+      "id": "vf_5",
+      "entryId": "ent_39",
+      "infinitive": "essen",
+      "present3rd": "isst",
+      "perfectAux": "haben",
+      "pastParticiple": "gegessen"
+    },
+    {
+      "id": "vf_6",
+      "entryId": "ent_40",
+      "infinitive": "besteigen",
+      "present3rd": "besteigt",
+      "perfectAux": "haben",
+      "pastParticiple": "bestiegen"
+    },
+    {
+      "id": "vf_7",
+      "entryId": "ent_42",
+      "infinitive": "joggen",
+      "present3rd": "joggt",
+      "perfectAux": "sein",
+      "pastParticiple": "gejoggt"
+    },
+    {
+      "id": "vf_8",
+      "entryId": "ent_44",
+      "infinitive": "wandern",
+      "present3rd": "wandert",
+      "perfectAux": "sein",
+      "pastParticiple": "gewandert"
+    },
+    {
+      "id": "vf_9",
+      "entryId": "ent_49",
+      "infinitive": "trainieren",
+      "present3rd": "trainiert",
+      "perfectAux": "haben",
+      "pastParticiple": "trainiert"
+    },
+    {
+      "id": "vf_10",
+      "entryId": "ent_50",
+      "infinitive": "tragen",
+      "present3rd": "trägt",
+      "perfectAux": "haben",
+      "pastParticiple": "getragen"
+    },
+    {
+      "id": "vf_11",
+      "entryId": "ent_45",
+      "infinitive": "fahren",
+      "present3rd": "fährt",
+      "perfectAux": "sein",
+      "pastParticiple": "gefahren"
+    },
+    {
+      "id": "vf_12",
+      "entryId": "ent_58",
+      "infinitive": "sich vorbereiten",
+      "present3rd": "bereitet sich vor",
+      "perfectAux": "haben",
+      "pastParticiple": "vorbereitet"
+    },
+    {
+      "id": "vf_13",
+      "entryId": "ent_59",
+      "infinitive": "sich freuen",
+      "present3rd": "freut sich",
+      "perfectAux": "haben",
+      "pastParticiple": "gefreut"
+    },
+    {
+      "id": "vf_14",
+      "entryId": "ent_60",
+      "infinitive": "sich verletzen",
+      "present3rd": "verletzt sich",
+      "perfectAux": "haben",
+      "pastParticiple": "verletzt"
+    },
+    {
+      "id": "vf_15",
+      "entryId": "ent_61",
+      "infinitive": "sich aufregen",
+      "present3rd": "regt sich auf",
+      "perfectAux": "haben",
+      "pastParticiple": "aufgeregt"
+    },
+    {
+      "id": "vf_16",
+      "entryId": "ent_62",
+      "infinitive": "sich vorstellen",
+      "present3rd": "stellt sich vor",
+      "perfectAux": "haben",
+      "pastParticiple": "vorgestellt"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[subject_pronoun] [würde_form] [intensifier] [adjective]",
+      "slots": [
+        "subject_pronoun",
+        "würde_form",
+        "intensifier",
+        "adjective"
+      ],
+      "description": "Simple personality statement using conditional mood with intensifier"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[würde_conditional_phrase] [extreme_activity], [subordinating_conjunction] [reason_phrase]",
+      "slots": [
+        "würde_conditional_phrase",
+        "extreme_activity",
+        "subordinating_conjunction",
+        "reason_phrase"
+      ],
+      "description": "Compound sentence expressing conditional action with reason using subordinating conjunction"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[time_phrase] [würde_form] [subject_pronoun] [extreme_activity]",
+      "slots": [
+        "time_phrase",
+        "würde_form",
+        "subject_pronoun",
+        "extreme_activity"
+      ],
+      "description": "Complex sentence with time phrase inversion and conditional extreme activity"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[reflexive_würde] [reflexive_verb], [subordinating_conjunction] [subject_pronoun] [intensifier] [adjective] bin",
+      "slots": [
+        "reflexive_würde",
+        "reflexive_verb",
+        "subordinating_conjunction",
+        "subject_pronoun",
+        "intensifier",
+        "adjective"
+      ],
+      "description": "Compound sentence with reflexive conditional verb and personality justification"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[time_phrase] [würde_form] [subject_pronoun] [preparation_activity] und [time_phrase_2] [würde_form] [subject_pronoun] [extreme_activity]",
+      "slots": [
+        "time_phrase",
+        "würde_form",
+        "subject_pronoun",
+        "preparation_activity",
+        "time_phrase_2",
+        "extreme_activity"
+      ],
+      "description": "Complex sentence with multiple time phrases showing sequence of preparation then action"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[subject_pronoun] [würde_form] [extreme_activity], [subordinating_conjunction] [statement_phrase]",
+      "slots": [
+        "subject_pronoun",
+        "würde_form",
+        "extreme_activity",
+        "subordinating_conjunction",
+        "statement_phrase"
+      ],
+      "description": "Compound conditional sentence with subordinate clause explaining motivation"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[würde_gern_phrase] [extreme_activity], aber [reason_against]",
+      "slots": [
+        "würde_gern_phrase",
+        "extreme_activity",
+        "reason_against"
+      ],
+      "description": "Compound sentence expressing desire contrasted with obstacle using aber"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[time_phrase] [würde_form] [subject_pronoun] [reflexive_pronoun] [reflexive_verb], [subordinating_conjunction] [würde_conditional] [extreme_activity]",
+      "slots": [
+        "time_phrase",
+        "würde_form",
+        "subject_pronoun",
+        "reflexive_pronoun",
+        "reflexive_verb",
+        "subordinating_conjunction",
+        "würde_conditional",
+        "extreme_activity"
+      ],
+      "description": "Complex sentence with time inversion, reflexive verb, and subordinate clause with conditional activity"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Ich bin äußerst mutig",
+      "english": "I am extremely brave",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_8",
+        "ent_3"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Du würdest ziemlich vorsichtig sein",
+      "english": "You would be quite cautious",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_22",
+        "ent_12",
+        "ent_4"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Ich würde das nie machen, weil es zu gefährlich wäre",
+      "english": "I would never do that, because it would be too dangerous",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_27",
+        "ent_80",
+        "ent_64"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Er würde gern mit Haifischen schwimmen, obwohl er ein bisschen ängstlich ist",
+      "english": "He would like to swim with sharks, although he is a little bit fearful",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_32",
+        "ent_35",
+        "ent_82",
+        "ent_13",
+        "ent_2"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Zuerst würde ich viel trainieren",
+      "english": "First of all I would train lots",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_15",
+        "ent_21",
+        "ent_49"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "In drei Jahren würde er den Mount Everest besteigen",
+      "english": "In 3 years he would climb Mount Everest",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_20",
+        "ent_23",
+        "ent_40"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Wir würden gern zum Mond fliegen, da Bergsteigen mein Hobby ist",
+      "english": "We would like to fly to the moon, because mountain climbing is my hobby",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_33",
+        "ent_38",
+        "ent_81",
+        "ent_69"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Sie ist total verrückt",
+      "english": "She is totally crazy",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_11",
+        "ent_7"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Ich würde mich sehr gut vorbereiten, weil ich äußerst vorsichtig bin",
+      "english": "I would prepare very well, because I am extremely cautious",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_52",
+        "ent_58",
+        "ent_80",
+        "ent_8",
+        "ent_4"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Du würdest das bestimmt machen, obwohl ich Adrenalinjunkie bin",
+      "english": "You would definitely do that, although I'm an adrenaline junkie",
+      "complexity": "compound",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_28",
+        "ent_82",
+        "ent_65"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Dann würde sie Fallschirm springen gehen",
+      "english": "Then she would go sky diving",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_16",
+        "ent_23",
+        "ent_37"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Wir sind gar nicht feige",
+      "english": "We are not at all cowardly",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_14",
+        "ent_6"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Man würde gern Extrembügeln machen, aber man ist viel zu faul",
+      "english": "One would like to do extreme ironing, but one is far too lazy",
+      "complexity": "compound",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_32",
+        "ent_36",
+        "ent_67"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Später würde ich durch eine Wüste joggen",
+      "english": "Later I would jog through a desert",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_18",
+        "ent_21",
+        "ent_42"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Ihr würdet gern Kakerlaken essen, obschon es zu gefährlich wäre",
+      "english": "You plural would like to eat cockroaches, although it would be too dangerous",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_34",
+        "ent_39",
+        "ent_83",
+        "ent_64"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Danach würde er sich darauf freuen, weil er wirklich kühn ist",
+      "english": "Afterwards he would look forward to it, because he is really daring",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_17",
+        "ent_23",
+        "ent_54",
+        "ent_59",
+        "ent_80",
+        "ent_9",
+        "ent_5"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Sie würden das vielleicht machen",
+      "english": "They would maybe do that",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_29"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Du würdest dich verletzen, da du nicht viel trainieren würdest",
+      "english": "You would get injured, because you would not train lots",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_53",
+        "ent_60",
+        "ent_81",
+        "ent_72",
+        "ent_49"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "In einem Jahr würde ich mit Krokodilen schwimmen",
+      "english": "In 1 year I would swim with crocodiles",
+      "complexity": "complex",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_19",
+        "ent_21",
+        "ent_47"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Wir würden uns sehr gut vorbereiten, obwohl wir ziemlich ängstlich sind",
+      "english": "We would prepare very well, although we are quite fearful",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_55",
+        "ent_58",
+        "ent_82",
+        "ent_12",
+        "ent_2"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Zuerst würde ich einen schweren Rucksack tragen und danach würde ich in den Alpen wandern",
+      "english": "First of all I would wear a heavy rucksack and afterwards I would hike in the alps",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_15",
+        "ent_21",
+        "ent_50",
+        "ent_17",
+        "ent_44"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Er würde zum Mars fliegen, weil ich für meinen Traumurlaub sparen muss",
+      "english": "He would fly to Mars, because I must save up for my dream holiday",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_23",
+        "ent_48",
+        "ent_80",
+        "ent_70"
+      ]
+    }
+  ],
+  "exportedAt": "2026-03-23T22:16:56.970Z",
+  "version": "1.0"
+}
