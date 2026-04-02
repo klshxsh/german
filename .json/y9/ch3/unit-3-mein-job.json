@@ -1358,8 +1358,8 @@
     },
     {
       "id": "sen_16",
-      "german": "Sie möchte als Ärztin arbeiten, weil sie viele Leute kennengelernt hat",
-      "english": "She would like to work as a doctor because I have got to know lots of people",
+      "german": "Sie möchte als Ärztin arbeiten, weil sie viele Leute kennengelernt hat.",
+      "english": "She would like to work as a doctor because she has got to know lots of people.",
       "complexity": "complex",
       "templateId": "tpl_4",
       "usedEntryIds": [
@@ -1385,8 +1385,8 @@
     },
     {
       "id": "sen_18",
-      "german": "Er arbeitet als Kellner in einer Bar, um selbstständiger zu werden",
-      "english": "He works as a football player in a bar in order to become more independent",
+      "german": "Er arbeitet als Kellner in einer Bar, um selbstständiger zu werden.",
+      "english": "He works as a waiter in a bar in order to become more independent.",
       "complexity": "complex",
       "templateId": "tpl_8",
       "usedEntryIds": [
@@ -1425,7 +1425,7 @@
     {
       "id": "sen_21",
       "german": "Ich arbeite als Trainer in einem Geschäft, um meinen Lebenslauf zu verbessern",
-      "english": "They work as trainers in a shop in order to improve my CV",
+      "english": "I work as a trainer in a shop in order to improve my CV",
       "complexity": "complex",
       "templateId": "tpl_8",
       "usedEntryIds": [
@@ -1448,6 +1448,6 @@
       ]
     }
   ],
-  "exportedAt": "2026-04-02T22:32:11.981Z",
+  "exportedAt": "2026-04-02T22:54:55.422Z",
   "version": "1.0"
 }
