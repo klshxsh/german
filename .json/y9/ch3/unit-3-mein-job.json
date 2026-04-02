@@ -1232,7 +1232,7 @@
     },
     {
       "id": "sen_6",
-      "german": "Ich denke den Job ist total langweilig",
+      "german": "Ich denke, dass der Job total langweilig ist",
       "english": "I think the job is totally boring",
       "complexity": "simple",
       "templateId": "tpl_3",
@@ -1319,7 +1319,7 @@
     },
     {
       "id": "sen_13",
-      "german": "Ich glaube den Job ist äußerst wertvoll, weil ich mich gut mit meinen Kollegen verstehe",
+      "german": "Ich glaube, dass der Job äußerst wertvoll ist, weil ich mich gut mit meinen Kollegen verstehe",
       "english": "I think the job is extremely worthwhile because I get along well with my colleagues",
       "complexity": "compound",
       "templateId": "tpl_6",
@@ -1358,7 +1358,7 @@
     },
     {
       "id": "sen_16",
-      "german": "Sie möchte als Ärztin arbeiten, weil ich viele Leute kennengelernt habe",
+      "german": "Sie möchte als Ärztin arbeiten, weil sie viele Leute kennengelernt hat",
       "english": "She would like to work as a doctor because I have got to know lots of people",
       "complexity": "complex",
       "templateId": "tpl_4",
@@ -1371,7 +1371,7 @@
     },
     {
       "id": "sen_17",
-      "german": "Ich denke den Job ist gar nicht cool, obwohl man viel Geld verdienen kann",
+      "german": "Ich denke, dass der Job gar nicht cool ist, obwohl man viel Geld verdienen kann",
       "english": "I think the job is not cool at all, although you can earn lots of money",
       "complexity": "complex",
       "templateId": "tpl_6",
@@ -1385,7 +1385,7 @@
     },
     {
       "id": "sen_18",
-      "german": "Er arbeitet als Fußballspieler in einer Bar, um selbstständiger zu werden",
+      "german": "Er arbeitet als Kellner in einer Bar, um selbstständiger zu werden",
       "english": "He works as a football player in a bar in order to become more independent",
       "complexity": "complex",
       "templateId": "tpl_8",
@@ -1398,7 +1398,7 @@
     },
     {
       "id": "sen_19",
-      "german": "Wir möchten als Geschäftsmann arbeiten, um reich zu werden",
+      "german": "Wir möchten als Geschäftsleute arbeiten, um reich zu werden",
       "english": "We would like to work as businessmen in order to become rich",
       "complexity": "complex",
       "templateId": "tpl_5",
@@ -1410,7 +1410,7 @@
     },
     {
       "id": "sen_20",
-      "german": "Meiner Meinung nach ist den Job wirklich unterhaltsam, weil ich viel Spaß habe",
+      "german": "Meiner Meinung nach ist der Job wirklich unterhaltsam, weil ich viel Spaß habe",
       "english": "In my opinion the job is really entertaining because I have lots of fun",
       "complexity": "complex",
       "templateId": "tpl_6",
@@ -1424,7 +1424,7 @@
     },
     {
       "id": "sen_21",
-      "german": "Sie arbeiten als Trainer in einem Geschäft, um meinen Lebenslauf zu verbessern",
+      "german": "Ich arbeite als Trainer in einem Geschäft, um meinen Lebenslauf zu verbessern",
       "english": "They work as trainers in a shop in order to improve my CV",
       "complexity": "complex",
       "templateId": "tpl_8",
@@ -1448,6 +1448,6 @@
       ]
     }
   ],
-  "exportedAt": "2026-04-02T22:13:46.974Z",
+  "exportedAt": "2026-04-02T22:32:11.981Z",
   "version": "1.0"
 }
