@@ -1,0 +1,1453 @@
+{
+  "unit": {
+    "name": "Mein Job",
+    "description": "My Job - Discussing jobs, preferences, and reasons for career choices"
+  },
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Welchen Job möchtest du?",
+      "description": "Which job would you like?",
+      "grammarNotes": "Uses modal verb möchten (would like) with infinitive arbeiten + als"
+    },
+    {
+      "id": "cat_2",
+      "name": "Möchten - Modal Verb Conjugation",
+      "description": "Conjugation of möchten (would like)",
+      "grammarNotes": "Modal verb conjugation - all persons"
+    },
+    {
+      "id": "cat_3",
+      "name": "Part-time Jobs",
+      "description": "Part-time job titles for young people",
+      "grammarNotes": "Nouns with (in) suffix for feminine forms"
+    },
+    {
+      "id": "cat_4",
+      "name": "Arbeiten - Verb Conjugation",
+      "description": "Conjugation of arbeiten (to work)",
+      "grammarNotes": "Regular verb conjugation - present tense"
+    },
+    {
+      "id": "cat_5",
+      "name": "Work Locations",
+      "description": "Places where one works",
+      "grammarNotes": "Prepositional phrases with in + dative"
+    },
+    {
+      "id": "cat_6",
+      "name": "Career Professions",
+      "description": "Professional career job titles",
+      "grammarNotes": "Nouns with (in) suffix for feminine forms"
+    },
+    {
+      "id": "cat_7",
+      "name": "Magst du den Job? - Opinion Phrases",
+      "description": "Do you like the job? - Expressing opinions about jobs",
+      "grammarNotes": "Opinion starter phrases with dass-clauses"
+    },
+    {
+      "id": "cat_8",
+      "name": "Qualifiers",
+      "description": "Adverbs to qualify opinions",
+      "grammarNotes": "Intensifiers and negators"
+    },
+    {
+      "id": "cat_9",
+      "name": "Job Adjectives",
+      "description": "Adjectives describing jobs",
+      "grammarNotes": "Predicative adjectives"
+    },
+    {
+      "id": "cat_10",
+      "name": "Warum möchtest du den Job?",
+      "description": "Why would you like the job? - Reasons for job choices",
+      "grammarNotes": "Uses weil/obwohl clauses and um...zu constructions"
+    },
+    {
+      "id": "cat_11",
+      "name": "Um...zu Infinitive Constructions",
+      "description": "In order to... (purpose clauses)",
+      "grammarNotes": "um + zu + infinitive construction for expressing purpose"
+    },
+    {
+      "id": "cat_12",
+      "name": "Weil/Obwohl Clauses - Job Reasons",
+      "description": "Because/although clauses explaining job preferences",
+      "grammarNotes": "Subordinate clauses with verb at the end"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ent_1",
+      "categoryId": "cat_1",
+      "german": "Welchen Job möchtest du?",
+      "english": "Which job would you like?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question phrase",
+      "tags": [
+        "question",
+        "jobs"
+      ]
+    },
+    {
+      "id": "ent_2",
+      "categoryId": "cat_2",
+      "german": "Ich möchte",
+      "english": "I would like",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Modal verb - 1st person singular",
+      "tags": [
+        "modal",
+        "möchten"
+      ]
+    },
+    {
+      "id": "ent_3",
+      "categoryId": "cat_2",
+      "german": "Du möchtest",
+      "english": "You would like",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Modal verb - 2nd person singular",
+      "tags": [
+        "modal",
+        "möchten"
+      ]
+    },
+    {
+      "id": "ent_4",
+      "categoryId": "cat_2",
+      "german": "Er/sie/es/man möchte",
+      "english": "He/she/it/one would like",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Modal verb - 3rd person singular",
+      "tags": [
+        "modal",
+        "möchten"
+      ]
+    },
+    {
+      "id": "ent_5",
+      "categoryId": "cat_2",
+      "german": "Wir möchten",
+      "english": "We would like",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Modal verb - 1st person plural",
+      "tags": [
+        "modal",
+        "möchten"
+      ]
+    },
+    {
+      "id": "ent_6",
+      "categoryId": "cat_2",
+      "german": "Ihr möchtet",
+      "english": "You plural would like",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Modal verb - 2nd person plural",
+      "tags": [
+        "modal",
+        "möchten"
+      ]
+    },
+    {
+      "id": "ent_7",
+      "categoryId": "cat_2",
+      "german": "Sie/sie möchten",
+      "english": "You formal/they would like",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Modal verb - 3rd person plural/formal",
+      "tags": [
+        "modal",
+        "möchten"
+      ]
+    },
+    {
+      "id": "ent_8",
+      "categoryId": "cat_1",
+      "german": "als",
+      "english": "to work as",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Preposition introducing job title",
+      "tags": [
+        "preposition"
+      ]
+    },
+    {
+      "id": "ent_9",
+      "categoryId": "cat_3",
+      "german": "Zeitungsausträger(in)",
+      "english": "paperboy/girl",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine: der Zeitungsausträger, Feminine: die Zeitungsträgerin",
+      "tags": [
+        "job",
+        "part-time"
+      ]
+    },
+    {
+      "id": "ent_10",
+      "categoryId": "cat_3",
+      "german": "Babysitter(in)",
+      "english": "babysitter",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "part-time"
+      ]
+    },
+    {
+      "id": "ent_11",
+      "categoryId": "cat_3",
+      "german": "Bademeister(in)",
+      "english": "lifeguard",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "part-time"
+      ]
+    },
+    {
+      "id": "ent_12",
+      "categoryId": "cat_3",
+      "german": "Trainer(in)",
+      "english": "trainer",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "part-time"
+      ]
+    },
+    {
+      "id": "ent_13",
+      "categoryId": "cat_3",
+      "german": "Hundeausführer(in)",
+      "english": "dog walker",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "part-time"
+      ]
+    },
+    {
+      "id": "ent_14",
+      "categoryId": "cat_3",
+      "german": "Kellner(in)",
+      "english": "waiter/waitress",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "part-time"
+      ]
+    },
+    {
+      "id": "ent_15",
+      "categoryId": "cat_4",
+      "german": "Ich arbeite",
+      "english": "I work",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense - 1st person singular",
+      "tags": [
+        "arbeiten",
+        "conjugation"
+      ]
+    },
+    {
+      "id": "ent_16",
+      "categoryId": "cat_4",
+      "german": "Du arbeitest",
+      "english": "you work",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense - 2nd person singular",
+      "tags": [
+        "arbeiten",
+        "conjugation"
+      ]
+    },
+    {
+      "id": "ent_17",
+      "categoryId": "cat_4",
+      "german": "Er/sie/es/man arbeitet",
+      "english": "He/she/it/you work",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense - 3rd person singular",
+      "tags": [
+        "arbeiten",
+        "conjugation"
+      ]
+    },
+    {
+      "id": "ent_18",
+      "categoryId": "cat_4",
+      "german": "Wir arbeiten",
+      "english": "We work",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense - 1st person plural",
+      "tags": [
+        "arbeiten",
+        "conjugation"
+      ]
+    },
+    {
+      "id": "ent_19",
+      "categoryId": "cat_4",
+      "german": "Ihr arbeitet",
+      "english": "You plural work",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense - 2nd person plural",
+      "tags": [
+        "arbeiten",
+        "conjugation"
+      ]
+    },
+    {
+      "id": "ent_20",
+      "categoryId": "cat_4",
+      "german": "Sie/sie arbeiten",
+      "english": "You/they work",
+      "partOfSpeech": "verb",
+      "grammarNotes": "Present tense - 3rd person plural/formal",
+      "tags": [
+        "arbeiten",
+        "conjugation"
+      ]
+    },
+    {
+      "id": "ent_21",
+      "categoryId": "cat_5",
+      "german": "in einem Café oder Restaurant",
+      "english": "in a café or restaurant",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Dative case after in",
+      "tags": [
+        "location",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_22",
+      "categoryId": "cat_5",
+      "german": "in einer Bar",
+      "english": "in a bar",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Dative case after in (feminine)",
+      "tags": [
+        "location",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_23",
+      "categoryId": "cat_5",
+      "german": "in einem Geschäft",
+      "english": "in a shop",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Dative case after in",
+      "tags": [
+        "location",
+        "work"
+      ]
+    },
+    {
+      "id": "ent_24",
+      "categoryId": "cat_6",
+      "german": "Arzt/Ärztin",
+      "english": "doctor",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "career",
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_25",
+      "categoryId": "cat_6",
+      "german": "Lehrer(in)",
+      "english": "teacher",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "career",
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_26",
+      "categoryId": "cat_6",
+      "german": "Sportler(in)",
+      "english": "sportsperson",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "career",
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_27",
+      "categoryId": "cat_6",
+      "german": "Geschäftsmann/frau",
+      "english": "businessman/woman",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Masculine/Feminine forms",
+      "tags": [
+        "job",
+        "career",
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_28",
+      "categoryId": "cat_6",
+      "german": "Fußballspieler",
+      "english": "football player",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Can add -in for feminine",
+      "tags": [
+        "job",
+        "career",
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_29",
+      "categoryId": "cat_6",
+      "german": "Fußballmanager",
+      "english": "football manager",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Can add -in for feminine",
+      "tags": [
+        "job",
+        "career",
+        "profession"
+      ]
+    },
+    {
+      "id": "ent_30",
+      "categoryId": "cat_7",
+      "german": "Magst du den Job?",
+      "english": "Do you like the job?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question phrase",
+      "tags": [
+        "question",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_31",
+      "categoryId": "cat_7",
+      "german": "Ich finde den Job",
+      "english": "I find the job",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion starter",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_32",
+      "categoryId": "cat_7",
+      "german": "Ich denke den Job ist",
+      "english": "I think the job is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion starter",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_33",
+      "categoryId": "cat_7",
+      "german": "Ich glaube den Job ist",
+      "english": "I think the job is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion starter",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_34",
+      "categoryId": "cat_7",
+      "german": "Meiner Meinung nach ist den Job",
+      "english": "In my opinion the job is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion starter - formal",
+      "tags": [
+        "opinion",
+        "formal"
+      ]
+    },
+    {
+      "id": "ent_35",
+      "categoryId": "cat_7",
+      "german": "Ich bin überzeugt, dass den Job... ist",
+      "english": "I am convinced the job is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion starter with dass-clause",
+      "tags": [
+        "opinion",
+        "formal"
+      ]
+    },
+    {
+      "id": "ent_36",
+      "categoryId": "cat_7",
+      "german": "Ich bin der Meinung, dass den Job... ist",
+      "english": "I am of the opinion that the job is",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion starter with dass-clause",
+      "tags": [
+        "opinion",
+        "formal"
+      ]
+    },
+    {
+      "id": "ent_37",
+      "categoryId": "cat_8",
+      "german": "sehr",
+      "english": "very",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier",
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_38",
+      "categoryId": "cat_8",
+      "german": "ein bisschen",
+      "english": "a bit",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_39",
+      "categoryId": "cat_8",
+      "german": "total",
+      "english": "totally",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier",
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_40",
+      "categoryId": "cat_8",
+      "german": "ganz",
+      "english": "completely",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier",
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_41",
+      "categoryId": "cat_8",
+      "german": "wirklich",
+      "english": "really",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier",
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_42",
+      "categoryId": "cat_8",
+      "german": "äußerst",
+      "english": "extremely",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Intensifier",
+      "tags": [
+        "qualifier",
+        "intensifier"
+      ]
+    },
+    {
+      "id": "ent_43",
+      "categoryId": "cat_8",
+      "german": "gar nicht",
+      "english": "not at all",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Negator",
+      "tags": [
+        "qualifier",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_44",
+      "categoryId": "cat_8",
+      "german": "nicht",
+      "english": "not",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Negator",
+      "tags": [
+        "qualifier",
+        "negative"
+      ]
+    },
+    {
+      "id": "ent_45",
+      "categoryId": "cat_8",
+      "german": "zu",
+      "english": "too",
+      "partOfSpeech": "adverb",
+      "grammarNotes": "Qualifier",
+      "tags": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "ent_46",
+      "categoryId": "cat_9",
+      "german": "interessant",
+      "english": "interesting",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "positive",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_47",
+      "categoryId": "cat_9",
+      "german": "cool",
+      "english": "cool",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "positive",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_48",
+      "categoryId": "cat_9",
+      "german": "wertvoll",
+      "english": "worthwhile",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "positive",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_49",
+      "categoryId": "cat_9",
+      "german": "sinnvoll",
+      "english": "worthwhile",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "positive",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_50",
+      "categoryId": "cat_9",
+      "german": "eine Herausforderung",
+      "english": "a challenge",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun - die Herausforderung",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_51",
+      "categoryId": "cat_9",
+      "german": "unterhaltsam",
+      "english": "entertaining",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "positive",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_52",
+      "categoryId": "cat_9",
+      "german": "gesellig",
+      "english": "sociable",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "positive",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_53",
+      "categoryId": "cat_9",
+      "german": "einfach",
+      "english": "easy",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "neutral",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_54",
+      "categoryId": "cat_9",
+      "german": "langweilig",
+      "english": "boring",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "negative",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_55",
+      "categoryId": "cat_9",
+      "german": "eine Zeitverschwendung",
+      "english": "a waste of time",
+      "partOfSpeech": "noun",
+      "grammarNotes": "Feminine noun - die Zeitverschwendung",
+      "tags": [
+        "negative",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_56",
+      "categoryId": "cat_9",
+      "german": "schwierig",
+      "english": "difficult",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "negative",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_57",
+      "categoryId": "cat_9",
+      "german": "unmöglich",
+      "english": "impossible",
+      "partOfSpeech": "adjective",
+      "grammarNotes": "Predicative adjective",
+      "tags": [
+        "negative",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ent_58",
+      "categoryId": "cat_10",
+      "german": "Warum möchtest du den Job?",
+      "english": "Why would you like the job?",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Question phrase",
+      "tags": [
+        "question",
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_59",
+      "categoryId": "cat_10",
+      "german": "Ich möchte den Job",
+      "english": "I would like the job",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Statement starter",
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_60",
+      "categoryId": "cat_10",
+      "german": "Ich mag den Job (nicht)",
+      "english": "I (don't) like the job",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Opinion phrase with optional negative",
+      "tags": [
+        "opinion",
+        "reason"
+      ]
+    },
+    {
+      "id": "ent_61",
+      "categoryId": "cat_10",
+      "german": "weil",
+      "english": "because",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "connective",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_62",
+      "categoryId": "cat_10",
+      "german": "obwohl",
+      "english": "although",
+      "partOfSpeech": "connective",
+      "grammarNotes": "Subordinating conjunction - verb to end",
+      "tags": [
+        "connective",
+        "subordinating"
+      ]
+    },
+    {
+      "id": "ent_63",
+      "categoryId": "cat_11",
+      "german": "um Geld zu verdienen",
+      "english": "in order to earn money",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_64",
+      "categoryId": "cat_11",
+      "german": "um Erfahrung zu bekommen",
+      "english": "in order to get experience",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_65",
+      "categoryId": "cat_11",
+      "german": "um meinen Lebenslauf zu verbessern",
+      "english": "in order to improve my CV",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_66",
+      "categoryId": "cat_11",
+      "german": "um selbstständiger zu werden",
+      "english": "in order to become more independent",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction with comparative",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_67",
+      "categoryId": "cat_11",
+      "german": "um Spaß zu haben",
+      "english": "in order to have fun",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_68",
+      "categoryId": "cat_11",
+      "german": "um Leute kennenzulernen",
+      "english": "in order to get to know people",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction with separable verb",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_69",
+      "categoryId": "cat_11",
+      "german": "um reich zu werden",
+      "english": "in order to become rich",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_70",
+      "categoryId": "cat_11",
+      "german": "um erfolgreich zu sein",
+      "english": "in order to be successful",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_71",
+      "categoryId": "cat_11",
+      "german": "um berühmt zu werden",
+      "english": "in order to become famous",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_72",
+      "categoryId": "cat_11",
+      "german": "um die ganze Welt zu sehen",
+      "english": "in order to see the whole world",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "um...zu construction",
+      "tags": [
+        "purpose",
+        "infinitive"
+      ]
+    },
+    {
+      "id": "ent_73",
+      "categoryId": "cat_12",
+      "german": "Ich viel Spaß habe",
+      "english": "I have lots of fun",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause - verb at end",
+      "tags": [
+        "reason",
+        "subordinate"
+      ]
+    },
+    {
+      "id": "ent_74",
+      "categoryId": "cat_12",
+      "german": "Man viel Geld verdienen kann",
+      "english": "You can earn lots of money",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause - verb at end",
+      "tags": [
+        "reason",
+        "subordinate"
+      ]
+    },
+    {
+      "id": "ent_75",
+      "categoryId": "cat_12",
+      "german": "Ich mich gut mit meinen Kollegen verstehe",
+      "english": "I get along well with my colleagues",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause with reflexive verb - verb at end",
+      "tags": [
+        "reason",
+        "subordinate"
+      ]
+    },
+    {
+      "id": "ent_76",
+      "categoryId": "cat_12",
+      "german": "Ich viele Leute kennengelernt habe",
+      "english": "I have got to know lots of people",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause in perfect tense - auxiliary at end",
+      "tags": [
+        "reason",
+        "subordinate",
+        "perfect"
+      ]
+    },
+    {
+      "id": "ent_77",
+      "categoryId": "cat_12",
+      "german": "Man wertvolle Erfahrung bekommt",
+      "english": "you get worthwhile experience",
+      "partOfSpeech": "phrase",
+      "grammarNotes": "Subordinate clause - verb at end",
+      "tags": [
+        "reason",
+        "subordinate"
+      ]
+    }
+  ],
+  "verbForms": [
+    {
+      "id": "vf_1",
+      "entryId": "ent_15",
+      "infinitive": "arbeiten",
+      "present3rd": "arbeitet",
+      "perfectAux": "haben",
+      "pastParticiple": "gearbeitet"
+    },
+    {
+      "id": "vf_2",
+      "entryId": "ent_63",
+      "infinitive": "verdienen",
+      "present3rd": "verdient",
+      "perfectAux": "haben",
+      "pastParticiple": "verdient"
+    },
+    {
+      "id": "vf_3",
+      "entryId": "ent_64",
+      "infinitive": "bekommen",
+      "present3rd": "bekommt",
+      "perfectAux": "haben",
+      "pastParticiple": "bekommen"
+    },
+    {
+      "id": "vf_4",
+      "entryId": "ent_65",
+      "infinitive": "verbessern",
+      "present3rd": "verbessert",
+      "perfectAux": "haben",
+      "pastParticiple": "verbessert"
+    },
+    {
+      "id": "vf_5",
+      "entryId": "ent_66",
+      "infinitive": "werden",
+      "present3rd": "wird",
+      "perfectAux": "sein",
+      "pastParticiple": "geworden"
+    },
+    {
+      "id": "vf_6",
+      "entryId": "ent_67",
+      "infinitive": "haben",
+      "present3rd": "hat",
+      "perfectAux": "haben",
+      "pastParticiple": "gehabt"
+    },
+    {
+      "id": "vf_7",
+      "entryId": "ent_68",
+      "infinitive": "kennenlernen",
+      "present3rd": "lernt kennen",
+      "perfectAux": "haben",
+      "pastParticiple": "kennengelernt"
+    },
+    {
+      "id": "vf_8",
+      "entryId": "ent_70",
+      "infinitive": "sein",
+      "present3rd": "ist",
+      "perfectAux": "sein",
+      "pastParticiple": "gewesen"
+    },
+    {
+      "id": "vf_9",
+      "entryId": "ent_72",
+      "infinitive": "sehen",
+      "present3rd": "sieht",
+      "perfectAux": "haben",
+      "pastParticiple": "gesehen"
+    },
+    {
+      "id": "vf_10",
+      "entryId": "ent_75",
+      "infinitive": "sich verstehen",
+      "present3rd": "versteht sich",
+      "perfectAux": "haben",
+      "pastParticiple": "verstanden"
+    }
+  ],
+  "sentenceTemplates": [
+    {
+      "id": "tpl_1",
+      "pattern": "[subject_pronoun] [möchten_conjugation] als [job_title] arbeiten",
+      "slots": [
+        "subject_pronoun",
+        "möchten_conjugation",
+        "job_title"
+      ],
+      "description": "Basic statement about wanting to work as something"
+    },
+    {
+      "id": "tpl_2",
+      "pattern": "[subject_pronoun] [arbeiten_conjugation] [location]",
+      "slots": [
+        "subject_pronoun",
+        "arbeiten_conjugation",
+        "location"
+      ],
+      "description": "Statement about where someone works"
+    },
+    {
+      "id": "tpl_3",
+      "pattern": "[opinion_starter] [qualifier] [adjective]",
+      "slots": [
+        "opinion_starter",
+        "qualifier",
+        "adjective"
+      ],
+      "description": "Opinion about a job with qualifier"
+    },
+    {
+      "id": "tpl_4",
+      "pattern": "[subject_pronoun] [möchten_conjugation] als [job_title] arbeiten, [connective] [subordinate_clause]",
+      "slots": [
+        "subject_pronoun",
+        "möchten_conjugation",
+        "job_title",
+        "connective",
+        "subordinate_clause"
+      ],
+      "description": "Job preference with reason using weil/obwohl"
+    },
+    {
+      "id": "tpl_5",
+      "pattern": "[subject_pronoun] [arbeiten_conjugation] als [job_title], [um_zu_phrase]",
+      "slots": [
+        "subject_pronoun",
+        "arbeiten_conjugation",
+        "job_title",
+        "um_zu_phrase"
+      ],
+      "description": "Statement about working with purpose clause"
+    },
+    {
+      "id": "tpl_6",
+      "pattern": "[opinion_starter] [qualifier] [adjective], [connective] [subordinate_clause]",
+      "slots": [
+        "opinion_starter",
+        "qualifier",
+        "adjective",
+        "connective",
+        "subordinate_clause"
+      ],
+      "description": "Opinion with supporting reason clause"
+    },
+    {
+      "id": "tpl_7",
+      "pattern": "[subject_pronoun] [möchten_conjugation] [location] arbeiten",
+      "slots": [
+        "subject_pronoun",
+        "möchten_conjugation",
+        "location"
+      ],
+      "description": "Statement about wanting to work at a location"
+    },
+    {
+      "id": "tpl_8",
+      "pattern": "[subject_pronoun] [arbeiten_conjugation] als [job_title] [location], [um_zu_phrase]",
+      "slots": [
+        "subject_pronoun",
+        "arbeiten_conjugation",
+        "job_title",
+        "location",
+        "um_zu_phrase"
+      ],
+      "description": "Complex statement with job, location, and purpose"
+    }
+  ],
+  "generatedSentences": [
+    {
+      "id": "sen_1",
+      "german": "Ich möchte als Babysitter arbeiten",
+      "english": "I would like to work as a babysitter",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_10"
+      ]
+    },
+    {
+      "id": "sen_2",
+      "german": "Sie arbeitet in einem Café oder Restaurant",
+      "english": "She works in a café or restaurant",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_17",
+        "ent_21"
+      ]
+    },
+    {
+      "id": "sen_3",
+      "german": "Ich finde den Job sehr interessant",
+      "english": "I find the job very interesting",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_31",
+        "ent_37",
+        "ent_46"
+      ]
+    },
+    {
+      "id": "sen_4",
+      "german": "Er möchte als Trainer arbeiten",
+      "english": "He would like to work as a trainer",
+      "complexity": "simple",
+      "templateId": "tpl_1",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_12"
+      ]
+    },
+    {
+      "id": "sen_5",
+      "german": "Wir arbeiten in einem Geschäft",
+      "english": "We work in a shop",
+      "complexity": "simple",
+      "templateId": "tpl_2",
+      "usedEntryIds": [
+        "ent_18",
+        "ent_23"
+      ]
+    },
+    {
+      "id": "sen_6",
+      "german": "Ich denke den Job ist total langweilig",
+      "english": "I think the job is totally boring",
+      "complexity": "simple",
+      "templateId": "tpl_3",
+      "usedEntryIds": [
+        "ent_32",
+        "ent_39",
+        "ent_54"
+      ]
+    },
+    {
+      "id": "sen_7",
+      "german": "Du möchtest in einer Bar arbeiten",
+      "english": "You would like to work in a bar",
+      "complexity": "simple",
+      "templateId": "tpl_7",
+      "usedEntryIds": [
+        "ent_3",
+        "ent_22"
+      ]
+    },
+    {
+      "id": "sen_8",
+      "german": "Ich möchte als Kellner arbeiten, weil man viel Geld verdienen kann",
+      "english": "I would like to work as a waiter because you can earn lots of money",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_14",
+        "ent_61",
+        "ent_74"
+      ]
+    },
+    {
+      "id": "sen_9",
+      "german": "Er arbeitet als Zeitungsausträger, um Geld zu verdienen",
+      "english": "He works as a paperboy in order to earn money",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_17",
+        "ent_9",
+        "ent_63"
+      ]
+    },
+    {
+      "id": "sen_10",
+      "german": "Ich finde den Job ein bisschen schwierig, obwohl ich viel Spaß habe",
+      "english": "I find the job a bit difficult, although I have lots of fun",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_31",
+        "ent_38",
+        "ent_56",
+        "ent_62",
+        "ent_73"
+      ]
+    },
+    {
+      "id": "sen_11",
+      "german": "Sie möchte als Lehrerin arbeiten, weil man wertvolle Erfahrung bekommt",
+      "english": "She would like to work as a teacher because you get worthwhile experience",
+      "complexity": "compound",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_25",
+        "ent_61",
+        "ent_77"
+      ]
+    },
+    {
+      "id": "sen_12",
+      "german": "Wir arbeiten als Bademeister, um Leute kennenzulernen",
+      "english": "We work as lifeguards in order to get to know people",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_18",
+        "ent_11",
+        "ent_68"
+      ]
+    },
+    {
+      "id": "sen_13",
+      "german": "Ich glaube den Job ist äußerst wertvoll, weil ich mich gut mit meinen Kollegen verstehe",
+      "english": "I think the job is extremely worthwhile because I get along well with my colleagues",
+      "complexity": "compound",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_33",
+        "ent_42",
+        "ent_48",
+        "ent_61",
+        "ent_75"
+      ]
+    },
+    {
+      "id": "sen_14",
+      "german": "Er möchte als Hundeausführer arbeiten, um Spaß zu haben",
+      "english": "He would like to work as a dog walker in order to have fun",
+      "complexity": "compound",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_13",
+        "ent_67"
+      ]
+    },
+    {
+      "id": "sen_15",
+      "german": "Ich arbeite als Kellner in einem Café oder Restaurant, um Erfahrung zu bekommen",
+      "english": "I work as a waiter in a café or restaurant in order to get experience",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_15",
+        "ent_14",
+        "ent_21",
+        "ent_64"
+      ]
+    },
+    {
+      "id": "sen_16",
+      "german": "Sie möchte als Ärztin arbeiten, weil ich viele Leute kennengelernt habe",
+      "english": "She would like to work as a doctor because I have got to know lots of people",
+      "complexity": "complex",
+      "templateId": "tpl_4",
+      "usedEntryIds": [
+        "ent_4",
+        "ent_24",
+        "ent_61",
+        "ent_76"
+      ]
+    },
+    {
+      "id": "sen_17",
+      "german": "Ich denke den Job ist gar nicht cool, obwohl man viel Geld verdienen kann",
+      "english": "I think the job is not cool at all, although you can earn lots of money",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_32",
+        "ent_43",
+        "ent_47",
+        "ent_62",
+        "ent_74"
+      ]
+    },
+    {
+      "id": "sen_18",
+      "german": "Er arbeitet als Fußballspieler in einer Bar, um selbstständiger zu werden",
+      "english": "He works as a football player in a bar in order to become more independent",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_17",
+        "ent_28",
+        "ent_22",
+        "ent_66"
+      ]
+    },
+    {
+      "id": "sen_19",
+      "german": "Wir möchten als Geschäftsmann arbeiten, um reich zu werden",
+      "english": "We would like to work as businessmen in order to become rich",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_5",
+        "ent_27",
+        "ent_69"
+      ]
+    },
+    {
+      "id": "sen_20",
+      "german": "Meiner Meinung nach ist den Job wirklich unterhaltsam, weil ich viel Spaß habe",
+      "english": "In my opinion the job is really entertaining because I have lots of fun",
+      "complexity": "complex",
+      "templateId": "tpl_6",
+      "usedEntryIds": [
+        "ent_34",
+        "ent_41",
+        "ent_51",
+        "ent_61",
+        "ent_73"
+      ]
+    },
+    {
+      "id": "sen_21",
+      "german": "Sie arbeiten als Trainer in einem Geschäft, um meinen Lebenslauf zu verbessern",
+      "english": "They work as trainers in a shop in order to improve my CV",
+      "complexity": "complex",
+      "templateId": "tpl_8",
+      "usedEntryIds": [
+        "ent_20",
+        "ent_12",
+        "ent_23",
+        "ent_65"
+      ]
+    },
+    {
+      "id": "sen_22",
+      "german": "Ich möchte als Fußballmanager arbeiten, um berühmt zu werden",
+      "english": "I would like to work as a football manager in order to become famous",
+      "complexity": "complex",
+      "templateId": "tpl_5",
+      "usedEntryIds": [
+        "ent_2",
+        "ent_29",
+        "ent_71"
+      ]
+    }
+  ],
+  "exportedAt": "2026-04-02T22:13:46.974Z",
+  "version": "1.0"
+}
